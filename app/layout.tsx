@@ -47,7 +47,15 @@ export const metadata: Metadata = {
     title: 'Flying Colours Vacations — Adding Colours to Every Journey',
     description: 'Handcrafted Southeast Asia holidays to Vietnam, Bali, Thailand and Malaysia.'
   },
-  icons: { icon: '/logo-flying-colours-vacations.webp' }
+  icons: {
+    // Just the globe+plane mark, cropped from the full logo lockup — the
+    // full wide logo squashed into a 16-32px tab icon was illegible.
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' }
+    ],
+    apple: '/apple-touch-icon.png'
+  }
 };
 
 export const viewport: Viewport = {

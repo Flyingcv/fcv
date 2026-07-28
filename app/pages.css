@@ -1115,8 +1115,7 @@ input[type="range"]::-moz-range-thumb {
   .tmq__inner > .tmq__track:last-child { display: none; }
   .tmq .quote-card { scroll-snap-align: center; }
 }
-.quote-card__by { display: flex; align-items: center; gap: .9rem; padding-top: 1.1rem; border-top: 1.5px dashed var(--hair-on-paper); }
-.quote-card__by img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex: none; background: var(--paper-300); }
+.quote-card__by { padding-top: 1.1rem; border-top: 1.5px dashed var(--hair-on-paper); }
 .quote-card__by b { display: block; font-size: .92rem; }
 .quote-card__by span { font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); }
 .stars { display: flex; gap: 2px; color: var(--gold-500); }

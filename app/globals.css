@@ -274,7 +274,6 @@ h1, h2, h3, h4 {
 }
 .pre__logo {
   width: min(340px, 68vw);
-  filter: brightness(0) invert(1);
   opacity: .96;
 }
 .pre__meta {

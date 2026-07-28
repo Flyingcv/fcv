@@ -28,12 +28,7 @@ const VALUES: [string, string][] = [
   ['Fix it before you notice', 'Delays, closures and weather get re-planned while you are still in the air.']
 ];
 
-const TEAM: [string, string, string][] = [
-  ['Nitin Bhardwaj', 'Founder & Vietnam lead', '1507003211169-0a1dd7228f2d'],
-  ['Aarushi Mehra', 'Honeymoons & Bali', '1494790108377-be9c29b29330'],
-  ['Rohan Iyer', 'Thailand & islands', '1500648767791-00dcc994a43e'],
-  ['Sana Qureshi', 'Groups & Malaysia', '1438761681033-6461ffad8d80']
-];
+const TEAM = ['Nitin Bhardwaj', 'Aarushi Mehra', 'Rohan Iyer', 'Sana Qureshi'];
 
 export default function AboutPage() {
   return (
@@ -162,17 +157,14 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="grid grid-4" data-stagger="0.08">
-            {TEAM.map(([name, role, photo]) => (
-              <article className="team-card" key={name}>
-                <div className="media media--r4x5 media--px">
-                  <Photo src={img(photo, 700)} alt={name} px={10} />
-                </div>
+          <ul className="crew-list" data-stagger="0.06">
+            {TEAM.map((name, i) => (
+              <li key={name}>
+                <span>{String(i + 1).padStart(2, '0')}</span>
                 <b>{name}</b>
-                <span>{role}</span>
-              </article>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

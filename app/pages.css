@@ -1174,11 +1174,37 @@ input[type="range"]::-moz-range-thumb {
 .tl__item h3 { font-size: var(--t-xl); margin-bottom: .5rem; }
 .tl__item p { color: var(--cream-on-navy); max-width: 60ch; }
 
-.team-card { text-align: left; }
-.team-card .media { margin-bottom: 1rem; filter: grayscale(1); transition: filter .6s; }
-.team-card:hover .media { filter: grayscale(0); }
-.team-card b { font-family: var(--f-display); font-size: var(--t-lg); font-weight: 600; display: block; }
-.team-card span { font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-600); }
+/* Names only, no photos - a plain manifest list rather than a photo grid */
+.crew-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.crew-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.6rem 0;
+  border-top: 1.5px dashed var(--hair-on-paper);
+}
+.crew-list li:nth-child(-n+4) { border-top: 1.5px dashed var(--hair-on-paper); }
+.crew-list span {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: .16em;
+  color: var(--gold-600);
+  flex: none;
+}
+.crew-list b {
+  font-family: var(--f-display);
+  font-size: var(--t-lg);
+  font-weight: 600;
+}
+@media (max-width: 900px) {
+  .crew-list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .crew-list { grid-template-columns: 1fr; }
+}
 
 .value-row {
   display: grid;

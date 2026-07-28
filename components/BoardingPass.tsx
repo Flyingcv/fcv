@@ -70,7 +70,7 @@ export default function BoardingPass({
           </div>
         )}
 
-        <div style={{ marginTop: 'clamp(1rem, 2.4vw, 1.6rem)' }}>
+        <div style={{ marginTop: 'clamp(.6rem, 1.4vw, 1rem)' }}>
           <div className="barcode" aria-hidden="true" />
           {code && <div className="pass__code">{code}</div>}
         </div>

@@ -70,7 +70,7 @@ export default async function DestinationPage({ params }: Params) {
       {/* ---------------------------------------------------------- overview */}
       <section className="section">
         <div className="wrap">
-          <div className="dsplit">
+          <div className="dsplit dsplit--pass">
             <div>
               <span className="tag rise">The short version</span>
               <SplitText as="h2" className="mt-1" style={{ fontSize: 'var(--t-2xl)' }}>

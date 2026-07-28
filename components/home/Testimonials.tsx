@@ -5,7 +5,6 @@
    measuring anything. Hovering slows it right down so a card can be read. */
 
 import { useRef } from 'react';
-import Photo from '@/components/Photo';
 import { Star } from '@/components/icons';
 import { gsap, prefersReducedMotion, useIsoLayoutEffect } from '@/lib/gsap';
 import { REVIEWS } from '@/lib/data';
@@ -41,11 +40,8 @@ export default function Testimonials() {
           </div>
           <blockquote>“{r.text}”</blockquote>
           <div className="quote-card__by">
-            <Photo src={r.avatar} alt="" />
-            <div>
-              <b>{r.name}</b>
-              <span>{r.meta}</span>
-            </div>
+            <b>{r.name}</b>
+            <span>{r.meta}</span>
           </div>
         </article>
       ))}

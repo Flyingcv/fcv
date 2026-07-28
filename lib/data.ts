@@ -491,59 +491,43 @@ export const REVIEWS = [
   {
     text: 'The romantic dinner on the beach in Da Nang and the private tours in Phu Quoc were genuinely magical. Everything was handled before we even thought to ask.',
     name: 'Rhea S.',
-    meta: 'Honeymoon · Vietnam',
-    avatar: img('1494790108377-be9c29b29330', 200)
+    meta: 'Honeymoon · Vietnam'
   },
   {
     text: 'Three generations, ages 6 to 71, and not one complaint. The Bali itinerary was paced so nobody was ever rushed. That takes real planning experience.',
     name: 'Arvind M.',
-    meta: 'Family of 9 · Bali',
-    avatar: img('1507003211169-0a1dd7228f2d', 200)
+    meta: 'Family of 9 · Bali'
   },
   {
     text: 'Our Krabi flight got cancelled at 11pm. They had us rebooked and the hotel informed before we finished reading the airline email. That is the whole value.',
     name: 'Nikita Deshpande',
-    meta: 'Islands · Thailand',
-    avatar: img('1438761681033-6461ffad8d80', 200)
+    meta: 'Islands · Thailand'
   },
   {
     text: 'I had quotes from four agencies. Flying Colours was the only one that showed me a per-day breakup instead of one lump sum. That transparency is why I booked.',
     name: 'Karthik Raghavan',
-    meta: 'Bengaluru · Malaysia',
-    avatar: img('1500648767791-00dcc994a43e', 200)
+    meta: 'Bengaluru · Malaysia'
   },
   {
     text: 'The floating breakfast photo everyone posts — they arranged it without us even asking, on our anniversary morning. Small thing, but we still talk about it.',
     name: 'Meera & Devansh Patel',
-    meta: 'Anniversary · Bali',
-    avatar: img('1531427186611-ecfd6d936c79', 200)
+    meta: 'Anniversary · Bali'
   },
   {
     text: 'Travelling solo as a woman, I was nervous about Vietnam. My planner shared driver details and hotel contacts before every leg. I never once felt unsure.',
     name: 'Ishita Bose',
-    meta: 'Solo · Vietnam',
-    avatar: img('1544005313-94ddf0286df2', 200)
+    meta: 'Solo · Vietnam'
   },
   {
     text: 'Fourteen of us, three cities, one bus, zero chaos. Whoever built that Kuala Lumpur to Langkawi schedule deserves a raise.',
     name: 'Harpreet Singh Gill',
-    meta: 'Group of 14 · Malaysia',
-    avatar: img('1506794778202-cad84cf45f1d', 200)
+    meta: 'Group of 14 · Malaysia'
   },
   {
     text: 'My parents are in their seventies and needed a slower pace. The Halong cruise cabin they picked had step-free access — nobody else even thought to check.',
     name: 'Ananya Krishnan',
-    meta: 'With parents · Vietnam',
-    avatar: img('1573497019940-1c28c88b4f3e', 200)
+    meta: 'With parents · Vietnam'
   }
-];
-
-export const BOARD_ROWS = [
-  { flight: 'FCV 214', dest: 'HO CHI MINH', gate: 'A12', dur: '5H 20M', status: 'BOARDING', soon: false },
-  { flight: 'FCV 508', dest: 'DENPASAR BALI', gate: 'B04', dur: '7H 10M', status: 'ON TIME', soon: false },
-  { flight: 'FCV 331', dest: 'BANGKOK', gate: 'C21', dur: '4H 15M', status: 'BOARDING', soon: false },
-  { flight: 'FCV 776', dest: 'KUALA LUMPUR', gate: 'A07', dur: '4H 45M', status: 'ON TIME', soon: false },
-  { flight: 'FCV 119', dest: 'PHU QUOC', gate: 'D02', dur: '6H 40M', status: 'CHECK IN', soon: true }
 ];
 
 export const CONTACT = {

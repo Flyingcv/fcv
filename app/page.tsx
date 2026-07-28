@@ -6,7 +6,6 @@ import Marquee from '@/components/Marquee';
 import BoardingPass from '@/components/BoardingPass';
 import Hero from '@/components/home/Hero';
 import HorizontalDestinations from '@/components/home/HorizontalDestinations';
-import DepartureBoard from '@/components/home/DepartureBoard';
 import Testimonials from '@/components/home/Testimonials';
 import { ArrowRight, Star, Plane } from '@/components/icons';
 import { img } from '@/lib/data';
@@ -89,7 +88,7 @@ export default function HomePage() {
       {/* -------------------------------------------- the pass / calculator */}
       <section className="section on-navy" style={{ overflow: 'hidden' }}>
         <div className="wrap">
-          <div className="dsplit" style={{ alignItems: 'center' }}>
+          <div className="dsplit dsplit--pass" style={{ alignItems: 'center' }}>
             <div>
               <span className="tag rise">Transparent pricing</span>
               <SplitText as="h2" style={{ fontSize: 'var(--t-2xl)', marginBlock: '.8rem 1.4rem' }}>
@@ -173,8 +172,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <DepartureBoard />
 
       {/* ------------------------------------------------------ testimonials */}
       <section className="section">

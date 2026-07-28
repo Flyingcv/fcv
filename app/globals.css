@@ -705,16 +705,18 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
 }
 .pass > * { position: relative; z-index: 1; }
 
-.pass__main { padding: clamp(1.3rem, 2.6vw, 2.1rem); min-width: 0; }
+/* Vertical padding is deliberately tighter than horizontal - a real
+   boarding pass reads as a short, wide strip, not a tall card. */
+.pass__main { padding: clamp(.85rem, 1.4vw, 1.2rem) clamp(1.3rem, 2.6vw, 2.1rem); min-width: 0; }
 
 /* Perforated stub separator with punched notches */
 .pass__stub {
   position: relative;
-  padding: clamp(1.3rem, 2.6vw, 2.1rem) clamp(1rem, 2vw, 1.6rem);
+  padding: clamp(.85rem, 1.4vw, 1.2rem) clamp(1rem, 2vw, 1.6rem);
   border-left: 2px dashed var(--paper-400);
   display: grid;
   align-content: space-between;
-  gap: 1.2rem;
+  gap: .7rem;
   background: linear-gradient(180deg, var(--paper-200), var(--paper-100));
   min-width: 132px;
 }

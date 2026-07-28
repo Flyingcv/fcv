@@ -806,7 +806,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
 
 /* Barcode */
 .barcode {
-  height: 46px;
+  height: 32px;
   width: 100%;
   background-image: repeating-linear-gradient(90deg,
     var(--navy-800) 0 2px, transparent 2px 4px,
@@ -817,7 +817,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
 }
 .barcode--v {
   height: 100%;
-  min-height: 90px;
+  min-height: 60px;
   width: 42px;
   background-image: repeating-linear-gradient(0deg,
     var(--navy-800) 0 2px, transparent 2px 4px,

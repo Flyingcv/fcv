@@ -208,56 +208,7 @@ h1, h2, h3, h4 {
 }
 .on-navy .perf-rule { border-color: var(--hair-on-navy); }
 
-/* ---------- 5. CUSTOM CURSOR ---------- */
-.cursor, .cursor-dot {
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  will-change: transform;
-  mix-blend-mode: difference;
-}
-.cursor {
-  width: 32px; height: 32px;
-  margin: -16px 0 0 -16px;
-  border: 1.5px solid var(--paper-100);
-  border-radius: 50%;
-  transition: width .35s var(--ease-out), height .35s var(--ease-out),
-              margin .35s var(--ease-out), background-color .35s var(--ease-out),
-              opacity .3s;
-}
-.cursor-dot {
-  width: 5px; height: 5px;
-  margin: -2.5px 0 0 -2.5px;
-  background: var(--paper-100);
-  border-radius: 50%;
-}
-.cursor__label {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--navy-900);
-  opacity: 0;
-  transition: opacity .25s;
-}
-body.cursor-hover .cursor {
-  width: 74px; height: 74px;
-  margin: -37px 0 0 -37px;
-  background: var(--paper-100);
-}
-body.cursor-hover .cursor__label { opacity: 1; }
-body.cursor-hover .cursor-dot { opacity: 0; }
-
-@media (hover: none), (pointer: coarse) {
-  .cursor, .cursor-dot { display: none !important; }
-}
-
-/* ---------- 6. PRELOADER — the plane reveal ---------- */
+/* ---------- 5. PRELOADER — the plane reveal ---------- */
 /* The wrapper itself is transparent — only the two halves cover the page,
    so sliding them apart genuinely reveals what is underneath. */
 .preloader {
@@ -394,7 +345,7 @@ body.cursor-hover .cursor-dot { opacity: 0; }
   background: linear-gradient(90deg, transparent, rgba(227,166,60,.9) 60%, #fff);
 }
 
-/* ---------- 7. NAVIGATION ---------- */
+/* ---------- 6. NAVIGATION ---------- */
 .nav {
   position: fixed;
   top: 0; left: 0;
@@ -656,7 +607,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
 }
 .drawer__foot a { color: var(--gold-400); }
 
-/* ---------- 8. BUTTONS ---------- */
+/* ---------- 7. BUTTONS ---------- */
 .btn {
   position: relative;
   display: inline-flex;
@@ -720,7 +671,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
 }
 .link-u:hover { background-size: 100% 1px; }
 
-/* ---------- 9. BOARDING PASS COMPONENT ---------- */
+/* ---------- 8. BOARDING PASS COMPONENT ---------- */
 .pass {
   position: relative;
   background: var(--paper-100);
@@ -922,7 +873,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
     var(--paper-100) 13px 14px, transparent 14px 18px);
 }
 
-/* ---------- 10. MEDIA / PARALLAX FRAMES ---------- */
+/* ---------- 9. MEDIA / PARALLAX FRAMES ---------- */
 .media {
   position: relative;
   overflow: hidden;
@@ -988,7 +939,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
   pointer-events: none;
 }
 
-/* ---------- 11. MARQUEE ---------- */
+/* ---------- 10. MARQUEE ---------- */
 .marquee {
   overflow: hidden;
   user-select: none;
@@ -1028,7 +979,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
 }
 .marquee__dot { color: var(--gold-600); font-size: .5em; }
 
-/* ---------- 12. FOOTER ---------- */
+/* ---------- 11. FOOTER ---------- */
 .footer {
   background: var(--navy-950);
   color: var(--paper-100);
@@ -1096,7 +1047,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
 .socials a:hover { background: var(--gold-500); border-color: var(--gold-500); color: var(--navy-900) !important; }
 .socials svg { width: 16px; height: 16px; }
 
-/* ---------- 13. PAGE HERO (inner pages) ---------- */
+/* ---------- 12. PAGE HERO (inner pages) ---------- */
 .phero {
   position: relative;
   min-height: clamp(46vh, 33vw, 62vh);
@@ -1164,7 +1115,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
   color: var(--gold-400);
 }
 
-/* ---------- 14. UTILITIES ---------- */
+/* ---------- 13. UTILITIES ---------- */
 .sr-only {
   position: absolute; width: 1px; height: 1px;
   padding: 0; margin: -1px; overflow: hidden;
@@ -1205,7 +1156,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
   60%, 100% { transform: translateY(100%); }
 }
 
-/* ---------- 15. RESPONSIVE ---------- */
+/* ---------- 14. RESPONSIVE ---------- */
 @media (max-width: 1080px) {
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -1248,7 +1199,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
   }
 }
 
-/* ---------- 16. MOTION PREFERENCES ---------- */
+/* ---------- 15. MOTION PREFERENCES ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .001ms !important;

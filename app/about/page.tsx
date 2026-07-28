@@ -65,19 +65,9 @@ export default function AboutPage() {
               <span className="tag rise">Our story</span>
               <SplitText as="h2">We got tired of<br />selling brochures.</SplitText>
               <p className="lede rise mt-2">
-                Flying Colours Vacations began with a simple frustration: agents were selling
-                Southeast Asia from a PDF nobody had ever visited. Wrong hotels, impossible
-                driving times, and a support number that stopped answering at 6pm.
-              </p>
-              <p className="rise mt-1">
-                So we did it the slow way. One country at a time, walked end to end, hotel by
-                hotel, guide by guide. Eleven years later we still refuse to sell a destination
-                somebody on this team has not personally travelled — which is why the list is
-                four countries long and not forty.
-              </p>
-              <p className="rise mt-1">
-                Today we are a small team in Noida planning roughly 1,200 trips a year. Every
-                file has one planner who owns it from the first call to the last transfer home.
+                Most agents sell Southeast Asia from a PDF nobody has visited. We do it the
+                slow way — one country at a time, walked hotel by hotel, guide by guide —
+                which is why our list is four countries long and not forty.
               </p>
 
               <TLink href="/contact" className="btn btn--navy mt-3" data-magnetic="0.3">

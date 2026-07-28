@@ -1002,7 +1002,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
   gap: clamp(1.8rem, 4vw, 3.5rem);
   padding-bottom: clamp(2.5rem, 5vw, 4rem);
 }
-.footer__logo { width: 178px; filter: brightness(0) invert(1); margin-bottom: 1.2rem; }
+.footer__logo { width: 178px; margin-bottom: 1.2rem; }
 .footer h4 {
   font-family: var(--f-mono);
   font-size: var(--t-xs);

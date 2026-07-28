@@ -764,13 +764,13 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
   display: flex;
   align-items: center;
   gap: clamp(.7rem, 2vw, 1.4rem);
-  padding-block: clamp(.9rem, 2vw, 1.3rem);
+  padding-block: clamp(.5rem, 1vw, .75rem);
   border-block: 1.5px dashed var(--paper-300);
-  margin-block: clamp(.9rem, 2vw, 1.2rem);
+  margin-block: clamp(.5rem, 1vw, .7rem);
 }
 .pass__iata {
   font-family: var(--f-display);
-  font-size: clamp(1.35rem, 2.8vw, 2.1rem);
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
   font-weight: 700;
   letter-spacing: -.03em;
   line-height: 1;

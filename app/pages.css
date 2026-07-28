@@ -514,6 +514,13 @@
   gap: clamp(2rem, 6vw, 5.5rem);
   align-items: start;
 }
+/* A boarding pass needs real width to read as a wide ticket rather than a
+   squarish card - the shared .dsplit breakpoint (900px) leaves too narrow a
+   two-column zone just above it. This variant hands over to a single column
+   earlier, before the pass ever gets squeezed. */
+@media (max-width: 1040px) {
+  .dsplit--pass { grid-template-columns: 1fr; }
+}
 .hilite-list { display: grid; gap: 0; margin-top: 1.5rem; }
 .hilite {
   display: flex;

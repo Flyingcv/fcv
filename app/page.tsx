@@ -95,16 +95,16 @@ export default function HomePage() {
                 Your whole trip,<br />printed on one pass.
               </SplitText>
               <p className="lede rise">
-                Move a slider, change the number of days, add flights or a private guide —
+                Move a slider, change the number of nights, pick a stay standard —
                 and watch the price update live on your own boarding pass. No enquiry form
                 before you can see a number.
               </p>
 
               <ul className="hilite-list">
                 {[
-                  ['Per-day pricing', 'Land cost is calculated per person per day, so 6 days is never priced like 8.'],
-                  ['Length & group discounts', 'Trips over 7 days and groups of 4+ drop the daily rate automatically.'],
-                  ['Add what you want', 'Flights, visa, insurance, private car and signature experiences are all optional lines.']
+                  ['Per-day pricing', 'Land cost is calculated per person per day, so 6 nights is never priced like 8.'],
+                  ['One straight number', 'No hidden fees, no fine-print discount that only shows up at checkout.'],
+                  ['Send it on WhatsApp', 'Get your quote straight to a planner and keep talking from there.']
                 ].map(([t, d]) => (
                   <li className="hilite rise" key={t}>
                     <span>—</span>
@@ -124,7 +124,7 @@ export default function HomePage() {
 
             <div className="rise" data-px-y="-50">
               <BoardingPass
-                notch="var(--navy-900)"
+                notch="var(--paper-200)"
                 from="DEL"
                 to="SGN"
                 fromCity="New Delhi"

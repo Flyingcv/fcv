@@ -117,7 +117,7 @@ export default function Reveals() {
 
       /* ------------------------------------------------- hero parallax */
       // Symmetric drift, so the oversized photo never exposes an edge
-      const heroBg = scope.querySelector<HTMLElement>('[data-hero-bg] img');
+      const heroBg = scope.querySelector<HTMLElement>('[data-hero-bg] video, [data-hero-bg] img');
       if (heroBg && heroBg.dataset[DONE] !== 'px') {
         heroBg.dataset[DONE] = 'px';
         gsap.fromTo(heroBg,

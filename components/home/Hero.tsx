@@ -2,14 +2,16 @@
 
 import { useRef } from 'react';
 import TLink from '@/components/TLink';
-import Photo from '@/components/Photo';
 import SplitText from '@/components/SplitText';
 import { Plane, ArrowRight } from '@/components/icons';
 import { useMotion } from '@/components/motion/MotionProvider';
 import { gsap, prefersReducedMotion, useIsoLayoutEffect } from '@/lib/gsap';
 import { img } from '@/lib/data';
 
-const HERO_IMG = img('1528181304800-259b08848526', 2400);
+/* Self-hosted from /public — files there are served from the site root,
+   so no /public prefix in the path. */
+const HERO_VIDEO = '/herosection.mp4';
+const HERO_POSTER = img('1552733407-5d5c46c3bb3b', 2400);
 
 export default function Hero() {
   const { revealed } = useMotion();
@@ -24,7 +26,7 @@ export default function Hero() {
 
     const title = el.querySelector<HTMLElement>('[data-hero-title]');
     const items = el.querySelectorAll<HTMLElement>('[data-hero-item]');
-    const bg = el.querySelector<HTMLElement>('[data-hero-bg] img');
+    const bg = el.querySelector<HTMLElement>('[data-hero-bg] video, [data-hero-bg] img');
     const arc = el.querySelector<SVGPathElement>('[data-arc]');
     const mark = el.querySelector<HTMLElement>('[data-arc-plane]');
 
@@ -80,7 +82,16 @@ export default function Hero() {
   return (
     <section className="hero" data-hero ref={root}>
       <div className="hero__bg" data-hero-bg>
-        <Photo src={HERO_IMG} alt="Limestone islands rising out of Halong Bay at golden hour" priority />
+        <video
+          src={HERO_VIDEO}
+          poster={HERO_POSTER}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        />
       </div>
 
       <svg className="hero__arc" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">

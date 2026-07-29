@@ -23,6 +23,7 @@ export default function HomePage() {
       <Hero />
 
       <Marquee
+        dir="right"
         items={[
           'Vietnam', '*Bali', 'Thailand', '*Malaysia',
           'Halong Bay', '*Nusa Penida', 'Phi Phi', '*Langkawi'

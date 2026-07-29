@@ -1114,12 +1114,6 @@ input[type="range"]::-moz-range-thumb {
   letter-spacing: -.02em;
 }
 
-.pkg__price del {
-  color: var(--ink-faint);
-  font-size: .8rem;
-  margin-left: .4rem;
-}
-
 .pkg.is-out {
   display: none;
 }
@@ -1768,6 +1762,10 @@ input[type="range"]::-moz-range-thumb {
   gap: clamp(2rem, 5vw, 5rem);
   align-items: start;
 }
+/* Grid items default to min-width:auto, which lets a child (the map iframe,
+   here) refuse to shrink below its intrinsic size and blow out the column.
+   min-width:0 on the direct children removes that floor. */
+.contact-split > * { min-width: 0; }
 
 .form {
   display: grid;
@@ -1869,6 +1867,7 @@ input[type="range"]::-moz-range-thumb {
   display: grid;
   gap: 1rem;
 }
+.contact-cards > * { min-width: 0; }
 
 .ccard {
   display: flex;
@@ -1879,6 +1878,11 @@ input[type="range"]::-moz-range-thumb {
   border-radius: var(--r-md);
   transition: border-color .4s, background-color .4s, transform .5s var(--ease-out);
 }
+/* Flex (and grid) items default to min-width:auto, so an unbreakable string
+   like the email address was refusing to shrink and blowing out the card —
+   min-width:0 lets the item shrink, overflow-wrap lets that one long word
+   actually break instead of just overflowing quietly. */
+.ccard > span:last-child { min-width: 0; overflow-wrap: break-word; }
 
 .ccard:hover {
   border-color: var(--gold-500);
@@ -1886,20 +1890,30 @@ input[type="range"]::-moz-range-thumb {
   transform: translateX(5px);
 }
 
+/* A thin 1.8px stroke at 17px was reading as an almost-empty circle on the
+   light card — a warm tinted fill plus a bolder stroke fixes that.
+   Centering the icon via absolute + translate rather than grid/flex
+   place-items — immune to any SVG intrinsic-size or baseline quirks that
+   can throw off place-items centering in some browsers. */
 .ccard__ico {
+  position: relative;
   width: 44px;
   height: 44px;
   border-radius: 50%;
   border: 1px solid var(--hair-on-paper);
-  display: grid;
-  place-items: center;
+  background: rgba(227, 166, 60, .12);
   flex: none;
   color: var(--gold-600);
 }
 
 .ccard__ico svg {
-  width: 17px;
-  height: 17px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 19px;
+  height: 19px;
+  stroke-width: 2.2;
 }
 
 .ccard span {
@@ -1928,6 +1942,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .map-frame {
+  width: 100%;
   border-radius: var(--r-md);
   overflow: hidden;
   border: 1px solid var(--hair-on-paper);

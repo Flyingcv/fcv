@@ -22,19 +22,23 @@ export default function Nav() {
   const [solid, setSolid] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
-  // The Destinations dropdown is otherwise pure CSS :hover — clicking a link
-  // inside it navigates but the cursor doesn't move, so :hover never clears
-  // and the panel stays open over the new page. This force-closes it until
-  // the mouse actually leaves, then hands control back to :hover as normal.
-  const [menuSuppressed, setMenuSuppressed] = useState(false);
-  const closeMenu = () => setMenuSuppressed(true);
+  // The Destinations dropdown's visibility is plain React state now, not
+  // CSS :hover. A pure-:hover panel doesn't reliably close on click: hiding
+  // it via pointer-events:none while the cursor still sits over it (over
+  // whatever page content is underneath) makes the browser re-target the
+  // hit-test to that content, and since that element isn't a descendant of
+  // .nav__item, it can fire a spurious mouseleave/mouseenter pair that
+  // leaves hover state inconsistent. Driving it from state sidesteps that
+  // entirely.
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const closeMenu = () => setDropdownOpen(false);
 
   // Belt and braces: the instant ANY navigation starts (the curtain begins
   // closing), force the dropdown shut too — regardless of where the mouse
   // is or which link triggered it. `revealed` goes false the moment
   // MotionProvider.navigate() runs, well before the route actually changes.
   useEffect(() => {
-    if (!revealed) setMenuSuppressed(true);
+    if (!revealed) setDropdownOpen(false);
   }, [revealed]);
 
   const isActive = (href: string) =>
@@ -81,13 +85,22 @@ export default function Nav() {
             {LINKS.map((l) => (
               <div
                 key={l.href}
-                className={`nav__item${l.menu ? ' nav__item--has-menu' : ''}${l.menu && menuSuppressed ? ' is-suppressed' : ''}`}
-                onMouseLeave={l.menu ? () => setMenuSuppressed(false) : undefined}
+                className={`nav__item${l.menu ? ' nav__item--has-menu' : ''}${l.menu && dropdownOpen ? ' is-open' : ''}`}
+                onMouseEnter={l.menu ? () => setDropdownOpen(true) : undefined}
+                onMouseLeave={l.menu ? () => setDropdownOpen(false) : undefined}
+                onFocus={l.menu ? () => setDropdownOpen(true) : undefined}
+                onBlur={l.menu ? (e) => {
+                  // React's onBlur bubbles via focusout; only close once focus
+                  // has actually left the whole group (dropdown included),
+                  // not when it's just moving between links inside it.
+                  if (!e.currentTarget.contains(e.relatedTarget as Node)) setDropdownOpen(false);
+                } : undefined}
               >
                 <TLink
                   href={l.href}
                   className={`nav__link${isActive(l.href) ? ' is-active' : ''}`}
                   aria-current={isActive(l.href) ? 'page' : undefined}
+                  aria-expanded={l.menu ? dropdownOpen : undefined}
                   onClick={l.menu ? closeMenu : undefined}
                 >
                   {l.label}

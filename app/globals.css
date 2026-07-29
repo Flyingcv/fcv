@@ -170,7 +170,7 @@ h1, h2, h3, h4 {
   max-width: var(--maxw-text);
   line-height: 1.55;
 }
-.phero .lede { color: var(--cream-on-navy); }
+.phero .lede, .cta-band .lede { color: var(--cream-on-navy); }
 
 .mono { font-family: var(--f-mono); }
 
@@ -454,9 +454,13 @@ h1, h2, h3, h4 {
   flex: none;
 }
 
-/* Destinations dropdown */
+/* Destinations dropdown — visibility is driven entirely by the .is-open
+   class (plain React state in Nav.tsx), not :hover/:focus-within. A pure-CSS
+   hover panel doesn't close reliably on click: hiding it via pointer-events
+   while the cursor still sits over it hands the hit-test to whatever page
+   content is underneath, which can leave hover state stuck. */
 .nav__item { position: relative; }
-.nav__item--has-menu:hover .nav__caret { transform: rotate(180deg); }
+.nav__item--has-menu.is-open .nav__caret { transform: rotate(180deg); }
 
 .dropdown {
   position: absolute;
@@ -482,18 +486,11 @@ h1, h2, h3, h4 {
   bottom: 100%; left: 0; right: 0;
   height: 14px;
 }
-.nav__item--has-menu:hover .dropdown,
-.nav__item--has-menu:focus-within .dropdown {
+.nav__item--has-menu.is-open .dropdown {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translate(-50%, 0);
-}
-/* Forced shut right after a dropdown link is clicked — see Nav.tsx */
-.nav__item--has-menu.is-suppressed .dropdown {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
 }
 .drop-card {
   display: flex;
@@ -582,10 +579,10 @@ body.menu-open .burger i:nth-child(3) { transform: translateX(-50%) translateY(-
 .drawer {
   position: fixed;
   top: 0; left: 0; right: 0;
-  max-height: min(80vh, 620px);
+  max-height: min(85vh, 600px);
   z-index: 890;
   background: var(--paper-100);
-  padding: calc(var(--nav-h) + 1.4rem) var(--gutter) 2rem;
+  padding: calc(var(--nav-h) + 1rem) var(--gutter) 1.4rem;
   overflow-y: auto;
   border-radius: 0 0 28px 28px;
   box-shadow: 0 30px 70px -24px rgba(3, 10, 24, .25);
@@ -609,11 +606,11 @@ body.menu-open .drawer-backdrop { opacity: 1; pointer-events: auto; }
 .drawer__link {
   display: flex;
   align-items: baseline;
-  gap: 1rem;
-  padding: .85rem 0;
+  gap: .8rem;
+  padding: .55rem 0;
   border-bottom: 1.5px dashed var(--hair-on-paper);
   font-family: var(--f-display);
-  font-size: clamp(1.5rem, 6.5vw, 2.2rem);
+  font-size: clamp(1.05rem, 4.2vw, 1.4rem);
   text-transform: uppercase;
   font-weight: 600;
   color: var(--navy-800);
@@ -623,24 +620,24 @@ body.menu-open .drawer-backdrop { opacity: 1; pointer-events: auto; }
 body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity .5s var(--ease-out) calc(var(--i) * .06s + .25s), transform .6s var(--ease-out) calc(var(--i) * .06s + .25s); }
 .drawer__link i {
   font-family: var(--f-mono);
-  font-size: .7rem;
+  font-size: .62rem;
   font-style: normal;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   color: var(--gold-600);
 }
-.drawer__sub { padding: .25rem 0 .9rem 2.6rem; display: grid; gap: .5rem; }
+.drawer__sub { padding: .2rem 0 .6rem 2.2rem; display: grid; gap: .35rem; }
 .drawer__sub a {
   font-family: var(--f-mono);
-  font-size: .8rem;
-  letter-spacing: .16em;
+  font-size: .7rem;
+  letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink-soft);
 }
 .drawer__sub a:hover { color: var(--gold-600); }
 .drawer__foot {
-  margin-top: 2.5rem;
+  margin-top: 1.4rem;
   display: grid;
-  gap: .4rem;
+  gap: .3rem;
   font-family: var(--f-mono);
   font-size: var(--t-xs);
   letter-spacing: .14em;
@@ -1049,7 +1046,9 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
   margin-bottom: 1.1rem;
 }
 .footer ul { display: grid; gap: .6rem; }
-.footer a:not(.btn) { color: var(--ink-soft); font-size: var(--t-sm); transition: color .3s; }
+/* overflow-wrap covers the email address — one long unbreakable string that
+   would otherwise force horizontal overflow on narrow screens. */
+.footer a:not(.btn) { color: var(--ink-soft); font-size: var(--t-sm); transition: color .3s; overflow-wrap: break-word; }
 .footer a:not(.btn):hover { color: var(--gold-600); }
 .footer p { color: var(--ink-soft); font-size: var(--t-sm); }
 
@@ -1081,17 +1080,26 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
 }
 .footer__bottom span:first-child::before { content: none; margin: 0; }
 .socials { display: flex; gap: .6rem; margin-top: 1.2rem; }
-.socials a {
+/* .footer a:not(.btn) outranks a single-class .socials a on specificity,
+   so the color override needs the extra .footer qualifier to actually win. */
+.footer .socials a {
+  position: relative;
   width: 36px; height: 36px;
   border: 1px solid var(--hair-on-paper);
   border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: var(--navy-800);
+  background: rgba(227, 166, 60, .12);
+  color: var(--gold-600);
   transition: background-color .35s, border-color .35s, color .35s;
 }
 .socials a:hover { background: var(--gold-500); border-color: var(--gold-500); color: var(--navy-900) !important; }
-.socials svg { width: 16px; height: 16px; }
+.socials svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 17px; height: 17px;
+  stroke-width: 2.2;
+}
 
 /* ---------- 12. PAGE HERO (inner pages) ---------- */
 .phero {

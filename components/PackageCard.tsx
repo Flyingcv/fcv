@@ -27,7 +27,6 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
           <div className="pkg__price">
             <small>Per person from</small>
             <b>{inr(pkg.price)}</b>
-            <del>{inr(pkg.was)}</del>
           </div>
           <TLink href={`/destinations/${pkg.dest}`} className="link-u" style={{ color: 'var(--gold-400)' }}>
             View <ArrowRight className="btn__icon" />

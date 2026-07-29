@@ -165,14 +165,11 @@ export default async function DestinationPage({ params }: Params) {
             </p>
           </div>
 
-          <div className="itin">
-            {d.itinerary.map(([title, copy], i) => (
-              <article className="itin__day rise" key={title}>
-                <span className="itin__num">Day {String(i + 1).padStart(2, '0')}</span>
-                <div>
-                  <h4>{title}</h4>
-                  <p>{copy}</p>
-                </div>
+          <div className="itin-rail" data-stagger="0.06">
+            {d.itinerary.map(([title, copy]) => (
+              <article className="itin-card" key={title}>
+                <h4>{title}</h4>
+                <p>{copy}</p>
               </article>
             ))}
           </div>
@@ -200,7 +197,7 @@ export default async function DestinationPage({ params }: Params) {
               <span className="tag">{packages.length} ready-made routes</span>
               <SplitText as="h2">{d.name} packages</SplitText>
             </div>
-            <TLink href="/services" className="link-u" style={{ color: 'var(--paper-100)' }}>
+            <TLink href="/services" className="link-u" style={{ color: 'var(--navy-800)' }}>
               Filter all packages <ArrowRight className="btn__icon" />
             </TLink>
           </div>
@@ -210,7 +207,7 @@ export default async function DestinationPage({ params }: Params) {
           </div>
 
           {sample && (
-            <p className="mono mt-3" style={{ color: 'var(--faint-on-navy)', fontSize: 'var(--t-xs)', letterSpacing: '.14em', textTransform: 'uppercase' }}>
+            <p className="mono mt-3" style={{ color: 'var(--ink-faint)', fontSize: 'var(--t-xs)', letterSpacing: '.14em', textTransform: 'uppercase' }}>
               Prices are per person on twin sharing · land package · flights optional
             </p>
           )}

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import TLink from '@/components/TLink';
 import Photo from '@/components/Photo';
 import { Caret, ArrowRight } from '@/components/icons';
+import { useMotion } from '@/components/motion/MotionProvider';
 import { DESTINATION_LIST, inr } from '@/lib/data';
 
 const LINKS = [
@@ -17,6 +18,7 @@ const LINKS = [
 
 export default function Nav() {
   const pathname = usePathname();
+  const { revealed } = useMotion();
   const [solid, setSolid] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
@@ -26,6 +28,14 @@ export default function Nav() {
   // the mouse actually leaves, then hands control back to :hover as normal.
   const [menuSuppressed, setMenuSuppressed] = useState(false);
   const closeMenu = () => setMenuSuppressed(true);
+
+  // Belt and braces: the instant ANY navigation starts (the curtain begins
+  // closing), force the dropdown shut too — regardless of where the mouse
+  // is or which link triggered it. `revealed` goes false the moment
+  // MotionProvider.navigate() runs, well before the route actually changes.
+  useEffect(() => {
+    if (!revealed) setMenuSuppressed(true);
+  }, [revealed]);
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href);
@@ -123,6 +133,7 @@ export default function Nav() {
       </header>
 
       {/* ------------------------------------------------ mobile drawer */}
+      <div className="drawer-backdrop" onClick={() => setOpen(false)} aria-hidden="true" />
       <div className="drawer" id="mobile-menu">
         <div className="drawer__list">
           {LINKS.map((l, i) => (

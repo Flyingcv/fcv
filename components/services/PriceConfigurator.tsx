@@ -5,12 +5,11 @@
    re-prints in real time with the destination, duration and total. */
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import TLink from '@/components/TLink';
 import BoardingPass from '@/components/BoardingPass';
-import { Check, ArrowRight } from '@/components/icons';
+import { ArrowRight } from '@/components/icons';
 import { gsap, prefersReducedMotion } from '@/lib/gsap';
 import {
-  DESTINATION_LIST, DESTINATIONS, TIERS, ADDONS, ORIGIN,
+  DESTINATION_LIST, DESTINATIONS, TIERS, ORIGIN,
   quote, inr, type DestinationSlug, type TierKey, type AddonKey
 } from '@/lib/data';
 
@@ -46,22 +45,38 @@ export default function PriceConfigurator() {
   const [days, setDays] = useState(6);
   const [pax, setPax] = useState(2);
   const [tier, setTier] = useState<TierKey>('premium');
-  const [addons, setAddons] = useState<AddonKey[]>(['flights', 'visa']);
+  // The "add to the package" picker is commented out below for now, so there
+  // is nothing to toggle — quote() still accepts an addons list if it comes
+  // back, it's just always empty while the picker is hidden.
+  const addons: AddonKey[] = [];
 
   const d = DESTINATIONS[dest];
   const q = useMemo(() => quote({ dest, days, pax, tier, addons }), [dest, days, pax, tier, addons]);
 
-  const toggle = (key: AddonKey) =>
-    setAddons((a) => (a.includes(key) ? a.filter((k) => k !== key) : [...a, key]));
-
   const daysFill = ((days - MIN_DAYS) / (MAX_DAYS - MIN_DAYS)) * 100;
 
-  /* Cost of each add-on at the current configuration, for the row labels */
-  const addonCost = (key: AddonKey) => {
-    const a = ADDONS[key];
-    const base = typeof a.rate === 'function' ? a.rate(d) : a.rate;
-    return Math.round(a.kind === 'perPersonPerDay' ? base * days * pax : base * pax);
-  };
+  // Add-ons are commented out on the page for now — see the config__block
+  // below — but toggle/addonCost stay so re-enabling is a one-line change.
+  // const toggle = (key: AddonKey) =>
+  //   setAddons((a) => (a.includes(key) ? a.filter((k) => k !== key) : [...a, key]));
+  // const addonCost = (key: AddonKey) => {
+  //   const a = ADDONS[key];
+  //   const base = typeof a.rate === 'function' ? a.rate(d) : a.rate;
+  //   return Math.round(a.kind === 'perPersonPerDay' ? base * days * pax : base * pax);
+  // };
+
+  const waMessage = [
+    `Hi! I'd like a quote for a trip:`,
+    ``,
+    `Destination: ${d.name} (${d.iata})`,
+    `Duration: ${days - 1} nights`,
+    `Travellers: ${pax}`,
+    `Stay: ${TIERS[tier].label}`,
+    `Estimated total: ${inr(q.total)}`,
+    ``,
+    `Please share more details.`
+  ].join('\n');
+  const waLink = `https://wa.me/917017440214?text=${encodeURIComponent(waMessage)}`;
 
   return (
     <div className="config" id="configurator">
@@ -87,12 +102,12 @@ export default function PriceConfigurator() {
           </div>
         </div>
 
-        {/* days */}
+        {/* days (slider still steps by whole days; display is nights-only) */}
         <div className="config__block">
           <div className="config__head">
             <label htmlFor="days">Trip length</label>
             <span className="config__val">
-              {String(days).padStart(2, '0')}<small>days / {days - 1} nights</small>
+              {String(days - 1).padStart(2, '0')}<small>nights</small>
             </span>
           </div>
           <div className="slider-wrap">
@@ -105,7 +120,7 @@ export default function PriceConfigurator() {
               value={days}
               style={{ ['--fill' as string]: `${daysFill}%` } as React.CSSProperties}
               onChange={(e) => setDays(Number(e.target.value))}
-              aria-valuetext={`${days} days`}
+              aria-valuetext={`${days - 1} nights`}
             />
             <div className="ticks" aria-hidden="true">
               {Array.from({ length: MAX_DAYS - MIN_DAYS + 1 }).map((_, i) => (
@@ -113,8 +128,8 @@ export default function PriceConfigurator() {
               ))}
             </div>
             <div className="range-ends">
-              <span>{MIN_DAYS} days</span>
-              <span>{MAX_DAYS} days</span>
+              <span>{MIN_DAYS - 1} nights</span>
+              <span>{MAX_DAYS - 1} nights</span>
             </div>
           </div>
         </div>
@@ -125,7 +140,7 @@ export default function PriceConfigurator() {
             <label>Travellers</label>
             <span className="config__val">
               {String(pax).padStart(2, '0')}
-              <small>{pax >= 4 ? `group discount ${pax >= 6 ? '8' : '5'}%` : 'twin sharing'}</small>
+              <small>{pax >= 4 ? 'group booking' : 'twin sharing'}</small>
             </span>
           </div>
           <div className="stepper">
@@ -153,7 +168,7 @@ export default function PriceConfigurator() {
           </div>
         </div>
 
-        {/* add-ons */}
+        {/* add-ons — commented out for now, see the note by the `addons` const above
         <div className="config__block">
           <div className="config__head"><label>Add to the package</label></div>
           <div className="addons">
@@ -170,13 +185,14 @@ export default function PriceConfigurator() {
             ))}
           </div>
         </div>
+        */}
       </div>
 
       {/* --------------------------------------------------- live output */}
       <div className="config__out">
         <BoardingPass
           className="config__pass"
-          notch="var(--navy-900)"
+          notch="var(--paper-200)"
           from={ORIGIN.code}
           to={d.iata}
           fromCity={ORIGIN.city}
@@ -203,13 +219,6 @@ export default function PriceConfigurator() {
             </div>
           ))}
 
-          {q.saved > 0 && (
-            <div className="brk-row brk-row--save">
-              <span>Length &amp; group discount</span>
-              <b>− {inr(q.saved)}</b>
-            </div>
-          )}
-
           <div className="brk-row brk-row--total">
             <span>Total for {pax} {pax === 1 ? 'traveller' : 'travellers'}</span>
             <b><Amount value={q.total} /></b>
@@ -222,10 +231,10 @@ export default function PriceConfigurator() {
         </div>
 
         <div className="hero__actions mt-2">
-          <TLink href="/contact" className="btn btn--gold" data-magnetic="0.28">
-            Send this quote to a planner
+          <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn btn--gold" data-magnetic="0.28">
+            Send this quote on WhatsApp
             <ArrowRight className="btn__icon" />
-          </TLink>
+          </a>
         </div>
 
         <p className="form__note mt-2">

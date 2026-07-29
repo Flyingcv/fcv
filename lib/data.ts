@@ -412,9 +412,9 @@ export type TierKey = 'comfort' | 'premium' | 'luxury';
 export type AddonKey = 'flights' | 'visa' | 'guide' | 'experiences';
 
 export const TIERS: Record<TierKey, { label: string; note: string; mult: number }> = {
-  comfort: { label: 'Comfort', note: '3★ / 4★', mult: 1.0 },
+  comfort: { label: 'Budget', note: '3★ / 4★', mult: 1.0 },
   premium: { label: 'Premium', note: '4★ / 5★', mult: 1.45 },
-  luxury: { label: 'Luxury', note: '5★ + villas', mult: 2.1 }
+  luxury: { label: 'Luxury', note: '5★', mult: 2.1 }
 };
 
 interface Addon {
@@ -435,10 +435,6 @@ export const ADDONS: Record<AddonKey, Addon> = {
 
 export const ORIGIN = { code: 'DEL', city: 'New Delhi' };
 
-/** Longer trips and bigger groups reduce the per-day land cost. */
-export const lengthDiscount = (days: number) => (days >= 10 ? 0.1 : days >= 7 ? 0.06 : 0);
-export const groupDiscount = (pax: number) => (pax >= 6 ? 0.08 : pax >= 4 ? 0.05 : 0);
-
 export interface QuoteInput {
   dest: DestinationSlug;
   days: number;
@@ -450,7 +446,6 @@ export interface QuoteInput {
 export interface Quote {
   land: number;
   extras: number;
-  saved: number;
   total: number;
   perPerson: number;
   lines: { label: string; amount: number }[];
@@ -460,10 +455,7 @@ export function quote({ dest, days, pax, tier, addons }: QuoteInput): Quote {
   const d = DESTINATIONS[dest];
   const t = TIERS[tier];
 
-  const landRaw = d.perDay * days * pax * t.mult;
-  const disc = lengthDiscount(days) + groupDiscount(pax);
-  const land = Math.round(landRaw * (1 - disc));
-  const saved = Math.round(landRaw - land);
+  const land = Math.round(d.perDay * days * pax * t.mult);
 
   const lines = [{ label: `${t.label} land package · ${days}D / ${days - 1}N`, amount: land }];
 
@@ -478,7 +470,7 @@ export function quote({ dest, days, pax, tier, addons }: QuoteInput): Quote {
   }
 
   const total = land + extras;
-  return { land, extras, saved, total, perPerson: Math.round(total / pax), lines };
+  return { land, extras, total, perPerson: Math.round(total / pax), lines };
 }
 
 /** ₹ 62,999 — Indian digit grouping */

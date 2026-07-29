@@ -70,10 +70,10 @@ export default function HorizontalDestinations() {
     <section className="hscroll" ref={section}>
       <div className="hscroll__head">
         <div>
-          <span className="tag tag--light">The rail · 08 stops</span>
+          <span className="tag">The rail · 08 stops</span>
           <SplitText as="h2">Where we fly</SplitText>
         </div>
-        <TLink href="/destinations" className="link-u" style={{ color: 'var(--paper-100)' }}>
+        <TLink href="/destinations" className="link-u" style={{ color: 'var(--navy-800)' }}>
           Full index <ArrowRight className="btn__icon" />
         </TLink>
       </div>

@@ -727,6 +727,92 @@
   height: 100%;
 }
 
+/* Gallery tiles are <button>s (for click-to-open) — strip the native
+   button chrome so they still look like the plain mosaic tiles. */
+.lightbox-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 10, 22, .92);
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 86vh;
+  border-radius: var(--r-md);
+  object-fit: contain;
+  cursor: default;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(251, 248, 241, .3);
+  border-radius: 50%;
+  background: rgba(251, 248, 241, .08);
+  color: var(--paper-100);
+  cursor: pointer;
+  transition: background-color .3s, border-color .3s;
+}
+.lightbox__close:hover { background: var(--gold-500); border-color: var(--gold-500); color: var(--navy-900); }
+.lightbox__close svg { width: 20px; height: 20px; }
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(251, 248, 241, .3);
+  border-radius: 50%;
+  background: rgba(251, 248, 241, .08);
+  color: var(--paper-100);
+  cursor: pointer;
+  transition: background-color .3s, border-color .3s;
+}
+.lightbox__nav:hover { background: var(--gold-500); border-color: var(--gold-500); color: var(--navy-900); }
+.lightbox__nav svg { width: 20px; height: 20px; }
+.lightbox__nav--prev { left: clamp(.5rem, 3vw, 2rem); }
+.lightbox__nav--prev svg { transform: rotate(180deg); }
+.lightbox__nav--next { right: clamp(.5rem, 3vw, 2rem); }
+
+.lightbox__count {
+  position: absolute;
+  bottom: clamp(1rem, 3vw, 2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: .1em;
+  color: rgba(251, 248, 241, .7);
+}
+
+@media (max-width: 640px) {
+  .lightbox__nav { width: 40px; height: 40px; }
+  .lightbox__nav--prev { left: .4rem; }
+  .lightbox__nav--next { right: .4rem; }
+}
+
 /* ==========================================================================
    SERVICES — cards
    ========================================================================== */

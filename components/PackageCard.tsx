@@ -1,11 +1,9 @@
 import TLink from '@/components/TLink';
 import Photo from '@/components/Photo';
 import { ArrowRight } from '@/components/icons';
-import { DESTINATIONS, inr, type Package } from '@/lib/data';
+import { inr, type Package } from '@/lib/data';
 
 export default function PackageCard({ pkg }: { pkg: Package }) {
-  const d = DESTINATIONS[pkg.dest];
-
   return (
     <article className="pkg" data-cursor="Details">
       <div className="pkg__media">
@@ -15,7 +13,7 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
       </div>
 
       <div className="pkg__body">
-        <span className="pkg__where">{d.iata} · {pkg.where}</span>
+        <span className="pkg__where">{pkg.where}</span>
         <h3>{pkg.title}</h3>
         <p>{pkg.blurb}</p>
 

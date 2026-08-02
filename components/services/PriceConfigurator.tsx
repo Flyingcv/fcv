@@ -140,11 +140,11 @@ export default function PriceConfigurator() {
             <label>Travellers</label>
             <span className="config__val">
               {String(pax).padStart(2, '0')}
-              <small>{pax >= 4 ? 'group booking' : 'twin sharing'}</small>
+              <small>{pax >= 4 ? 'travelling together' : 'twin sharing'}</small>
             </span>
           </div>
           <div className="stepper">
-            <button onClick={() => setPax((p) => Math.max(1, p - 1))} disabled={pax <= 1} aria-label="One traveller fewer">−</button>
+            <button onClick={() => setPax((p) => Math.max(2, p - 1))} disabled={pax <= 2} aria-label="One traveller fewer">−</button>
             <output>{pax}</output>
             <button onClick={() => setPax((p) => Math.min(12, p + 1))} disabled={pax >= 12} aria-label="One traveller more">+</button>
           </div>
@@ -201,7 +201,7 @@ export default function PriceConfigurator() {
           stamp={`${TIERS[tier].label} · ${pax} PAX`}
           code={`FCV · ${d.iata} · ${String(days).padStart(2, '0')}D · ${TIERS[tier].label.toUpperCase()} · ${pax}PAX`}
           fields={[
-            { label: 'Duration', value: `${String(days).padStart(2, '0')}D / ${String(days - 1).padStart(2, '0')}N`, mono: true },
+            { label: 'Duration', value: `${String(days - 1).padStart(2, '0')}N / ${String(days).padStart(2, '0')}D`, mono: true },
             { label: 'Travellers', value: String(pax).padStart(2, '0'), mono: true },
             { label: 'Per person', value: inr(q.perPerson) }
           ]}

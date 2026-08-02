@@ -12,7 +12,7 @@ const LINKS = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/destinations', label: 'Destinations', menu: true },
-  { href: '/services', label: 'Services' },
+  { href: '/services', label: 'Packages' },
   { href: '/contact', label: 'Contact' }
 ];
 

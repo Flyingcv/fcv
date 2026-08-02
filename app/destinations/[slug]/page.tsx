@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import TLink from '@/components/TLink';
 import SplitText from '@/components/SplitText';
 import Photo from '@/components/Photo';
+import Gallery from '@/components/Gallery';
 import BoardingPass from '@/components/BoardingPass';
 import PackageCard from '@/components/PackageCard';
 import { ArrowRight } from '@/components/icons';
@@ -179,13 +180,7 @@ export default async function DestinationPage({ params }: Params) {
       {/* ----------------------------------------------------------- gallery */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <div className="mosaic">
-            {d.gallery.map((g, i) => (
-              <div className="media reveal-clip" key={g + i}>
-                <Photo src={g} alt={`${d.name} photography ${i + 1}`} />
-              </div>
-            ))}
-          </div>
+          <Gallery images={d.gallery} alt={d.name} />
         </div>
       </section>
 

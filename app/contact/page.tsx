@@ -96,15 +96,6 @@ export default function ContactPage() {
                   </span>
                 </div>
               </div>
-
-              <div className="map-frame mt-3 rise">
-                <iframe
-                  title="Flying Colours Vacations office location"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=77.38%2C28.49%2C77.44%2C28.53&layer=mapnik&marker=28.5106%2C77.4109"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
             </div>
 
             <div className="rise">

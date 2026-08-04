@@ -18,6 +18,15 @@ npm start        # serve the production build
 
 ---
 
+## Editing content (destinations, packages, prices, reviews, contact info)
+
+All of that lives in plain JSON files under [`content/`](content/) — no
+TypeScript or component code involved. See
+**[content/README.md](content/README.md)** for a field-by-field guide
+written for non-technical editors.
+
+---
+
 ## The idea
 
 The whole site is one long airline metaphor. Navy and gold come straight out of the

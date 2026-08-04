@@ -4,31 +4,30 @@ import TLink from '@/components/TLink';
 import SplitText from '@/components/SplitText';
 import Photo from '@/components/Photo';
 import Marquee from '@/components/Marquee';
-import { ArrowRight } from '@/components/icons';
+import { ArrowRight, Pin, Star, Plane, Check, Mail, Phone } from '@/components/icons';
 import { img } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'About us',
   description:
-    'Flying Colours Vacations has planned Southeast Asia holidays from Noida since 2014 — one desk, one planner per file, 24/7 on-trip support.'
+    'Flying Colours Vacations plans international holidays from Noida — transparent pricing, dependable service and 24/7 on-trip support.'
 };
 
-const TIMELINE: [string, string, string][] = [
-  ['2014', 'One desk, one country', 'We started selling Thailand only — because it was the only country we could honestly say we knew hotel by hotel.'],
-  ['2017', 'Vietnam changes everything', 'A scouting trip through Hanoi, Halong and Hoi An turned into our most requested itinerary within a year.'],
-  ['2019', 'Bali & the honeymoon desk', 'Villas, private dinners and Nusa Penida. A dedicated planner now handles honeymoons end to end.'],
-  ['2021', 'The support promise', 'After two years of rebooking cancelled flights at 2am, 24/7 on-trip support became standard on every file.'],
-  ['2024', '12,000 travellers later', 'Four countries, twenty-six cities, and a 4.8 average across 1,564 reviews — still one planner per trip.']
-];
-
 const VALUES: [string, string][] = [
-  ['Depth over breadth', 'We sell four countries, not forty. Every planner here has walked the routes they sell.'],
-  ['Real prices, up front', 'Our calculator shows you a number before you ever fill in a form. No “price on request”.'],
-  ['One person, one file', 'The planner who drafts your itinerary is the same person answering at 11pm from Krabi.'],
-  ['Fix it before you notice', 'Delays, closures and weather get re-planned while you are still in the air.']
+  ['Customer first', 'Every recommendation we make is based on what’s best for you — never what’s easiest to sell.'],
+  ['Professional service', 'From your first enquiry to your return journey, our team stays committed to seamless support.'],
+  ['Best value', 'Premium hotels, exciting sightseeing and carefully selected experiences at prices that hold their own.'],
+  ['Trust & transparency', 'Clear communication, honest pricing and dependable service — the foundation of everything we do.']
 ];
 
-const TEAM = ['Nitin Bhardwaj', 'Aarushi Mehra', 'Rohan Iyer', 'Sana Qureshi'];
+const PERKS: [typeof Pin, string, string][] = [
+  [Pin, 'Destination experts', 'We specialise in carefully planned holidays to Vietnam, Bali, Thailand and Malaysia.'],
+  [Star, 'Premium hotels', 'Accommodation selected for quality, location and guest satisfaction on every itinerary.'],
+  [Plane, 'Airport transfers', 'Stress-free pick-up and drop-off included on most tour packages.'],
+  [Check, 'Visa assistance', 'Complete guidance through the visa documentation process, start to finish.'],
+  [Mail, 'Personalised planning', 'Every itinerary is built around your travel dates, budget and preferences.'],
+  [Phone, 'Dedicated support', 'Quick assistance before, during and after your holiday — one desk, one number.']
+];
 
 export default function AboutPage() {
   return (
@@ -49,9 +48,9 @@ export default function AboutPage() {
 
             <div className="phero__meta">
               <div><span>Founded</span><b>2014</b></div>
-              <div><span>Countries</span><b>04</b></div>
-              <div><span>Travellers</span><b>12,400+</b></div>
-              <div><span>Rating</span><b>4.8 / 5</b></div>
+              <div><span>Destinations</span><b>04</b></div>
+              <div><span>Happy travellers</span><b>500+</b></div>
+              <div><span>Support</span><b>24×7</b></div>
             </div>
           </div>
         </div>
@@ -63,11 +62,18 @@ export default function AboutPage() {
           <div className="intro__layout">
             <div className="intro__copy">
               <span className="tag rise">Our story</span>
-              <SplitText as="h2">We got tired of<br />selling brochures.</SplitText>
+              <SplitText as="h2">Creating memorable<br />holidays, since day one.</SplitText>
               <p className="lede rise mt-2">
-                Most agents sell Southeast Asia from a PDF nobody has visited. We do it the
-                slow way — one country at a time, walked hotel by hotel, guide by guide —
-                which is why our list is four countries long and not forty.
+                Flying Colours Vacations was established with one simple goal — to make
+                international travel affordable without compromising on quality or comfort.
+                Every itinerary is built around who you are: honeymooners, families, students,
+                working professionals or groups — never a one-size-fits-all template.
+              </p>
+              <p className="lede rise mt-2">
+                Today we proudly serve travellers from across India who dream of exploring
+                Southeast Asia’s most loved destinations. Our commitment is simple —
+                transparent pricing, dependable service and memorable holidays that truly
+                add colours to every journey.
               </p>
 
               <TLink href="/contact" className="btn btn--navy mt-3" data-magnetic="0.3">
@@ -89,28 +95,40 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Marquee items={['*Depth over breadth', 'Real prices', '*One planner per file', '24/7 support']} />
+      <Marquee items={['*Customer first', 'Transparent pricing', '*Trust & transparency', '24/7 support']} />
 
-      {/* ---------------------------------------------------------- timeline */}
+      {/* ----------------------------------------------------- mission & vision */}
       <section className="section on-navy">
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">The route so far</span>
-              <SplitText as="h2">Eleven years,<br />four countries.</SplitText>
+              <span className="tag">Our purpose</span>
+              <SplitText as="h2">Mission<br />& vision.</SplitText>
             </div>
+            <p className="lede" style={{ maxWidth: '38ch' }}>
+              We strive to make international travel simple, affordable and
+              unforgettable for every traveller.
+            </p>
           </div>
 
-          <div className="tl">
-            {TIMELINE.map(([yr, title, copy]) => (
-              <article className="tl__item rise" key={yr}>
-                <span className="tl__yr">{yr}</span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{copy}</p>
-                </div>
-              </article>
-            ))}
+          <div className="mv-grid" data-stagger="0.08">
+            <article className="mv-card rise">
+              <h3>Our mission</h3>
+              <p>
+                To provide thoughtfully designed international holiday packages that
+                deliver premium travel experiences at budget-friendly prices. We build
+                lasting relationships through honest advice, quality service,
+                transparent pricing and personalised travel planning.
+              </p>
+            </article>
+            <article className="mv-card rise">
+              <h3>Our vision</h3>
+              <p>
+                To become one of India’s most trusted travel brands for international
+                holidays — creating journeys filled with happiness, comfort and
+                exceptional customer service.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -120,8 +138,8 @@ export default function AboutPage() {
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">What we hold to</span>
-              <SplitText as="h2">Four rules we<br />do not bend.</SplitText>
+              <span className="tag">Our values</span>
+              <SplitText as="h2">What makes us<br />different.</SplitText>
             </div>
           </div>
 
@@ -137,24 +155,43 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* -------------------------------------------------------- why choose us */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="section-head">
+            <div className="section-head__text">
+              <span className="tag">Why choose us</span>
+              <SplitText as="h2">Why travellers pick<br />Flying Colours.</SplitText>
+            </div>
+          </div>
+
+          <div className="perk-grid" data-stagger="0.06">
+            {PERKS.map(([Icon, title, copy]) => (
+              <article className="perk rise" key={title}>
+                <span className="perk__ico"><Icon /></span>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* -------------------------------------------------------------- team */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
               <span className="tag">The desk</span>
-              <SplitText as="h2">Who picks up<br />when you call.</SplitText>
+              <SplitText as="h2">Passionate travel<br />experts.</SplitText>
             </div>
+            <p className="lede" style={{ maxWidth: '46ch' }}>
+              Every memorable holiday begins with proper planning. Our travel
+              consultants work closely with every guest to build a trip that
+              matches their interests, travel style and budget — from your
+              first enquiry to the day you land back home.
+            </p>
           </div>
-
-          <ul className="crew-list" data-stagger="0.06">
-            {TEAM.map((name, i) => (
-              <li key={name}>
-                <span>{String(i + 1).padStart(2, '0')}</span>
-                <b>{name}</b>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 

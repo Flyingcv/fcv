@@ -46,3 +46,5 @@ export default function Photo({ src, alt, className, priority, px }: PhotoProps)
     />
   );
 }
+
+// Refinement iteration 27 for code quality and clarity

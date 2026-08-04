@@ -1053,11 +1053,10 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
 .footer p { color: var(--ink-soft); font-size: var(--t-sm); }
 
 /* One single row. On a viewport too narrow to fit it, this scrolls
-   horizontally rather than wrapping — fine print, not primary navigation,
-   so a sideways scroll is a better trade than an uneven wrap. */
+   horizontally rather than wrapping — fine print, not primary navigation. */
 .footer__bottom {
   border-top: 1.5px dashed var(--hair-on-paper);
-  padding-block: 1.5rem 2rem;
+  padding-block: 1.5rem 1.2rem;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
@@ -1066,7 +1065,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
   -ms-overflow-style: none;
   font-family: var(--f-mono);
   font-size: var(--t-xs);
-  letter-spacing: .1em;
+  letter-spacing: .09em;
   text-transform: uppercase;
   color: var(--ink-faint);
   white-space: nowrap;
@@ -1079,6 +1078,18 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
   color: var(--hair-on-paper);
 }
 .footer__bottom span:first-child::before { content: none; margin: 0; }
+
+.footer__credit {
+  padding-bottom: 1.6rem;
+  text-align: center;
+  font-family: var(--f-mono);
+  font-size: var(--t-sm);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.footer__credit a { color: var(--ink-faint); text-decoration: underline; text-underline-offset: .2em; }
+.footer__credit a:hover { color: var(--gold-600); }
 .socials { display: flex; gap: .6rem; margin-top: 1.2rem; }
 /* .footer a:not(.btn) outranks a single-class .socials a on specificity,
    so the color override needs the extra .footer qualifier to actually win. */

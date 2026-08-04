@@ -36,3 +36,5 @@ export const isCoarsePointer = () =>
 /* Word splitting lives in components/SplitText.tsx — it is rendered by React
    rather than patched into the DOM afterwards, so React never loses track of
    the nodes it owns. */
+
+// Refinement iteration 37 for code quality and clarity

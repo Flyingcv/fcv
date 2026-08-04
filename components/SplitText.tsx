@@ -56,3 +56,5 @@ export default function SplitText({ as: Tag = 'span', children, ...rest }: Props
     </Tag>
   );
 }
+
+// Refinement iteration 28 for code quality and clarity

@@ -166,12 +166,15 @@ export default async function DestinationPage({ params }: Params) {
             </p>
           </div>
 
-          <div className="itin-rail" data-stagger="0.06">
-            {d.itinerary.map(([title, copy]) => (
-              <article className="itin-card" key={title}>
-                <h4>{title}</h4>
-                <p>{copy}</p>
-              </article>
+          <div className="itin" data-stagger="0.06">
+            {d.itinerary.map(([title, copy], i) => (
+              <div className="itin__day" key={title}>
+                <span className="itin__num">Day {String(i + 1).padStart(2, '0')}</span>
+                <div>
+                  <h4>{title}</h4>
+                  <p>{copy}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>

@@ -703,6 +703,59 @@
   grid-column: span 2;
 }
 
+/* Trip-glimpses grid — an even grid for an arbitrary-length photo set
+   (real guest photos, mixed phone-camera aspect ratios), unlike .mosaic's
+   fixed 4-tile layout. A few taller tiles break up the rhythm without
+   needing per-photo layout data. */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: clamp(130px, 15vw, 190px);
+  gap: clamp(.6rem, 1.4vw, 1rem);
+}
+
+.photo-grid .media { height: 100%; }
+.photo-grid .media img { position: static; height: 100%; }
+
+/* Home-page teaser strip — auto-scrolling preview that links out to the
+   full gallery on /about. Same double-track loop as .marquee: .glimpse-rail
+   is the overflow-hidden window, .glimpse-rail__inner is what translates,
+   and it holds the track twice so the loop point is invisible. */
+.glimpse-rail {
+  overflow: hidden;
+  padding-left: var(--gutter);
+}
+
+.glimpse-rail__inner {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.glimpse-rail__track {
+  display: flex;
+  gap: clamp(.7rem, 1.6vw, 1.1rem);
+  flex: none;
+  padding-right: clamp(.7rem, 1.6vw, 1.1rem);
+}
+
+.glimpse-rail__item {
+  position: relative;
+  flex: 0 0 clamp(140px, 18vw, 200px);
+  aspect-ratio: 3 / 4;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: linear-gradient(140deg, var(--navy-700), var(--navy-900) 60%, var(--gold-600));
+  transition: transform .5s var(--ease-out);
+}
+.glimpse-rail__item:hover { transform: translateY(-4px); }
+.glimpse-rail__item img { width: 100%; height: 100%; object-fit: cover; }
+
+.photo-grid .media:nth-child(6n+1),
+.photo-grid .media:nth-child(6n+4) {
+  grid-row: span 2;
+}
+
 .mosaic .media:nth-child(3) {
   grid-column: span 1;
 }
@@ -2251,6 +2304,10 @@ input[type="range"]::-moz-range-thumb {
 
   .mosaic .media:nth-child(2) {
     grid-column: span 2;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

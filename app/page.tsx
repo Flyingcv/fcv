@@ -7,6 +7,7 @@ import BoardingPass from '@/components/BoardingPass';
 import Hero from '@/components/home/Hero';
 import HorizontalDestinations from '@/components/home/HorizontalDestinations';
 import Testimonials from '@/components/home/Testimonials';
+import GlimpseRail from '@/components/home/GlimpseRail';
 import { ArrowRight, Star, Plane } from '@/components/icons';
 import { img } from '@/lib/data';
 
@@ -189,6 +190,23 @@ export default function HomePage() {
         </div>
 
         <Testimonials />
+      </section>
+
+      {/* --------------------------------------------------------- glimpses */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="section-head">
+            <div className="section-head__text">
+              <span className="tag">Straight from their cameras</span>
+              <SplitText as="h2">Glimpses from<br />the road.</SplitText>
+            </div>
+            <TLink href="/about#glimpses" className="link-u" style={{ color: 'var(--gold-600)' }}>
+              See more glimpses <ArrowRight className="btn__icon" />
+            </TLink>
+          </div>
+        </div>
+
+        <GlimpseRail images={Array.from({ length: 17 }, (_, i) => `/trip-glimpses/glimpse-${String(i + 1).padStart(2, '0')}.jpg`)} />
       </section>
 
       {/* --------------------------------------------------------- CTA band */}

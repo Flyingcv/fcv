@@ -4,8 +4,11 @@ import TLink from '@/components/TLink';
 import SplitText from '@/components/SplitText';
 import Photo from '@/components/Photo';
 import Marquee from '@/components/Marquee';
+import Gallery from '@/components/Gallery';
 import { ArrowRight, Pin, Star, Plane, Check, Mail, Phone } from '@/components/icons';
 import { img } from '@/lib/data';
+
+const GLIMPSES = Array.from({ length: 17 }, (_, i) => `/trip-glimpses/glimpse-${String(i + 1).padStart(2, '0')}.jpg`);
 
 export const metadata: Metadata = {
   title: 'About us',
@@ -174,6 +177,24 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* --------------------------------------------------------- trip glimpses */}
+      <section className="section on-navy" id="glimpses">
+        <div className="wrap">
+          <div className="section-head">
+            <div className="section-head__text">
+              <span className="tag">Real trips, real travellers</span>
+              <SplitText as="h2">Glimpses from<br />the road.</SplitText>
+            </div>
+            <p className="lede" style={{ maxWidth: '42ch' }}>
+              Straight from our travellers’ own cameras — beaches, bridges,
+              airport welcomes and everything between.
+            </p>
+          </div>
+
+          <Gallery images={GLIMPSES} alt="Flying Colours Vacations travellers" layout="grid" />
         </div>
       </section>
 

@@ -10,9 +10,12 @@ import { ArrowRight, Close } from '@/components/icons';
 interface Props {
   images: string[];
   alt: string;
+  /** 'mosaic' is the fixed 4-tile layout used on destination/package pages.
+   *  'grid' is an even responsive grid for arbitrary-length photo sets. */
+  layout?: 'mosaic' | 'grid';
 }
 
-export default function Gallery({ images, alt }: Props) {
+export default function Gallery({ images, alt, layout = 'mosaic' }: Props) {
   const [openAt, setOpenAt] = useState<number | null>(null);
 
   useEffect(() => {
@@ -36,7 +39,7 @@ export default function Gallery({ images, alt }: Props) {
 
   return (
     <>
-      <div className="mosaic">
+      <div className={layout === 'grid' ? 'photo-grid' : 'mosaic'}>
         {images.map((g, i) => (
           <button
             type="button"

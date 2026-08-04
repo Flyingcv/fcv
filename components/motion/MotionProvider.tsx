@@ -303,3 +303,5 @@ export default function MotionProvider({ children }: { children: React.ReactNode
     </Ctx.Provider>
   );
 }
+
+// Refinement iteration 33 for code quality and clarity

@@ -12,8 +12,8 @@ export default function Footer() {
             <img className="footer__logo" src="/logo-flying-colours-vacations.webp" alt="Flying Colours Vacations" width={480} height={98} />
             <p>Adding colours to every journey. Southeast Asia specialists since 2014 — planning, ticketing and 24/7 on-trip support from one desk in Noida.</p>
             <div className="socials">
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram /></a>
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><Facebook /></a>
+              <a href="https://www.instagram.com/flyingcoloursvacations" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram /></a>
+              <a href="https://facebook.com/flyingcoloursvacations" target="_blank" rel="noreferrer" aria-label="Facebook"><Facebook /></a>
               <a href={`https://wa.me/917017440214`} target="_blank" rel="noreferrer" aria-label="WhatsApp"><WhatsApp /></a>
             </div>
           </div>
@@ -58,7 +58,12 @@ export default function Footer() {
         <div className="footer__bottom">
           <span>© {new Date().getFullYear()} Flying Colours Vacations · All rights reserved</span>
           <span>Noida · India — IATA-partnered ticketing</span>
-          <span>Made with 🔥 by The Angaar Labs</span>
+          <span><TLink href="/privacy-policy">Privacy policy</TLink></span>
+          <span><TLink href="/cancellation-policy">Cancellation &amp; refund policy</TLink></span>
+        </div>
+        <div className="footer__credit">
+          Made with 🔥 by{' '}
+          <a href="https://labs.theangaarbatch.in/" target="_blank" rel="noreferrer">The Angaar Labs</a>
         </div>
       </div>
     </footer>

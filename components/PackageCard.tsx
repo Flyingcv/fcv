@@ -9,7 +9,7 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
       <div className="pkg__media">
         <Photo src={pkg.image} alt={pkg.title} />
         <span className="pkg__badge">{pkg.badge}</span>
-        <span className="pkg__days">{pkg.days}D / {pkg.nights}N</span>
+        <span className="pkg__days">{pkg.nights}N / {pkg.days}D</span>
       </div>
 
       <div className="pkg__body">
@@ -26,7 +26,7 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
             <small>Per person from</small>
             <b>{inr(pkg.price)}</b>
           </div>
-          <TLink href={`/destinations/${pkg.dest}`} className="link-u" style={{ color: 'var(--gold-400)' }}>
+          <TLink href={`/packages/${pkg.id}`} className="link-u" style={{ color: 'var(--gold-400)' }}>
             View <ArrowRight className="btn__icon" />
           </TLink>
         </div>

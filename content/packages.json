@@ -1,0 +1,324 @@
+[
+  {
+    "id": "vn-halong-heritage",
+    "dest": "vietnam",
+    "title": "Hanoi · Ninh Binh · Halong Bay",
+    "where": "North Vietnam",
+    "days": 6, "nights": 5, "price": 62999,
+    "badge": "Bestseller", "type": ["culture", "nature"],
+    "blurb": "Old Quarter mornings, a Trang An rowboat afternoon and a night anchored among the karsts of Halong Bay.",
+    "includes": ["4★ Hotels", "Overnight Cruise", "All Transfers", "Daily Breakfast"],
+    "image": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=80",
+    "route": ["Hanoi", "Ninh Binh", "Halong Bay"],
+    "itinerary": [
+      ["Arrive Hanoi", "Airport meet-and-greet, transfer to the Old Quarter. Evening egg-coffee walk and a water puppet show on Hoan Kiem lake."],
+      ["Hanoi city tour", "Ho Chi Minh Mausoleum complex, the Temple of Literature, an Old Quarter walking tour and a street-food dinner."],
+      ["Ninh Binh day trip", "Rowboat through the Trang An caves, cycle to Hoa Lu, climb the 500 steps to Mua Cave for the valley panorama."],
+      ["Halong Bay cruise", "Board a deluxe junk, kayak Luon Cave, squid fishing after dinner."],
+      ["Halong Bay sunrise", "Sunrise tai chi on the sundeck, cruise back to Hanoi, free evening in the Old Quarter."],
+      ["Departure", "Free morning for souvenir shopping and cafés before the transfer to the airport."]
+    ]
+  },
+  {
+    "id": "vn-central-express",
+    "dest": "vietnam",
+    "title": "Da Nang & Hoi An Heritage",
+    "where": "Central Vietnam",
+    "days": 4, "nights": 3, "price": 42999,
+    "badge": "Short break", "type": ["culture", "beach"],
+    "blurb": "Golden Bridge above the clouds, My Khe beach afternoons and lantern-lit evenings in the Ancient Town.",
+    "includes": ["4★ Hotels", "Ba Na Hills", "Basket Boat", "Airport Pickup"],
+    "image": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=900&q=80",
+    "route": ["Da Nang", "Ba Na Hills", "Hoi An"],
+    "itinerary": [
+      ["Arrive Da Nang", "Transfer to hotel, My Khe beach sunset and the Dragon Bridge fire show."],
+      ["Ba Na Hills", "Golden Bridge cable car in the morning, the French Village, and Fantasy Park in the afternoon."],
+      ["Hoi An Ancient Town", "Lantern-lit old town, a tailor-shop visit and a basket-boat ride on the Thu Bon river."],
+      ["Departure", "Free morning at leisure before the transfer to Da Nang airport."]
+    ]
+  },
+  {
+    "id": "vn-grand-tour",
+    "dest": "vietnam",
+    "title": "Grand Vietnam — North to South",
+    "where": "Hanoi → Saigon",
+    "days": 10, "nights": 9, "price": 118999,
+    "badge": "Signature", "type": ["culture", "nature"],
+    "blurb": "Sapa terraces, Halong Bay, Hoi An lanterns and the Mekong Delta in one carefully paced ten-day arc.",
+    "includes": ["4★ & 5★ Mix", "2 Domestic Flights", "Sapa Homestay", "Private Guide"],
+    "image": "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?auto=format&fit=crop&w=900&q=80",
+    "route": ["Hanoi", "Sapa", "Halong Bay", "Da Nang", "Hoi An", "Ho Chi Minh City", "Mekong Delta"],
+    "itinerary": [
+      ["Arrive Hanoi", "Transfer to the Old Quarter, evening egg-coffee walk."],
+      ["Sapa", "Transfer to Sapa, homestay with Hmong families on the staircase valleys."],
+      ["Sapa trekking", "Rice-terrace trek and a Cat Cat village visit, return to Hanoi overnight."],
+      ["Halong Bay cruise", "Board a deluxe junk, kayak Luon Cave."],
+      ["Halong Bay to Da Nang", "Sunrise on the cruise, fly to Da Nang, My Khe beach evening."],
+      ["Ba Na Hills & Hoi An", "Golden Bridge in the morning, lantern-lit Ancient Town at night."],
+      ["Fly to Ho Chi Minh City", "Ben Thanh Market, Reunification Palace and the War Remnants Museum."],
+      ["Cu Chi Tunnels", "Half-day tunnel exploration, afternoon at leisure."],
+      ["Mekong Delta", "Sampan through coconut canals to a floating market."],
+      ["Departure", "Transfer to Ho Chi Minh City airport."]
+    ]
+  },
+  {
+    "id": "vn-phu-quoc",
+    "dest": "vietnam",
+    "title": "Phu Quoc Island & VinWonders",
+    "where": "Phu Quoc",
+    "days": 5, "nights": 4, "price": 56999,
+    "badge": "Family", "type": ["beach", "family"],
+    "blurb": "The world’s longest sea cable car, a safari park, and sunsets from the quietest beaches in Vietnam.",
+    "includes": ["Beach Resort", "VinWonders Pass", "Safari Entry", "Half Board"],
+    "image": "https://images.unsplash.com/photo-1555921015-5532091f6026?auto=format&fit=crop&w=900&q=80",
+    "route": ["Phu Quoc Town", "VinWonders", "Sao Beach"],
+    "itinerary": [
+      ["Arrive Phu Quoc", "Resort check-in, sunset at a Sunset Sanato beach club."],
+      ["Hon Thom cable car", "The world’s longest sea cable car, then an afternoon at VinWonders theme park."],
+      ["Safari & beach", "Vinpearl Safari in the morning, Sao Beach in the afternoon."],
+      ["Island hopping", "Snorkelling trip to the southern islands."],
+      ["Departure", "Free morning before the transfer to Phu Quoc airport."]
+    ]
+  },
+  {
+    "id": "bali-honeymoon",
+    "dest": "bali",
+    "title": "Bali Honeymoon — Villas & Volcanoes",
+    "where": "Seminyak → Ubud",
+    "days": 6, "nights": 5, "price": 74999,
+    "badge": "Honeymoon", "type": ["honeymoon", "luxury"],
+    "blurb": "Private pool villas, a floating breakfast, Kecak fire dance at Uluwatu and a candlelit dinner on the sand.",
+    "includes": ["Pool Villas", "Floating Breakfast", "Couple Spa", "Romantic Dinner"],
+    "image": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80",
+    "route": ["Seminyak", "Uluwatu", "Ubud", "Kintamani"],
+    "itinerary": [
+      ["Arrive Denpasar", "Private transfer to your Seminyak pool villa, sunset at Double Six beach."],
+      ["Uluwatu & the south", "Padang Padang beach, Uluwatu temple, and the Kecak fire dance at sunset."],
+      ["Move to Ubud", "Tegallalang rice terraces and the Tirta Empul holy spring."],
+      ["Mount Batur sunrise", "Guided summit trek, natural hot springs afterwards."],
+      ["Romance day", "Floating breakfast, a couple’s spa and a candlelit dinner on the sand."],
+      ["Departure", "Late checkout, transfer to Denpasar airport."]
+    ]
+  },
+  {
+    "id": "bali-island-hop",
+    "dest": "bali",
+    "title": "Bali & Nusa Penida Explorer",
+    "where": "Bali + Nusa Islands",
+    "days": 7, "nights": 6, "price": 84999,
+    "badge": "Adventure", "type": ["adventure", "beach"],
+    "blurb": "Kelingking cliff, Manta Point snorkelling and a 2am summit push up Mount Batur for sunrise.",
+    "includes": ["4★ Hotels", "Fast Boat", "Batur Trek", "Snorkel Gear"],
+    "image": "https://images.unsplash.com/photo-1573790387438-4da905039392?auto=format&fit=crop&w=900&q=80",
+    "route": ["Seminyak", "Nusa Penida", "Ubud", "Mount Batur"],
+    "itinerary": [
+      ["Arrive Denpasar", "Transfer to Seminyak, beach club evening."],
+      ["Nusa Penida", "Fast boat across the strait for Kelingking cliff and Broken Beach."],
+      ["Nusa Penida continued", "Manta Point snorkelling and Angel’s Billabong."],
+      ["Move to Ubud", "Rice-terrace walk and an afternoon browsing the art market."],
+      ["Mount Batur sunrise", "A 2am start and a guided summit trek, breakfast steamed over the volcano vent."],
+      ["Free adventure day", "Optional white-water rafting or a waterfall visit."],
+      ["Departure", "Transfer to Denpasar airport."]
+    ]
+  },
+  {
+    "id": "bali-quick",
+    "dest": "bali",
+    "title": "Bali Beach Escape",
+    "where": "Seminyak & Kuta",
+    "days": 4, "nights": 3, "price": 48999,
+    "badge": "Value", "type": ["beach"],
+    "blurb": "A long weekend of beach clubs, sunset cliffs and warungs — the shortest way to feel far away.",
+    "includes": ["4★ Hotel", "Beach Club Entry", "Uluwatu Tour", "Breakfast"],
+    "image": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=80",
+    "route": ["Seminyak", "Kuta", "Uluwatu"],
+    "itinerary": [
+      ["Arrive Denpasar", "Seminyak check-in, sunset at a beach club."],
+      ["Uluwatu day trip", "Padang Padang beach, the clifftop temple and the Kecak fire dance."],
+      ["Kuta & leisure", "Beach clubs, warung-hopping and free time to shop."],
+      ["Departure", "Transfer to Denpasar airport."]
+    ]
+  },
+  {
+    "id": "bali-family",
+    "dest": "bali",
+    "title": "Bali Family Week",
+    "where": "Nusa Dua → Ubud",
+    "days": 8, "nights": 7, "price": 92999,
+    "badge": "Family", "type": ["family", "nature"],
+    "blurb": "Waterbom park, a safari and marine park, elephant sanctuary and gentle rice-terrace walks for all ages.",
+    "includes": ["Family Rooms", "Park Tickets", "Kids Eat Free", "Private Van"],
+    "image": "https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=900&q=80",
+    "route": ["Nusa Dua", "Ubud", "Kintamani"],
+    "itinerary": [
+      ["Arrive Denpasar", "Transfer to your Nusa Dua family resort."],
+      ["Waterbom Park", "A full day of waterslides for the kids."],
+      ["Marine & safari park", "A day at Bali Safari and Marine Park."],
+      ["Move to Ubud", "Elephant sanctuary visit and a gentle rice-terrace walk."],
+      ["Ubud family day", "Monkey Forest, the art market and a family cooking class."],
+      ["Kintamani day trip", "Volcano viewpoint and a coffee-plantation visit."],
+      ["Back to Nusa Dua", "Beach day, free time at the resort."],
+      ["Departure", "Transfer to Denpasar airport."]
+    ]
+  },
+  {
+    "id": "th-bangkok-pattaya",
+    "dest": "thailand",
+    "title": "Bangkok & Pattaya Classic",
+    "where": "Bangkok · Pattaya",
+    "days": 5, "nights": 4, "price": 34999,
+    "badge": "Bestseller", "type": ["culture", "beach"],
+    "blurb": "Grand Palace mornings, Coral Island afternoons and the Alcazar show to close the night.",
+    "includes": ["4★ Hotels", "Coral Island", "Alcazar Show", "All Transfers"],
+    "image": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=80",
+    "route": ["Bangkok", "Pattaya", "Coral Island"],
+    "itinerary": [
+      ["Arrive Bangkok", "Transfer to Sukhumvit, evening Chao Phraya dinner cruise."],
+      ["Bangkok city", "Grand Palace, Wat Pho, Wat Arun, then Chinatown street food by tuk-tuk."],
+      ["Transfer to Pattaya", "Coral Island speedboat day trip."],
+      ["Pattaya evening", "The Alcazar cabaret show, free time on the beach."],
+      ["Departure", "Transfer to Bangkok airport."]
+    ]
+  },
+  {
+    "id": "th-krabi-phi-phi",
+    "dest": "thailand",
+    "title": "Krabi & Phi Phi Islands",
+    "where": "Andaman Coast",
+    "days": 6, "nights": 5, "price": 52999,
+    "badge": "Islands", "type": ["beach", "adventure"],
+    "blurb": "Four-island longtail tour, Maya Bay by speedboat and sea-canoeing through Phang Nga’s hidden hongs.",
+    "includes": ["Beachfront Stay", "2 Island Tours", "Snorkelling", "Breakfast"],
+    "image": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=900&q=80",
+    "route": ["Krabi", "Railay", "Phi Phi Islands"],
+    "itinerary": [
+      ["Arrive Krabi", "Ao Nang check-in, sunset at Railay West."],
+      ["Four-island tour", "Chicken Island sandbar, Tup Island walk-across, snorkelling at Poda."],
+      ["Phi Phi speedboat", "Maya Bay, Viking Cave and Monkey Beach."],
+      ["James Bond Island", "Sea-canoe through Phang Nga’s hidden hongs."],
+      ["Free beach day", "Optional rock climbing or diving at Railay."],
+      ["Departure", "Transfer to Krabi airport."]
+    ]
+  },
+  {
+    "id": "th-phuket-quick",
+    "dest": "thailand",
+    "title": "Phuket Long Weekend",
+    "where": "Phuket",
+    "days": 4, "nights": 3, "price": 28999,
+    "badge": "Value", "type": ["beach"],
+    "blurb": "Patong sunsets, a James Bond Island day trip and enough time to do absolutely nothing.",
+    "includes": ["3★+ Hotel", "Phang Nga Tour", "Airport Transfer", "Breakfast"],
+    "image": "https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=900&q=80",
+    "route": ["Patong", "Phang Nga Bay"],
+    "itinerary": [
+      ["Arrive Phuket", "Patong check-in, sunset stroll on the beach."],
+      ["James Bond Island tour", "Phang Nga Bay day trip by longtail boat."],
+      ["Free day", "Patong beach and nightlife at leisure."],
+      ["Departure", "Transfer to Phuket airport."]
+    ]
+  },
+  {
+    "id": "th-grand",
+    "dest": "thailand",
+    "title": "Thailand Grand Circuit",
+    "where": "Bangkok · Chiang Mai · Phuket",
+    "days": 9, "nights": 8, "price": 89999,
+    "badge": "Signature", "type": ["culture", "adventure", "beach"],
+    "blurb": "Temples in the capital, elephants in the north and the Andaman islands to finish — two domestic flights.",
+    "includes": ["4★ Hotels", "2 Domestic Flights", "Elephant Sanctuary", "Private Guide"],
+    "image": "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=900&q=80",
+    "route": ["Bangkok", "Chiang Mai", "Phuket", "Krabi"],
+    "itinerary": [
+      ["Arrive Bangkok", "Sukhumvit check-in, Chao Phraya dinner cruise."],
+      ["Bangkok city", "Grand Palace, Wat Arun and a floating market."],
+      ["Fly to Chiang Mai", "Old city temples, evening night bazaar."],
+      ["Elephant sanctuary", "Ethical elephant-care visit, Doi Suthep temple."],
+      ["Fly to Phuket", "Patong beach evening."],
+      ["Phang Nga Bay", "James Bond Island canoe tour."],
+      ["Krabi day trip", "Four-island longtail tour."],
+      ["Free beach day", "Optional diving or a spa afternoon."],
+      ["Departure", "Transfer to Phuket airport."]
+    ]
+  },
+  {
+    "id": "my-kl-genting",
+    "dest": "malaysia",
+    "title": "Kuala Lumpur & Genting Highlands",
+    "where": "KL · Genting",
+    "days": 5, "nights": 4, "price": 37999,
+    "badge": "Bestseller", "type": ["culture", "family"],
+    "blurb": "Petronas skybridge, Batu Caves and a cable car ride into the cloud forest above Kuala Lumpur.",
+    "includes": ["4★ Hotels", "SkyWay Cable Car", "City Tour", "Breakfast"],
+    "image": "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=900&q=80",
+    "route": ["Kuala Lumpur", "Genting Highlands"],
+    "itinerary": [
+      ["Arrive Kuala Lumpur", "Bukit Bintang check-in, evening at the KLCC fountain show."],
+      ["KL city tour", "Batu Caves, King’s Palace and the Petronas Towers skybridge."],
+      ["Genting Highlands", "Awana SkyWay cable car and an afternoon at Skytropolis."],
+      ["Free day in KL", "Jalan Alor food street and shopping."],
+      ["Departure", "Transfer to KL airport."]
+    ]
+  },
+  {
+    "id": "my-langkawi",
+    "dest": "malaysia",
+    "title": "Langkawi Island Retreat",
+    "where": "Langkawi",
+    "days": 4, "nights": 3, "price": 33999,
+    "badge": "Short break", "type": ["beach", "honeymoon"],
+    "blurb": "Sky Bridge above the rainforest canopy, island hopping by speedboat and duty-free sunsets at Cenang.",
+    "includes": ["Beach Resort", "SkyCab Tickets", "Island Hopping", "Breakfast"],
+    "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80",
+    "route": ["Pantai Cenang", "Langkawi Sky Bridge"],
+    "itinerary": [
+      ["Arrive Langkawi", "Pantai Cenang beach check-in."],
+      ["Sky Bridge & SkyCab", "Cable car to Gunung Mat Cincang and the curved bridge walk."],
+      ["Island hopping", "Dayang Bunting lake, eagle feeding and a mangrove tour."],
+      ["Departure", "Duty-free shopping before the transfer to Langkawi airport."]
+    ]
+  },
+  {
+    "id": "my-twin-city",
+    "dest": "malaysia",
+    "title": "Malaysia Twin City — KL & Langkawi",
+    "where": "KL → Langkawi",
+    "days": 7, "nights": 6, "price": 64999,
+    "badge": "Popular", "type": ["family", "beach", "culture"],
+    "blurb": "City energy first, island time second — connected by a 55-minute domestic hop.",
+    "includes": ["4★ Hotels", "Domestic Flight", "2 Tours", "All Transfers"],
+    "image": "https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=900&q=80",
+    "route": ["Kuala Lumpur", "Genting Highlands", "Langkawi"],
+    "itinerary": [
+      ["Arrive Kuala Lumpur", "Bukit Bintang check-in."],
+      ["KL city tour", "Batu Caves and the Petronas Towers skybridge."],
+      ["Genting Highlands", "Cable car ride and the Chin Swee temple."],
+      ["Fly to Langkawi", "Pantai Cenang beach evening."],
+      ["Sky Bridge & SkyCab", "Rainforest canopy cable car."],
+      ["Island hopping", "Speedboat tour of the southern islands."],
+      ["Departure", "Transfer to Langkawi airport."]
+    ]
+  },
+  {
+    "id": "my-luxe",
+    "dest": "malaysia",
+    "title": "Borneo & Langkawi Luxury",
+    "where": "Kota Kinabalu · Langkawi",
+    "days": 8, "nights": 7, "price": 104999,
+    "badge": "Luxury", "type": ["luxury", "nature"],
+    "blurb": "Orangutan sanctuary mornings, private-island resorts and a sunset cruise on the South China Sea.",
+    "includes": ["5★ Resorts", "Domestic Flights", "Private Guide", "Half Board"],
+    "image": "https://images.unsplash.com/photo-1508062878650-88b52897f298?auto=format&fit=crop&w=900&q=80",
+    "route": ["Kota Kinabalu", "Sepilok", "Langkawi"],
+    "itinerary": [
+      ["Arrive Kota Kinabalu", "City check-in, waterfront sunset."],
+      ["Sepilok Orangutan Sanctuary", "Morning feeding session and a rainforest walk."],
+      ["Island resort transfer", "Check-in at a private-island resort."],
+      ["Marine park day", "Snorkelling and beach time."],
+      ["Fly to Langkawi", "Beachfront resort check-in."],
+      ["Sky Bridge & SkyCab", "Rainforest canopy cable car."],
+      ["Sunset cruise", "A sunset sail on the South China Sea."],
+      ["Departure", "Transfer to Langkawi airport."]
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "comfort": { "label": "Budget", "note": "3★", "mult": 1.0 },
+  "premium": { "label": "Premium", "note": "4★", "mult": 1.45 },
+  "luxury": { "label": "Luxury", "note": "5★", "mult": 2.1 }
+}

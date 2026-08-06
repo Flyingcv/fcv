@@ -3,12 +3,26 @@ import type { Metadata } from 'next';
 import TLink from '@/components/TLink';
 import SplitText from '@/components/SplitText';
 import Photo from '@/components/Photo';
+import LegalToc from '@/components/LegalToc';
 import { CONTACT, img } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Privacy policy',
   description: 'How Flying Colours Vacations collects, uses, discloses and protects your personal information.'
 };
+
+const SECTIONS: [string, string][] = [
+  ['collect', '1. Information we collect'],
+  ['use', '2. How we use it'],
+  ['sharing', '3. Sharing & disclosure'],
+  ['security', '4. Data security'],
+  ['third-party', '5. Third-party links'],
+  ['children', '6. Children’s privacy'],
+  ['choices', '7. Your choices'],
+  ['offline', '8. Offline collection'],
+  ['updates', '9. Updates to this policy'],
+  ['contact', '10. Contact us']
+];
 
 export default function PrivacyPolicyPage() {
   return (
@@ -33,7 +47,8 @@ export default function PrivacyPolicyPage() {
       {/* -------------------------------------------------------------- body */}
       <section className="section">
         <div className="wrap">
-          <div className="legal">
+          <div className="legal-layout">
+            <div className="legal">
             <p className="legal__updated">Last updated · 2026</p>
 
             <p>
@@ -44,7 +59,7 @@ export default function PrivacyPolicyPage() {
               our website, you consent to the terms outlined in this Privacy Policy.
             </p>
 
-            <h2>1. Information we collect</h2>
+            <h2 id="collect">1. Information we collect</h2>
             <p>
               <strong>Personal information.</strong> We may collect personal information such as
               your name, email address, phone number and billing details when you make a
@@ -73,7 +88,7 @@ export default function PrivacyPolicyPage() {
               third-party social media platforms if you log in using those credentials.
             </p>
 
-            <h2>2. How we use your information</h2>
+            <h2 id="use">2. How we use your information</h2>
             <p>
               We use your personal information to process reservations, respond to inquiries and
               provide customer support, including confirmation emails and service-related
@@ -87,7 +102,7 @@ export default function PrivacyPolicyPage() {
               site’s content and layout, and inform our own marketing efforts.
             </p>
 
-            <h2>3. Information sharing &amp; disclosure</h2>
+            <h2 id="sharing">3. Information sharing &amp; disclosure</h2>
             <p>
               Except as set out below, we do not sell, rent, trade or license your personal or
               financial information to anyone.
@@ -100,7 +115,7 @@ export default function PrivacyPolicyPage() {
               <li><strong>Aggregated data.</strong> We may share non-personal, aggregated information (such as the number of daily visitors to a page) with partners — this does not identify you personally.</li>
             </ul>
 
-            <h2>4. Data security</h2>
+            <h2 id="security">4. Data security</h2>
             <p>
               We take reasonable administrative, technical and physical measures to safeguard your
               personal information from unauthorised access, alteration, disclosure or
@@ -108,14 +123,14 @@ export default function PrivacyPolicyPage() {
               cannot guarantee absolute security.
             </p>
 
-            <h2>5. Third-party links</h2>
+            <h2 id="third-party">5. Third-party links</h2>
             <p>
               Our website may contain links to third-party websites or services. We are not
               responsible for the privacy practices or content of such websites, and we encourage
               you to review their privacy policies before providing any personal information.
             </p>
 
-            <h2>6. Children’s privacy</h2>
+            <h2 id="children">6. Children’s privacy</h2>
             <p>
               Our services are not intended for individuals under the age of 18 and we do not
               knowingly collect personal information from children. If you believe we have
@@ -123,7 +138,7 @@ export default function PrivacyPolicyPage() {
               promptly delete it.
             </p>
 
-            <h2>7. Your choices — opt out &amp; corrections</h2>
+            <h2 id="choices">7. Your choices — opt out &amp; corrections</h2>
             <p>
               On request, we will correct or update your personal information, stop sending
               marketing emails to your address, or disable your account to prevent future
@@ -132,14 +147,14 @@ export default function PrivacyPolicyPage() {
               card number or other sensitive payment information to us directly.
             </p>
 
-            <h2>8. Offline collection</h2>
+            <h2 id="offline">8. Offline collection</h2>
             <p>
               We may also collect information offline — for example, when you call us to place a
               booking or ask a question. We only ask for the information needed to help you, and
               any information collected offline is treated consistently with this policy.
             </p>
 
-            <h2>9. Updates to this policy</h2>
+            <h2 id="updates">9. Updates to this policy</h2>
             <p>
               We may update this Privacy Policy from time to time. Material changes will be
               communicated through our website or other appropriate means. Continuing to use our
@@ -147,12 +162,15 @@ export default function PrivacyPolicyPage() {
               encourage you to review this page periodically.
             </p>
 
-            <h2>10. Contact us</h2>
+            <h2 id="contact">10. Contact us</h2>
             <p>
               If you have any questions, concerns or requests regarding your privacy or this
               policy, write to us at <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> or
               call <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>.
             </p>
+            </div>
+
+            <LegalToc sections={SECTIONS} />
           </div>
         </div>
       </section>

@@ -6,11 +6,14 @@ import SplitText from '@/components/SplitText';
 import Photo from '@/components/Photo';
 import Gallery from '@/components/Gallery';
 import PackageCard from '@/components/PackageCard';
-import DownloadItineraryButton from '@/components/DownloadItineraryButton';
-import { ArrowRight } from '@/components/icons';
-import { PACKAGES, DESTINATIONS, ORIGIN, inr } from '@/lib/data';
+import ItineraryAccordion from '@/components/ItineraryAccordion';
+import PriceCard from '@/components/PriceCard';
+import { ArrowRight, Check, Close } from '@/components/icons';
+import { PACKAGES, DESTINATIONS, ORIGIN, PACKAGE_EXCLUDES, inr } from '@/lib/data';
 
 type Params = { params: Promise<{ id: string }> };
+
+const GLIMPSES = Array.from({ length: 17 }, (_, i) => `/trip-glimpses/glimpse-${String(i + 1).padStart(2, '0')}.jpg`);
 
 export function generateStaticParams() {
   return PACKAGES.map((p) => ({ id: p.id }));
@@ -72,7 +75,7 @@ export default async function PackagePage({ params }: Params) {
         </div>
       </section>
 
-      {/* --------------------------------------------------- route + actions */}
+      {/* --------------------------------------------------------- trip route */}
       <section className="section" style={{ paddingBottom: 0 }}>
         <div className="wrap">
           <span className="tag rise">Trip route</span>
@@ -84,83 +87,175 @@ export default async function PackagePage({ params }: Params) {
               </span>
             ))}
           </div>
-
-          <div className="hero__actions mt-3">
-            <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn btn--gold" data-magnetic="0.28">
-              Enquire on WhatsApp
-              <ArrowRight className="btn__icon" />
-            </a>
-            <DownloadItineraryButton pkg={pkg} destination={d} />
-          </div>
         </div>
       </section>
 
-      {/* --------------------------------------------------------- itinerary */}
+      {/* ------------------------------------------------ main + sticky price */}
       <section className="section">
         <div className="wrap">
-          <div className="section-head">
-            <div className="section-head__text">
-              <span className="tag">Day by day · {pkg.days} days</span>
-              <SplitText as="h2">The full<br />itinerary.</SplitText>
-            </div>
-            <p className="lede" style={{ maxWidth: '38ch' }}>
-              A starting point, not a fixed menu — every day can be swapped,
-              stretched or dropped entirely.
-            </p>
-          </div>
+          <div className="pkg-detail">
+            <div className="pkg-detail__main">
 
-          <div className="itin" data-stagger="0.06">
-            {pkg.itinerary.map(([title, copy], i) => (
-              <div className="itin__day" key={title}>
-                <span className="itin__num">Day {String(i + 1).padStart(2, '0')}</span>
-                <div>
-                  <h4>{title}</h4>
-                  <p>{copy}</p>
+              {/* --------------------------------------------- quick details */}
+              <div>
+                <div className="section-head">
+                  <div className="section-head__text">
+                    <span className="tag">Quick details</span>
+                    <SplitText as="h2">The trip,<br />at a glance.</SplitText>
+                  </div>
+                </div>
+                <dl className="qd-table">
+                  {Object.entries(pkg.quickDetails).map(([k, v]) => (
+                    <div className="qd-row" key={k}>
+                      <dt>{k}</dt>
+                      <dd>{v}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+
+              {/* ------------------------------------------------- itinerary */}
+              <div>
+                <div className="section-head">
+                  <div className="section-head__text">
+                    <span className="tag">Day by day · {pkg.days} days</span>
+                    <SplitText as="h2">The full<br />itinerary.</SplitText>
+                  </div>
+                  <p className="lede" style={{ maxWidth: '34ch' }}>
+                    A starting point, not a fixed menu — tap a day to open it.
+                  </p>
+                </div>
+                <ItineraryAccordion days={pkg.itinerary} />
+              </div>
+
+              {/* ---------------------------------------------------- hotels */}
+              <div>
+                <div className="section-head">
+                  <div className="section-head__text">
+                    <span className="tag">Where you stay</span>
+                    <SplitText as="h2">Hotels on<br />this route.</SplitText>
+                  </div>
+                </div>
+                <ul className="inex-list inex-list--yes">
+                  {pkg.hotels.map((h) => <li key={h}><Check /> {h}</li>)}
+                </ul>
+                <p className="form__note mt-2">
+                  If a hotel is unavailable for your dates we substitute the same or a
+                  higher category and confirm it with you in writing.
+                </p>
+              </div>
+
+              {/* --------------------------------------------- included / not */}
+              <div>
+                <div className="section-head">
+                  <div className="section-head__text">
+                    <span className="tag">Package breakdown</span>
+                    <SplitText as="h2">What’s included<br />&amp; what’s not.</SplitText>
+                  </div>
+                </div>
+                <div className="inex-grid">
+                  <div>
+                    <h3><Check style={{ width: 16, height: 16, color: 'var(--gold-600)' }} /> Included</h3>
+                    <ul className="inex-list inex-list--yes">
+                      {pkg.includes.map((inc) => (
+                        <li key={inc}><Check /> {inc}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h3><Close style={{ width: 16, height: 16, color: 'var(--ink-faint)' }} /> Not included</h3>
+                    <ul className="inex-list inex-list--no">
+                      {PACKAGE_EXCLUDES.map((ex) => (
+                        <li key={ex}><Close /> {ex}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ------------------------------------------------------------ includes */}
-      <section className="section on-navy">
-        <div className="wrap">
-          <div className="section-head">
-            <div className="section-head__text">
-              <span className="tag">What’s included</span>
-              <SplitText as="h2">Package<br />breakdown.</SplitText>
+              {/* ------------------------------------------------------ costing */}
+              <div>
+                <div className="section-head">
+                  <div className="section-head__text">
+                    <span className="tag">Costing</span>
+                    <SplitText as="h2">What you<br />pay.</SplitText>
+                  </div>
+                </div>
+                <div className="variant-list">
+                  {pkg.priceVariants.map((v, i) => (
+                    <div className={`variant${i === 0 ? ' variant--featured' : ''}`} key={v.label + v.note}>
+                      <div>
+                        <b>{v.label}</b>
+                        <span>{v.note}</span>
+                      </div>
+                      <em>{inr(v.price)}</em>
+                    </div>
+                  ))}
+                </div>
+                <p className="lede mt-2" style={{ maxWidth: '60ch' }}>
+                  All prices are per person on twin sharing. Applicable GST and TCS are
+                  charged as per Indian government regulations. Build a fully custom
+                  quote on the{' '}
+                  <TLink href="/services#configurator">price calculator</TLink>.
+                </p>
+              </div>
+
+              {/* ------------------------------------------------ about the trip */}
+              <div>
+                <div className="section-head">
+                  <div className="section-head__text">
+                    <span className="tag">About this trip</span>
+                    <SplitText as="h2">The short<br />version.</SplitText>
+                  </div>
+                </div>
+                <p className="lede" style={{ maxWidth: '68ch' }}>{pkg.blurb} {d.blurb}</p>
+              </div>
+
+              {/* -------------------------------------------------- highlights */}
+              <div>
+                <div className="section-head">
+                  <div className="section-head__text">
+                    <span className="tag">Trip highlights</span>
+                    <SplitText as="h2">Don’t miss<br />these.</SplitText>
+                  </div>
+                </div>
+                <ul className="hilite-list" data-stagger="0.06">
+                  {d.highlights.map(([title, copy], i) => (
+                    <li className="hilite rise" key={title}>
+                      <span>{String(i + 1).padStart(2, '0')}</span>
+                      <div>
+                        <b>{title}</b>
+                        <p>{copy}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* ---------------------------------------------- traveller gallery */}
+              <div>
+                <div className="section-head">
+                  <div className="section-head__text">
+                    <span className="tag">Gallery by travellers</span>
+                    <SplitText as="h2">Real trips,<br />real photos.</SplitText>
+                  </div>
+                </div>
+                <Gallery images={GLIMPSES} alt="Flying Colours Vacations traveller" layout="grid" />
+              </div>
+
             </div>
-          </div>
 
-          <div className="pkg__inc" style={{ fontSize: 'var(--t-sm)', gap: '.6rem' }}>
-            {pkg.includes.map((inc) => <span key={inc}>{inc}</span>)}
+            {/* ------------------------------------------------- sticky price */}
+            <aside className="pkg-detail__sidebar">
+              <PriceCard pkg={pkg} destination={d} />
+            </aside>
           </div>
-
-          <p className="lede mt-3" style={{ maxWidth: '60ch' }}>
-            Price shown is per person on twin sharing for the land package. Flights,
-            visa and travel insurance are optional — build them into your own quote
-            with the <TLink href="/services#configurator">price calculator</TLink>.
-          </p>
-        </div>
-      </section>
-
-      {/* --------------------------------------------------------------- gallery */}
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="wrap">
-          <div className="section-head">
-            <div className="section-head__text">
-              <span className="tag">More from {d.name}</span>
-              <SplitText as="h2">A closer<br />look.</SplitText>
-            </div>
-          </div>
-          <Gallery images={d.gallery} alt={d.name} />
         </div>
       </section>
 
       {/* --------------------------------------------------------- more packages */}
       {more.length > 0 && (
-        <section className="section" style={{ paddingTop: 0 }}>
+        <section className="section on-navy" style={{ paddingTop: 0 }}>
           <div className="wrap">
             <div className="section-head">
               <div className="section-head__text">

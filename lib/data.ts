@@ -15,6 +15,7 @@ import packagesJson from '@/content/packages.json';
 import tiersJson from '@/content/tiers.json';
 import reviewsJson from '@/content/reviews.json';
 import contactJson from '@/content/contact.json';
+import brochureJson from '@/content/brochure.json';
 
 /** Unsplash helper — swap for your own photography/CDN later.
  *  If a URL fails, <Photo> degrades the frame to a branded gradient. */
@@ -54,6 +55,32 @@ export const DESTINATION_LIST = Object.values(DESTINATIONS);
    PACKAGES — powers the live filter on /services
    price = per person, land package
    -------------------------------------------------------------------------- */
+export interface ItineraryDay {
+  title: string;
+  /** One-line overview of the day */
+  summary: string;
+  /** Specific bullet-point activities that make up the day */
+  activities: string[];
+  /** Short "X + Y + Z" recap of what that day's cost covers */
+  included: string;
+  /** "Half day" | "Full day" — shown as a badge on the day */
+  type: string;
+  /** e.g. "Breakfast + Lunch", "No meals" */
+  meals: string;
+  /** City the night is spent in; "-" on the departure day */
+  stay: string;
+  /** Indicative hour-by-hour schedule, used by the timing sheet */
+  timings: string[];
+}
+
+export interface PriceVariant {
+  /** e.g. "5N / 6D" */
+  label: string;
+  /** What that price covers */
+  note: string;
+  price: number;
+}
+
 export interface Package {
   id: string;
   dest: DestinationSlug;
@@ -69,11 +96,27 @@ export interface Package {
   image: string;
   /** Ordered list of stops, shown as the trip-route strip on the package page */
   route: string[];
-  /** One entry per day: [title, description] */
-  itinerary: [string, string][];
+  itinerary: ItineraryDay[];
+  /** Label → value summary table (arrival, duration, meals, visa, …) */
+  quickDetails: Record<string, string>;
+  /** Properties we book most often on this route */
+  hotels: string[];
+  /** Same trip at different lengths / with flights included */
+  priceVariants: PriceVariant[];
 }
 
 export const PACKAGES = packagesJson as unknown as Package[];
+
+/** Shared across every package — shown on the package page and in the
+ *  downloadable itinerary PDF. Kept in one place so the two can't drift. */
+export const PACKAGE_EXCLUDES = [
+  'International / domestic airfare, unless specifically mentioned above',
+  'Visa fees and travel insurance',
+  'Personal expenses, tips and shopping',
+  'Meals not listed in the inclusions',
+  'Optional activities and entry tickets not listed above',
+  'Anything not specifically mentioned as included'
+];
 
 /* --------------------------------------------------------------------------
    PRICING MODEL — drives the interactive configurator
@@ -150,3 +193,17 @@ export const inr = (n: number) => '₹' + Math.round(n).toLocaleString('en-IN');
 export const REVIEWS = reviewsJson;
 
 export const CONTACT = contactJson;
+
+/* --------------------------------------------------------------------------
+   BROCHURE CONTENT — shared across every package's downloadable itinerary
+   PDF (add-ons, booking notes, payment terms, why-us). /content/brochure.json
+   -------------------------------------------------------------------------- */
+export interface Brochure {
+  addons: { service: string; description: string; price: string }[];
+  notes: string[];
+  paymentMethods: string[];
+  paymentTerms: string[];
+  whyUs: { title: string; copy: string }[];
+}
+
+export const BROCHURE = brochureJson as Brochure;

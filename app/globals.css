@@ -24,11 +24,15 @@
   --paper-400: #CFC2A6;
 
   --ink: #0A1B3D;
-  --ink-soft: rgba(10, 27, 61, .62);
-  /* Low-opacity dark text reads far weaker on a light background than the
-     equivalent low-opacity light text did on navy — .34 was tuned for the
-     old dark theme and came out nearly invisible here. */
-  --ink-faint: rgba(10, 27, 61, .56);
+  /* Body copy. At .62 this measured 4.76:1 on --paper-100 — technically past
+     AA but visibly washed out across long-form pages. .82 lands at 9.4:1 and
+     still reads clearly lighter than full --ink for headings. */
+  --ink-soft: rgba(10, 27, 61, .82);
+  /* Micro labels and captions. Low-opacity dark text on a light background
+     reads far weaker than the equivalent light-on-navy did, and these sit on
+     small uppercase mono type — .56 measured 3.96:1, i.e. below AA. .72 is
+     6.7:1 while staying subordinate to --ink-soft. */
+  --ink-faint: rgba(10, 27, 61, .72);
 
   --cream-on-navy: rgba(251, 248, 241, .74);
   --faint-on-navy: rgba(251, 248, 241, .42);

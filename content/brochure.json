@@ -1,0 +1,84 @@
+{
+  "addons": [
+    {
+      "service": "Visa assistance",
+      "description": "End-to-end e-Visa filing and document check",
+      "price": "From ₹3,000 per person"
+    },
+    {
+      "service": "Travel insurance",
+      "description": "Medical, baggage and trip-cancellation cover",
+      "price": "From ₹1,400 per person"
+    },
+    {
+      "service": "International SIM / eSIM",
+      "description": "Data pack active from landing, multiple variants",
+      "price": "From ₹1,200 per person"
+    },
+    {
+      "service": "Return flights",
+      "description": "Ex-Delhi, Mumbai, Bengaluru or your home city",
+      "price": "At actuals, quoted on request"
+    },
+    {
+      "service": "Private guide & car",
+      "description": "English-speaking guide, full day, per city",
+      "price": "From ₹4,500 per day"
+    },
+    {
+      "service": "Hotel upgrade",
+      "description": "Move up a star category or to a sea-view room",
+      "price": "Quoted on request"
+    }
+  ],
+
+  "notes": [
+    "Standard hotel check-in is 2:00 PM and check-out is 12:00 noon (local time). Early check-in and late check-out are subject to availability and may carry a charge.",
+    "Airport transfers are included on the arrival and departure days listed in the itinerary. Transfers for flights arriving or departing outside those windows can be arranged at additional cost.",
+    "Breakfast is served at the hotel and typically offers both continental and local options, vegetarian and non-vegetarian. Jain and other specific meal requirements can usually be arranged with advance notice.",
+    "Indian restaurants are available near most of the hotels we use across Vietnam, Bali, Thailand and Malaysia. Your planner will share options for each city before you fly.",
+    "Timings in this document are indicative. The order of activities may shift with weather, traffic and local operating hours — your trip planner confirms the final day plan before departure.",
+    "Hotels listed are the properties we book most often. If a specific hotel is unavailable for your dates, we substitute a property of the same or higher category and confirm it with you in writing.",
+    "Prices are per person on twin-sharing basis unless stated otherwise. Single-occupancy supplements apply and are quoted separately.",
+    "Rates are not applicable during major festival periods (Diwali, Christmas, New Year) and peak-season blackout dates, when a revised quote will be shared."
+  ],
+
+  "paymentMethods": [
+    "Bank transfer (NEFT / IMPS / RTGS)",
+    "UPI",
+    "Debit card",
+    "Credit card",
+    "Secure payment link"
+  ],
+
+  "paymentTerms": [
+    "A booking advance is required to confirm hotels and services; the balance is due before departure as set out in your booking confirmation.",
+    "Card and payment-gateway transactions may carry a processing charge, which is always shown to you before you confirm.",
+    "Package prices are dynamic and subject to change until the booking is confirmed and the advance is received.",
+    "Applicable GST and TCS are charged as per prevailing Indian government regulations.",
+    "Refunds, where applicable under the cancellation policy, are processed only through the original mode of payment within 15 working days of the cancellation request."
+  ],
+
+  "whyUs": [
+    {
+      "title": "One planner, start to finish",
+      "copy": "The person who builds your itinerary is the same person answering your message at 11pm from Krabi. No handoffs, no call centre."
+    },
+    {
+      "title": "Real prices, up front",
+      "copy": "Every price on our site and in this document is a real number you can plan around. No \"price on request\", no surprises at the end."
+    },
+    {
+      "title": "Depth over breadth",
+      "copy": "We sell four countries, not forty. Every route in this document has been walked by someone on our team, hotel by hotel."
+    },
+    {
+      "title": "Fixed before you notice",
+      "copy": "Delays, closures and weather get re-planned while you are still in the air. 24/7 on-trip support is standard on every booking."
+    },
+    {
+      "title": "Built around you",
+      "copy": "Want to swap a city, add two nights or drop the 5am trek? Say so. We rebuild the plan until it reads like your holiday, not a template."
+    }
+  ]
+}

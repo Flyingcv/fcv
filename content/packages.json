@@ -4,19 +4,180 @@
     "dest": "vietnam",
     "title": "Hanoi · Ninh Binh · Halong Bay",
     "where": "North Vietnam",
-    "days": 6, "nights": 5, "price": 62999,
-    "badge": "Bestseller", "type": ["culture", "nature"],
+    "days": 6,
+    "nights": 5,
+    "price": 62999,
+    "badge": "Bestseller",
+    "type": [
+      "culture",
+      "nature"
+    ],
     "blurb": "Old Quarter mornings, a Trang An rowboat afternoon and a night anchored among the karsts of Halong Bay.",
-    "includes": ["4★ Hotels", "Overnight Cruise", "All Transfers", "Daily Breakfast"],
+    "includes": [
+      "4★ Hotels",
+      "Overnight Cruise",
+      "All Transfers",
+      "Daily Breakfast"
+    ],
     "image": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=80",
-    "route": ["Hanoi", "Ninh Binh", "Halong Bay"],
+    "route": [
+      "Hanoi",
+      "Ninh Binh",
+      "Halong Bay"
+    ],
     "itinerary": [
-      ["Arrive Hanoi", "Airport meet-and-greet, transfer to the Old Quarter. Evening egg-coffee walk and a water puppet show on Hoan Kiem lake."],
-      ["Hanoi city tour", "Ho Chi Minh Mausoleum complex, the Temple of Literature, an Old Quarter walking tour and a street-food dinner."],
-      ["Ninh Binh day trip", "Rowboat through the Trang An caves, cycle to Hoa Lu, climb the 500 steps to Mua Cave for the valley panorama."],
-      ["Halong Bay cruise", "Board a deluxe junk, kayak Luon Cave, squid fishing after dinner."],
-      ["Halong Bay sunrise", "Sunrise tai chi on the sundeck, cruise back to Hanoi, free evening in the Old Quarter."],
-      ["Departure", "Free morning for souvenir shopping and cafés before the transfer to the airport."]
+      {
+        "title": "Arrive Hanoi",
+        "summary": "Airport meet-and-greet and a transfer to the Old Quarter — the first evening is for settling in before the trip properly begins.",
+        "activities": [
+          "Airport pick-up and private transfer to your Old Quarter hotel",
+          "Evening egg-coffee walk through the Old Quarter's 36 streets",
+          "Water puppet show on Hoan Kiem Lake"
+        ],
+        "included": "Airport Transfer + Hotel Check-in + Water Puppet Show",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Hanoi",
+        "timings": [
+          "09:00 AM - Airport pick-up at Noi Bai (HAN)",
+          "02:00 PM - Old Quarter hotel check-in",
+          "05:00 PM - Egg-coffee walk with your guide",
+          "08:00 PM - Water puppet show at Hoan Kiem Lake"
+        ]
+      },
+      {
+        "title": "Hanoi city tour",
+        "summary": "A full day inside Vietnam's capital — from Ho Chi Minh's resting place to its oldest university.",
+        "activities": [
+          "Ho Chi Minh Mausoleum complex and the One Pillar Pagoda",
+          "Temple of Literature, Vietnam's first national university",
+          "Guided Old Quarter walking tour",
+          "Street-food dinner with a local guide"
+        ],
+        "included": "City Guide + Entry Tickets + Street-Food Dinner",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Hanoi",
+        "timings": [
+          "08:00 AM - Breakfast at hotel",
+          "09:00 AM - Ho Chi Minh Mausoleum complex",
+          "11:30 AM - Temple of Literature",
+          "03:00 PM - Old Quarter walking tour",
+          "07:00 PM - Street-food dinner with a local guide"
+        ]
+      },
+      {
+        "title": "Ninh Binh day trip",
+        "summary": "A day among Ninh Binh's limestone valleys — often called \"Halong Bay on land\".",
+        "activities": [
+          "Rowboat through the Trang An caves and grottoes",
+          "Cycle through rice paddies to Hoa Lu, Vietnam's ancient capital",
+          "Climb the 500 steps to Mua Cave for the valley panorama"
+        ],
+        "included": "Rowboat Ride + Bicycle + Mua Cave Entry",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Hanoi",
+        "timings": [
+          "07:30 AM - Depart Hanoi for Ninh Binh",
+          "10:00 AM - Trang An rowboat through the caves",
+          "01:00 PM - Local lunch",
+          "02:30 PM - Cycle to Hoa Lu ancient capital",
+          "04:00 PM - Mua Cave climb for the valley panorama",
+          "07:30 PM - Return to Hanoi"
+        ]
+      },
+      {
+        "title": "Halong Bay cruise",
+        "summary": "Board a deluxe overnight junk and sail out among 1,600 limestone islands.",
+        "activities": [
+          "Board the deluxe junk and cruise into Halong Bay",
+          "Kayak into Luon Cave's hidden lagoon",
+          "Squid fishing off the deck after dinner"
+        ],
+        "included": "Overnight Cruise + All Meals + Kayaking",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch + Dinner",
+        "stay": "Halong Bay cruise",
+        "timings": [
+          "07:30 AM - Checkout and transfer to Halong Bay",
+          "11:30 AM - Board the deluxe junk, welcome drink",
+          "01:00 PM - Lunch on board",
+          "03:00 PM - Kayak into Luon Cave lagoon",
+          "07:00 PM - Dinner on board",
+          "09:00 PM - Squid fishing off the deck"
+        ]
+      },
+      {
+        "title": "Halong Bay sunrise",
+        "summary": "A slow morning on the water before the cruise heads back to Hanoi.",
+        "activities": [
+          "Sunrise tai chi session on the sundeck",
+          "Cruise back to the Halong Bay harbour",
+          "Free evening back in the Hanoi Old Quarter"
+        ],
+        "included": "Cruise Breakfast + Return Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "Hanoi",
+        "timings": [
+          "06:30 AM - Sunrise tai chi on the sundeck",
+          "08:00 AM - Breakfast on board",
+          "11:00 AM - Disembark at Halong harbour",
+          "03:00 PM - Arrive Hanoi, hotel check-in",
+          "07:00 PM - Free evening in the Old Quarter"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the flight home.",
+        "activities": [
+          "Free morning for souvenir shopping and cafés",
+          "Private transfer to Noi Bai International Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at hotel",
+          "10:00 AM - Free morning for souvenir shopping",
+          "12:00 PM - Checkout and transfer to Noi Bai Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Hanoi (HAN) / Hanoi (HAN)",
+      "Duration": "5N / 6D",
+      "Trip type": "Private departure",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle + overnight junk cruise",
+      "Accommodation": "4 Star hotels + 1N deluxe cruise cabin",
+      "Meals": "(5) Breakfast (2) Lunch (1) Dinner",
+      "Places covered": "Hanoi - Ninh Binh - Halong Bay",
+      "Visa": "e-Visa (processing 3-5 working days)"
+    },
+    "hotels": [
+      "Hanoi - La Siesta Premium Hang Be or similar (4 Star)",
+      "Halong Bay - Deluxe overnight junk cruise, sea-view cabin"
+    ],
+    "priceVariants": [
+      {
+        "label": "5N / 6D",
+        "note": "Land package only, twin sharing",
+        "price": 62999
+      },
+      {
+        "label": "5N / 6D",
+        "note": "With return flights ex-Delhi",
+        "price": 86999
+      },
+      {
+        "label": "7N / 8D",
+        "note": "With Sapa add-on, land package",
+        "price": 78999
+      }
     ]
   },
   {
@@ -24,17 +185,132 @@
     "dest": "vietnam",
     "title": "Da Nang & Hoi An Heritage",
     "where": "Central Vietnam",
-    "days": 4, "nights": 3, "price": 42999,
-    "badge": "Short break", "type": ["culture", "beach"],
+    "days": 4,
+    "nights": 3,
+    "price": 42999,
+    "badge": "Short break",
+    "type": [
+      "culture",
+      "beach"
+    ],
     "blurb": "Golden Bridge above the clouds, My Khe beach afternoons and lantern-lit evenings in the Ancient Town.",
-    "includes": ["4★ Hotels", "Ba Na Hills", "Basket Boat", "Airport Pickup"],
+    "includes": [
+      "4★ Hotels",
+      "Ba Na Hills",
+      "Basket Boat",
+      "Airport Pickup"
+    ],
     "image": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=900&q=80",
-    "route": ["Da Nang", "Ba Na Hills", "Hoi An"],
+    "route": [
+      "Da Nang",
+      "Ba Na Hills",
+      "Hoi An"
+    ],
     "itinerary": [
-      ["Arrive Da Nang", "Transfer to hotel, My Khe beach sunset and the Dragon Bridge fire show."],
-      ["Ba Na Hills", "Golden Bridge cable car in the morning, the French Village, and Fantasy Park in the afternoon."],
-      ["Hoi An Ancient Town", "Lantern-lit old town, a tailor-shop visit and a basket-boat ride on the Thu Bon river."],
-      ["Departure", "Free morning at leisure before the transfer to Da Nang airport."]
+      {
+        "title": "Arrive Da Nang",
+        "summary": "Straight to the coast — check in, then watch Da Nang's bridges light up after dark.",
+        "activities": [
+          "Airport pick-up and transfer to your Da Nang hotel",
+          "Sunset at My Khe Beach",
+          "Dragon Bridge fire-breathing show (weekend evenings)"
+        ],
+        "included": "Airport Transfer + Hotel Check-in",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Da Nang",
+        "timings": [
+          "12:00 PM - Airport pick-up at Da Nang (DAD)",
+          "02:00 PM - Hotel check-in",
+          "05:00 PM - Sunset at My Khe Beach",
+          "09:00 PM - Dragon Bridge fire show (weekends)"
+        ]
+      },
+      {
+        "title": "Ba Na Hills",
+        "summary": "A full day above the clouds on one of the world's longest cable car rides.",
+        "activities": [
+          "Cable car ride up to Ba Na Hills",
+          "Golden Bridge, held up by giant stone hands",
+          "French Village and Fantasy Park theme park"
+        ],
+        "included": "Cable Car + Ba Na Hills Entry",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Da Nang",
+        "timings": [
+          "07:30 AM - Breakfast and depart for Ba Na Hills",
+          "09:00 AM - Cable car to the summit",
+          "10:00 AM - Golden Bridge",
+          "01:00 PM - French Village and Fantasy Park",
+          "05:00 PM - Return to Da Nang"
+        ]
+      },
+      {
+        "title": "Hoi An Ancient Town",
+        "summary": "A UNESCO old town that only really comes alive after dark.",
+        "activities": [
+          "Daytime visit to Hoi An's tailor shops for made-to-measure orders",
+          "Basket-boat ride through the coconut forest on the Thu Bon river",
+          "Evening lantern walk through the Ancient Town"
+        ],
+        "included": "Basket Boat Ride + Walking Tour",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Hoi An / Da Nang",
+        "timings": [
+          "09:00 AM - Transfer to Hoi An",
+          "10:30 AM - Tailor-shop visit for made-to-measure orders",
+          "02:00 PM - Basket-boat ride on the Thu Bon river",
+          "05:30 PM - Ancient Town walking tour",
+          "07:30 PM - Lantern-lit evening, optional lantern boat ride"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer back to Da Nang airport.",
+        "activities": [
+          "Free morning for tailoring pick-ups and cafés",
+          "Private transfer to Da Nang International Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at hotel",
+          "10:00 AM - Free morning / tailoring pick-up",
+          "12:00 PM - Checkout and transfer to Da Nang Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Da Nang (DAD) / Da Nang (DAD)",
+      "Duration": "3N / 4D",
+      "Trip type": "Private departure",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle",
+      "Accommodation": "4 Star hotels",
+      "Meals": "(3) Breakfast",
+      "Places covered": "Da Nang - Ba Na Hills - Hoi An",
+      "Visa": "e-Visa (processing 3-5 working days)"
+    },
+    "hotels": [
+      "Da Nang - Sala Danang Beach Hotel or similar (4 Star)",
+      "Hoi An - Little Riverside or similar (4 Star), subject to availability"
+    ],
+    "priceVariants": [
+      {
+        "label": "3N / 4D",
+        "note": "Land package only, twin sharing",
+        "price": 42999
+      },
+      {
+        "label": "3N / 4D",
+        "note": "With return flights ex-Delhi",
+        "price": 66999
+      }
     ]
   },
   {
@@ -42,23 +318,253 @@
     "dest": "vietnam",
     "title": "Grand Vietnam — North to South",
     "where": "Hanoi → Saigon",
-    "days": 10, "nights": 9, "price": 118999,
-    "badge": "Signature", "type": ["culture", "nature"],
+    "days": 10,
+    "nights": 9,
+    "price": 118999,
+    "badge": "Signature",
+    "type": [
+      "culture",
+      "nature"
+    ],
     "blurb": "Sapa terraces, Halong Bay, Hoi An lanterns and the Mekong Delta in one carefully paced ten-day arc.",
-    "includes": ["4★ & 5★ Mix", "2 Domestic Flights", "Sapa Homestay", "Private Guide"],
+    "includes": [
+      "4★ & 5★ Mix",
+      "2 Domestic Flights",
+      "Sapa Homestay",
+      "Private Guide"
+    ],
     "image": "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?auto=format&fit=crop&w=900&q=80",
-    "route": ["Hanoi", "Sapa", "Halong Bay", "Da Nang", "Hoi An", "Ho Chi Minh City", "Mekong Delta"],
+    "route": [
+      "Hanoi",
+      "Sapa",
+      "Halong Bay",
+      "Da Nang",
+      "Hoi An",
+      "Ho Chi Minh City",
+      "Mekong Delta"
+    ],
     "itinerary": [
-      ["Arrive Hanoi", "Transfer to the Old Quarter, evening egg-coffee walk."],
-      ["Sapa", "Transfer to Sapa, homestay with Hmong families on the staircase valleys."],
-      ["Sapa trekking", "Rice-terrace trek and a Cat Cat village visit, return to Hanoi overnight."],
-      ["Halong Bay cruise", "Board a deluxe junk, kayak Luon Cave."],
-      ["Halong Bay to Da Nang", "Sunrise on the cruise, fly to Da Nang, My Khe beach evening."],
-      ["Ba Na Hills & Hoi An", "Golden Bridge in the morning, lantern-lit Ancient Town at night."],
-      ["Fly to Ho Chi Minh City", "Ben Thanh Market, Reunification Palace and the War Remnants Museum."],
-      ["Cu Chi Tunnels", "Half-day tunnel exploration, afternoon at leisure."],
-      ["Mekong Delta", "Sampan through coconut canals to a floating market."],
-      ["Departure", "Transfer to Ho Chi Minh City airport."]
+      {
+        "title": "Arrive Hanoi",
+        "summary": "Transfer to the Old Quarter to settle in before the ten days ahead.",
+        "activities": [
+          "Airport pick-up and transfer to your Old Quarter hotel",
+          "Evening egg-coffee walk through the Old Quarter"
+        ],
+        "included": "Airport Transfer + Hotel Check-in",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Hanoi",
+        "timings": [
+          "09:00 AM - Airport pick-up at Noi Bai (HAN)",
+          "02:00 PM - Old Quarter hotel check-in",
+          "05:00 PM - Egg-coffee walk through the Old Quarter"
+        ]
+      },
+      {
+        "title": "Sapa",
+        "summary": "Head for the northern highlands and a homestay with a hill-tribe family.",
+        "activities": [
+          "Scenic transfer to Sapa through the highlands",
+          "Check-in to a Hmong family homestay",
+          "Evening walk through Sapa town"
+        ],
+        "included": "Transfer + Homestay + Dinner",
+        "type": "Full day",
+        "meals": "Breakfast + Dinner",
+        "stay": "Sapa homestay",
+        "timings": [
+          "07:00 AM - Breakfast and depart for Sapa",
+          "01:00 PM - Arrive Sapa, homestay check-in",
+          "04:00 PM - Walk through Sapa town",
+          "07:30 PM - Dinner with the host family"
+        ]
+      },
+      {
+        "title": "Sapa trekking",
+        "summary": "A full day on foot through staircase valleys carved over 300 years.",
+        "activities": [
+          "Guided trek through the rice terraces",
+          "Cat Cat village visit",
+          "Overnight transfer back to Hanoi"
+        ],
+        "included": "Trekking Guide + Overnight Transfer",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Overnight transfer",
+        "timings": [
+          "08:00 AM - Breakfast at the homestay",
+          "09:00 AM - Guided rice-terrace trek",
+          "01:00 PM - Lunch in the valley",
+          "03:00 PM - Cat Cat village",
+          "09:00 PM - Overnight transfer back to Hanoi"
+        ]
+      },
+      {
+        "title": "Halong Bay cruise",
+        "summary": "Board a deluxe junk and sail out among Halong Bay's limestone islands.",
+        "activities": [
+          "Board the deluxe junk into Halong Bay",
+          "Kayak into Luon Cave's hidden lagoon",
+          "Overnight aboard the cruise"
+        ],
+        "included": "Overnight Cruise + All Meals",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch + Dinner",
+        "stay": "Halong Bay cruise",
+        "timings": [
+          "08:00 AM - Transfer to Halong Bay",
+          "11:30 AM - Board the deluxe junk",
+          "01:00 PM - Lunch on board",
+          "03:00 PM - Kayak into Luon Cave lagoon",
+          "07:00 PM - Dinner on board"
+        ]
+      },
+      {
+        "title": "Halong Bay to Da Nang",
+        "summary": "A sunrise cruise deck, then a short flight south to the coast.",
+        "activities": [
+          "Sunrise on the cruise deck before disembarking",
+          "Flight to Da Nang",
+          "Evening at My Khe Beach"
+        ],
+        "included": "Domestic Flight + Airport Transfers",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Da Nang",
+        "timings": [
+          "06:30 AM - Sunrise on the cruise deck",
+          "11:00 AM - Disembark, transfer to Hanoi airport",
+          "03:00 PM - Flight to Da Nang",
+          "06:00 PM - Hotel check-in",
+          "08:00 PM - Evening at My Khe Beach"
+        ]
+      },
+      {
+        "title": "Ba Na Hills & Hoi An",
+        "summary": "Cable cars above the clouds by day, lantern light by night.",
+        "activities": [
+          "Golden Bridge and Ba Na Hills cable car",
+          "Afternoon transfer to Hoi An",
+          "Lantern-lit Ancient Town at night"
+        ],
+        "included": "Cable Car Tickets + Transfers",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Hoi An / Da Nang",
+        "timings": [
+          "07:30 AM - Depart for Ba Na Hills",
+          "09:00 AM - Cable car and Golden Bridge",
+          "01:00 PM - Lunch at Ba Na Hills",
+          "04:00 PM - Transfer to Hoi An",
+          "07:00 PM - Lantern-lit Ancient Town"
+        ]
+      },
+      {
+        "title": "Fly to Ho Chi Minh City",
+        "summary": "From lantern town to the country's biggest, busiest city.",
+        "activities": [
+          "Flight to Ho Chi Minh City",
+          "Ben Thanh Market",
+          "Reunification Palace and War Remnants Museum"
+        ],
+        "included": "Domestic Flight + City Guide",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Ho Chi Minh City",
+        "timings": [
+          "08:00 AM - Checkout and airport transfer",
+          "11:00 AM - Flight to Ho Chi Minh City",
+          "02:00 PM - Hotel check-in",
+          "04:00 PM - Reunification Palace and War Remnants Museum",
+          "07:00 PM - Ben Thanh Market"
+        ]
+      },
+      {
+        "title": "Cu Chi Tunnels",
+        "summary": "A half-day underground, then an afternoon at your own pace.",
+        "activities": [
+          "Half-day guided tour of the Cu Chi Tunnels",
+          "Afternoon at leisure in the city"
+        ],
+        "included": "Tunnel Entry + Guide",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "Ho Chi Minh City",
+        "timings": [
+          "08:00 AM - Breakfast at hotel",
+          "09:00 AM - Cu Chi Tunnels guided tour",
+          "02:00 PM - Return to the city, afternoon at leisure"
+        ]
+      },
+      {
+        "title": "Mekong Delta",
+        "summary": "Sampan through coconut canals to a market that trades on the water.",
+        "activities": [
+          "Sampan ride through the coconut canals",
+          "Floating market visit",
+          "Local lunch on the water"
+        ],
+        "included": "Boat Ride + Lunch",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Ho Chi Minh City",
+        "timings": [
+          "07:30 AM - Depart for the Mekong Delta",
+          "10:00 AM - Sampan through the coconut canals",
+          "12:30 PM - Local lunch on the water",
+          "02:00 PM - Floating market",
+          "06:00 PM - Return to Ho Chi Minh City"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer to the airport.",
+        "activities": [
+          "Free morning at leisure",
+          "Private transfer to Tan Son Nhat International Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at hotel",
+          "11:00 AM - Checkout",
+          "12:00 PM - Transfer to Tan Son Nhat Airport (SGN)"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Hanoi (HAN) / Ho Chi Minh City (SGN)",
+      "Duration": "9N / 10D",
+      "Trip type": "Private departure",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Included - 2 sectors",
+      "Internal transportation": "Private AC vehicle + overnight train + junk cruise",
+      "Accommodation": "4 Star & 5 Star mix + 1N homestay + 1N cruise",
+      "Meals": "(9) Breakfast (4) Lunch (2) Dinner",
+      "Places covered": "Hanoi - Sapa - Halong Bay - Da Nang - Hoi An - Ho Chi Minh City - Mekong Delta",
+      "Visa": "e-Visa (processing 3-5 working days)"
+    },
+    "hotels": [
+      "Hanoi - La Siesta Premium Hang Be or similar (4 Star)",
+      "Sapa - Hmong family homestay, Lao Chai valley",
+      "Halong Bay - Deluxe overnight junk cruise, sea-view cabin",
+      "Da Nang / Hoi An - Sala Danang Beach Hotel or similar (4 Star)",
+      "Ho Chi Minh City - Silverland Yen or similar (4 Star)"
+    ],
+    "priceVariants": [
+      {
+        "label": "9N / 10D",
+        "note": "Land package + 2 domestic flights",
+        "price": 118999
+      },
+      {
+        "label": "9N / 10D",
+        "note": "With return international flights ex-Delhi",
+        "price": 142999
+      }
     ]
   },
   {
@@ -66,18 +572,145 @@
     "dest": "vietnam",
     "title": "Phu Quoc Island & VinWonders",
     "where": "Phu Quoc",
-    "days": 5, "nights": 4, "price": 56999,
-    "badge": "Family", "type": ["beach", "family"],
+    "days": 5,
+    "nights": 4,
+    "price": 56999,
+    "badge": "Family",
+    "type": [
+      "beach",
+      "family"
+    ],
     "blurb": "The world’s longest sea cable car, a safari park, and sunsets from the quietest beaches in Vietnam.",
-    "includes": ["Beach Resort", "VinWonders Pass", "Safari Entry", "Half Board"],
+    "includes": [
+      "Beach Resort",
+      "VinWonders Pass",
+      "Safari Entry",
+      "Half Board"
+    ],
     "image": "https://images.unsplash.com/photo-1555921015-5532091f6026?auto=format&fit=crop&w=900&q=80",
-    "route": ["Phu Quoc Town", "VinWonders", "Sao Beach"],
+    "route": [
+      "Phu Quoc Town",
+      "VinWonders",
+      "Sao Beach"
+    ],
     "itinerary": [
-      ["Arrive Phu Quoc", "Resort check-in, sunset at a Sunset Sanato beach club."],
-      ["Hon Thom cable car", "The world’s longest sea cable car, then an afternoon at VinWonders theme park."],
-      ["Safari & beach", "Vinpearl Safari in the morning, Sao Beach in the afternoon."],
-      ["Island hopping", "Snorkelling trip to the southern islands."],
-      ["Departure", "Free morning before the transfer to Phu Quoc airport."]
+      {
+        "title": "Arrive Phu Quoc",
+        "summary": "Straight to the resort, then a first sunset on the sand.",
+        "activities": [
+          "Airport pick-up and resort check-in",
+          "Sunset at a Sunset Sanato beach club"
+        ],
+        "included": "Airport Transfer + Resort Check-in",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Phu Quoc",
+        "timings": [
+          "12:00 PM - Airport pick-up at Phu Quoc (PQC)",
+          "02:00 PM - Beach resort check-in",
+          "05:30 PM - Sunset at Sunset Sanato beach club"
+        ]
+      },
+      {
+        "title": "Hon Thom cable car",
+        "summary": "The world's longest sea-crossing cable car, then a full theme-park afternoon.",
+        "activities": [
+          "World's longest sea cable car to Hon Thom Island",
+          "Afternoon at VinWonders theme park"
+        ],
+        "included": "Cable Car + Theme Park Entry",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Phu Quoc",
+        "timings": [
+          "08:00 AM - Breakfast at the resort",
+          "09:30 AM - Hon Thom sea cable car",
+          "12:30 PM - Lunch",
+          "02:00 PM - VinWonders theme park",
+          "07:00 PM - Return to the resort"
+        ]
+      },
+      {
+        "title": "Safari & beach",
+        "summary": "Wildlife in the morning, white sand in the afternoon.",
+        "activities": [
+          "Morning at Vinpearl Safari Park",
+          "Afternoon on Sao Beach"
+        ],
+        "included": "Safari Entry + Beach Transfer",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Phu Quoc",
+        "timings": [
+          "08:00 AM - Breakfast at the resort",
+          "09:00 AM - Vinpearl Safari Park",
+          "01:00 PM - Transfer to Sao Beach",
+          "05:00 PM - Return to the resort"
+        ]
+      },
+      {
+        "title": "Island hopping",
+        "summary": "A boat day among the quieter southern islands.",
+        "activities": [
+          "Snorkelling trip to the southern islands",
+          "Fresh seafood lunch on the boat"
+        ],
+        "included": "Boat Trip + Snorkel Gear + Lunch",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Phu Quoc",
+        "timings": [
+          "08:00 AM - Breakfast at the resort",
+          "09:30 AM - Speedboat to the southern islands",
+          "11:00 AM - Snorkelling stops",
+          "01:00 PM - Seafood lunch on board",
+          "04:30 PM - Return to the resort"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer to the airport.",
+        "activities": [
+          "Free morning at the resort",
+          "Transfer to Phu Quoc Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at the resort",
+          "11:00 AM - Checkout",
+          "12:00 PM - Transfer to Phu Quoc Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Phu Quoc (PQC) / Phu Quoc (PQC)",
+      "Duration": "4N / 5D",
+      "Trip type": "Private departure - family friendly",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not included",
+      "Internal transportation": "Private AC vehicle + island speedboat",
+      "Accommodation": "4 Star beach resort",
+      "Meals": "(4) Breakfast (2) Lunch",
+      "Places covered": "Phu Quoc Town - Hon Thom - VinWonders - Sao Beach",
+      "Visa": "e-Visa (Phu Quoc allows visa-free entry up to 30 days)"
+    },
+    "hotels": [
+      "Phu Quoc - Sailing Club Signature Resort or similar (4 Star, beachfront)"
+    ],
+    "priceVariants": [
+      {
+        "label": "4N / 5D",
+        "note": "Land package only, twin sharing",
+        "price": 56999
+      },
+      {
+        "label": "4N / 5D",
+        "note": "With return flights ex-Delhi",
+        "price": 84999
+      }
     ]
   },
   {
@@ -85,19 +718,171 @@
     "dest": "bali",
     "title": "Bali Honeymoon — Villas & Volcanoes",
     "where": "Seminyak → Ubud",
-    "days": 6, "nights": 5, "price": 74999,
-    "badge": "Honeymoon", "type": ["honeymoon", "luxury"],
+    "days": 6,
+    "nights": 5,
+    "price": 74999,
+    "badge": "Honeymoon",
+    "type": [
+      "honeymoon",
+      "luxury"
+    ],
     "blurb": "Private pool villas, a floating breakfast, Kecak fire dance at Uluwatu and a candlelit dinner on the sand.",
-    "includes": ["Pool Villas", "Floating Breakfast", "Couple Spa", "Romantic Dinner"],
+    "includes": [
+      "Pool Villas",
+      "Floating Breakfast",
+      "Couple Spa",
+      "Romantic Dinner"
+    ],
     "image": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80",
-    "route": ["Seminyak", "Uluwatu", "Ubud", "Kintamani"],
+    "route": [
+      "Seminyak",
+      "Uluwatu",
+      "Ubud",
+      "Kintamani"
+    ],
     "itinerary": [
-      ["Arrive Denpasar", "Private transfer to your Seminyak pool villa, sunset at Double Six beach."],
-      ["Uluwatu & the south", "Padang Padang beach, Uluwatu temple, and the Kecak fire dance at sunset."],
-      ["Move to Ubud", "Tegallalang rice terraces and the Tirta Empul holy spring."],
-      ["Mount Batur sunrise", "Guided summit trek, natural hot springs afterwards."],
-      ["Romance day", "Floating breakfast, a couple’s spa and a candlelit dinner on the sand."],
-      ["Departure", "Late checkout, transfer to Denpasar airport."]
+      {
+        "title": "Arrive Denpasar",
+        "summary": "Straight to a private pool villa, then a first sunset together.",
+        "activities": [
+          "Private transfer to your Seminyak pool villa",
+          "Sunset at Double Six Beach",
+          "Seafood grill dinner in Jimbaran"
+        ],
+        "included": "Private Transfer + Villa Check-in",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Seminyak",
+        "timings": [
+          "01:00 PM - Airport pick-up at Denpasar (DPS)",
+          "03:00 PM - Pool villa check-in",
+          "05:30 PM - Sunset at Double Six Beach",
+          "07:30 PM - Seafood grill dinner in Jimbaran"
+        ]
+      },
+      {
+        "title": "Uluwatu & the south",
+        "summary": "Clifftop beaches by day, fire dance by dusk.",
+        "activities": [
+          "Padang Padang Beach",
+          "Uluwatu clifftop temple",
+          "Kecak fire dance at sunset"
+        ],
+        "included": "Temple Entry + Kecak Show Tickets",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Seminyak",
+        "timings": [
+          "08:30 AM - Breakfast at the villa",
+          "10:00 AM - Padang Padang Beach",
+          "03:00 PM - Uluwatu clifftop temple",
+          "06:00 PM - Kecak fire dance at sunset",
+          "08:30 PM - Return to Seminyak"
+        ]
+      },
+      {
+        "title": "Move to Ubud",
+        "summary": "From the coast to the rice terraces and holy springs of the interior.",
+        "activities": [
+          "Tegallalang rice terraces",
+          "Tirta Empul holy spring purification ritual"
+        ],
+        "included": "Private Car + Entry Tickets",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Ubud",
+        "timings": [
+          "09:00 AM - Checkout and transfer to Ubud",
+          "11:00 AM - Tegallalang rice terraces",
+          "02:00 PM - Tirta Empul holy spring",
+          "04:00 PM - Ubud villa check-in"
+        ]
+      },
+      {
+        "title": "Mount Batur sunrise",
+        "summary": "A 2am start rewarded with breakfast above the clouds.",
+        "activities": [
+          "Guided summit trek starting at 2am",
+          "Breakfast steamed over the volcano vent",
+          "Natural hot springs afterwards"
+        ],
+        "included": "Trekking Guide + Breakfast + Hot Springs",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Ubud",
+        "timings": [
+          "02:00 AM - Depart for Mount Batur",
+          "04:00 AM - Guided summit trek begins",
+          "06:00 AM - Sunrise from the crater rim",
+          "07:00 AM - Breakfast steamed over the vent",
+          "11:00 AM - Natural hot springs",
+          "02:00 PM - Return to the villa"
+        ]
+      },
+      {
+        "title": "Romance day",
+        "summary": "A day built entirely around the two of you.",
+        "activities": [
+          "Floating breakfast on the villa pool",
+          "Couple's spa treatment",
+          "Candlelit dinner on the sand"
+        ],
+        "included": "Floating Breakfast + Couple Spa + Romantic Dinner",
+        "type": "Full day",
+        "meals": "Breakfast + Dinner",
+        "stay": "Ubud",
+        "timings": [
+          "09:00 AM - Floating breakfast on the villa pool",
+          "01:00 PM - Couple spa treatment",
+          "05:00 PM - Free time",
+          "07:30 PM - Candlelit dinner on the sand"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A late checkout before the transfer to the airport.",
+        "activities": [
+          "Late checkout and free morning",
+          "Transfer to Denpasar Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "09:00 AM - Breakfast at the villa",
+          "12:00 PM - Late checkout",
+          "01:00 PM - Transfer to Denpasar Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Denpasar (DPS) / Denpasar (DPS)",
+      "Duration": "5N / 6D",
+      "Trip type": "Private departure - honeymoon",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle with English-speaking driver",
+      "Accommodation": "Private pool villas (5 Star)",
+      "Meals": "(5) Breakfast (1) Dinner",
+      "Places covered": "Seminyak - Uluwatu - Ubud - Kintamani",
+      "Visa": "Visa on arrival (approx. IDR 500,000)"
+    },
+    "hotels": [
+      "Seminyak - The Layar Designer Villas or similar (private pool villa)",
+      "Ubud - Kajane Mua or similar (private pool villa)"
+    ],
+    "priceVariants": [
+      {
+        "label": "5N / 6D",
+        "note": "Land package only, couple",
+        "price": 74999
+      },
+      {
+        "label": "5N / 6D",
+        "note": "With return flights ex-Delhi",
+        "price": 102999
+      }
     ]
   },
   {
@@ -105,20 +890,189 @@
     "dest": "bali",
     "title": "Bali & Nusa Penida Explorer",
     "where": "Bali + Nusa Islands",
-    "days": 7, "nights": 6, "price": 84999,
-    "badge": "Adventure", "type": ["adventure", "beach"],
+    "days": 7,
+    "nights": 6,
+    "price": 84999,
+    "badge": "Adventure",
+    "type": [
+      "adventure",
+      "beach"
+    ],
     "blurb": "Kelingking cliff, Manta Point snorkelling and a 2am summit push up Mount Batur for sunrise.",
-    "includes": ["4★ Hotels", "Fast Boat", "Batur Trek", "Snorkel Gear"],
+    "includes": [
+      "4★ Hotels",
+      "Fast Boat",
+      "Batur Trek",
+      "Snorkel Gear"
+    ],
     "image": "https://images.unsplash.com/photo-1573790387438-4da905039392?auto=format&fit=crop&w=900&q=80",
-    "route": ["Seminyak", "Nusa Penida", "Ubud", "Mount Batur"],
+    "route": [
+      "Seminyak",
+      "Nusa Penida",
+      "Ubud",
+      "Mount Batur"
+    ],
     "itinerary": [
-      ["Arrive Denpasar", "Transfer to Seminyak, beach club evening."],
-      ["Nusa Penida", "Fast boat across the strait for Kelingking cliff and Broken Beach."],
-      ["Nusa Penida continued", "Manta Point snorkelling and Angel’s Billabong."],
-      ["Move to Ubud", "Rice-terrace walk and an afternoon browsing the art market."],
-      ["Mount Batur sunrise", "A 2am start and a guided summit trek, breakfast steamed over the volcano vent."],
-      ["Free adventure day", "Optional white-water rafting or a waterfall visit."],
-      ["Departure", "Transfer to Denpasar airport."]
+      {
+        "title": "Arrive Denpasar",
+        "summary": "Transfer to Seminyak for a first taste of Bali's beach-club evenings.",
+        "activities": [
+          "Transfer to Seminyak",
+          "Beach club evening"
+        ],
+        "included": "Airport Transfer + Hotel Check-in",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Seminyak",
+        "timings": [
+          "01:00 PM - Airport pick-up at Denpasar (DPS)",
+          "02:00 PM - Seminyak hotel check-in",
+          "06:00 PM - Beach club evening"
+        ]
+      },
+      {
+        "title": "Nusa Penida",
+        "summary": "Across the strait to Bali's most photographed clifftop.",
+        "activities": [
+          "Fast boat across the strait",
+          "Kelingking Cliff viewpoint",
+          "Broken Beach"
+        ],
+        "included": "Fast Boat + Island Guide",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Nusa Penida",
+        "timings": [
+          "06:30 AM - Breakfast and transfer to Sanur harbour",
+          "08:00 AM - Fast boat to Nusa Penida",
+          "10:00 AM - Kelingking Cliff viewpoint",
+          "01:00 PM - Lunch",
+          "03:00 PM - Broken Beach",
+          "05:00 PM - Island hotel check-in"
+        ]
+      },
+      {
+        "title": "Nusa Penida continued",
+        "summary": "A second day on the island, this time in the water.",
+        "activities": [
+          "Manta Point snorkelling",
+          "Angel's Billabong natural pool"
+        ],
+        "included": "Snorkel Gear + Boat Transfer",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Nusa Penida",
+        "timings": [
+          "07:00 AM - Breakfast at the hotel",
+          "08:30 AM - Boat to Manta Point",
+          "10:00 AM - Snorkelling with manta rays",
+          "01:00 PM - Lunch on board",
+          "03:00 PM - Angel’s Billabong natural pool"
+        ]
+      },
+      {
+        "title": "Move to Ubud",
+        "summary": "Back to the mainland and into the rice-terrace interior.",
+        "activities": [
+          "Transfer to Ubud",
+          "Rice-terrace walk",
+          "Art market browsing"
+        ],
+        "included": "Private Car",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Ubud",
+        "timings": [
+          "08:00 AM - Fast boat back to Bali",
+          "11:00 AM - Transfer to Ubud",
+          "02:00 PM - Hotel check-in",
+          "04:00 PM - Rice-terrace walk",
+          "06:30 PM - Ubud art market"
+        ]
+      },
+      {
+        "title": "Mount Batur sunrise",
+        "summary": "A 2am start for the summit, then breakfast with a view.",
+        "activities": [
+          "2am summit trek start",
+          "Sunrise from the crater rim",
+          "Breakfast steamed over the vent"
+        ],
+        "included": "Trekking Guide + Breakfast",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Ubud",
+        "timings": [
+          "02:00 AM - Depart for Mount Batur",
+          "04:00 AM - Summit trek begins",
+          "06:00 AM - Sunrise from the crater rim",
+          "07:00 AM - Breakfast steamed over the vent",
+          "01:00 PM - Return to the hotel"
+        ]
+      },
+      {
+        "title": "Free adventure day",
+        "summary": "One day left open for whichever adventure suits the group.",
+        "activities": [
+          "Optional white-water rafting on the Ayung river",
+          "Or a waterfall-hopping day trip"
+        ],
+        "included": "Free Day (optional activities at extra cost)",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Ubud",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "10:00 AM - Optional white-water rafting or waterfall trip",
+          "05:00 PM - Free evening in Ubud"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer to the airport.",
+        "activities": [
+          "Free morning at leisure",
+          "Transfer to Denpasar Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "11:00 AM - Checkout",
+          "12:30 PM - Transfer to Denpasar Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Denpasar (DPS) / Denpasar (DPS)",
+      "Duration": "6N / 7D",
+      "Trip type": "Private departure - adventure",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle + fast boat to Nusa Penida",
+      "Accommodation": "4 Star hotels",
+      "Meals": "(6) Breakfast (2) Lunch",
+      "Places covered": "Seminyak - Nusa Penida - Ubud - Mount Batur",
+      "Visa": "Visa on arrival (approx. IDR 500,000)"
+    },
+    "hotels": [
+      "Seminyak - Ize Seminyak or similar (4 Star)",
+      "Nusa Penida - Semabu Hills or similar (4 Star)",
+      "Ubud - Alaya Resort Ubud or similar (4 Star)"
+    ],
+    "priceVariants": [
+      {
+        "label": "6N / 7D",
+        "note": "Land package only, twin sharing",
+        "price": 84999
+      },
+      {
+        "label": "6N / 7D",
+        "note": "With return flights ex-Delhi",
+        "price": 112999
+      }
     ]
   },
   {
@@ -126,17 +1080,126 @@
     "dest": "bali",
     "title": "Bali Beach Escape",
     "where": "Seminyak & Kuta",
-    "days": 4, "nights": 3, "price": 48999,
-    "badge": "Value", "type": ["beach"],
+    "days": 4,
+    "nights": 3,
+    "price": 48999,
+    "badge": "Value",
+    "type": [
+      "beach"
+    ],
     "blurb": "A long weekend of beach clubs, sunset cliffs and warungs — the shortest way to feel far away.",
-    "includes": ["4★ Hotel", "Beach Club Entry", "Uluwatu Tour", "Breakfast"],
+    "includes": [
+      "4★ Hotel",
+      "Beach Club Entry",
+      "Uluwatu Tour",
+      "Breakfast"
+    ],
     "image": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=80",
-    "route": ["Seminyak", "Kuta", "Uluwatu"],
+    "route": [
+      "Seminyak",
+      "Kuta",
+      "Uluwatu"
+    ],
     "itinerary": [
-      ["Arrive Denpasar", "Seminyak check-in, sunset at a beach club."],
-      ["Uluwatu day trip", "Padang Padang beach, the clifftop temple and the Kecak fire dance."],
-      ["Kuta & leisure", "Beach clubs, warung-hopping and free time to shop."],
-      ["Departure", "Transfer to Denpasar airport."]
+      {
+        "title": "Arrive Denpasar",
+        "summary": "Straight to Seminyak for a first evening on the sand.",
+        "activities": [
+          "Seminyak check-in",
+          "Sunset at a beach club"
+        ],
+        "included": "Airport Transfer + Hotel Check-in",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Seminyak",
+        "timings": [
+          "01:00 PM - Airport pick-up at Denpasar (DPS)",
+          "02:00 PM - Seminyak check-in",
+          "05:30 PM - Sunset at a beach club"
+        ]
+      },
+      {
+        "title": "Uluwatu day trip",
+        "summary": "The clifftop side of Bali, capped with a fire dance at dusk.",
+        "activities": [
+          "Padang Padang Beach",
+          "Uluwatu temple",
+          "Kecak fire dance"
+        ],
+        "included": "Temple Entry + Kecak Tickets",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Seminyak",
+        "timings": [
+          "08:30 AM - Breakfast at the hotel",
+          "10:00 AM - Padang Padang Beach",
+          "03:00 PM - Uluwatu temple",
+          "06:00 PM - Kecak fire dance",
+          "08:30 PM - Return to Seminyak"
+        ]
+      },
+      {
+        "title": "Kuta & leisure",
+        "summary": "A day with nothing booked — exactly the point of a long weekend.",
+        "activities": [
+          "Beach clubs and warung-hopping",
+          "Free time to shop Kuta's markets"
+        ],
+        "included": "Free Day",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Seminyak",
+        "timings": [
+          "09:00 AM - Breakfast at the hotel",
+          "11:00 AM - Kuta beach and markets",
+          "02:00 PM - Warung-hopping lunch on your own",
+          "05:00 PM - Free evening"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer to the airport.",
+        "activities": [
+          "Free morning at leisure",
+          "Transfer to Denpasar Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "11:00 AM - Checkout",
+          "12:00 PM - Transfer to Denpasar Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Denpasar (DPS) / Denpasar (DPS)",
+      "Duration": "3N / 4D",
+      "Trip type": "Private departure - short break",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle + airport transfers",
+      "Accommodation": "4 Star hotel",
+      "Meals": "(3) Breakfast",
+      "Places covered": "Seminyak - Kuta - Uluwatu",
+      "Visa": "Visa on arrival (approx. IDR 500,000)"
+    },
+    "hotels": [
+      "Seminyak - Ize Seminyak or similar (4 Star)"
+    ],
+    "priceVariants": [
+      {
+        "label": "3N / 4D",
+        "note": "Land package only, twin sharing",
+        "price": 48999
+      },
+      {
+        "label": "3N / 4D",
+        "note": "With return flights ex-Delhi",
+        "price": 76999
+      }
     ]
   },
   {
@@ -144,21 +1207,199 @@
     "dest": "bali",
     "title": "Bali Family Week",
     "where": "Nusa Dua → Ubud",
-    "days": 8, "nights": 7, "price": 92999,
-    "badge": "Family", "type": ["family", "nature"],
+    "days": 8,
+    "nights": 7,
+    "price": 92999,
+    "badge": "Family",
+    "type": [
+      "family",
+      "nature"
+    ],
     "blurb": "Waterbom park, a safari and marine park, elephant sanctuary and gentle rice-terrace walks for all ages.",
-    "includes": ["Family Rooms", "Park Tickets", "Kids Eat Free", "Private Van"],
+    "includes": [
+      "Family Rooms",
+      "Park Tickets",
+      "Kids Eat Free",
+      "Private Van"
+    ],
     "image": "https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=900&q=80",
-    "route": ["Nusa Dua", "Ubud", "Kintamani"],
+    "route": [
+      "Nusa Dua",
+      "Ubud",
+      "Kintamani"
+    ],
     "itinerary": [
-      ["Arrive Denpasar", "Transfer to your Nusa Dua family resort."],
-      ["Waterbom Park", "A full day of waterslides for the kids."],
-      ["Marine & safari park", "A day at Bali Safari and Marine Park."],
-      ["Move to Ubud", "Elephant sanctuary visit and a gentle rice-terrace walk."],
-      ["Ubud family day", "Monkey Forest, the art market and a family cooking class."],
-      ["Kintamani day trip", "Volcano viewpoint and a coffee-plantation visit."],
-      ["Back to Nusa Dua", "Beach day, free time at the resort."],
-      ["Departure", "Transfer to Denpasar airport."]
+      {
+        "title": "Arrive Denpasar",
+        "summary": "Transfer to a family-friendly Nusa Dua resort to settle in.",
+        "activities": [
+          "Transfer to your Nusa Dua family resort",
+          "Evening at the resort"
+        ],
+        "included": "Airport Transfer + Resort Check-in",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Nusa Dua",
+        "timings": [
+          "01:00 PM - Airport pick-up at Denpasar (DPS)",
+          "02:30 PM - Family resort check-in",
+          "05:00 PM - Evening at the resort pool"
+        ]
+      },
+      {
+        "title": "Waterbom Park",
+        "summary": "A full day of waterslides — the one day every age group agrees on.",
+        "activities": [
+          "Full day of waterslides at Waterbom Bali"
+        ],
+        "included": "Park Tickets + Private Van",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Nusa Dua",
+        "timings": [
+          "08:00 AM - Breakfast at the resort",
+          "10:00 AM - Waterbom Bali waterpark",
+          "05:00 PM - Return to the resort"
+        ]
+      },
+      {
+        "title": "Safari & marine park",
+        "summary": "Animals up close, from big cats to marine life.",
+        "activities": [
+          "Bali Safari and Marine Park",
+          "Animal shows and feeding sessions"
+        ],
+        "included": "Park Entry",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Nusa Dua",
+        "timings": [
+          "07:30 AM - Breakfast and depart",
+          "09:00 AM - Bali Safari and Marine Park",
+          "01:00 PM - Lunch at the park",
+          "03:00 PM - Animal shows and feeding",
+          "06:00 PM - Return to the resort"
+        ]
+      },
+      {
+        "title": "Move to Ubud",
+        "summary": "Into the highlands, with an elephant sanctuary on the way.",
+        "activities": [
+          "Transfer to Ubud",
+          "Elephant sanctuary visit",
+          "Gentle rice-terrace walk"
+        ],
+        "included": "Sanctuary Entry + Private Van",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Ubud",
+        "timings": [
+          "09:00 AM - Checkout and transfer to Ubud",
+          "11:00 AM - Elephant sanctuary visit",
+          "02:00 PM - Resort check-in",
+          "04:30 PM - Gentle rice-terrace walk"
+        ]
+      },
+      {
+        "title": "Ubud family day",
+        "summary": "Monkeys, markets and a cooking class the kids can join.",
+        "activities": [
+          "Monkey Forest Sanctuary",
+          "Art market browsing",
+          "Family cooking class"
+        ],
+        "included": "Monkey Forest Entry + Cooking Class",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Ubud",
+        "timings": [
+          "08:30 AM - Breakfast at the resort",
+          "10:00 AM - Monkey Forest Sanctuary",
+          "12:30 PM - Lunch",
+          "02:30 PM - Family cooking class",
+          "05:30 PM - Ubud art market"
+        ]
+      },
+      {
+        "title": "Kintamani day trip",
+        "summary": "A volcano view and a coffee break for the grown-ups.",
+        "activities": [
+          "Mount Batur volcano viewpoint",
+          "Coffee plantation visit and tasting"
+        ],
+        "included": "Private Van + Coffee Tasting",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Ubud",
+        "timings": [
+          "08:00 AM - Breakfast at the resort",
+          "09:30 AM - Kintamani volcano viewpoint",
+          "12:00 PM - Coffee plantation visit and tasting",
+          "04:00 PM - Return to the resort"
+        ]
+      },
+      {
+        "title": "Back to Nusa Dua",
+        "summary": "One last beach day before packing up.",
+        "activities": [
+          "Beach day at the resort",
+          "Free time"
+        ],
+        "included": "Free Day",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Nusa Dua",
+        "timings": [
+          "09:00 AM - Checkout and transfer to Nusa Dua",
+          "12:00 PM - Resort check-in",
+          "02:00 PM - Beach and pool day"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer to the airport.",
+        "activities": [
+          "Free morning at leisure",
+          "Transfer to Denpasar Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at the resort",
+          "11:00 AM - Checkout",
+          "12:00 PM - Transfer to Denpasar Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Denpasar (DPS) / Denpasar (DPS)",
+      "Duration": "7N / 8D",
+      "Trip type": "Private departure - family",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC van with English-speaking driver",
+      "Accommodation": "4 Star family resorts",
+      "Meals": "(7) Breakfast (2) Lunch",
+      "Places covered": "Nusa Dua - Ubud - Kintamani",
+      "Visa": "Visa on arrival (approx. IDR 500,000)"
+    },
+    "hotels": [
+      "Nusa Dua - Grand Mirage Resort or similar (4 Star, family rooms)",
+      "Ubud - Alaya Resort Ubud or similar (4 Star, family rooms)"
+    ],
+    "priceVariants": [
+      {
+        "label": "7N / 8D",
+        "note": "Land package only, per adult twin sharing",
+        "price": 92999
+      },
+      {
+        "label": "7N / 8D",
+        "note": "With return flights ex-Delhi",
+        "price": 120999
+      }
     ]
   },
   {
@@ -166,18 +1407,148 @@
     "dest": "thailand",
     "title": "Bangkok & Pattaya Classic",
     "where": "Bangkok · Pattaya",
-    "days": 5, "nights": 4, "price": 34999,
-    "badge": "Bestseller", "type": ["culture", "beach"],
+    "days": 5,
+    "nights": 4,
+    "price": 34999,
+    "badge": "Bestseller",
+    "type": [
+      "culture",
+      "beach"
+    ],
     "blurb": "Grand Palace mornings, Coral Island afternoons and the Alcazar show to close the night.",
-    "includes": ["4★ Hotels", "Coral Island", "Alcazar Show", "All Transfers"],
+    "includes": [
+      "4★ Hotels",
+      "Coral Island",
+      "Alcazar Show",
+      "All Transfers"
+    ],
     "image": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=80",
-    "route": ["Bangkok", "Pattaya", "Coral Island"],
+    "route": [
+      "Bangkok",
+      "Pattaya",
+      "Coral Island"
+    ],
     "itinerary": [
-      ["Arrive Bangkok", "Transfer to Sukhumvit, evening Chao Phraya dinner cruise."],
-      ["Bangkok city", "Grand Palace, Wat Pho, Wat Arun, then Chinatown street food by tuk-tuk."],
-      ["Transfer to Pattaya", "Coral Island speedboat day trip."],
-      ["Pattaya evening", "The Alcazar cabaret show, free time on the beach."],
-      ["Departure", "Transfer to Bangkok airport."]
+      {
+        "title": "Arrive Bangkok",
+        "summary": "A dinner cruise down the Chao Phraya on your first night.",
+        "activities": [
+          "Transfer to Sukhumvit",
+          "Evening Chao Phraya dinner cruise"
+        ],
+        "included": "Airport Transfer + Dinner Cruise",
+        "type": "Half day",
+        "meals": "Dinner",
+        "stay": "Bangkok",
+        "timings": [
+          "12:00 PM - Airport pick-up at Suvarnabhumi (BKK)",
+          "02:00 PM - Sukhumvit hotel check-in",
+          "06:30 PM - Chao Phraya dinner cruise",
+          "09:30 PM - Return to the hotel"
+        ]
+      },
+      {
+        "title": "Bangkok city",
+        "summary": "Temples by day, street food by tuk-tuk after dark.",
+        "activities": [
+          "Grand Palace and Wat Pho",
+          "Wat Arun by ferry",
+          "Chinatown street food by tuk-tuk"
+        ],
+        "included": "City Guide + Entry Tickets",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Bangkok",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "09:00 AM - Grand Palace and Wat Pho",
+          "12:30 PM - Ferry to Wat Arun",
+          "04:00 PM - Free time",
+          "07:00 PM - Chinatown street food by tuk-tuk"
+        ]
+      },
+      {
+        "title": "Transfer to Pattaya",
+        "summary": "From the capital to the coast, with an island day to follow.",
+        "activities": [
+          "Transfer to Pattaya",
+          "Coral Island speedboat day trip"
+        ],
+        "included": "Speedboat + Transfers",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Pattaya",
+        "timings": [
+          "08:00 AM - Checkout and transfer to Pattaya",
+          "11:00 AM - Hotel check-in",
+          "12:00 PM - Speedboat to Coral Island",
+          "01:00 PM - Lunch on the island",
+          "05:00 PM - Return to Pattaya"
+        ]
+      },
+      {
+        "title": "Pattaya evening",
+        "summary": "A famous cabaret show, then the beach at your own pace.",
+        "activities": [
+          "Alcazar cabaret show",
+          "Free time on the beach"
+        ],
+        "included": "Alcazar Show Tickets",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Pattaya",
+        "timings": [
+          "09:00 AM - Breakfast at the hotel",
+          "11:00 AM - Free time on the beach",
+          "06:00 PM - Alcazar cabaret show",
+          "08:00 PM - Walking Street (optional)"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer to the airport.",
+        "activities": [
+          "Free morning at leisure",
+          "Transfer to Bangkok Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "10:00 AM - Checkout",
+          "12:00 PM - Transfer to Suvarnabhumi Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Bangkok (BKK) / Bangkok (BKK)",
+      "Duration": "4N / 5D",
+      "Trip type": "Private departure",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle + Coral Island speedboat",
+      "Accommodation": "4 Star hotels",
+      "Meals": "(4) Breakfast (1) Lunch (1) Dinner",
+      "Places covered": "Bangkok - Pattaya - Coral Island",
+      "Visa": "Visa-free for Indian passport holders (up to 60 days)"
+    },
+    "hotels": [
+      "Bangkok - Grande Centre Point Sukhumvit or similar (4 Star)",
+      "Pattaya - Siam@Siam Design Hotel or similar (4 Star)"
+    ],
+    "priceVariants": [
+      {
+        "label": "4N / 5D",
+        "note": "Land package only, twin sharing",
+        "price": 34999
+      },
+      {
+        "label": "4N / 5D",
+        "note": "With return flights ex-Delhi",
+        "price": 54999
+      }
     ]
   },
   {
@@ -185,19 +1556,168 @@
     "dest": "thailand",
     "title": "Krabi & Phi Phi Islands",
     "where": "Andaman Coast",
-    "days": 6, "nights": 5, "price": 52999,
-    "badge": "Islands", "type": ["beach", "adventure"],
+    "days": 6,
+    "nights": 5,
+    "price": 52999,
+    "badge": "Islands",
+    "type": [
+      "beach",
+      "adventure"
+    ],
     "blurb": "Four-island longtail tour, Maya Bay by speedboat and sea-canoeing through Phang Nga’s hidden hongs.",
-    "includes": ["Beachfront Stay", "2 Island Tours", "Snorkelling", "Breakfast"],
+    "includes": [
+      "Beachfront Stay",
+      "2 Island Tours",
+      "Snorkelling",
+      "Breakfast"
+    ],
     "image": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=900&q=80",
-    "route": ["Krabi", "Railay", "Phi Phi Islands"],
+    "route": [
+      "Krabi",
+      "Railay",
+      "Phi Phi Islands"
+    ],
     "itinerary": [
-      ["Arrive Krabi", "Ao Nang check-in, sunset at Railay West."],
-      ["Four-island tour", "Chicken Island sandbar, Tup Island walk-across, snorkelling at Poda."],
-      ["Phi Phi speedboat", "Maya Bay, Viking Cave and Monkey Beach."],
-      ["James Bond Island", "Sea-canoe through Phang Nga’s hidden hongs."],
-      ["Free beach day", "Optional rock climbing or diving at Railay."],
-      ["Departure", "Transfer to Krabi airport."]
+      {
+        "title": "Arrive Krabi",
+        "summary": "Straight to Ao Nang, with a sunset view at Railay to follow.",
+        "activities": [
+          "Ao Nang check-in",
+          "Sunset at Railay West"
+        ],
+        "included": "Airport Transfer + Hotel Check-in",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Ao Nang",
+        "timings": [
+          "01:00 PM - Airport pick-up at Krabi (KBV)",
+          "02:00 PM - Ao Nang hotel check-in",
+          "05:00 PM - Longtail transfer to Railay West for sunset"
+        ]
+      },
+      {
+        "title": "Four-island tour",
+        "summary": "A longtail-boat day between sandbars and snorkel stops.",
+        "activities": [
+          "Chicken Island sandbar",
+          "Tup Island walk-across",
+          "Snorkelling at Poda Island"
+        ],
+        "included": "Longtail Boat + Snorkel Gear",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Ao Nang",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "09:00 AM - Longtail boat departs",
+          "10:00 AM - Chicken Island sandbar",
+          "12:30 PM - Lunch on the boat",
+          "02:00 PM - Snorkelling at Poda Island",
+          "04:30 PM - Return to Ao Nang"
+        ]
+      },
+      {
+        "title": "Phi Phi speedboat",
+        "summary": "The postcard bay, a pirate-lore cave and a monkey-filled beach.",
+        "activities": [
+          "Maya Bay",
+          "Viking Cave",
+          "Monkey Beach"
+        ],
+        "included": "Speedboat + Lunch",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Ao Nang",
+        "timings": [
+          "07:30 AM - Breakfast at the hotel",
+          "08:30 AM - Speedboat to Phi Phi",
+          "10:30 AM - Maya Bay and Viking Cave",
+          "12:30 PM - Lunch on Phi Phi Don",
+          "02:30 PM - Monkey Beach",
+          "05:00 PM - Return to Ao Nang"
+        ]
+      },
+      {
+        "title": "James Bond Island",
+        "summary": "Sea-canoeing through limestone hongs most boats can't reach.",
+        "activities": [
+          "Sea-canoe through Phang Nga's hidden hongs",
+          "James Bond Island viewpoint"
+        ],
+        "included": "Canoe Tour + Guide",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Ao Nang",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "09:00 AM - Depart for Phang Nga Bay",
+          "11:00 AM - Sea-canoe through the hongs",
+          "01:00 PM - Lunch on board",
+          "03:00 PM - James Bond Island",
+          "06:00 PM - Return to Ao Nang"
+        ]
+      },
+      {
+        "title": "Free beach day",
+        "summary": "One day left open for Railay's climbers and divers.",
+        "activities": [
+          "Optional rock climbing at Railay",
+          "Or a diving day trip"
+        ],
+        "included": "Free Day (optional activities at extra cost)",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Ao Nang",
+        "timings": [
+          "09:00 AM - Breakfast at the hotel",
+          "10:00 AM - Free day - optional rock climbing or diving",
+          "06:00 PM - Free evening at Ao Nang"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer to the airport.",
+        "activities": [
+          "Free morning at leisure",
+          "Transfer to Krabi Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "11:00 AM - Checkout",
+          "12:00 PM - Transfer to Krabi Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Krabi (KBV) / Krabi (KBV)",
+      "Duration": "5N / 6D",
+      "Trip type": "Private departure - islands",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle + longtail and speedboat transfers",
+      "Accommodation": "4 Star beachfront hotel",
+      "Meals": "(5) Breakfast (3) Lunch",
+      "Places covered": "Krabi - Railay - Phi Phi Islands - Phang Nga Bay",
+      "Visa": "Visa-free for Indian passport holders (up to 60 days)"
+    },
+    "hotels": [
+      "Ao Nang, Krabi - Centara Ao Nang Beach Resort or similar (4 Star)"
+    ],
+    "priceVariants": [
+      {
+        "label": "5N / 6D",
+        "note": "Land package only, twin sharing",
+        "price": 52999
+      },
+      {
+        "label": "5N / 6D",
+        "note": "With return flights ex-Delhi",
+        "price": 76999
+      }
     ]
   },
   {
@@ -205,17 +1725,124 @@
     "dest": "thailand",
     "title": "Phuket Long Weekend",
     "where": "Phuket",
-    "days": 4, "nights": 3, "price": 28999,
-    "badge": "Value", "type": ["beach"],
+    "days": 4,
+    "nights": 3,
+    "price": 28999,
+    "badge": "Value",
+    "type": [
+      "beach"
+    ],
     "blurb": "Patong sunsets, a James Bond Island day trip and enough time to do absolutely nothing.",
-    "includes": ["3★+ Hotel", "Phang Nga Tour", "Airport Transfer", "Breakfast"],
+    "includes": [
+      "3★+ Hotel",
+      "Phang Nga Tour",
+      "Airport Transfer",
+      "Breakfast"
+    ],
     "image": "https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=900&q=80",
-    "route": ["Patong", "Phang Nga Bay"],
+    "route": [
+      "Patong",
+      "Phang Nga Bay"
+    ],
     "itinerary": [
-      ["Arrive Phuket", "Patong check-in, sunset stroll on the beach."],
-      ["James Bond Island tour", "Phang Nga Bay day trip by longtail boat."],
-      ["Free day", "Patong beach and nightlife at leisure."],
-      ["Departure", "Transfer to Phuket airport."]
+      {
+        "title": "Arrive Phuket",
+        "summary": "Straight to Patong for a first sunset on the beach.",
+        "activities": [
+          "Patong check-in",
+          "Sunset stroll on the beach"
+        ],
+        "included": "Airport Transfer + Hotel Check-in",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Patong",
+        "timings": [
+          "01:00 PM - Airport pick-up at Phuket (HKT)",
+          "02:30 PM - Patong hotel check-in",
+          "05:30 PM - Sunset stroll on Patong Beach"
+        ]
+      },
+      {
+        "title": "James Bond Island tour",
+        "summary": "A classic longtail-boat day through Phang Nga Bay.",
+        "activities": [
+          "Phang Nga Bay by longtail boat",
+          "James Bond Island viewpoint"
+        ],
+        "included": "Longtail Boat + Guide",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Patong",
+        "timings": [
+          "07:30 AM - Breakfast at the hotel",
+          "08:30 AM - Depart for Phang Nga Bay",
+          "11:00 AM - Longtail boat through the bay",
+          "01:00 PM - Lunch",
+          "03:00 PM - James Bond Island",
+          "06:00 PM - Return to Patong"
+        ]
+      },
+      {
+        "title": "Free day",
+        "summary": "Nothing booked — Patong's beach and markets at your own pace.",
+        "activities": [
+          "Patong beach at leisure",
+          "Optional night market visit"
+        ],
+        "included": "Free Day",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Patong",
+        "timings": [
+          "09:00 AM - Breakfast at the hotel",
+          "11:00 AM - Free day on Patong Beach",
+          "07:00 PM - Optional night market visit"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer to the airport.",
+        "activities": [
+          "Free morning at leisure",
+          "Transfer to Phuket Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "11:00 AM - Checkout",
+          "12:00 PM - Transfer to Phuket Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Phuket (HKT) / Phuket (HKT)",
+      "Duration": "3N / 4D",
+      "Trip type": "Private departure - short break",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle + longtail boat",
+      "Accommodation": "3 Star+ hotel",
+      "Meals": "(3) Breakfast (1) Lunch",
+      "Places covered": "Patong - Phang Nga Bay",
+      "Visa": "Visa-free for Indian passport holders (up to 60 days)"
+    },
+    "hotels": [
+      "Patong, Phuket - Deevana Patong Resort or similar (3 Star+)"
+    ],
+    "priceVariants": [
+      {
+        "label": "3N / 4D",
+        "note": "Land package only, twin sharing",
+        "price": 28999
+      },
+      {
+        "label": "3N / 4D",
+        "note": "With return flights ex-Delhi",
+        "price": 52999
+      }
     ]
   },
   {
@@ -223,22 +1850,224 @@
     "dest": "thailand",
     "title": "Thailand Grand Circuit",
     "where": "Bangkok · Chiang Mai · Phuket",
-    "days": 9, "nights": 8, "price": 89999,
-    "badge": "Signature", "type": ["culture", "adventure", "beach"],
+    "days": 9,
+    "nights": 8,
+    "price": 89999,
+    "badge": "Signature",
+    "type": [
+      "culture",
+      "adventure",
+      "beach"
+    ],
     "blurb": "Temples in the capital, elephants in the north and the Andaman islands to finish — two domestic flights.",
-    "includes": ["4★ Hotels", "2 Domestic Flights", "Elephant Sanctuary", "Private Guide"],
+    "includes": [
+      "4★ Hotels",
+      "2 Domestic Flights",
+      "Elephant Sanctuary",
+      "Private Guide"
+    ],
     "image": "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=900&q=80",
-    "route": ["Bangkok", "Chiang Mai", "Phuket", "Krabi"],
+    "route": [
+      "Bangkok",
+      "Chiang Mai",
+      "Phuket",
+      "Krabi"
+    ],
     "itinerary": [
-      ["Arrive Bangkok", "Sukhumvit check-in, Chao Phraya dinner cruise."],
-      ["Bangkok city", "Grand Palace, Wat Arun and a floating market."],
-      ["Fly to Chiang Mai", "Old city temples, evening night bazaar."],
-      ["Elephant sanctuary", "Ethical elephant-care visit, Doi Suthep temple."],
-      ["Fly to Phuket", "Patong beach evening."],
-      ["Phang Nga Bay", "James Bond Island canoe tour."],
-      ["Krabi day trip", "Four-island longtail tour."],
-      ["Free beach day", "Optional diving or a spa afternoon."],
-      ["Departure", "Transfer to Phuket airport."]
+      {
+        "title": "Arrive Bangkok",
+        "summary": "A dinner cruise down the Chao Phraya on your first night.",
+        "activities": [
+          "Sukhumvit check-in",
+          "Chao Phraya dinner cruise"
+        ],
+        "included": "Airport Transfer + Dinner Cruise",
+        "type": "Half day",
+        "meals": "Dinner",
+        "stay": "Bangkok",
+        "timings": [
+          "12:00 PM - Airport pick-up at Suvarnabhumi (BKK)",
+          "02:00 PM - Sukhumvit hotel check-in",
+          "06:30 PM - Chao Phraya dinner cruise"
+        ]
+      },
+      {
+        "title": "Bangkok city",
+        "summary": "Grand temples by day, a floating market to close it out.",
+        "activities": [
+          "Grand Palace and Wat Arun",
+          "Damnoen Saduak floating market"
+        ],
+        "included": "City Guide + Entry Tickets",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Bangkok",
+        "timings": [
+          "07:00 AM - Breakfast and depart",
+          "08:30 AM - Damnoen Saduak floating market",
+          "12:30 PM - Lunch",
+          "03:00 PM - Grand Palace and Wat Arun",
+          "07:00 PM - Free evening"
+        ]
+      },
+      {
+        "title": "Fly to Chiang Mai",
+        "summary": "North to the old walled city and its night bazaar.",
+        "activities": [
+          "Flight to Chiang Mai",
+          "Old city temple visits",
+          "Evening night bazaar"
+        ],
+        "included": "Domestic Flight + Guide",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Chiang Mai",
+        "timings": [
+          "08:00 AM - Checkout and airport transfer",
+          "10:30 AM - Flight to Chiang Mai",
+          "01:00 PM - Hotel check-in",
+          "03:30 PM - Old city temple visits",
+          "07:00 PM - Night bazaar"
+        ]
+      },
+      {
+        "title": "Elephant sanctuary",
+        "summary": "An ethical elephant encounter, then a hilltop temple.",
+        "activities": [
+          "Ethical elephant-care visit",
+          "Doi Suthep temple"
+        ],
+        "included": "Sanctuary Entry + Temple Guide",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Chiang Mai",
+        "timings": [
+          "07:30 AM - Breakfast and depart",
+          "09:00 AM - Ethical elephant sanctuary visit",
+          "12:30 PM - Lunch at the sanctuary",
+          "03:30 PM - Doi Suthep temple",
+          "06:30 PM - Return to the hotel"
+        ]
+      },
+      {
+        "title": "Fly to Phuket",
+        "summary": "From the mountains to the Andaman coast.",
+        "activities": [
+          "Flight to Phuket",
+          "Evening at Patong Beach"
+        ],
+        "included": "Domestic Flight",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Phuket",
+        "timings": [
+          "08:00 AM - Checkout and airport transfer",
+          "11:00 AM - Flight to Phuket",
+          "02:30 PM - Hotel check-in",
+          "05:30 PM - Evening at Patong Beach"
+        ]
+      },
+      {
+        "title": "Phang Nga Bay",
+        "summary": "A canoe day through limestone sea caves.",
+        "activities": [
+          "James Bond Island canoe tour",
+          "Sea cave exploration"
+        ],
+        "included": "Canoe Tour + Guide",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Phuket",
+        "timings": [
+          "08:00 AM - Breakfast and depart",
+          "10:30 AM - Sea-canoe through Phang Nga hongs",
+          "01:00 PM - Lunch on board",
+          "03:00 PM - James Bond Island",
+          "06:00 PM - Return to Patong"
+        ]
+      },
+      {
+        "title": "Krabi day trip",
+        "summary": "A four-island longtail day to finish the coast leg.",
+        "activities": [
+          "Four-island longtail tour",
+          "Snorkelling stops"
+        ],
+        "included": "Longtail Boat + Snorkel Gear",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Phuket",
+        "timings": [
+          "07:30 AM - Breakfast and depart for Krabi",
+          "10:00 AM - Four-island longtail tour",
+          "12:30 PM - Lunch on the boat",
+          "02:30 PM - Snorkelling stops",
+          "06:30 PM - Return to Phuket"
+        ]
+      },
+      {
+        "title": "Free beach day",
+        "summary": "One day left open for diving or downtime.",
+        "activities": [
+          "Optional diving trip",
+          "Or a spa afternoon"
+        ],
+        "included": "Free Day (optional activities at extra cost)",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Phuket",
+        "timings": [
+          "09:00 AM - Breakfast at the hotel",
+          "11:00 AM - Free day - optional diving or spa",
+          "06:00 PM - Free evening"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer to the airport.",
+        "activities": [
+          "Free morning at leisure",
+          "Transfer to Phuket Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "11:00 AM - Checkout",
+          "12:00 PM - Transfer to Phuket Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Bangkok (BKK) / Phuket (HKT)",
+      "Duration": "8N / 9D",
+      "Trip type": "Private departure - signature",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Included - 2 sectors",
+      "Internal transportation": "Private AC vehicle + longtail and canoe transfers",
+      "Accommodation": "4 Star hotels",
+      "Meals": "(8) Breakfast (4) Lunch (1) Dinner",
+      "Places covered": "Bangkok - Chiang Mai - Phuket - Krabi",
+      "Visa": "Visa-free for Indian passport holders (up to 60 days)"
+    },
+    "hotels": [
+      "Bangkok - Grande Centre Point Sukhumvit or similar (4 Star)",
+      "Chiang Mai - Le Meridien Chiang Mai or similar (4 Star)",
+      "Phuket - Deevana Plaza Patong or similar (4 Star)"
+    ],
+    "priceVariants": [
+      {
+        "label": "8N / 9D",
+        "note": "Land package + 2 domestic flights",
+        "price": 89999
+      },
+      {
+        "label": "8N / 9D",
+        "note": "With return international flights ex-Delhi",
+        "price": 113999
+      }
     ]
   },
   {
@@ -246,18 +2075,144 @@
     "dest": "malaysia",
     "title": "Kuala Lumpur & Genting Highlands",
     "where": "KL · Genting",
-    "days": 5, "nights": 4, "price": 37999,
-    "badge": "Bestseller", "type": ["culture", "family"],
+    "days": 5,
+    "nights": 4,
+    "price": 37999,
+    "badge": "Bestseller",
+    "type": [
+      "culture",
+      "family"
+    ],
     "blurb": "Petronas skybridge, Batu Caves and a cable car ride into the cloud forest above Kuala Lumpur.",
-    "includes": ["4★ Hotels", "SkyWay Cable Car", "City Tour", "Breakfast"],
+    "includes": [
+      "4★ Hotels",
+      "SkyWay Cable Car",
+      "City Tour",
+      "Breakfast"
+    ],
     "image": "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=900&q=80",
-    "route": ["Kuala Lumpur", "Genting Highlands"],
+    "route": [
+      "Kuala Lumpur",
+      "Genting Highlands"
+    ],
     "itinerary": [
-      ["Arrive Kuala Lumpur", "Bukit Bintang check-in, evening at the KLCC fountain show."],
-      ["KL city tour", "Batu Caves, King’s Palace and the Petronas Towers skybridge."],
-      ["Genting Highlands", "Awana SkyWay cable car and an afternoon at Skytropolis."],
-      ["Free day in KL", "Jalan Alor food street and shopping."],
-      ["Departure", "Transfer to KL airport."]
+      {
+        "title": "Arrive Kuala Lumpur",
+        "summary": "Straight to Bukit Bintang, with the KLCC fountain show after dark.",
+        "activities": [
+          "Bukit Bintang check-in",
+          "KLCC park fountain show"
+        ],
+        "included": "Airport Transfer + Hotel Check-in",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Kuala Lumpur",
+        "timings": [
+          "01:00 PM - Airport pick-up at KLIA (KUL)",
+          "02:30 PM - Bukit Bintang hotel check-in",
+          "07:30 PM - KLCC park fountain show"
+        ]
+      },
+      {
+        "title": "KL city tour",
+        "summary": "Caves, palaces and the city's tallest skybridge in one day.",
+        "activities": [
+          "Batu Caves",
+          "King's Palace and Merdeka Square",
+          "Petronas Towers skybridge"
+        ],
+        "included": "City Guide + Skybridge Tickets",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Kuala Lumpur",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "09:30 AM - Batu Caves",
+          "12:00 PM - King’s Palace and Merdeka Square",
+          "03:30 PM - Petronas Towers skybridge",
+          "07:00 PM - Free evening"
+        ]
+      },
+      {
+        "title": "Genting Highlands",
+        "summary": "A cable car into the cloud forest above the city.",
+        "activities": [
+          "Awana SkyWay cable car",
+          "Afternoon at Skytropolis indoor park"
+        ],
+        "included": "Cable Car + Theme Park Entry",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Kuala Lumpur",
+        "timings": [
+          "08:00 AM - Breakfast and depart for Genting",
+          "10:00 AM - Awana SkyWay cable car",
+          "11:30 AM - Chin Swee Caves Temple",
+          "01:30 PM - Skytropolis indoor theme park",
+          "06:00 PM - Return to Kuala Lumpur"
+        ]
+      },
+      {
+        "title": "Free day in KL",
+        "summary": "A day for the food street and the malls.",
+        "activities": [
+          "Jalan Alor food street",
+          "Shopping at leisure"
+        ],
+        "included": "Free Day",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Kuala Lumpur",
+        "timings": [
+          "09:00 AM - Breakfast at the hotel",
+          "11:00 AM - Free day for shopping",
+          "07:00 PM - Jalan Alor food street"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer to the airport.",
+        "activities": [
+          "Free morning at leisure",
+          "Transfer to KL Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "11:00 AM - Checkout",
+          "12:00 PM - Transfer to KLIA"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Kuala Lumpur (KUL) / Kuala Lumpur (KUL)",
+      "Duration": "4N / 5D",
+      "Trip type": "Private departure - family friendly",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle + Awana SkyWay cable car",
+      "Accommodation": "4 Star hotels",
+      "Meals": "(4) Breakfast",
+      "Places covered": "Kuala Lumpur - Batu Caves - Genting Highlands",
+      "Visa": "Visa-free entry for Indian passport holders (up to 30 days)"
+    },
+    "hotels": [
+      "Kuala Lumpur - Furama Bukit Bintang or similar (4 Star)"
+    ],
+    "priceVariants": [
+      {
+        "label": "4N / 5D",
+        "note": "Land package only, twin sharing",
+        "price": 37999
+      },
+      {
+        "label": "4N / 5D",
+        "note": "With return flights ex-Delhi",
+        "price": 59999
+      }
     ]
   },
   {
@@ -265,17 +2220,127 @@
     "dest": "malaysia",
     "title": "Langkawi Island Retreat",
     "where": "Langkawi",
-    "days": 4, "nights": 3, "price": 33999,
-    "badge": "Short break", "type": ["beach", "honeymoon"],
+    "days": 4,
+    "nights": 3,
+    "price": 33999,
+    "badge": "Short break",
+    "type": [
+      "beach",
+      "honeymoon"
+    ],
     "blurb": "Sky Bridge above the rainforest canopy, island hopping by speedboat and duty-free sunsets at Cenang.",
-    "includes": ["Beach Resort", "SkyCab Tickets", "Island Hopping", "Breakfast"],
+    "includes": [
+      "Beach Resort",
+      "SkyCab Tickets",
+      "Island Hopping",
+      "Breakfast"
+    ],
     "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80",
-    "route": ["Pantai Cenang", "Langkawi Sky Bridge"],
+    "route": [
+      "Pantai Cenang",
+      "Langkawi Sky Bridge"
+    ],
     "itinerary": [
-      ["Arrive Langkawi", "Pantai Cenang beach check-in."],
-      ["Sky Bridge & SkyCab", "Cable car to Gunung Mat Cincang and the curved bridge walk."],
-      ["Island hopping", "Dayang Bunting lake, eagle feeding and a mangrove tour."],
-      ["Departure", "Duty-free shopping before the transfer to Langkawi airport."]
+      {
+        "title": "Arrive Langkawi",
+        "summary": "Straight to the beach at Pantai Cenang.",
+        "activities": [
+          "Pantai Cenang beach check-in"
+        ],
+        "included": "Airport Transfer + Hotel Check-in",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Pantai Cenang",
+        "timings": [
+          "01:00 PM - Airport pick-up at Langkawi (LGK)",
+          "02:00 PM - Beach resort check-in",
+          "05:30 PM - Sunset at Pantai Cenang"
+        ]
+      },
+      {
+        "title": "Sky Bridge & SkyCab",
+        "summary": "A cable car into the rainforest canopy, then the curved bridge itself.",
+        "activities": [
+          "Cable car to Gunung Mat Cincang",
+          "Curved Sky Bridge walk"
+        ],
+        "included": "SkyCab Tickets",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Pantai Cenang",
+        "timings": [
+          "08:30 AM - Breakfast at the resort",
+          "10:00 AM - SkyCab to Gunung Mat Cincang",
+          "11:30 AM - Curved Sky Bridge walk",
+          "02:00 PM - Oriental Village",
+          "05:00 PM - Return to the resort"
+        ]
+      },
+      {
+        "title": "Island hopping",
+        "summary": "A boat day between a freshwater lake and a mangrove forest.",
+        "activities": [
+          "Dayang Bunting Lake",
+          "Eagle feeding show",
+          "Mangrove tour"
+        ],
+        "included": "Boat Tour + Guide",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Pantai Cenang",
+        "timings": [
+          "08:00 AM - Breakfast at the resort",
+          "09:30 AM - Island-hopping speedboat departs",
+          "10:30 AM - Dayang Bunting Lake",
+          "12:00 PM - Eagle feeding show",
+          "02:00 PM - Kilim mangrove tour",
+          "04:30 PM - Return to the resort"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "Duty-free shopping before the flight home.",
+        "activities": [
+          "Duty-free shopping in Kuah town",
+          "Transfer to Langkawi Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at the resort",
+          "10:00 AM - Duty-free shopping in Kuah town",
+          "12:30 PM - Transfer to Langkawi Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Langkawi (LGK) / Langkawi (LGK)",
+      "Duration": "3N / 4D",
+      "Trip type": "Private departure - short break",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle + island speedboat",
+      "Accommodation": "4 Star beach resort",
+      "Meals": "(3) Breakfast",
+      "Places covered": "Pantai Cenang - Langkawi Sky Bridge - Southern islands",
+      "Visa": "Visa-free entry for Indian passport holders (up to 30 days)"
+    },
+    "hotels": [
+      "Pantai Cenang, Langkawi - Meritus Pelangi Beach Resort or similar (4 Star)"
+    ],
+    "priceVariants": [
+      {
+        "label": "3N / 4D",
+        "note": "Land package only, twin sharing",
+        "price": 33999
+      },
+      {
+        "label": "3N / 4D",
+        "note": "With return flights ex-Delhi",
+        "price": 57999
+      }
     ]
   },
   {
@@ -283,20 +2348,181 @@
     "dest": "malaysia",
     "title": "Malaysia Twin City — KL & Langkawi",
     "where": "KL → Langkawi",
-    "days": 7, "nights": 6, "price": 64999,
-    "badge": "Popular", "type": ["family", "beach", "culture"],
+    "days": 7,
+    "nights": 6,
+    "price": 64999,
+    "badge": "Popular",
+    "type": [
+      "family",
+      "beach",
+      "culture"
+    ],
     "blurb": "City energy first, island time second — connected by a 55-minute domestic hop.",
-    "includes": ["4★ Hotels", "Domestic Flight", "2 Tours", "All Transfers"],
+    "includes": [
+      "4★ Hotels",
+      "Domestic Flight",
+      "2 Tours",
+      "All Transfers"
+    ],
     "image": "https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=900&q=80",
-    "route": ["Kuala Lumpur", "Genting Highlands", "Langkawi"],
+    "route": [
+      "Kuala Lumpur",
+      "Genting Highlands",
+      "Langkawi"
+    ],
     "itinerary": [
-      ["Arrive Kuala Lumpur", "Bukit Bintang check-in."],
-      ["KL city tour", "Batu Caves and the Petronas Towers skybridge."],
-      ["Genting Highlands", "Cable car ride and the Chin Swee temple."],
-      ["Fly to Langkawi", "Pantai Cenang beach evening."],
-      ["Sky Bridge & SkyCab", "Rainforest canopy cable car."],
-      ["Island hopping", "Speedboat tour of the southern islands."],
-      ["Departure", "Transfer to Langkawi airport."]
+      {
+        "title": "Arrive Kuala Lumpur",
+        "summary": "Straight to Bukit Bintang to settle in.",
+        "activities": [
+          "Bukit Bintang check-in"
+        ],
+        "included": "Airport Transfer + Hotel Check-in",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Kuala Lumpur",
+        "timings": [
+          "01:00 PM - Airport pick-up at KLIA (KUL)",
+          "02:30 PM - Bukit Bintang hotel check-in",
+          "07:00 PM - Free evening at Bukit Bintang"
+        ]
+      },
+      {
+        "title": "KL city tour",
+        "summary": "Caves and skybridges in one full city day.",
+        "activities": [
+          "Batu Caves",
+          "Petronas Towers skybridge"
+        ],
+        "included": "City Guide + Skybridge Tickets",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Kuala Lumpur",
+        "timings": [
+          "08:00 AM - Breakfast at the hotel",
+          "09:30 AM - Batu Caves",
+          "01:00 PM - Merdeka Square",
+          "03:30 PM - Petronas Towers skybridge",
+          "07:30 PM - KLCC fountain show"
+        ]
+      },
+      {
+        "title": "Genting Highlands",
+        "summary": "A cable car ride and a cliffside temple in the cloud forest.",
+        "activities": [
+          "Cable car ride",
+          "Chin Swee Caves Temple"
+        ],
+        "included": "Cable Car Tickets",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Kuala Lumpur",
+        "timings": [
+          "08:00 AM - Breakfast and depart for Genting",
+          "10:00 AM - Awana SkyWay cable car",
+          "11:30 AM - Chin Swee Caves Temple",
+          "02:00 PM - Free time at the resort world",
+          "06:00 PM - Return to Kuala Lumpur"
+        ]
+      },
+      {
+        "title": "Fly to Langkawi",
+        "summary": "A short domestic hop trades the city for the coast.",
+        "activities": [
+          "Domestic flight to Langkawi",
+          "Evening at Pantai Cenang"
+        ],
+        "included": "Domestic Flight",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Pantai Cenang",
+        "timings": [
+          "09:00 AM - Checkout and airport transfer",
+          "12:00 PM - Flight to Langkawi",
+          "02:00 PM - Beach resort check-in",
+          "05:30 PM - Sunset at Pantai Cenang"
+        ]
+      },
+      {
+        "title": "Sky Bridge & SkyCab",
+        "summary": "The rainforest canopy cable car and Sky Bridge walk.",
+        "activities": [
+          "Rainforest canopy cable car",
+          "Sky Bridge walk"
+        ],
+        "included": "SkyCab Tickets",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Pantai Cenang",
+        "timings": [
+          "08:30 AM - Breakfast at the resort",
+          "10:00 AM - SkyCab to Gunung Mat Cincang",
+          "11:30 AM - Sky Bridge walk",
+          "03:00 PM - Return to the resort"
+        ]
+      },
+      {
+        "title": "Island hopping",
+        "summary": "A speedboat day around Langkawi's southern islands.",
+        "activities": [
+          "Speedboat tour of the southern islands"
+        ],
+        "included": "Boat Tour + Guide",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Pantai Cenang",
+        "timings": [
+          "08:00 AM - Breakfast at the resort",
+          "09:30 AM - Island-hopping speedboat",
+          "12:00 PM - Eagle feeding and mangroves",
+          "04:00 PM - Return to the resort"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer to the airport.",
+        "activities": [
+          "Free morning at leisure",
+          "Transfer to Langkawi Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at the resort",
+          "11:00 AM - Checkout",
+          "12:00 PM - Transfer to Langkawi Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Kuala Lumpur (KUL) / Langkawi (LGK)",
+      "Duration": "6N / 7D",
+      "Trip type": "Private departure",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Included - 1 sector (KUL to LGK)",
+      "Internal transportation": "Private AC vehicle + cable car + island speedboat",
+      "Accommodation": "4 Star hotels and beach resort",
+      "Meals": "(6) Breakfast",
+      "Places covered": "Kuala Lumpur - Genting Highlands - Langkawi",
+      "Visa": "Visa-free entry for Indian passport holders (up to 30 days)"
+    },
+    "hotels": [
+      "Kuala Lumpur - Furama Bukit Bintang or similar (4 Star)",
+      "Pantai Cenang, Langkawi - Meritus Pelangi Beach Resort or similar (4 Star)"
+    ],
+    "priceVariants": [
+      {
+        "label": "6N / 7D",
+        "note": "Land package + 1 domestic flight",
+        "price": 64999
+      },
+      {
+        "label": "6N / 7D",
+        "note": "With return international flights ex-Delhi",
+        "price": 88999
+      }
     ]
   },
   {
@@ -304,21 +2530,199 @@
     "dest": "malaysia",
     "title": "Borneo & Langkawi Luxury",
     "where": "Kota Kinabalu · Langkawi",
-    "days": 8, "nights": 7, "price": 104999,
-    "badge": "Luxury", "type": ["luxury", "nature"],
+    "days": 8,
+    "nights": 7,
+    "price": 104999,
+    "badge": "Luxury",
+    "type": [
+      "luxury",
+      "nature"
+    ],
     "blurb": "Orangutan sanctuary mornings, private-island resorts and a sunset cruise on the South China Sea.",
-    "includes": ["5★ Resorts", "Domestic Flights", "Private Guide", "Half Board"],
+    "includes": [
+      "5★ Resorts",
+      "Domestic Flights",
+      "Private Guide",
+      "Half Board"
+    ],
     "image": "https://images.unsplash.com/photo-1508062878650-88b52897f298?auto=format&fit=crop&w=900&q=80",
-    "route": ["Kota Kinabalu", "Sepilok", "Langkawi"],
+    "route": [
+      "Kota Kinabalu",
+      "Sepilok",
+      "Langkawi"
+    ],
     "itinerary": [
-      ["Arrive Kota Kinabalu", "City check-in, waterfront sunset."],
-      ["Sepilok Orangutan Sanctuary", "Morning feeding session and a rainforest walk."],
-      ["Island resort transfer", "Check-in at a private-island resort."],
-      ["Marine park day", "Snorkelling and beach time."],
-      ["Fly to Langkawi", "Beachfront resort check-in."],
-      ["Sky Bridge & SkyCab", "Rainforest canopy cable car."],
-      ["Sunset cruise", "A sunset sail on the South China Sea."],
-      ["Departure", "Transfer to Langkawi airport."]
+      {
+        "title": "Arrive Kota Kinabalu",
+        "summary": "A first evening on Borneo's waterfront.",
+        "activities": [
+          "City check-in",
+          "Waterfront sunset"
+        ],
+        "included": "Airport Transfer + Hotel Check-in",
+        "type": "Half day",
+        "meals": "Dinner",
+        "stay": "Kota Kinabalu",
+        "timings": [
+          "01:00 PM - Airport pick-up at Kota Kinabalu (BKI)",
+          "02:30 PM - Resort check-in",
+          "05:30 PM - Waterfront sunset",
+          "07:30 PM - Dinner at the resort"
+        ]
+      },
+      {
+        "title": "Sepilok Orangutan Sanctuary",
+        "summary": "A morning face-to-face with Borneo's most famous residents.",
+        "activities": [
+          "Morning feeding session",
+          "Rainforest boardwalk"
+        ],
+        "included": "Sanctuary Entry + Guide",
+        "type": "Full day",
+        "meals": "Breakfast + Dinner",
+        "stay": "Kota Kinabalu",
+        "timings": [
+          "06:30 AM - Early breakfast and transfer",
+          "09:00 AM - Sepilok Orangutan Sanctuary feeding",
+          "11:30 AM - Rainforest boardwalk",
+          "05:00 PM - Return to the resort",
+          "07:30 PM - Dinner at the resort"
+        ]
+      },
+      {
+        "title": "Island resort transfer",
+        "summary": "From the mainland to a private-island stay.",
+        "activities": [
+          "Transfer to a private-island resort"
+        ],
+        "included": "Boat Transfer + Resort Check-in",
+        "type": "Half day",
+        "meals": "Breakfast + Dinner",
+        "stay": "Private island",
+        "timings": [
+          "09:00 AM - Breakfast and checkout",
+          "11:00 AM - Boat transfer to the private island",
+          "01:00 PM - Island resort check-in",
+          "07:30 PM - Dinner at the resort"
+        ]
+      },
+      {
+        "title": "Marine park day",
+        "summary": "A slow day in and around the water.",
+        "activities": [
+          "Snorkelling at the marine park",
+          "Beach time"
+        ],
+        "included": "Snorkel Gear + Park Entry",
+        "type": "Full day",
+        "meals": "Breakfast + Dinner",
+        "stay": "Private island",
+        "timings": [
+          "08:30 AM - Breakfast at the resort",
+          "10:00 AM - Marine park snorkelling",
+          "02:00 PM - Beach time",
+          "07:30 PM - Dinner at the resort"
+        ]
+      },
+      {
+        "title": "Fly to Langkawi",
+        "summary": "From Borneo's coast to Langkawi's beaches.",
+        "activities": [
+          "Domestic flight to Langkawi",
+          "Beachfront resort check-in"
+        ],
+        "included": "Domestic Flight",
+        "type": "Full day",
+        "meals": "Breakfast + Dinner",
+        "stay": "Langkawi",
+        "timings": [
+          "08:00 AM - Breakfast and boat transfer",
+          "11:30 AM - Flight to Langkawi",
+          "03:00 PM - Beachfront resort check-in",
+          "07:30 PM - Dinner at the resort"
+        ]
+      },
+      {
+        "title": "Sky Bridge & SkyCab",
+        "summary": "The rainforest canopy cable car and Sky Bridge walk.",
+        "activities": [
+          "Rainforest canopy cable car",
+          "Sky Bridge walk"
+        ],
+        "included": "SkyCab Tickets",
+        "type": "Full day",
+        "meals": "Breakfast",
+        "stay": "Langkawi",
+        "timings": [
+          "08:30 AM - Breakfast at the resort",
+          "10:00 AM - SkyCab to Gunung Mat Cincang",
+          "11:30 AM - Sky Bridge walk",
+          "03:00 PM - Return to the resort"
+        ]
+      },
+      {
+        "title": "Sunset cruise",
+        "summary": "A private sail to close out the trip.",
+        "activities": [
+          "Sunset sail on the South China Sea"
+        ],
+        "included": "Private Cruise",
+        "type": "Full day",
+        "meals": "Breakfast + Dinner",
+        "stay": "Langkawi",
+        "timings": [
+          "09:00 AM - Breakfast at the resort",
+          "11:00 AM - Free morning",
+          "05:00 PM - Private sunset sail on the South China Sea",
+          "08:00 PM - Dinner at the resort"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the transfer to the airport.",
+        "activities": [
+          "Free morning at leisure",
+          "Transfer to Langkawi Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at the resort",
+          "11:00 AM - Checkout",
+          "12:00 PM - Transfer to Langkawi Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Kota Kinabalu (BKI) / Langkawi (LGK)",
+      "Duration": "7N / 8D",
+      "Trip type": "Private departure - luxury",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Included - 1 sector (BKI to LGK)",
+      "Internal transportation": "Private AC vehicle + island boat transfers",
+      "Accommodation": "5 Star resorts including a private-island stay",
+      "Meals": "(7) Breakfast (5) Dinner - half board",
+      "Places covered": "Kota Kinabalu - Sepilok - Private island - Langkawi",
+      "Visa": "Visa-free entry for Indian passport holders (up to 30 days)"
+    },
+    "hotels": [
+      "Kota Kinabalu - Shangri-La Tanjung Aru or similar (5 Star)",
+      "Private island - Gaya Island Resort or similar (5 Star)",
+      "Langkawi - The Danna Langkawi or similar (5 Star)"
+    ],
+    "priceVariants": [
+      {
+        "label": "7N / 8D",
+        "note": "Land package + 1 domestic flight, half board",
+        "price": 104999
+      },
+      {
+        "label": "7N / 8D",
+        "note": "With return international flights ex-Delhi",
+        "price": 132999
+      }
     ]
   }
 ]

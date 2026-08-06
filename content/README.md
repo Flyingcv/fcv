@@ -77,10 +77,45 @@ Yeh `/services` page ke saare ready-made package cards hain (Vietnam ke
 | `blurb` | Card ka description |
 | `includes` | Chhoti list jo card ke andar dikhti hai (e.g. "4★ Hotels") |
 | `image` | Card photo ka URL |
+| `route` | Trip ke stops ki list, order mein — package page pe route strip banta hai |
+| `quickDetails` | "Quick details" table — arrival/departure, duration, flights, meals, visa waghera. Left side label, right side value. Jitne chaho utne rows add/remove kar sakte ho |
+| `hotels` | Jin hotels mein stay hota hai unki list |
+| `priceVariants` | Alag-alag duration/flight options ke prices. Har ek `{ label, note, price }` — pehla wala highlight hota hai |
+| `itinerary` | Din-ba-din plan (neeche detail mein) |
+
+**`itinerary` ka har din** ek block hota hai:
+
+| Field | Kya hai |
+|---|---|
+| `title` | Us din ka naam (e.g. "Halong Bay cruise") |
+| `summary` | Ek line ka overview |
+| `activities` | Us din ki specific cheezon ki list (bullet points) |
+| `included` | "X + Y + Z" format mein us din kya included hai |
+| `type` | `"Half day"` ya `"Full day"` — badge banta hai |
+| `meals` | e.g. `"Breakfast + Lunch"` ya `"No meals"` |
+| `stay` | Us raat kis city mein stay — last din pe `"-"` |
+| `timings` | Ghante-wise schedule ki list — PDF ke timing sheet mein jaata hai |
+
+**Zaroori:** `itinerary` mein jitne din honge, `days` field mein bhi utna hi
+number hona chahiye. 6 din ka trip = `"days": 6` aur `itinerary` mein 6 blocks.
 
 **Naya package add karna ho to:** list mein ek naya `{ ... }` block copy-paste
 karke uske fields badal do, aur uske pehle wale block ke end mein comma
 lagana mat bhoolna (kyunki ab wo last nahi raha).
+
+### `brochure.json`
+Yeh downloadable PDF ka wo content hai jo **sabhi packages mein same** rehta
+hai — isliye ek hi jagah rakha hai:
+
+| Field | Kya hai |
+|---|---|
+| `addons` | Optional add-ons ki table (Visa, insurance, SIM, flights waghera). Har ek `{ service, description, price }` |
+| `notes` | "Good to know" section — check-in timing, meals, hotel substitution waghera |
+| `paymentMethods` | Kaunse payment modes accept karte ho |
+| `paymentTerms` | Payment/booking ki terms |
+| `whyUs` | "Why travel with us" section — har ek `{ title, copy }` |
+
+Inme se kuch bhi badloge to **har package ka PDF** update ho jayega.
 
 ### `tiers.json`
 Price calculator ki 3 stay-tiers (Budget / Premium / Luxury) ka label,

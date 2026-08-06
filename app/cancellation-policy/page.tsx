@@ -3,12 +3,22 @@ import type { Metadata } from 'next';
 import TLink from '@/components/TLink';
 import SplitText from '@/components/SplitText';
 import Photo from '@/components/Photo';
+import LegalToc from '@/components/LegalToc';
 import { CONTACT, img } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Cancellation & refund policy',
   description: 'Payment terms, cancellation and refund policy for bookings made with Flying Colours Vacations.'
 };
+
+const SECTIONS: [string, string][] = [
+  ['delivery', 'Delivery policy'],
+  ['payment-terms', 'Payment terms'],
+  ['amend-cancel', 'Amending or cancelling'],
+  ['refunds', 'Refunds'],
+  ['changes', 'Changes to this policy'],
+  ['questions', 'Questions']
+];
 
 export default function CancellationPolicyPage() {
   return (
@@ -33,16 +43,17 @@ export default function CancellationPolicyPage() {
       {/* -------------------------------------------------------------- body */}
       <section className="section">
         <div className="wrap">
-          <div className="legal">
+          <div className="legal-layout">
+            <div className="legal">
             <p className="legal__updated">Last updated · 2026</p>
 
-            <h2>Delivery policy</h2>
+            <h2 id="delivery">Delivery policy</h2>
             <p>
               A booking is confirmed as soon as payment is received and, in some cases, once we
               receive confirmation from the respective supplier for the booking made.
             </p>
 
-            <h2>Payment terms</h2>
+            <h2 id="payment-terms">Payment terms</h2>
             <p>
               You will pay the price shown on your Booking Confirmation, which supersedes any
               rate shown elsewhere. Payment can be processed via online/internet banking, wire
@@ -57,7 +68,7 @@ export default function CancellationPolicyPage() {
               <li>Payment-gateway processing charges are borne by you. If a transaction is cancelled after being initiated, processing charges will still apply.</li>
             </ul>
 
-            <h2>Amending or cancelling a booking</h2>
+            <h2 id="amend-cancel">Amending or cancelling a booking</h2>
             <p>
               Your ability to amend or cancel a tour booking is restricted by that booking’s own
               terms and conditions, or by our third-party suppliers’ cancellation policies.
@@ -72,14 +83,14 @@ export default function CancellationPolicyPage() {
               that policy accordingly.
             </p>
 
-            <h2>Refunds</h2>
+            <h2 id="refunds">Refunds</h2>
             <ul>
               <li>Refunds are made only through the original mode of payment.</li>
               <li>Bookings eligible for a refund under the applicable cancellation policy will be refunded within <strong>15 working days</strong> of the cancellation request, after deducting any payment-gateway processing or wire-transfer charges.</li>
               <li>If a paid service is not availed of, partly or fully, no refund will be made under any circumstances.</li>
             </ul>
 
-            <h2>Changes to this policy</h2>
+            <h2 id="changes">Changes to this policy</h2>
             <p>
               We may update this policy from time to time to reflect changes to our practices. If
               we make any material changes, we may notify you by email (sent to the address on
@@ -87,12 +98,15 @@ export default function CancellationPolicyPage() {
               to periodically review this page for the latest information.
             </p>
 
-            <h2>Questions</h2>
+            <h2 id="questions">Questions</h2>
             <p>
               For anything related to a payment, cancellation or refund, write to us at{' '}
               <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> or call{' '}
               <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>.
             </p>
+            </div>
+
+            <LegalToc sections={SECTIONS} />
           </div>
         </div>
       </section>

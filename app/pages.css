@@ -2169,7 +2169,62 @@ input[type="range"]::-moz-range-thumb {
 /* ==========================================================================
    LEGAL PAGES (Privacy Policy, Cancellation & Refund Policy)
    ========================================================================== */
+/* Prose column + a sticky contents rail. Without the rail the 74ch measure
+   left roughly half of a 1280px wrap empty on the right, which read as a
+   broken layout rather than a deliberate one. */
+.legal-layout {
+  display: grid;
+  /* Size the prose column to the reading measure itself rather than 1fr —
+     with 1fr the column stretched to the full wrap while the text stayed
+     capped at 74ch, leaving a large void between the copy and the rail.
+     Sizing to the measure and centring the pair keeps the margins even. */
+  grid-template-columns: minmax(0, 74ch) 260px;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  justify-content: center;
+  align-items: start;
+}
+
 .legal { max-width: 74ch; }
+
+.legal-toc {
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem);
+  padding-left: 1.6rem;
+  border-left: 1.5px solid var(--hair-on-paper);
+}
+
+.legal-toc__title {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 1.1rem;
+}
+
+.legal-toc ul { display: grid; gap: .55rem; }
+
+.legal-toc a {
+  display: block;
+  font-size: var(--t-sm);
+  line-height: 1.45;
+  color: var(--ink-faint);
+  transition: color .25s;
+}
+.legal-toc a:hover { color: var(--navy-800); }
+.legal-toc a.is-active { color: var(--gold-600); font-weight: 600; }
+
+/* Anchor jumps must clear the fixed nav */
+.legal h2 { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
+
+@media (max-width: 900px) {
+  .legal-layout { grid-template-columns: 1fr; }
+  /* The rail is a convenience, not content — on narrow screens it would just
+     push the actual policy text down the page. */
+  .legal-toc { display: none; }
+  .legal { max-width: none; }
+}
 
 .legal__updated {
   font-family: var(--f-mono);

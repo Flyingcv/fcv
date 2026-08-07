@@ -116,7 +116,15 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       let y = 0;
 
       /* ---------------------------------------------------------- helpers */
-      const wrap = (text: string, maxW: number) => doc.splitTextToSize(pdfText(text), maxW);
+      /* splitTextToSize measures with whatever font is *currently* active, so
+         wrapping before setting the draw font silently produces the wrong
+         line count (a 9.5pt paragraph measured at the 15pt heading size wraps
+         far too narrow). Pass `size` whenever the active font isn't already
+         the one the text will be drawn at. */
+      const wrap = (text: string, maxW: number, size?: number) => {
+        if (size !== undefined) doc.setFontSize(size);
+        return doc.splitTextToSize(pdfText(text), maxW);
+      };
 
       const rule = (yy: number, x1 = M, x2 = pageW - M, color = HAIRLINE) => {
         doc.setDrawColor(...color);
@@ -137,23 +145,34 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
         doc.text(pdfText(text).toUpperCase(), x, yy);
       };
 
-      /** Big section heading with a rule under it. Advances y. */
+      /** Starts a new major section. Sections flow down the page rather than
+       *  each forcing doc.addPage() — that was leaving 400-550pt of dead
+       *  space at the foot of any section that didn't fill a full page.
+       *  Adds breathing room above, then breaks only if the heading would
+       *  otherwise orphan near the bottom. */
+      const section = (gapAbove = 18) => {
+        if (y > M) y += gapAbove;
+      };
+
+      /** Big section heading with a rule under it. Advances y.
+       *  Reserves space for the heading plus a first chunk of content so a
+       *  heading is never stranded alone at the bottom of a page. */
       const heading = (text: string, sub?: string) => {
-        room(70);
+        room(95);
         doc.setTextColor(...GOLD);
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(15);
         doc.text(pdfText(text), M, y);
-        y += 10;
-        rule(y + 8);
-        y += 26;
+        y += 8;
+        rule(y + 7);
+        y += 21;
         if (sub) {
           doc.setTextColor(...INK_SOFT);
           doc.setFont('helvetica', 'normal');
           doc.setFontSize(9.5);
           const lines = wrap(sub, CW);
           doc.text(lines, M, y);
-          y += lines.length * 13 + 12;
+          y += lines.length * 13 + 8;
         }
       };
 
@@ -251,7 +270,7 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
 
       const qd = Object.entries(pkg.quickDetails);
       qd.forEach(([k, v], i) => {
-        const lines = wrap(v, CW - 172);
+        const lines = wrap(v, CW - 172, 9.5);
         const rowH = Math.max(22, lines.length * 12 + 12);
         room(rowH + 4);
 
@@ -271,10 +290,10 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
         y += rowH;
       });
 
-      y += 18;
+      section(24);
       heading('Where you stay');
       pkg.hotels.forEach((h) => {
-        const lines = wrap(h, CW - 16);
+        const lines = wrap(h, CW - 16, 9.5);
         room(lines.length * 13 + 8);
         bullet(M + 3, y);
         doc.setTextColor(...INK_SOFT);
@@ -287,11 +306,18 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       doc.setTextColor(...INK_FAINT);
       doc.setFont('helvetica', 'italic');
       doc.setFontSize(8.5);
-      doc.text(wrap('Hotels are the properties we book most often on this route. If one is unavailable for your dates we substitute the same or a higher category and confirm it in writing.', CW), M, y);
+      const hotelNote = wrap(
+        'Hotels are the properties we book most often on this route. If one is unavailable for your dates we substitute the same or a higher category and confirm it in writing.',
+        CW, 8.5
+      );
+      room(hotelNote.length * 11);
+      doc.text(hotelNote, M, y);
+      // Advance past the note — without this the next section drew straight
+      // over it.
+      y += hotelNote.length * 11;
 
       /* ================================================== SKETCH ITINERARY */
-      doc.addPage();
-      y = M;
+      section();
       heading('Itinerary at a glance', 'The whole trip on one page — days, plan, where you sleep and which meals are covered.');
 
       // Table header
@@ -308,9 +334,9 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       y += 20;
 
       pkg.itinerary.forEach((day, i) => {
-        const titleLines = wrap(day.title, 232);
-        const stayLines = wrap(day.stay, 92);
-        const mealLines = wrap(day.meals, CW - (colX[3] - M) - 12);
+        const titleLines = wrap(day.title, 232, 9);
+        const stayLines = wrap(day.stay, 92, 8.5);
+        const mealLines = wrap(day.meals, CW - (colX[3] - M) - 12, 8.5);
         const rowH = Math.max(titleLines.length, stayLines.length, mealLines.length) * 11 + 14;
 
         if (room(rowH)) {
@@ -353,16 +379,15 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       });
 
       /* ================================================ DAYWISE ITINERARY */
-      doc.addPage();
-      y = M;
+      section();
       heading('Day-by-day itinerary');
 
       pkg.itinerary.forEach((day, i) => {
-        const summaryLines = wrap(day.summary, CW - 84);
-        const activityLines = day.activities.map((a) => wrap(a, CW - 102));
-        const inclLines = wrap(`Included: ${day.included}`, CW - 84);
-        const actH = activityLines.reduce((h, l) => h + l.length * 12 + 6, 0);
-        const blockH = 20 + summaryLines.length * 12.5 + 14 + actH + 12 + inclLines.length * 11 + 22;
+        const summaryLines = wrap(day.summary, CW - 84, 9.5);
+        const activityLines = day.activities.map((a) => wrap(a, CW - 102, 9));
+        const inclLines = wrap(`Included: ${day.included}`, CW - 84, 8);
+        const actH = activityLines.reduce((h, l) => h + l.length * 12 + 5, 0);
+        const blockH = 17 + summaryLines.length * 12.5 + 12 + actH + 10 + inclLines.length * 11 + 18;
 
         room(Math.min(blockH, 260));
 
@@ -382,17 +407,17 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
 
         // Half day / meals pills
         let px = M + 84;
-        const py = y + 17;
+        const py = y + 15;
         px += pill(day.type, px, py, [237, 231, 216], INK_SOFT) + 6;
         pill(day.meals, px, py, [237, 231, 216], INK_SOFT);
 
-        let dy = py + 20;
+        let dy = py + 17;
 
         doc.setTextColor(...INK_SOFT);
         doc.setFont('helvetica', 'normal');
         doc.setFontSize(9.5);
         doc.text(summaryLines, M + 84, dy);
-        dy += summaryLines.length * 12.5 + 10;
+        dy += summaryLines.length * 12.5 + 8;
 
         activityLines.forEach((lines) => {
           bullet(M + 88, dy);
@@ -400,52 +425,50 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
           doc.setFont('helvetica', 'normal');
           doc.setFontSize(9);
           doc.text(lines, M + 98, dy);
-          dy += lines.length * 12 + 6;
+          dy += lines.length * 12 + 5;
         });
 
-        dy += 6;
+        dy += 4;
         doc.setTextColor(...GOLD);
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(8);
         doc.text(inclLines, M + 84, dy);
-        dy += inclLines.length * 11 + 16;
+        dy += inclLines.length * 11 + 13;
 
         y = dy;
-        rule(y - 8);
+        rule(y - 7);
       });
 
       /* ====================================================== TIMING SHEET */
-      doc.addPage();
-      y = M;
+      section();
       heading('Timing sheet', 'Indicative timings. The order may shift with weather, traffic and local operating hours — your planner confirms the final plan before departure.');
 
       pkg.itinerary.forEach((day, i) => {
-        const headH = 20;
-        const rowsH = day.timings.reduce((h, t) => h + wrap(t, CW - 30).length * 12 + 4, 0);
-        room(headH + rowsH + 16);
+        const headH = 16;
+        const rowsH = day.timings.reduce((h, t) => h + wrap(t, CW - 30, 9).length * 12 + 3, 0);
+        room(headH + rowsH + 12);
 
         doc.setTextColor(...NAVY);
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(10);
         doc.text(pdfText(`Day ${i + 1} — ${day.title}`), M, y);
-        y += 16;
+        y += 14;
 
         day.timings.forEach((t) => {
-          const lines = wrap(t, CW - 30);
+          const lines = wrap(t, CW - 30, 9);
           room(lines.length * 12 + 6);
           bullet(M + 6, y, GOLD_LIGHT);
           doc.setTextColor(...INK_SOFT);
           doc.setFont('helvetica', 'normal');
           doc.setFontSize(9);
           doc.text(lines, M + 16, y);
-          y += lines.length * 12 + 4;
+          y += lines.length * 12 + 3;
         });
-        y += 14;
+        y += 11;
       });
 
       /* =================================================== INCL / EXCL */
-      doc.addPage();
-      y = M;
+      section();
       heading('Inclusions & exclusions');
 
       const halfW = CW / 2 - 14;
@@ -456,7 +479,7 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(9.5);
       pkg.includes.forEach((item) => {
-        const lines = wrap(item, halfW - 18);
+        const lines = wrap(item, halfW - 18, 9.5);
         drawCheck(M, incY);
         doc.setTextColor(...INK_SOFT);
         doc.text(lines, M + 15, incY);
@@ -466,7 +489,7 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       const dayIncl = Array.from(new Set(pkg.itinerary.flatMap((dd) => dd.included.split(' + ').map((s) => s.trim()))));
       dayIncl.forEach((item) => {
         if (pkg.includes.some((i2) => i2.toLowerCase() === item.toLowerCase())) return;
-        const lines = wrap(item, halfW - 18);
+        const lines = wrap(item, halfW - 18, 9.5);
         drawCheck(M, incY);
         doc.setTextColor(...INK_SOFT);
         doc.text(lines, M + 15, incY);
@@ -477,7 +500,7 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       label('Not included', exX, topY, INK_FAINT);
       let exY = topY + 20;
       PACKAGE_EXCLUDES.forEach((item) => {
-        const lines = wrap(item, halfW - 18);
+        const lines = wrap(item, halfW - 18, 9.5);
         drawCross(exX, exY);
         doc.setTextColor(...INK_FAINT);
         doc.text(lines, exX + 15, exY);
@@ -487,11 +510,11 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       y = Math.max(incY, exY) + 18;
 
       /* ======================================================= HIGHLIGHTS */
-      y += 10;
+      section(24);
       heading(`${d.name} highlights`);
       d.highlights.forEach(([title, copy]) => {
-        const lines = wrap(copy, CW - 16);
-        const h = 14 + lines.length * 12 + 14;
+        const lines = wrap(copy, CW - 16, 9.5);
+        const h = 13 + lines.length * 12 + 11;
         room(h);
         doc.setTextColor(...NAVY);
         doc.setFont('helvetica', 'bold');
@@ -505,12 +528,11 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       });
 
       /* ========================================================== PRICING */
-      doc.addPage();
-      y = M;
+      section();
       heading('What you pay', 'Per person on twin-sharing basis. Applicable GST and TCS are charged as per Indian government regulations.');
 
       pkg.priceVariants.forEach((v, i) => {
-        const noteLines = wrap(v.note, CW - 200);
+        const noteLines = wrap(v.note, CW - 200, 8.5);
         const rowH = Math.max(34, noteLines.length * 12 + 24);
         room(rowH + 4);
 
@@ -536,7 +558,7 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
         y += rowH + 8;
       });
 
-      y += 12;
+      section(24);
       heading('Optional add-ons');
 
       // Add-ons table
@@ -551,7 +573,7 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       y += 20;
 
       BROCHURE.addons.forEach((a, i) => {
-        const descLines = wrap(a.description, 220);
+        const descLines = wrap(a.description, 220, 8.5);
         const rowH = Math.max(22, descLines.length * 12 + 12);
         room(rowH);
         if (i % 2 === 0) {
@@ -574,21 +596,20 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       });
 
       /* ============================================ NOTES + PAYMENT + WHY */
-      doc.addPage();
-      y = M;
+      section();
       heading('Good to know');
       BROCHURE.notes.forEach((n) => {
-        const lines = wrap(n, CW - 18);
+        const lines = wrap(n, CW - 18, 9);
         room(lines.length * 12.5 + 9);
         bullet(M + 4, y);
         doc.setTextColor(...INK_SOFT);
         doc.setFont('helvetica', 'normal');
         doc.setFontSize(9);
         doc.text(lines, M + 15, y);
-        y += lines.length * 12.5 + 9;
+        y += lines.length * 12.5 + 7;
       });
 
-      y += 14;
+      section(24);
       heading('Payment & booking');
       label('We accept', M, y);
       y += 16;
@@ -599,32 +620,42 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       y += 22;
 
       BROCHURE.paymentTerms.forEach((t) => {
-        const lines = wrap(t, CW - 18);
+        const lines = wrap(t, CW - 18, 9);
         room(lines.length * 12.5 + 9);
         bullet(M + 4, y);
         doc.setTextColor(...INK_SOFT);
         doc.setFont('helvetica', 'normal');
         doc.setFontSize(9);
         doc.text(lines, M + 15, y);
-        y += lines.length * 12.5 + 9;
+        y += lines.length * 12.5 + 7;
       });
 
-      y += 14;
+      section(24);
       heading('Why travel with us');
-      BROCHURE.whyUs.forEach((w) => {
-        const lines = wrap(w.copy, CW - 16);
-        const h = 14 + lines.length * 12 + 14;
-        room(h);
-        doc.setTextColor(...NAVY);
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(10.5);
-        doc.text(pdfText(w.title), M, y);
-        doc.setTextColor(...INK_SOFT);
-        doc.setFont('helvetica', 'normal');
-        doc.setFontSize(9.5);
-        doc.text(lines, M, y + 14);
-        y += h;
-      });
+      // Two columns — these blurbs are short, and a single full-width column
+      // ran the section long enough to widow its last items onto a page of
+      // their own.
+      {
+        const colW = CW / 2 - 14;
+        const colX = [M, M + CW / 2 + 14];
+        for (let i = 0; i < BROCHURE.whyUs.length; i += 2) {
+          const pair = BROCHURE.whyUs.slice(i, i + 2);
+          const wrapped = pair.map((w) => wrap(w.copy, colW, 9.5));
+          const rowH = Math.max(...wrapped.map((l) => 13 + l.length * 12 + 12));
+          room(rowH);
+          pair.forEach((w, j) => {
+            doc.setTextColor(...NAVY);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(10.5);
+            doc.text(pdfText(w.title), colX[j], y);
+            doc.setTextColor(...INK_SOFT);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9.5);
+            doc.text(wrapped[j], colX[j], y + 14);
+          });
+          y += rowH;
+        }
+      }
 
       /* ===================================================== BACK / CONTACT */
       doc.addPage();
@@ -664,7 +695,7 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
         ['Desk hours', CONTACT.hours]
       ];
       contactRows.forEach(([k, v]) => {
-        const lines = wrap(v, CW - 150);
+        const lines = wrap(v, CW - 150, 10);
         doc.setTextColor(...GOLD_LIGHT);
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(7.5);

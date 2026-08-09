@@ -1667,11 +1667,6 @@
         "label": "5N / 6D",
         "note": "Land package only, twin sharing",
         "price": 52999
-      },
-      {
-        "label": "5N / 6D",
-        "note": "With return flights ex-Delhi",
-        "price": 76999
       }
     ]
   },
@@ -1792,11 +1787,6 @@
         "label": "3N / 4D",
         "note": "Land package only, twin sharing",
         "price": 28999
-      },
-      {
-        "label": "3N / 4D",
-        "note": "With return flights ex-Delhi",
-        "price": 52999
       }
     ]
   },
@@ -2017,11 +2007,6 @@
         "label": "8N / 9D",
         "note": "Land package + 2 domestic flights",
         "price": 89999
-      },
-      {
-        "label": "8N / 9D",
-        "note": "With return international flights ex-Delhi",
-        "price": 113999
       }
     ]
   },
@@ -2162,11 +2147,6 @@
         "label": "4N / 5D",
         "note": "Land package only, twin sharing",
         "price": 37999
-      },
-      {
-        "label": "4N / 5D",
-        "note": "With return flights ex-Delhi",
-        "price": 59999
       }
     ]
   },
@@ -2290,11 +2270,6 @@
         "label": "3N / 4D",
         "note": "Land package only, twin sharing",
         "price": 33999
-      },
-      {
-        "label": "3N / 4D",
-        "note": "With return flights ex-Delhi",
-        "price": 57999
       }
     ]
   },
@@ -2472,11 +2447,6 @@
         "label": "6N / 7D",
         "note": "Land package + 1 domestic flight",
         "price": 64999
-      },
-      {
-        "label": "6N / 7D",
-        "note": "With return international flights ex-Delhi",
-        "price": 88999
       }
     ]
   },
@@ -2672,11 +2642,6 @@
         "label": "7N / 8D",
         "note": "Land package + 1 domestic flight, half board",
         "price": 104999
-      },
-      {
-        "label": "7N / 8D",
-        "note": "With return international flights ex-Delhi",
-        "price": 132999
       }
     ]
   }

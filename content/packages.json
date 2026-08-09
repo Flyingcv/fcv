@@ -169,11 +169,6 @@
         "price": 62999
       },
       {
-        "label": "5N / 6D",
-        "note": "With return flights ex-Delhi",
-        "price": 86999
-      },
-      {
         "label": "7N / 8D",
         "note": "With Sapa add-on, land package",
         "price": 78999
@@ -305,11 +300,6 @@
         "label": "3N / 4D",
         "note": "Land package only, twin sharing",
         "price": 42999
-      },
-      {
-        "label": "3N / 4D",
-        "note": "With return flights ex-Delhi",
-        "price": 66999
       }
     ]
   },
@@ -559,11 +549,6 @@
         "label": "9N / 10D",
         "note": "Land package + 2 domestic flights",
         "price": 118999
-      },
-      {
-        "label": "9N / 10D",
-        "note": "With return international flights ex-Delhi",
-        "price": 142999
       }
     ]
   },

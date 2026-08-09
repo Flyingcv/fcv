@@ -10,6 +10,11 @@ import {
 interface Props {
   pkg: Package;
   destination: Destination;
+  /** Trip length and traveller count as currently configured on the price
+   *  card — the PDF's pricing mirrors whatever the visitor has selected
+   *  rather than always printing the package's base price. */
+  nights: number;
+  pax: number;
 }
 
 /* jsPDF's built-in fonts only cover WinAnsi (Windows-1252) — ₹, ₫, ฿, ★, →
@@ -99,7 +104,51 @@ async function loadImagePng(src: string): Promise<{ dataUrl: string; ratio: numb
   }
 }
 
-export default function DownloadItineraryButton({ pkg, destination: d }: Props) {
+/** Loads the brand watermark JPEG and keys its flat cream background out to
+ *  transparency, so tiling it across a page reads as a repeating logo mark
+ *  rather than a grid of pale rectangles. Downscaled since it's drawn many
+ *  times per page — full resolution would bloat the PDF for no visible gain
+ *  at watermark size. A soft threshold band (not a hard cutoff) avoids a
+ *  jagged edge from JPEG compression ringing around the artwork. */
+async function loadWatermarkPng(src: string): Promise<{ dataUrl: string; ratio: number } | null> {
+  try {
+    const img = new Image();
+    await new Promise<void>((resolve, reject) => {
+      img.onload = () => resolve();
+      img.onerror = () => reject(new Error('watermark load failed'));
+      img.src = src;
+    });
+
+    const targetW = 480;
+    const targetH = Math.round(targetW * (img.naturalHeight / img.naturalWidth));
+    const canvas = document.createElement('canvas');
+    canvas.width = targetW;
+    canvas.height = targetH;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return null;
+    ctx.drawImage(img, 0, 0, targetW, targetH);
+
+    const imageData = ctx.getImageData(0, 0, targetW, targetH);
+    const { data } = imageData;
+    const bgR = 249, bgG = 246, bgB = 241;
+    const cut = 26, feather = 20;
+    for (let i = 0; i < data.length; i += 4) {
+      const dr = data[i] - bgR;
+      const dg = data[i + 1] - bgG;
+      const db = data[i + 2] - bgB;
+      const dist = Math.sqrt(dr * dr + dg * dg + db * db);
+      if (dist < cut) data[i + 3] = 0;
+      else if (dist < cut + feather) data[i + 3] = Math.round(255 * ((dist - cut) / feather));
+    }
+    ctx.putImageData(imageData, 0, 0);
+
+    return { dataUrl: canvas.toDataURL('image/png'), ratio: targetW / targetH };
+  } catch {
+    return null;
+  }
+}
+
+export default function DownloadItineraryButton({ pkg, destination: d, nights, pax }: Props) {
   const [busy, setBusy] = useState(false);
 
   const handleDownload = async () => {
@@ -115,10 +164,19 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
 
       // Landscape banner (~2.35:1) rather than a full-bleed portrait cover —
       // it's a strip at the top of page 1, not the whole first page.
-      const [banner, logo] = await Promise.all([
+      const [banner, logo, watermark] = await Promise.all([
         loadImageCover(d.hero.replace(/w=\d+/, 'w=1600'), 1600, 680),
-        loadImagePng('/logo-flying-colours-vacations.webp')
+        loadImagePng('/logo-flying-colours-vacations.webp'),
+        loadWatermarkPng('/PDF%20Watermark.jpeg')
       ]);
+
+      // Mirrors the price card's own math exactly, so the PDF a visitor
+      // downloads always matches the nights/travellers they had selected.
+      const selNights = nights;
+      const selDays = selNights + 1;
+      const perNightRate = pkg.price / pkg.nights;
+      const perPersonTotal = Math.round(perNightRate * selNights);
+      const groupTotal = perPersonTotal * pax;
 
       let y = 0;
 
@@ -224,20 +282,21 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
         gd.setGState(gd.GState({ opacity: 1 }));
       };
 
-      /** Faint tiled brand text across the whole page, behind and over the
+      /** Faint tiled brand logo across the whole page, behind and over the
        *  content — makes a screenshot or photocopy traceable back to us
-       *  without hurting legibility of the real text sitting on top. */
+       *  without hurting legibility of the real text sitting on top. Falls
+       *  back silently (draws nothing) if the watermark asset failed to load. */
       const drawWatermark = (onDark: boolean) => {
-        withOpacity(onDark ? 0.07 : 0.05, () => {
-          doc.setTextColor(...(onDark ? [255, 255, 255] as [number, number, number] : NAVY));
-          doc.setFont('helvetica', 'bold');
-          doc.setFontSize(13);
-          const text = 'FLYING COLOURS VACATIONS';
-          const stepX = 230, stepY = 100;
+        if (!watermark) return;
+        withOpacity(onDark ? 0.14 : 0.08, () => {
+          const wmW = 118;
+          const wmH = wmW / watermark.ratio;
+          const stepX = 205, stepY = 150;
           let row = 0;
-          for (let ry = 40; ry < pageH + 60; ry += stepY, row += 1) {
-            for (let rx = -140 + (row % 2 ? stepX / 2 : 0); rx < pageW + 100; rx += stepX) {
-              doc.text(text, rx, ry, { angle: 28 });
+          for (let ry = -40; ry < pageH + stepY; ry += stepY, row += 1) {
+            const offset = row % 2 ? stepX / 2 : 0;
+            for (let rx = -stepX + offset; rx < pageW + stepX; rx += stepX) {
+              doc.addImage(watermark.dataUrl, 'PNG', rx, ry, wmW, wmH);
             }
           }
         });
@@ -304,11 +363,12 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(10);
       doc.setTextColor(...INK_SOFT);
-      doc.text(
-        pdfText(`${pkg.badge}  ·  ${pkg.nights}N / ${pkg.days}D  ·  from ${pdfMoney(pkg.price)} per person`),
-        M, y
+      const coverMeta = wrap(
+        `${pkg.badge}  ·  ${selNights}N / ${selDays}D  ·  ${pax} ${pax === 1 ? 'traveller' : 'travellers'}  ·  ${pdfMoney(perPersonTotal)} per person  ·  ${pdfMoney(groupTotal)} total`,
+        CW, 10
       );
-      y += 26;
+      doc.text(coverMeta, M, y);
+      y += coverMeta.length * 14 + 12;
 
       label('Trip route', M, y);
       y += 15;
@@ -583,32 +643,86 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
         'Per person on twin-sharing basis, land package. Return flights price constantly — add one on request at the fare live on your travel date, or use the estimate in Optional add-ons below.'
       );
 
-      pkg.priceVariants.forEach((v, i) => {
-        const noteLines = wrap(v.note, CW - 200, 8.5);
-        const rowH = Math.max(34, noteLines.length * 12 + 24);
-        room(rowH + 4);
+      // The visitor's live configuration from the price card — kept visually
+      // distinct (navy, "Your selection") from the fixed catalog variants
+      // below it, since the two are different things: this is a what-if
+      // scaled off the base per-night rate, those are specific fixed plans.
+      {
+        const rowH = 56;
+        room(rowH + 10);
 
-        const featured = i === 0;
-        doc.setFillColor(...(featured ? NAVY : BAND));
-        doc.roundedRect(M, y - 12, CW, rowH, 5, 5, 'F');
+        doc.setFillColor(...NAVY);
+        doc.roundedRect(M, y - 12, CW, rowH, 6, 6, 'F');
 
-        doc.setTextColor(...(featured ? GOLD_LIGHT : GOLD));
+        label('Your selection', M + 16, y + 2, GOLD_LIGHT, 8);
+        doc.setTextColor(255, 255, 255);
         doc.setFont('helvetica', 'bold');
-        doc.setFontSize(9);
-        doc.text(pdfText(v.label), M + 14, y + 4);
-
-        doc.setTextColor(...(featured ? [220, 224, 235] as [number, number, number] : INK_SOFT));
+        doc.setFontSize(12);
+        doc.text(
+          pdfText(`${selNights}N / ${selDays}D  ·  ${pax} ${pax === 1 ? 'traveller' : 'travellers'}`),
+          M + 16, y + 21
+        );
         doc.setFont('helvetica', 'normal');
         doc.setFontSize(8.5);
-        doc.text(noteLines, M + 90, y + 4);
+        doc.setTextColor(210, 216, 230);
+        doc.text(pdfText(`${pdfMoney(perPersonTotal)} per person, twin sharing`), M + 16, y + 35);
 
-        doc.setTextColor(...(featured ? [255, 255, 255] as [number, number, number] : NAVY));
+        doc.setTextColor(255, 255, 255);
         doc.setFont('helvetica', 'bold');
-        doc.setFontSize(14);
-        doc.text(pdfMoney(v.price), pageW - M - 14, y + 6, { align: 'right' });
+        doc.setFontSize(18);
+        doc.text(pdfMoney(groupTotal), pageW - M - 16, y + 14, { align: 'right' });
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(7.5);
+        doc.setTextColor(210, 216, 230);
+        doc.text('TOTAL FOR GROUP', pageW - M - 16, y + 27, { align: 'right' });
 
-        y += rowH + 8;
-      });
+        y += rowH + 12;
+
+        if (selNights !== pkg.nights) {
+          doc.setTextColor(...INK_FAINT);
+          doc.setFont('helvetica', 'italic');
+          doc.setFontSize(8.5);
+          const scaledNote = wrap(
+            `Scaled from the base ${pkg.nights}N / ${pkg.days}D itinerary at ${pdfMoney(perNightRate)} per person per night. The day-by-day plan below follows the original ${pkg.nights}N / ${pkg.days}D route — a planner adjusts it for the extra nights before confirming.`,
+            CW, 8.5
+          );
+          room(scaledNote.length * 11);
+          doc.text(scaledNote, M, y);
+          y += scaledNote.length * 11 + 10;
+        }
+      }
+
+      if (pkg.priceVariants.length) {
+        section(10);
+        label('Other package options', M, y);
+        y += 18;
+
+        pkg.priceVariants.forEach((v) => {
+          const noteLines = wrap(v.note, CW - 200, 8.5);
+          const rowH = Math.max(34, noteLines.length * 12 + 24);
+          room(rowH + 4);
+
+          doc.setFillColor(...BAND);
+          doc.roundedRect(M, y - 12, CW, rowH, 5, 5, 'F');
+
+          doc.setTextColor(...GOLD);
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(9);
+          doc.text(pdfText(v.label), M + 14, y + 4);
+
+          doc.setTextColor(...INK_SOFT);
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(8.5);
+          doc.text(noteLines, M + 90, y + 4);
+
+          doc.setTextColor(...NAVY);
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(14);
+          doc.text(pdfMoney(v.price), pageW - M - 14, y + 6, { align: 'right' });
+
+          y += rowH + 8;
+        });
+      }
 
       section(24);
       heading('Optional add-ons');
@@ -778,7 +892,7 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
           doc.setFont('helvetica', 'normal');
           doc.setFontSize(7.5);
           doc.setTextColor(...INK_FAINT);
-          doc.text(pdfText(`${pkg.title}  ·  ${pkg.nights}N / ${pkg.days}D`), M, pageH - 20);
+          doc.text(pdfText(`${pkg.title}  ·  ${selNights}N / ${selDays}D`), M, pageH - 20);
           doc.text(`${p} / ${pageCount}`, pageW - M, pageH - 20, { align: 'right' });
         }
       }

@@ -9,7 +9,7 @@ import PackageCard from '@/components/PackageCard';
 import ItineraryAccordion from '@/components/ItineraryAccordion';
 import PriceCard from '@/components/PriceCard';
 import { ArrowRight, Check, Close } from '@/components/icons';
-import { PACKAGES, DESTINATIONS, ORIGIN, PACKAGE_EXCLUDES, inr } from '@/lib/data';
+import { PACKAGES, DESTINATIONS, ORIGIN, PACKAGE_EXCLUDES, SITE_URL, inr } from '@/lib/data';
 
 type Params = { params: Promise<{ id: string }> };
 
@@ -41,7 +41,8 @@ export default async function PackagePage({ params }: Params) {
   const waMessage = [
     `Hi! I'd like to know more about this package:`, ``,
     `${pkg.title} (${pkg.nights}N / ${pkg.days}D)`,
-    `Price: ${inr(pkg.price)} per person`, ``,
+    `Price: ${inr(pkg.price)} per person`,
+    `${SITE_URL}/packages/${pkg.id}`, ``,
     `Please share availability and next steps.`
   ].join('\n');
   const waLink = `https://wa.me/917017440214?text=${encodeURIComponent(waMessage)}`;

@@ -690,11 +690,6 @@
         "label": "4N / 5D",
         "note": "Land package only, twin sharing",
         "price": 56999
-      },
-      {
-        "label": "4N / 5D",
-        "note": "With return flights ex-Delhi",
-        "price": 84999
       }
     ]
   },
@@ -862,11 +857,6 @@
         "label": "5N / 6D",
         "note": "Land package only, couple",
         "price": 74999
-      },
-      {
-        "label": "5N / 6D",
-        "note": "With return flights ex-Delhi",
-        "price": 102999
       }
     ]
   },
@@ -1052,11 +1042,6 @@
         "label": "6N / 7D",
         "note": "Land package only, twin sharing",
         "price": 84999
-      },
-      {
-        "label": "6N / 7D",
-        "note": "With return flights ex-Delhi",
-        "price": 112999
       }
     ]
   },

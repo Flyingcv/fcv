@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { ArrowRight } from '@/components/icons';
 import {
-  BROCHURE, CONTACT, ORIGIN, PACKAGE_EXCLUDES,
+  BROCHURE, CONTACT, PACKAGE_EXCLUDES,
   type Package, type Destination
 } from '@/lib/data';
 
@@ -32,7 +32,6 @@ const pdfText = (s: string) => s
 const pdfMoney = (n: number) => 'Rs. ' + Math.round(n).toLocaleString('en-IN');
 
 const NAVY: [number, number, number] = [10, 27, 61];
-const NAVY_DEEP: [number, number, number] = [5, 12, 28];
 const GOLD: [number, number, number] = [196, 134, 43];
 const GOLD_LIGHT: [number, number, number] = [227, 166, 60];
 const INK: [number, number, number] = [32, 44, 68];
@@ -41,18 +40,10 @@ const INK_FAINT: [number, number, number] = [140, 148, 165];
 const HAIRLINE: [number, number, number] = [231, 222, 201];
 const BAND: [number, number, number] = [248, 245, 237];
 
-/** Loads an image, crops it (canvas-side) to exactly fill targetW x targetH —
- *  true "cover" fit so photos never look stretched — and paints the darkening
- *  scrim on in the same pass. Doing the gradient here rather than as stacked
- *  jsPDF rects matters: abutting semi-transparent rects leave visible seams
- *  where their edges overlap, a canvas gradient is genuinely smooth.
+/** Loads an image and crops it (canvas-side) to exactly fill targetW x
+ *  targetH — true "cover" fit, so photos never look stretched in the PDF.
  *  Returns null on any failure (CORS, 404, ...) so the PDF still builds. */
-async function loadImageCover(
-  src: string,
-  targetW: number,
-  targetH: number,
-  scrim = false
-): Promise<string | null> {
+async function loadImageCover(src: string, targetW: number, targetH: number): Promise<string | null> {
   try {
     const img = new Image();
     img.crossOrigin = 'anonymous';
@@ -79,18 +70,30 @@ async function loadImageCover(
       sy = (img.naturalHeight - sh) / 2;
     }
     ctx.drawImage(img, sx, sy, sw, sh, 0, 0, targetW, targetH);
-
-    if (scrim) {
-      const g = ctx.createLinearGradient(0, 0, 0, targetH);
-      g.addColorStop(0, 'rgba(5, 12, 28, 0.82)');
-      g.addColorStop(0.34, 'rgba(5, 12, 28, 0.46)');
-      g.addColorStop(0.62, 'rgba(5, 12, 28, 0.62)');
-      g.addColorStop(1, 'rgba(5, 12, 28, 0.93)');
-      ctx.fillStyle = g;
-      ctx.fillRect(0, 0, targetW, targetH);
-    }
-
     return canvas.toDataURL('image/jpeg', 0.85);
+  } catch {
+    return null;
+  }
+}
+
+/** Loads a same-origin image (the logo) at its natural size, preserving
+ *  transparency via PNG — unlike loadImageCover this doesn't crop or
+ *  recompress to JPEG, since a logo needs a clean edge, not a photo fit. */
+async function loadImagePng(src: string): Promise<{ dataUrl: string; ratio: number } | null> {
+  try {
+    const img = new Image();
+    await new Promise<void>((resolve, reject) => {
+      img.onload = () => resolve();
+      img.onerror = () => reject(new Error('logo load failed'));
+      img.src = src;
+    });
+    const canvas = document.createElement('canvas');
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return null;
+    ctx.drawImage(img, 0, 0);
+    return { dataUrl: canvas.toDataURL('image/png'), ratio: img.naturalWidth / img.naturalHeight };
   } catch {
     return null;
   }
@@ -110,8 +113,12 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       const CW = pageW - M * 2;        // content width
       const BOTTOM = pageH - 62;       // where the footer zone starts
 
-      // A4 portrait ratio (1:1.414) so the cover fills the page without distortion
-      const cover = await loadImageCover(d.hero.replace(/w=\d+/, 'w=1600'), 1240, 1754, true);
+      // Landscape banner (~2.35:1) rather than a full-bleed portrait cover —
+      // it's a strip at the top of page 1, not the whole first page.
+      const [banner, logo] = await Promise.all([
+        loadImageCover(d.hero.replace(/w=\d+/, 'w=1600'), 1600, 680),
+        loadImagePng('/logo-flying-colours-vacations.webp')
+      ]);
 
       let y = 0;
 
@@ -170,7 +177,7 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
           doc.setTextColor(...INK_SOFT);
           doc.setFont('helvetica', 'normal');
           doc.setFontSize(9.5);
-          const lines = wrap(sub, CW);
+          const lines = wrap(sub, CW, 9.5);
           doc.text(lines, M, y);
           y += lines.length * 13 + 8;
         }
@@ -207,66 +214,141 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
         return w;
       };
 
-      /* ============================================================ COVER */
-      // The darkening scrim is already baked into the cover bitmap by
-      // loadImageCover(..., scrim: true) — a canvas gradient, so no seams.
-      if (cover) {
-        doc.addImage(cover, 'JPEG', 0, 0, pageW, pageH);
+      /* jsPDF's opacity API isn't in the published .d.ts but is present at
+         runtime (verified against the installed jspdf version). Used for
+         the anti-copy watermark below. */
+      const withOpacity = (op: number, draw: () => void) => {
+        const gd = doc as unknown as { GState(o: { opacity: number }): unknown; setGState(g: unknown): void };
+        gd.setGState(gd.GState({ opacity: op }));
+        draw();
+        gd.setGState(gd.GState({ opacity: 1 }));
+      };
+
+      /** Faint tiled brand text across the whole page, behind and over the
+       *  content — makes a screenshot or photocopy traceable back to us
+       *  without hurting legibility of the real text sitting on top. */
+      const drawWatermark = (onDark: boolean) => {
+        withOpacity(onDark ? 0.07 : 0.05, () => {
+          doc.setTextColor(...(onDark ? [255, 255, 255] as [number, number, number] : NAVY));
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(13);
+          const text = 'FLYING COLOURS VACATIONS';
+          const stepX = 230, stepY = 100;
+          let row = 0;
+          for (let ry = 40; ry < pageH + 60; ry += stepY, row += 1) {
+            for (let rx = -140 + (row % 2 ? stepX / 2 : 0); rx < pageW + 100; rx += stepX) {
+              doc.text(text, rx, ry, { angle: 28 });
+            }
+          }
+        });
+      };
+
+      /** Small logo mark, top-right, on every page. On the navy back cover
+       *  it sits on a white chip — the logo's wordmark is navy-on-transparent
+       *  and would vanish drawn directly onto navy. */
+      const drawCornerLogo = (onDark: boolean) => {
+        if (!logo) return;
+        const w = 68;
+        const h = w / logo.ratio;
+        const x = pageW - M - w;
+        const yTop = 22;
+        if (onDark) {
+          doc.setFillColor(255, 255, 255);
+          doc.roundedRect(x - 8, yTop - 8, w + 16, h + 16, 4, 4, 'F');
+        }
+        doc.addImage(logo.dataUrl, 'PNG', x, yTop, w, h);
+      };
+
+      /* ============================================================ PAGE 1 */
+      y = M;
+      doc.setTextColor(...GOLD);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(9);
+      doc.text('FLYING COLOURS VACATIONS', M, y);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(7.5);
+      doc.setTextColor(...INK_FAINT);
+      doc.text('ADDING COLOURS TO EVERY JOURNEY', M, y + 12);
+      y += 34;
+
+      const bannerH = CW * 0.42;
+      if (banner) {
+        doc.addImage(banner, 'JPEG', M, y, CW, bannerH);
       } else {
-        doc.setFillColor(...NAVY_DEEP);
-        doc.rect(0, 0, pageW, pageH, 'F');
+        doc.setFillColor(...NAVY);
+        doc.rect(M, y, CW, bannerH, 'F');
       }
+      doc.setDrawColor(...HAIRLINE);
+      doc.setLineWidth(1);
+      doc.rect(M, y, CW, bannerH);
+      y += bannerH + 24;
 
-      doc.setTextColor(255, 255, 255);
+      doc.setTextColor(...NAVY);
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(10);
-      doc.text('FLYING COLOURS VACATIONS', M, 52);
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(8.5);
-      doc.setTextColor(...GOLD_LIGHT);
-      doc.text('ADDING COLOURS TO EVERY JOURNEY', M, 68);
-
-      // Destination name, oversized
-      doc.setTextColor(255, 255, 255);
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(46);
-      doc.text(pdfText(d.name).toUpperCase(), M, pageH / 2 - 40);
-
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(13);
-      doc.setTextColor(...GOLD_LIGHT);
-      doc.text(pdfText(d.tagline), M, pageH / 2 - 14);
-
-      // Package title
-      doc.setTextColor(255, 255, 255);
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(17);
-      const coverTitle = wrap(pkg.title, CW - 40);
-      doc.text(coverTitle, M, pageH / 2 + 24);
-
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(10.5);
-      doc.setTextColor(220, 224, 235);
-      doc.text(pdfText(`${pkg.badge}  ·  ${pkg.nights}N / ${pkg.days}D  ·  from ${pdfMoney(pkg.price)} per person`),
-        M, pageH / 2 + 24 + coverTitle.length * 20 + 6);
-
-      // Route strip along the bottom
-      rule(pageH - 120, M, pageW - M, [90, 100, 130]);
-      label('Trip route', M, pageH - 98, GOLD_LIGHT);
-      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(26);
+      doc.text(pdfText(d.name).toUpperCase(), M, y);
+      y += 20;
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(11);
-      const coverRoute = wrap(pkg.route.join('   ->   '), CW);
-      doc.text(coverRoute, M, pageH - 78);
+      doc.setTextColor(...GOLD);
+      doc.text(pdfText(d.tagline), M, y);
+      y += 28;
 
-      doc.setFontSize(8.5);
-      doc.setTextColor(...GOLD_LIGHT);
-      doc.text(pdfText(`${CONTACT.phone}   ·   ${CONTACT.email}`), M, pageH - 42);
+      doc.setTextColor(...NAVY);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(15);
+      const coverTitle = wrap(pkg.title, CW, 15);
+      doc.text(coverTitle, M, y);
+      y += coverTitle.length * 18 + 6;
+
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10);
+      doc.setTextColor(...INK_SOFT);
+      doc.text(
+        pdfText(`${pkg.badge}  ·  ${pkg.nights}N / ${pkg.days}D  ·  from ${pdfMoney(pkg.price)} per person`),
+        M, y
+      );
+      y += 26;
+
+      label('Trip route', M, y);
+      y += 15;
+      doc.setTextColor(...INK);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10.5);
+      const coverRoute = wrap(pkg.route.join('   ->   '), CW, 10.5);
+      doc.text(coverRoute, M, y);
+      y += coverRoute.length * 14 + 22;
+
+      label('About this trip', M, y);
+      y += 15;
+      doc.setTextColor(...INK_SOFT);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10);
+      const blurbLines = wrap(`${pkg.blurb} ${d.blurb}`, CW, 10);
+      doc.text(blurbLines, M, y);
+      y += blurbLines.length * 13.5 + 20;
+
+      label('Good to know', M, y);
+      y += 16;
+      const factEntries = Object.entries(d.facts);
+      const factColW = CW / factEntries.length;
+      factEntries.forEach(([k, v], i) => {
+        const x = M + i * factColW;
+        doc.setTextColor(...INK_FAINT);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7.5);
+        doc.text(pdfText(k).toUpperCase(), x, y);
+        doc.setTextColor(...NAVY);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9.5);
+        const lines = wrap(v, factColW - 10, 9.5);
+        doc.text(lines, x, y + 14);
+      });
+      y += 40;
 
       /* =================================================== QUICK DETAILS */
-      doc.addPage();
-      y = M;
-      heading('Quick details', `Everything at a glance before you read the day-by-day plan.`);
+      section();
+      heading('Quick details', 'Everything at a glance before you read the day-by-day plan.');
 
       const qd = Object.entries(pkg.quickDetails);
       qd.forEach(([k, v], i) => {
@@ -312,15 +394,12 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       );
       room(hotelNote.length * 11);
       doc.text(hotelNote, M, y);
-      // Advance past the note — without this the next section drew straight
-      // over it.
       y += hotelNote.length * 11;
 
       /* ================================================== SKETCH ITINERARY */
       section();
       heading('Itinerary at a glance', 'The whole trip on one page — days, plan, where you sleep and which meals are covered.');
 
-      // Table header
       const colX = [M + 8, M + 58, M + 300, M + 400];
       doc.setFillColor(...NAVY);
       doc.rect(M, y - 12, CW, 22, 'F');
@@ -340,7 +419,6 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
         const rowH = Math.max(titleLines.length, stayLines.length, mealLines.length) * 11 + 14;
 
         if (room(rowH)) {
-          // repeat the header on a fresh page
           doc.setFillColor(...NAVY);
           doc.rect(M, y - 12, CW, 22, 'F');
           doc.setTextColor(255, 255, 255);
@@ -391,7 +469,6 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
 
         room(Math.min(blockH, 260));
 
-        // Day chip
         doc.setFillColor(...GOLD);
         doc.roundedRect(M, y - 11, 64, 17, 3, 3, 'F');
         doc.setTextColor(255, 255, 255);
@@ -399,13 +476,11 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
         doc.setFontSize(7.5);
         doc.text(`DAY ${String(i + 1).padStart(2, '0')}`, M + 32, y, { align: 'center' });
 
-        // Title
         doc.setTextColor(...NAVY);
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(12);
         doc.text(pdfText(day.title), M + 84, y);
 
-        // Half day / meals pills
         let px = M + 84;
         const py = y + 15;
         px += pill(day.type, px, py, [237, 231, 216], INK_SOFT) + 6;
@@ -439,34 +514,6 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
         rule(y - 7);
       });
 
-      /* ====================================================== TIMING SHEET */
-      section();
-      heading('Timing sheet', 'Indicative timings. The order may shift with weather, traffic and local operating hours — your planner confirms the final plan before departure.');
-
-      pkg.itinerary.forEach((day, i) => {
-        const headH = 16;
-        const rowsH = day.timings.reduce((h, t) => h + wrap(t, CW - 30, 9).length * 12 + 3, 0);
-        room(headH + rowsH + 12);
-
-        doc.setTextColor(...NAVY);
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(10);
-        doc.text(pdfText(`Day ${i + 1} — ${day.title}`), M, y);
-        y += 14;
-
-        day.timings.forEach((t) => {
-          const lines = wrap(t, CW - 30, 9);
-          room(lines.length * 12 + 6);
-          bullet(M + 6, y, GOLD_LIGHT);
-          doc.setTextColor(...INK_SOFT);
-          doc.setFont('helvetica', 'normal');
-          doc.setFontSize(9);
-          doc.text(lines, M + 16, y);
-          y += lines.length * 12 + 3;
-        });
-        y += 11;
-      });
-
       /* =================================================== INCL / EXCL */
       section();
       heading('Inclusions & exclusions');
@@ -474,6 +521,9 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       const halfW = CW / 2 - 14;
       const topY = y;
 
+      // Dynamic — sourced from pkg.includes plus every unique "Included: X"
+      // line across the day-by-day plan, so editing content/packages.json
+      // is the only thing that ever needs to change this list.
       label('Included', M, y, GOLD);
       let incY = y + 20;
       doc.setFont('helvetica', 'normal');
@@ -485,7 +535,6 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
         doc.text(lines, M + 15, incY);
         incY += lines.length * 12.5 + 7;
       });
-      // Also fold the per-day inclusions in, deduplicated
       const dayIncl = Array.from(new Set(pkg.itinerary.flatMap((dd) => dd.included.split(' + ').map((s) => s.trim()))));
       dayIncl.forEach((item) => {
         if (pkg.includes.some((i2) => i2.toLowerCase() === item.toLowerCase())) return;
@@ -529,7 +578,10 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
 
       /* ========================================================== PRICING */
       section();
-      heading('What you pay', 'Per person on twin-sharing basis. Applicable GST and TCS are charged as per Indian government regulations.');
+      heading(
+        'What you pay',
+        'Per person on twin-sharing basis, land package. Return flights price constantly — add one on request at the fare live on your travel date, or use the estimate in Optional add-ons below.'
+      );
 
       pkg.priceVariants.forEach((v, i) => {
         const noteLines = wrap(v.note, CW - 200, 8.5);
@@ -561,7 +613,6 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       section(24);
       heading('Optional add-ons');
 
-      // Add-ons table
       doc.setFillColor(...NAVY);
       doc.rect(M, y - 12, CW, 22, 'F');
       doc.setTextColor(255, 255, 255);
@@ -637,7 +688,7 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       // their own.
       {
         const colW = CW / 2 - 14;
-        const colX = [M, M + CW / 2 + 14];
+        const colX2 = [M, M + CW / 2 + 14];
         for (let i = 0; i < BROCHURE.whyUs.length; i += 2) {
           const pair = BROCHURE.whyUs.slice(i, i + 2);
           const wrapped = pair.map((w) => wrap(w.copy, colW, 9.5));
@@ -647,11 +698,11 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
             doc.setTextColor(...NAVY);
             doc.setFont('helvetica', 'bold');
             doc.setFontSize(10.5);
-            doc.text(pdfText(w.title), colX[j], y);
+            doc.text(pdfText(w.title), colX2[j], y);
             doc.setTextColor(...INK_SOFT);
             doc.setFont('helvetica', 'normal');
             doc.setFontSize(9.5);
-            doc.text(wrapped[j], colX[j], y + 14);
+            doc.text(wrapped[j], colX2[j], y + 14);
           });
           y += rowH;
         }
@@ -680,9 +731,8 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(11);
       doc.setTextColor(220, 224, 235);
-      doc.text(wrap('Send us your dates and we will turn this into a confirmed, priced itinerary — usually the same day.', CW - 120), M, pageH / 2 + 6);
+      doc.text(wrap('Send us your dates and we will turn this into a confirmed, priced itinerary — usually the same day.', CW - 120, 11), M, pageH / 2 + 6);
 
-      // Contact block
       let cy = pageH / 2 + 90;
       doc.setDrawColor(90, 100, 130);
       doc.setLineWidth(0.75);
@@ -712,18 +762,25 @@ export default function DownloadItineraryButton({ pkg, destination: d }: Props) 
       doc.setFontSize(9);
       doc.text('flyingcoloursvacations.com', M, pageH - 56);
 
-      /* ------------------------------------------------------------ footer */
+      /* ------------------------------------------------------------- footer */
       const pageCount = doc.getNumberOfPages();
-      for (let p = 2; p < pageCount; p++) {   // skip cover and back cover
+      for (let p = 1; p <= pageCount; p += 1) {
         doc.setPage(p);
-        doc.setDrawColor(...HAIRLINE);
-        doc.setLineWidth(0.5);
-        doc.line(M, pageH - 34, pageW - M, pageH - 34);
-        doc.setFont('helvetica', 'normal');
-        doc.setFontSize(7.5);
-        doc.setTextColor(...INK_FAINT);
-        doc.text(pdfText(`${pkg.title}  ·  ${pkg.nights}N / ${pkg.days}D`), M, pageH - 20);
-        doc.text(`${p} / ${pageCount}`, pageW - M, pageH - 20, { align: 'right' });
+        const isBackCover = p === pageCount;
+
+        drawWatermark(isBackCover);
+        drawCornerLogo(isBackCover);
+
+        if (!isBackCover) {
+          doc.setDrawColor(...HAIRLINE);
+          doc.setLineWidth(0.5);
+          doc.line(M, pageH - 34, pageW - M, pageH - 34);
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(7.5);
+          doc.setTextColor(...INK_FAINT);
+          doc.text(pdfText(`${pkg.title}  ·  ${pkg.nights}N / ${pkg.days}D`), M, pageH - 20);
+          doc.text(`${p} / ${pageCount}`, pageW - M, pageH - 20, { align: 'right' });
+        }
       }
 
       doc.save(`${pkg.id}-itinerary.pdf`);

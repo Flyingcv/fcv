@@ -275,64 +275,6 @@ h1, h2, h3, h4 {
   transform: scaleX(0);
 }
 
-.pre__content {
-  position: relative;
-  z-index: 4;
-  display: grid;
-  justify-items: center;
-  gap: 1.4rem;
-  text-align: center;
-  padding-inline: 1.5rem;
-}
-.pre__logo {
-  width: min(340px, 68vw);
-  opacity: .96;
-}
-.pre__meta {
-  display: flex;
-  gap: clamp(1.2rem, 4vw, 3rem);
-  font-family: var(--f-mono);
-  font-size: var(--t-xs);
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--faint-on-navy);
-}
-.pre__meta b { display: block; color: var(--gold-400); font-weight: 500; margin-top: .3rem; }
-
-.pre__count {
-  font-family: var(--f-mono);
-  font-size: clamp(2.6rem, 9vw, 5.5rem);
-  color: var(--paper-100);
-  font-weight: 300;
-  letter-spacing: -.04em;
-  line-height: 1;
-}
-.pre__count sup { font-size: .3em; vertical-align: super; color: var(--gold-500); }
-
-.pre__bar {
-  width: min(420px, 74vw);
-  height: 2px;
-  background: rgba(251,248,241,.16);
-  overflow: hidden;
-}
-.pre__bar span {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background: var(--gold-500);
-  transform: scaleX(0);
-  transform-origin: left;
-}
-
-.pre__tagline {
-  font-family: var(--f-mono);
-  font-size: var(--t-xs);
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--faint-on-navy);
-  max-width: 34ch;
-}
-
 /* The plane that streaks across at the tear */
 .pre__plane {
   position: absolute;

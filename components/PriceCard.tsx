@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { ArrowRight } from '@/components/icons';
 import DownloadItineraryButton from '@/components/DownloadItineraryButton';
-import { ORIGIN, inr, type Package, type Destination } from '@/lib/data';
+import { ORIGIN, SITE_URL, inr, type Package, type Destination } from '@/lib/data';
 
 interface Props {
   pkg: Package;
@@ -24,10 +24,12 @@ export default function PriceCard({ pkg, destination: d }: Props) {
   const perNightRate = pkg.price / pkg.nights;
   const total = Math.round(perNightRate * nights);
 
+  const pageUrl = typeof window !== 'undefined' ? window.location.href : `${SITE_URL}/packages/${pkg.id}`;
   const waMessage = [
     `Hi! I'd like to know more about this package:`, ``,
     `${pkg.title} (${nights}N / ${days}D)`,
-    `Estimated price: ${inr(total)} per person`, ``,
+    `Estimated price: ${inr(total)} per person`,
+    pageUrl, ``,
     `Please share availability and next steps.`
   ].join('\n');
   const waLink = `https://wa.me/917017440214?text=${encodeURIComponent(waMessage)}`;

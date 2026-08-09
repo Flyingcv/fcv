@@ -930,6 +930,28 @@
 .price-card__stepper .stepper button { width: 30px; height: 30px; font-size: .95rem; }
 .price-card__stepper .stepper output { font-size: 1.05rem; }
 
+.price-card__total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem 1rem;
+  border-radius: var(--r-sm);
+  background: var(--paper-200);
+}
+.price-card__total span {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.price-card__total b {
+  font-family: var(--f-display);
+  font-size: var(--t-lg);
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
 .price-card__facts {
   display: grid;
   gap: .6rem;

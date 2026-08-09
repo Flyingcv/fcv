@@ -17,6 +17,11 @@ import reviewsJson from '@/content/reviews.json';
 import contactJson from '@/content/contact.json';
 import brochureJson from '@/content/brochure.json';
 
+/** Canonical production domain — matches metadataBase in app/layout.tsx.
+ *  Used to build absolute links (e.g. inside WhatsApp enquiry messages)
+ *  from server components, which have no window.location to fall back on. */
+export const SITE_URL = 'https://flyingcoloursvacations.com';
+
 /** Unsplash helper — swap for your own photography/CDN later.
  *  If a URL fails, <Photo> degrades the frame to a branded gradient. */
 export const img = (id: string, w = 1400) =>

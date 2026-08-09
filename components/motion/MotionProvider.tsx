@@ -33,8 +33,6 @@ interface MotionCtx {
 const Ctx = createContext<MotionCtx>({ navigate: () => {}, revealed: true, lenis: null });
 export const useMotion = () => useContext(Ctx);
 
-const SEEN_KEY = 'fcv-intro-seen';
-
 export default function MotionProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
@@ -47,11 +45,8 @@ export default function MotionProvider({ children }: { children: React.ReactNode
   const planeRef = useRef<SVGSVGElement>(null);
   const trailRef = useRef<HTMLSpanElement>(null);
   const perfRef = useRef<HTMLSpanElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const barRef = useRef<HTMLSpanElement>(null);
-  const countRef = useRef<HTMLElement>(null);
 
-  const covering = useRef(true);   // does the curtain currently hide the page?
+  const covering = useRef(false);   // does the curtain currently hide the page?
   const prevPath = useRef(pathname);
 
   /* ---------------------------------------------------------------- scroll */
@@ -77,7 +72,6 @@ export default function MotionProvider({ children }: { children: React.ReactNode
       lerp: 0.085
     });
     lenisRef.current = lenis;
-    lenis.stop(); // the curtain is up — hold the page still
 
     const onScroll = () => ScrollTrigger.update();
     lenis.on('scroll', onScroll);
@@ -111,7 +105,10 @@ export default function MotionProvider({ children }: { children: React.ReactNode
   }, []);
 
   /* --------------------------------------------------------------- curtain */
-  const openCurtain = useCallback((full: boolean) => {
+  /* Route-to-route transition only — the boarding-pass "tear" wipe. The
+     old first-load intro (a full-screen 0-100% loading counter) has been
+     removed; the site now renders straight away on first visit. */
+  const openCurtain = useCallback(() => {
     const root = rootRef.current;
     const top = topRef.current;
     const bot = botRef.current;
@@ -120,9 +117,6 @@ export default function MotionProvider({ children }: { children: React.ReactNode
 
     const trail = trailRef.current;
     const perf = perfRef.current;
-    const content = contentRef.current;
-    const bar = barRef.current;
-    const count = countRef.current;
 
     gsap.set(root, { autoAlpha: 1, pointerEvents: 'auto' });
     // The icon is drawn nose-up; rotate it so the plane flies along the tear
@@ -138,33 +132,14 @@ export default function MotionProvider({ children }: { children: React.ReactNode
       }
     });
 
-    if (full) {
-      const counter = { v: 0 };
-      tl.set([top, bot], { clipPath: 'inset(0 0 0 0%)' })
-        .from(content!.children, { y: 22, autoAlpha: 0, duration: 0.65, stagger: 0.07, ease: 'power3.out' })
-        .to(bar, { scaleX: 1, duration: 1.25, ease: 'power2.inOut' }, 0.2)
-        .to(counter, {
-          v: 100,
-          duration: 1.25,
-          ease: 'power2.inOut',
-          onUpdate: () => {
-            if (count) count.textContent = String(Math.round(counter.v)).padStart(3, '0');
-          }
-        }, 0.25)
-        // Score the perforation across the pass
-        .to(perf, { scaleX: 1, duration: 0.7, ease: 'power2.inOut' }, '-=0.4')
-        .to(content, { y: -18, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }, '-=0.2');
-    } else {
-      tl.set(content, { autoAlpha: 0 })
-        .set([bar, perf], { scaleX: 1 })
-        .set([top, bot], { clipPath: 'inset(0 0 0 0%)' });
-    }
+    tl.set([top, bot], { clipPath: 'inset(0 0 0 0%)' })
+      .set(perf, { scaleX: 1 });
 
     // The plane flies the length of the tear; a clip-path wipe unzips the
     // pass open behind it, left edge to right, in the same beat as the plane.
     const unzip = { p: 0 };
     const flightDuration = 1;
-    tl.to(trail, { scaleX: 1, duration: 0.8, ease: 'power2.in' }, full ? '-=0.1' : 0)
+    tl.to(trail, { scaleX: 1, duration: 0.8, ease: 'power2.in' }, 0)
       .to(plane, { x: flyOut, duration: flightDuration, ease: 'power1.in' }, '<')
       .to(unzip, {
         p: 100,
@@ -184,7 +159,6 @@ export default function MotionProvider({ children }: { children: React.ReactNode
     if (!root || !top || !bot || !plane) { done(); return; }
 
     gsap.set(root, { autoAlpha: 1, pointerEvents: 'auto' });
-    gsap.set(contentRef.current, { autoAlpha: 0 });
     gsap.set(trailRef.current, { autoAlpha: 1, scaleX: 0 });
     // Start fully "unzipped" (open) so the close is the same wipe in reverse
     gsap.set([top, bot], { clipPath: 'inset(0 100% 0 0)' });
@@ -203,27 +177,16 @@ export default function MotionProvider({ children }: { children: React.ReactNode
   }, []);
 
   /* ------------------------------------------------------ intro, once only */
+  /* The site used to open behind a full-screen curtain with a 0-100% loading
+     counter on first visit. Dropped per request — the page now renders
+     straight away; the curtain DOM stays mounted only for route transitions. */
   useIsoLayoutEffect(() => {
     if (introPlayed) return;
     introPlayed = true;
-
-    if (prefersReducedMotion()) {
-      gsap.set(rootRef.current, { autoAlpha: 0, pointerEvents: 'none' });
-      covering.current = false;
-      setRevealed(true);
-      return;
-    }
-
-    // Full sequence on the first visit of a session; a quick tear after that
-    let short = false;
-    try {
-      short = sessionStorage.getItem(SEEN_KEY) === '1';
-      sessionStorage.setItem(SEEN_KEY, '1');
-    } catch { /* private mode — just play the full intro */ }
-
-    lock();
-    openCurtain(!short);
-  }, [lock, openCurtain]);
+    gsap.set(rootRef.current, { autoAlpha: 0, pointerEvents: 'none' });
+    covering.current = false;
+    setRevealed(true);
+  }, []);
 
   /* ------------------------------------------------- open on route arrival */
   useEffect(() => {
@@ -234,7 +197,7 @@ export default function MotionProvider({ children }: { children: React.ReactNode
     lenisRef.current?.scrollTo(0, { immediate: true });
     ScrollTrigger.refresh();
 
-    if (covering.current) openCurtain(false);
+    if (covering.current) openCurtain();
     else setRevealed(true);
   }, [pathname, openCurtain]);
 
@@ -275,28 +238,6 @@ export default function MotionProvider({ children }: { children: React.ReactNode
         </div>
         <span className="pre__contrail" ref={trailRef} />
         <Plane className="pre__plane" ref={planeRef} />
-
-        <div className="pre__content" ref={contentRef}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="pre__logo" src="/logo-flying-colours-vacations.webp" alt="Flying Colours Vacations" />
-
-          <div className="pre__meta">
-            <span>From<b>DEL</b></span>
-            <span>To<b>Southeast Asia</b></span>
-            <span>Class<b>Window Seat</b></span>
-          </div>
-
-          {/* Left empty on purpose: the intro timeline owns this text node,
-              so React must not be holding a child of its own here. */}
-          <div className="pre__count">
-            <b ref={countRef} />
-            <sup>%</sup>
-          </div>
-
-          <div className="pre__bar"><span ref={barRef} /></div>
-
-          <p className="pre__tagline">Preparing for departure — adding colours to your journey</p>
-        </div>
       </div>
 
       {children}

@@ -9,11 +9,14 @@ import PackageCard from '@/components/PackageCard';
 import ItineraryAccordion from '@/components/ItineraryAccordion';
 import PriceCard from '@/components/PriceCard';
 import { ArrowRight, Check, Close } from '@/components/icons';
-import { PACKAGES, DESTINATIONS, ORIGIN, PACKAGE_EXCLUDES, SITE_URL, inr } from '@/lib/data';
+import { PACKAGES, DESTINATIONS, ORIGIN, PACKAGE_EXCLUDES, PACKAGE_PAGE, SITE, SITE_URL, inr } from '@/lib/data';
+import { parseInlineHtml } from '@/lib/richtext';
 
 type Params = { params: Promise<{ id: string }> };
 
 const GLIMPSES = Array.from({ length: 17 }, (_, i) => `/trip-glimpses/glimpse-${String(i + 1).padStart(2, '0')}.jpg`);
+const fill = (template: string, values: Record<string, string>) =>
+  Object.entries(values).reduce((s, [k, v]) => s.replaceAll(`{${k}}`, v), template);
 
 export function generateStaticParams() {
   return PACKAGES.map((p) => ({ id: p.id }));
@@ -37,13 +40,14 @@ export default async function PackagePage({ params }: Params) {
 
   const d = DESTINATIONS[pkg.dest];
   const more = PACKAGES.filter((p) => p.dest === pkg.dest && p.id !== pkg.id).slice(0, 3);
+  const P = PACKAGE_PAGE;
 
   const waMessage = [
-    `Hi! I'd like to know more about this package:`, ``,
+    `${P.waMessage.intro}`, ``,
     `${pkg.title} (${pkg.nights}N / ${pkg.days}D)`,
-    `Price: ${inr(pkg.price)} per person`,
+    `${P.waMessage.priceLine} ${inr(pkg.price)} ${P.waMessage.perPerson}`,
     `${SITE_URL}/packages/${pkg.id}`, ``,
-    `Please share availability and next steps.`
+    P.waMessage.closing
   ].join('\n');
   const waLink = `https://wa.me/917017440214?text=${encodeURIComponent(waMessage)}`;
 
@@ -79,7 +83,7 @@ export default async function PackagePage({ params }: Params) {
       {/* --------------------------------------------------------- trip route */}
       <section className="section" style={{ paddingBottom: 0 }}>
         <div className="wrap">
-          <span className="tag rise">Trip route</span>
+          <span className="tag rise">{P.tripRouteTag}</span>
           <div className="route-strip mt-1" data-stagger="0.04">
             {pkg.route.map((stop, i) => (
               <span className="route-strip__stop rise" key={stop}>
@@ -101,8 +105,8 @@ export default async function PackagePage({ params }: Params) {
               <div>
                 <div className="section-head">
                   <div className="section-head__text">
-                    <span className="tag">Quick details</span>
-                    <SplitText as="h2">The trip,<br />at a glance.</SplitText>
+                    <span className="tag">{P.quickDetails.tag}</span>
+                    <SplitText as="h2">{parseInlineHtml(P.quickDetails.headingHtml)}</SplitText>
                   </div>
                 </div>
                 <dl className="qd-table">
@@ -119,11 +123,11 @@ export default async function PackagePage({ params }: Params) {
               <div>
                 <div className="section-head">
                   <div className="section-head__text">
-                    <span className="tag">Day by day · {pkg.days} days</span>
-                    <SplitText as="h2">The full<br />itinerary.</SplitText>
+                    <span className="tag">{fill(P.itinerary.tagTemplate, { days: String(pkg.days) })}</span>
+                    <SplitText as="h2">{parseInlineHtml(P.itinerary.headingHtml)}</SplitText>
                   </div>
                   <p className="lede" style={{ maxWidth: '34ch' }}>
-                    A starting point, not a fixed menu — tap a day to open it.
+                    {P.itinerary.lede}
                   </p>
                 </div>
                 <ItineraryAccordion days={pkg.itinerary} />
@@ -133,16 +137,15 @@ export default async function PackagePage({ params }: Params) {
               <div>
                 <div className="section-head">
                   <div className="section-head__text">
-                    <span className="tag">Where you stay</span>
-                    <SplitText as="h2">Hotels on<br />this route.</SplitText>
+                    <span className="tag">{P.hotels.tag}</span>
+                    <SplitText as="h2">{parseInlineHtml(P.hotels.headingHtml)}</SplitText>
                   </div>
                 </div>
                 <ul className="inex-list inex-list--yes">
                   {pkg.hotels.map((h) => <li key={h}><Check /> {h}</li>)}
                 </ul>
                 <p className="form__note mt-2">
-                  If a hotel is unavailable for your dates we substitute the same or a
-                  higher category and confirm it with you in writing.
+                  {P.hotels.disclaimer}
                 </p>
               </div>
 
@@ -150,13 +153,13 @@ export default async function PackagePage({ params }: Params) {
               <div>
                 <div className="section-head">
                   <div className="section-head__text">
-                    <span className="tag">Package breakdown</span>
-                    <SplitText as="h2">What’s included<br />&amp; what’s not.</SplitText>
+                    <span className="tag">{P.breakdown.tag}</span>
+                    <SplitText as="h2">{parseInlineHtml(P.breakdown.headingHtml)}</SplitText>
                   </div>
                 </div>
                 <div className="inex-grid">
                   <div>
-                    <h3><Check style={{ width: 16, height: 16, color: 'var(--gold-600)' }} /> Included</h3>
+                    <h3><Check style={{ width: 16, height: 16, color: 'var(--gold-600)' }} /> {P.breakdown.includedLabel}</h3>
                     <ul className="inex-list inex-list--yes">
                       {pkg.includes.map((inc) => (
                         <li key={inc}><Check /> {inc}</li>
@@ -164,7 +167,7 @@ export default async function PackagePage({ params }: Params) {
                     </ul>
                   </div>
                   <div>
-                    <h3><Close style={{ width: 16, height: 16, color: 'var(--ink-faint)' }} /> Not included</h3>
+                    <h3><Close style={{ width: 16, height: 16, color: 'var(--ink-faint)' }} /> {P.breakdown.notIncludedLabel}</h3>
                     <ul className="inex-list inex-list--no">
                       {PACKAGE_EXCLUDES.map((ex) => (
                         <li key={ex}><Close /> {ex}</li>
@@ -178,8 +181,8 @@ export default async function PackagePage({ params }: Params) {
               <div>
                 <div className="section-head">
                   <div className="section-head__text">
-                    <span className="tag">Costing</span>
-                    <SplitText as="h2">What you<br />pay.</SplitText>
+                    <span className="tag">{P.costing.tag}</span>
+                    <SplitText as="h2">{parseInlineHtml(P.costing.headingHtml)}</SplitText>
                   </div>
                 </div>
                 <div className="variant-list">
@@ -194,10 +197,8 @@ export default async function PackagePage({ params }: Params) {
                   ))}
                 </div>
                 <p className="lede mt-2" style={{ maxWidth: '60ch' }}>
-                  All prices are per person on twin sharing. Applicable GST and TCS are
-                  charged as per Indian government regulations. Build a fully custom
-                  quote on the{' '}
-                  <TLink href="/services#configurator">price calculator</TLink>.
+                  {P.costing.disclaimerPrefix}{' '}
+                  <TLink href={P.costing.disclaimerLinkHref}>{P.costing.disclaimerLinkLabel}</TLink>.
                 </p>
               </div>
 
@@ -205,8 +206,8 @@ export default async function PackagePage({ params }: Params) {
               <div>
                 <div className="section-head">
                   <div className="section-head__text">
-                    <span className="tag">About this trip</span>
-                    <SplitText as="h2">The short<br />version.</SplitText>
+                    <span className="tag">{P.about.tag}</span>
+                    <SplitText as="h2">{parseInlineHtml(P.about.headingHtml)}</SplitText>
                   </div>
                 </div>
                 <p className="lede" style={{ maxWidth: '68ch' }}>{pkg.blurb} {d.blurb}</p>
@@ -216,8 +217,8 @@ export default async function PackagePage({ params }: Params) {
               <div>
                 <div className="section-head">
                   <div className="section-head__text">
-                    <span className="tag">Trip highlights</span>
-                    <SplitText as="h2">Don’t miss<br />these.</SplitText>
+                    <span className="tag">{P.highlights.tag}</span>
+                    <SplitText as="h2">{parseInlineHtml(P.highlights.headingHtml)}</SplitText>
                   </div>
                 </div>
                 <ul className="hilite-list" data-stagger="0.06">
@@ -237,11 +238,11 @@ export default async function PackagePage({ params }: Params) {
               <div>
                 <div className="section-head">
                   <div className="section-head__text">
-                    <span className="tag">Gallery by travellers</span>
-                    <SplitText as="h2">Real trips,<br />real photos.</SplitText>
+                    <span className="tag">{P.gallery.tag}</span>
+                    <SplitText as="h2">{parseInlineHtml(P.gallery.headingHtml)}</SplitText>
                   </div>
                 </div>
-                <Gallery images={GLIMPSES} alt="Flying Colours Vacations traveller" layout="grid" />
+                <Gallery images={GLIMPSES} alt={SITE.glimpseAltText} layout="grid" />
               </div>
 
             </div>
@@ -260,8 +261,8 @@ export default async function PackagePage({ params }: Params) {
           <div className="wrap">
             <div className="section-head">
               <div className="section-head__text">
-                <span className="tag">Also in {d.name}</span>
-                <SplitText as="h2">More ways<br />to go.</SplitText>
+                <span className="tag">{fill(P.morePackages.tagTemplate, { name: d.name })}</span>
+                <SplitText as="h2">{parseInlineHtml(P.morePackages.headingHtml)}</SplitText>
               </div>
             </div>
             <div className="pkg-grid" data-stagger="0.08">
@@ -278,10 +279,10 @@ export default async function PackagePage({ params }: Params) {
         </div>
         <div className="wrap">
           <div className="cta-band__inner">
-            <span className="tag tag--light tag--plain">Ready when you are</span>
-            <SplitText as="h2">Let’s make this<br />trip <em>real</em>.</SplitText>
+            <span className="tag tag--light tag--plain">{P.cta.tag}</span>
+            <SplitText as="h2">{parseInlineHtml(P.cta.headingHtml)}</SplitText>
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn btn--gold rise" data-magnetic="0.3">
-              Enquire on WhatsApp
+              {P.cta.ctaLabel}
               <ArrowRight className="btn__icon" />
             </a>
           </div>

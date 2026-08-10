@@ -1,26 +1,27 @@
 import TLink from '@/components/TLink';
 import { ArrowRight } from '@/components/icons';
-import { DESTINATION_LIST } from '@/lib/data';
+import { DESTINATION_LIST, SITE } from '@/lib/data';
 
 export default function NotFound() {
+  const { notFound } = SITE;
+
   return (
     <section className="phero" style={{ minHeight: '86vh', alignItems: 'center' }}>
       <div className="phero__inner">
         <div className="wrap wrap--narrow center">
-          <span className="tag tag--light tag--plain">Error 404 · Gate closed</span>
-          <h1 className="mega mt-2">Off<br />route</h1>
+          <span className="tag tag--light tag--plain">{notFound.tag}</span>
+          <h1 className="mega mt-2" dangerouslySetInnerHTML={{ __html: notFound.heading }} />
           <p className="lede mt-2" style={{ margin: '1.5rem auto 0' }}>
-            This boarding pass is not in our system. The page may have moved, or the
-            link was mistyped somewhere along the way.
+            {notFound.paragraph}
           </p>
 
           <div className="hero__actions mt-3" style={{ justifyContent: 'center' }}>
             <TLink href="/" className="btn btn--gold" data-magnetic="0.3">
-              Back to the terminal
+              {notFound.primaryLabel}
               <ArrowRight className="btn__icon" />
             </TLink>
             <TLink href="/services" className="btn btn--ghost" data-magnetic="0.3">
-              Browse packages
+              {notFound.secondaryLabel}
               <ArrowRight className="btn__icon" />
             </TLink>
           </div>
@@ -38,15 +39,3 @@ export default function NotFound() {
     </section>
   );
 }
-
-// Refinement iteration 18 for code quality and clarity
-
-// Refinement iteration 40 for code quality and clarity
-
-// Refinement iteration 62 for code quality and clarity
-
-// Refinement iteration 13 for code quality and clarity
-
-// Refinement iteration 35 for code quality and clarity
-
-// Refinement iteration 4 for code quality and clarity

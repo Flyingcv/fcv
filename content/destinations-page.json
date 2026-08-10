@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Destinations",
+    "description": "Vietnam, Bali, Thailand and Malaysia — four Southeast Asian countries we know street by street. Browse itineraries, best seasons and starting prices."
+  },
+  "hero": {
+    "tag": "04 countries · 26 cities",
+    "headingHtml": "The whole<br />map, curated.",
+    "paragraph": "We deliberately do not sell the world. These four countries are the ones our planners have walked end to end — which is why the itineraries actually work.",
+    "stats": [
+      { "label": "Countries", "value": "04" },
+      { "label": "Cities", "value": "26" }
+    ],
+    "fromPriceFallback": 28999
+  },
+  "marqueeItems": ["Halong Bay", "*Ubud", "Krabi", "*Langkawi", "Hoi An", "*Nusa Penida", "Phuket", "*Genting"],
+  "cta": {
+    "tag": "Not sure yet?",
+    "headingHtml": "Tell us the vibe.<br />We'll pick the country.",
+    "paragraph": "Honeymoon, first passport stamp, three generations travelling together, or ten days of nothing but islands — each one points somewhere different.",
+    "primaryLabel": "Filter every package",
+    "primaryHref": "/services",
+    "secondaryLabel": "Ask a planner",
+    "secondaryHref": "/contact"
+  },
+  "slug": {
+    "overviewTag": "The short version",
+    "overviewHeadingTemplate": "Why {name}<br />is worth the flight.",
+    "priceCtaTemplate": "Price a {name} trip",
+    "highlightsTag": "The non-negotiables",
+    "highlightsHeadingHtml": "Five things you<br />should not skip.",
+    "itineraryTagTemplate": "Sample itinerary · {count} days",
+    "itineraryHeadingTemplate": "A {name} week,<br />hour by hour.",
+    "itineraryParagraph": "This is a starting point, not a fixed menu. Every day below can be swapped, stretched or dropped entirely.",
+    "packagesTagTemplate": "{count} ready-made routes",
+    "packagesHeadingTemplate": "{name} packages",
+    "packagesLinkLabel": "Filter all packages",
+    "pricingDisclaimer": "Prices are per person on twin sharing · land package · flights optional",
+    "connectingTag": "Connecting flights",
+    "connectingHeading": "Pair it with",
+    "stampSuffix": "peak"
+  }
+}

@@ -8,7 +8,7 @@ import TLink from '@/components/TLink';
 import SplitText from '@/components/SplitText';
 import Photo from '@/components/Photo';
 import { gsap, ScrollTrigger, prefersReducedMotion, useIsoLayoutEffect } from '@/lib/gsap';
-import { DESTINATION_LIST, inr } from '@/lib/data';
+import { DESTINATION_LIST, HOME, inr } from '@/lib/data';
 import { ArrowRight } from '@/components/icons';
 
 /* A few sub-destinations per country so the rail has real depth */
@@ -70,11 +70,11 @@ export default function HorizontalDestinations() {
     <section className="hscroll" ref={section}>
       <div className="hscroll__head">
         <div>
-          <span className="tag">The rail · 08 stops</span>
-          <SplitText as="h2">Where we fly</SplitText>
+          <span className="tag">{HOME.horizontalDestinations.tag}</span>
+          <SplitText as="h2">{HOME.horizontalDestinations.heading}</SplitText>
         </div>
         <TLink href="/destinations" className="link-u" style={{ color: 'var(--navy-800)' }}>
-          Full index <ArrowRight className="btn__icon" />
+          {HOME.horizontalDestinations.linkLabel} <ArrowRight className="btn__icon" />
         </TLink>
       </div>
 
@@ -96,7 +96,7 @@ export default function HorizontalDestinations() {
                 <h3>{c.city}</h3>
                 <div className="hcard__sub">{c.country}</div>
                 <div className="hcard__price">
-                  <span>Packages from</span>
+                  <span>{HOME.horizontalDestinations.packagesFromLabel}</span>
                   <b>{inr(c.price)}</b>
                 </div>
               </div>

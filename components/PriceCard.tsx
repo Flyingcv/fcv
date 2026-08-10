@@ -3,31 +3,26 @@
 import { useState } from 'react';
 import { ArrowRight } from '@/components/icons';
 import DownloadItineraryButton from '@/components/DownloadItineraryButton';
-import { ORIGIN, SITE_URL, inr, type Package, type Destination } from '@/lib/data';
+import { ORIGIN, SITE_URL, SITE, inr, type Package, type Destination } from '@/lib/data';
 
 interface Props {
   pkg: Package;
   destination: Destination;
 }
 
-const MIN_NIGHTS = 2;
-const EXTRA_NIGHTS_CAP = 6;
 const MIN_PAX = 1;
 const MAX_PAX = 10;
+const U = SITE.ui.priceCard;
 
-/* Nights adjustable, priced off this package's own implied per-night rate —
-   a quick "what if" without pretending to have a real itinerary for every
-   possible length. The itinerary and PDF below always reflect the actual
-   pkg.nights plan. Travellers scales the same per-person rate into a group
-   total — the per-person figure stays the headline number since that's how
-   every price on the site is already quoted. */
+/* Trip length always matches the itinerary shown below — only the
+   traveller count is adjustable here, scaling the per-person rate into a
+   group total. The per-person figure stays the headline number since
+   that's how every price on the site is already quoted. */
 export default function PriceCard({ pkg, destination: d }: Props) {
-  const [nights, setNights] = useState(pkg.nights);
   const [pax, setPax] = useState(2);
-  const maxNights = pkg.nights + EXTRA_NIGHTS_CAP;
-  const days = nights + 1;
-  const perNightRate = pkg.price / pkg.nights;
-  const total = Math.round(perNightRate * nights);
+  const nights = pkg.nights;
+  const days = pkg.days;
+  const total = pkg.price;
   const groupTotal = total * pax;
 
   // Built from the canonical SITE_URL rather than window.location.href —
@@ -35,12 +30,12 @@ export default function PriceCard({ pkg, destination: d }: Props) {
   // hydration mismatch (the href silently changed right after hydration).
   const pageUrl = `${SITE_URL}/packages/${pkg.id}`;
   const waMessage = [
-    `Hi! I'd like to know more about this package:`, ``,
+    U.waMessage.intro, ``,
     `${pkg.title} (${nights}N / ${days}D)`,
-    `Travellers: ${pax}`,
-    `Estimated price: ${inr(total)} per person (${inr(groupTotal)} total)`,
+    `${U.waMessage.travellersLine} ${pax}`,
+    U.waMessage.priceLineTemplate.replace('{total}', inr(total)).replace('{groupTotal}', inr(groupTotal)),
     pageUrl, ``,
-    `Please share availability and next steps.`
+    U.waMessage.closing
   ].join('\n');
   const waLink = `https://wa.me/917017440214?text=${encodeURIComponent(waMessage)}`;
 
@@ -50,30 +45,11 @@ export default function PriceCard({ pkg, destination: d }: Props) {
 
       <div className="price-card__price">
         {inr(total)}
-        <small>per person · twin sharing</small>
+        <small>{U.perPersonTwinSharing}</small>
       </div>
 
       <div className="price-card__stepper">
-        <span>Trip length</span>
-        <div className="stepper">
-          <button
-            type="button"
-            onClick={() => setNights((n) => Math.max(MIN_NIGHTS, n - 1))}
-            disabled={nights <= MIN_NIGHTS}
-            aria-label="One night fewer"
-          >−</button>
-          <output>{nights}N</output>
-          <button
-            type="button"
-            onClick={() => setNights((n) => Math.min(maxNights, n + 1))}
-            disabled={nights >= maxNights}
-            aria-label="One night more"
-          >+</button>
-        </div>
-      </div>
-
-      <div className="price-card__stepper">
-        <span>Travellers</span>
+        <span>{U.travellersLabel}</span>
         <div className="stepper">
           <button
             type="button"
@@ -92,27 +68,24 @@ export default function PriceCard({ pkg, destination: d }: Props) {
       </div>
 
       <div className="price-card__total">
-        <span>Total for {pax} {pax === 1 ? 'traveller' : 'travellers'}</span>
+        <span>{U.totalForTemplate.replace('{pax}', String(pax)).replace('{travellerWord}', pax === 1 ? U.travellerSingular : U.travellerPlural)}</span>
         <b>{inr(groupTotal)}</b>
       </div>
 
       <div className="price-card__facts">
-        <div><span>Duration</span><b>{nights}N / {days}D</b></div>
-        <div><span>Route</span><b>{ORIGIN.code} → {d.iata}</b></div>
-        <div><span>Style</span><b>{d.tagline}</b></div>
+        <div><span>{U.durationLabel}</span><b>{nights}N / {days}D</b></div>
+        <div><span>{U.routeLabel}</span><b>{ORIGIN.code} → {d.iata}</b></div>
+        <div><span>{U.styleLabel}</span><b>{d.tagline}</b></div>
       </div>
 
       <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn btn--gold" data-magnetic="0.28">
-        Enquire on WhatsApp
+        {U.enquireLabel}
         <ArrowRight className="btn__icon" />
       </a>
       <DownloadItineraryButton pkg={pkg} destination={d} nights={nights} pax={pax} />
 
       <p className="price-card__note">
-        {nights === pkg.nights
-          ? 'This matches the itinerary shown below.'
-          : `Scaled for ${nights} nights — the itinerary below covers the original ${pkg.nights}N / ${pkg.days}D plan.`}{' '}
-        Priced per person on twin sharing; a planner confirms the exact group quote.
+        {U.note}
       </p>
     </div>
   );

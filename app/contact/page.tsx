@@ -6,30 +6,19 @@ import Photo from '@/components/Photo';
 import ContactForm from '@/components/ContactForm';
 import Faq from '@/components/Faq';
 import { Phone, Mail, Pin, Clock, ArrowRight } from '@/components/icons';
-import { CONTACT, img } from '@/lib/data';
+import { CONTACT, CONTACT_PAGE, img } from '@/lib/data';
+import { parseInlineHtml } from '@/lib/richtext';
 
 export const metadata: Metadata = {
-  title: 'Contact',
-  description:
-    'Talk to a Southeast Asia planner at Flying Colours Vacations — Noida office, +91 70174 40214, info@flyingcoloursvacations.com.'
+  title: CONTACT_PAGE.meta.title,
+  description: CONTACT_PAGE.meta.descriptionTemplate
+    .replace('{phone}', CONTACT.phone)
+    .replace('{email}', CONTACT.email)
 };
 
-const FAQS: [string, string][] = [
-  ['How far in advance should I book?',
-    'For peak season (October to March) we recommend 8–10 weeks, mainly for hotel availability rather than airfare. Bali in July–August and Vietnam over New Year fill earliest. Short breaks can be turned around in under two weeks if you are flexible on hotels.'],
-  ['What does the price include?',
-    'Every package price on this site is per person on twin sharing and covers the land package — hotels, listed tours, private transfers and daily breakfast. Flights, visas and insurance are optional add-ons you can toggle in the price calculator so you always see exactly what you are paying for.'],
-  ['Do you handle visas?',
-    'Yes. We file Vietnam e-Visas on your behalf, guide you through visa-on-arrival for Bali, and Thailand and Malaysia are visa-free for Indian passport holders on the durations we sell. Documents are checked before you fly, not at the airport.'],
-  ['What happens if a flight is cancelled mid-trip?',
-    'You message the same planner who built your itinerary. We rebook, inform the hotel, and reschedule any tours that are affected. That support runs 24/7 for the whole time you are travelling — it is not an outsourced call centre.'],
-  ['Can you plan for large families or groups?',
-    'Regularly. We plan around mixed-age pacing — no 5am treks for the grandparents while the kids are at a water park — and one planner stays on the file for the whole group.'],
-  ['How do I pay?',
-    'Bank transfer, UPI, credit or debit card, or a secure payment link. Typically a booking advance to hold hotels and the balance closer to departure. Card payments may carry a gateway charge, which we always show before you confirm.']
-];
-
 export default function ContactPage() {
+  const { hero, cardsSection, formSection, faqSection, faqs } = CONTACT_PAGE;
+
   return (
     <>
       {/* --------------------------------------------------------- page hero */}
@@ -43,8 +32,8 @@ export default function ContactPage() {
             <nav className="phero__crumbs" aria-label="Breadcrumb">
               <TLink href="/">Home</TLink> <span>/</span> <span>Contact</span>
             </nav>
-            <span className="tag tag--light">Departures desk · open now</span>
-            <SplitText as="h1" className="mt-1">Let’s plan it.</SplitText>
+            <span className="tag tag--light">{hero.tag}</span>
+            <SplitText as="h1" className="mt-1">{hero.heading}</SplitText>
           </div>
         </div>
       </section>
@@ -54,16 +43,16 @@ export default function ContactPage() {
         <div className="wrap">
           <div className="contact-split">
             <div>
-              <span className="tag rise">Reach us directly</span>
+              <span className="tag rise">{cardsSection.tag}</span>
               <SplitText as="h2" className="mt-1" style={{ fontSize: 'var(--t-2xl)' }}>
-                One desk.<br />One number.
+                {parseInlineHtml(cardsSection.headingHtml)}
               </SplitText>
 
               <div className="contact-cards mt-3" data-stagger="0.08">
                 <a className="ccard" href={CONTACT.phoneHref}>
                   <span className="ccard__ico"><Phone /></span>
                   <span>
-                    <span>Call or WhatsApp</span>
+                    <span>{cardsSection.callCard.label}</span>
                     <b>{CONTACT.phone}</b>
                     <p>{CONTACT.emergency}</p>
                   </span>
@@ -72,17 +61,17 @@ export default function ContactPage() {
                 <a className="ccard" href={`mailto:${CONTACT.email}`}>
                   <span className="ccard__ico"><Mail /></span>
                   <span>
-                    <span>Email</span>
+                    <span>{cardsSection.emailCard.label}</span>
                     <b>{CONTACT.email}</b>
-                    <p>Replies from a planner, usually same day</p>
+                    <p>{cardsSection.emailCard.note}</p>
                   </span>
                 </a>
 
                 <div className="ccard">
                   <span className="ccard__ico"><Pin /></span>
                   <span>
-                    <span>Office</span>
-                    <b>Bhutani Alphathum, Noida</b>
+                    <span>{cardsSection.officeCard.label}</span>
+                    <b>{cardsSection.officeCard.title}</b>
                     <p>{CONTACT.address}</p>
                   </span>
                 </div>
@@ -90,18 +79,18 @@ export default function ContactPage() {
                 <div className="ccard">
                   <span className="ccard__ico"><Clock /></span>
                   <span>
-                    <span>Desk hours</span>
+                    <span>{cardsSection.hoursCard.label}</span>
                     <b>{CONTACT.hours}</b>
-                    <p>On-trip support runs around the clock</p>
+                    <p>{cardsSection.hoursCard.note}</p>
                   </span>
                 </div>
               </div>
             </div>
 
             <div className="rise">
-              <span className="tag">Trip enquiry</span>
+              <span className="tag">{formSection.tag}</span>
               <SplitText as="h2" className="mt-1" style={{ fontSize: 'var(--t-2xl)', marginBottom: '2rem' }}>
-                Tell us the shape<br />of the trip.
+                {parseInlineHtml(formSection.headingHtml)}
               </SplitText>
               <ContactForm />
             </div>
@@ -114,23 +103,23 @@ export default function ContactPage() {
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">Before you ask</span>
-              <SplitText as="h2">The questions<br />we get most.</SplitText>
+              <span className="tag">{faqSection.tag}</span>
+              <SplitText as="h2">{parseInlineHtml(faqSection.headingHtml)}</SplitText>
             </div>
             <p className="lede" style={{ maxWidth: '34ch' }}>
-              Still stuck? Call the desk — it is genuinely faster than typing it out.
+              {faqSection.paragraph}
             </p>
           </div>
 
-          <Faq items={FAQS} />
+          <Faq items={faqs as [string, string][]} />
 
           <div className="hero__actions mt-3">
-            <TLink href="/services#configurator" className="btn btn--navy" data-magnetic="0.3">
-              Price a trip yourself
+            <TLink href={faqSection.primaryHref} className="btn btn--navy" data-magnetic="0.3">
+              {faqSection.primaryLabel}
               <ArrowRight className="btn__icon" />
             </TLink>
-            <TLink href="/destinations" className="btn btn--ghost" data-magnetic="0.3">
-              Browse destinations
+            <TLink href={faqSection.secondaryHref} className="btn btn--ghost" data-magnetic="0.3">
+              {faqSection.secondaryLabel}
               <ArrowRight className="btn__icon" />
             </TLink>
           </div>

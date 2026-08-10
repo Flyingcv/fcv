@@ -4,15 +4,17 @@ import SplitText from '@/components/SplitText';
 import Photo from '@/components/Photo';
 import Marquee from '@/components/Marquee';
 import { ArrowRight } from '@/components/icons';
-import { DESTINATION_LIST, PACKAGES, inr, img } from '@/lib/data';
+import { DESTINATION_LIST, PACKAGES, DESTINATIONS_PAGE, inr, img } from '@/lib/data';
+import { parseInlineHtml } from '@/lib/richtext';
 
 export const metadata: Metadata = {
-  title: 'Destinations',
-  description:
-    'Vietnam, Bali, Thailand and Malaysia — four Southeast Asian countries we know street by street. Browse itineraries, best seasons and starting prices.'
+  title: DESTINATIONS_PAGE.meta.title,
+  description: DESTINATIONS_PAGE.meta.description
 };
 
 export default function DestinationsPage() {
+  const { hero, cta } = DESTINATIONS_PAGE;
+
   return (
     <>
       <section className="phero">
@@ -25,18 +27,18 @@ export default function DestinationsPage() {
             <nav className="phero__crumbs" aria-label="Breadcrumb">
               <TLink href="/">Home</TLink> <span>/</span> <span>Destinations</span>
             </nav>
-            <span className="tag tag--light">04 countries · 26 cities</span>
-            <SplitText as="h1" className="mt-1">The whole<br />map, curated.</SplitText>
+            <span className="tag tag--light">{hero.tag}</span>
+            <SplitText as="h1" className="mt-1">{parseInlineHtml(hero.headingHtml)}</SplitText>
             <p className="lede mt-2" style={{ maxWidth: '52ch' }}>
-              We deliberately do not sell the world. These four countries are the ones our
-              planners have walked end to end — which is why the itineraries actually work.
+              {hero.paragraph}
             </p>
 
             <div className="phero__meta">
-              <div><span>Countries</span><b>04</b></div>
-              <div><span>Cities</span><b>26</b></div>
+              {hero.stats.map((s) => (
+                <div key={s.label}><span>{s.label}</span><b>{s.value}</b></div>
+              ))}
               <div><span>Itineraries</span><b>{PACKAGES.length}+</b></div>
-              <div><span>From</span><b>{inr(28999)}</b></div>
+              <div><span>From</span><b>{inr(hero.fromPriceFallback)}</b></div>
             </div>
           </div>
         </div>
@@ -90,28 +92,24 @@ export default function DestinationsPage() {
         </div>
       </section>
 
-      <Marquee
-        dir="right"
-        items={['Halong Bay', '*Ubud', 'Krabi', '*Langkawi', 'Hoi An', '*Nusa Penida', 'Phuket', '*Genting']}
-      />
+      <Marquee dir="right" items={DESTINATIONS_PAGE.marqueeItems} />
 
       <section className="section on-navy">
         <div className="wrap wrap--narrow center">
-          <span className="tag rise">Not sure yet?</span>
+          <span className="tag rise">{cta.tag}</span>
           <SplitText as="h2" className="mt-1" style={{ fontSize: 'var(--t-2xl)' }}>
-            Tell us the vibe.<br />We’ll pick the country.
+            {parseInlineHtml(cta.headingHtml)}
           </SplitText>
           <p className="lede rise mt-2" style={{ margin: '0 auto' }}>
-            Honeymoon, first passport stamp, three generations travelling together, or ten
-            days of nothing but islands — each one points somewhere different.
+            {cta.paragraph}
           </p>
           <div className="hero__actions mt-3" style={{ justifyContent: 'center' }}>
-            <TLink href="/services" className="btn btn--gold" data-magnetic="0.3">
-              Filter every package
+            <TLink href={cta.primaryHref} className="btn btn--gold" data-magnetic="0.3">
+              {cta.primaryLabel}
               <ArrowRight className="btn__icon" />
             </TLink>
-            <TLink href="/contact" className="btn btn--ghost" data-magnetic="0.3">
-              Ask a planner
+            <TLink href={cta.secondaryHref} className="btn btn--ghost" data-magnetic="0.3">
+              {cta.secondaryLabel}
               <ArrowRight className="btn__icon" />
             </TLink>
           </div>

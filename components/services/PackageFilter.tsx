@@ -7,21 +7,22 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import PackageCard from '@/components/PackageCard';
 import { useMotion } from '@/components/motion/MotionProvider';
 import { gsap, prefersReducedMotion } from '@/lib/gsap';
-import { PACKAGES, DESTINATION_LIST, inr, type DestinationSlug } from '@/lib/data';
+import { PACKAGES, DESTINATION_LIST, FORMS, inr, type DestinationSlug } from '@/lib/data';
 
 type DestFilter = 'all' | DestinationSlug;
 type LenFilter = 'any' | 'short' | 'mid' | 'long';
 type Sort = 'price' | 'days' | 'popular';
 
-const LENGTHS: { key: LenFilter; label: string; test: (d: number) => boolean }[] = [
-  { key: 'any', label: 'Any', test: () => true },
-  { key: 'short', label: '4 days', test: (d) => d <= 4 },
-  { key: 'mid', label: '5 – 6 days', test: (d) => d >= 5 && d <= 6 },
-  { key: 'long', label: '7+ days', test: (d) => d >= 7 }
-];
+const F = FORMS.packageFilter;
 
-const MIN_BUDGET = 25000;
-const MAX_BUDGET = 125000;
+const LENGTHS: { key: LenFilter; label: string; test: (d: number) => boolean }[] = F.lengths.map((l) => ({
+  key: l.key as LenFilter,
+  label: l.label,
+  test: (d: number) => (l.minDays === null || d >= l.minDays) && (l.maxDays === null || d <= l.maxDays)
+}));
+
+const MIN_BUDGET = F.minBudget;
+const MAX_BUDGET = F.maxBudget;
 
 export default function PackageFilter() {
   const [dest, setDest] = useState<DestFilter>('all');
@@ -154,8 +155,8 @@ export default function PackageFilter() {
           <div className="filter__cell">
             <div className="filter__label"><span>Sort by</span></div>
             <div className="chips" role="group" aria-label="Sort results">
-              {([['popular', 'Popular'], ['price', 'Price'], ['days', 'Days']] as [Sort, string][]).map(([k, label]) => (
-                <button key={k} className="chipbtn" aria-pressed={sort === k} onClick={pick(setSort, k)}>
+              {F.sortOptions.map(({ key, label }) => (
+                <button key={key} className="chipbtn" aria-pressed={sort === key} onClick={pick(setSort, key as Sort)}>
                   {label}
                 </button>
               ))}
@@ -167,7 +168,7 @@ export default function PackageFilter() {
           <span>
             Showing <b>{String(results.length).padStart(2, '0')}</b> of {PACKAGES.length} itineraries
           </span>
-          {active && <button className="filter__reset" onClick={reset}>× Clear filters</button>}
+          {active && <button className="filter__reset" onClick={reset}>{F.resetLabel}</button>}
         </div>
       </div>
 
@@ -177,9 +178,9 @@ export default function PackageFilter() {
 
       {results.length === 0 && (
         <div className="filter-empty">
-          <h3>No route matches that yet.</h3>
-          <p>Widen the budget or the trip length — or let a planner build something custom.</p>
-          <button className="btn btn--gold mt-2" onClick={reset}>Reset filters</button>
+          <h3>{F.emptyState.heading}</h3>
+          <p>{F.emptyState.paragraph}</p>
+          <button className="btn btn--gold mt-2" onClick={reset}>{F.emptyState.resetLabel}</button>
         </div>
       )}
     </>

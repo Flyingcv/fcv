@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "About us",
+    "description": "Flying Colours Vacations plans international holidays from Noida — transparent pricing, dependable service and 24/7 on-trip support."
+  },
+  "hero": {
+    "tag": "Est. 2014 · Noida, India",
+    "headingHtml": "Adding colours<br />to every journey.",
+    "stats": [
+      { "label": "Founded", "value": "2014" },
+      { "label": "Destinations", "value": "04" },
+      { "label": "Happy travellers", "value": "500+" },
+      { "label": "Support", "value": "24×7" }
+    ]
+  },
+  "story": {
+    "tag": "Our story",
+    "headingHtml": "Creating memorable<br />holidays, since day one.",
+    "paragraphs": [
+      "Flying Colours Vacations was established with one simple goal — to make international travel affordable without compromising on quality or comfort. Every itinerary is built around who you are: honeymooners, families, students, working professionals or groups — never a one-size-fits-all template.",
+      "Today we proudly serve travellers from across India who dream of exploring Southeast Asia's most loved destinations. Our commitment is simple — transparent pricing, dependable service and memorable holidays that truly add colours to every journey."
+    ],
+    "ctaLabel": "Meet a planner",
+    "ctaHref": "/contact",
+    "ratingBadgeHtml": "4.8<br />/ 5"
+  },
+  "marqueeItems": ["*Customer first", "Transparent pricing", "*Trust & transparency", "24/7 support"],
+  "missionVision": {
+    "tag": "Our purpose",
+    "headingHtml": "Mission<br />& vision.",
+    "paragraph": "We strive to make international travel simple, affordable and unforgettable for every traveller.",
+    "mission": {
+      "title": "Our mission",
+      "copy": "To provide thoughtfully designed international holiday packages that deliver premium travel experiences at budget-friendly prices. We build lasting relationships through honest advice, quality service, transparent pricing and personalised travel planning."
+    },
+    "vision": {
+      "title": "Our vision",
+      "copy": "To become one of India's most trusted travel brands for international holidays — creating journeys filled with happiness, comfort and exceptional customer service."
+    }
+  },
+  "values": {
+    "tag": "Our values",
+    "headingHtml": "What makes us<br />different.",
+    "items": [
+      { "title": "Customer first", "copy": "Every recommendation we make is based on what's best for you — never what's easiest to sell." },
+      { "title": "Professional service", "copy": "From your first enquiry to your return journey, our team stays committed to seamless support." },
+      { "title": "Best value", "copy": "Premium hotels, exciting sightseeing and carefully selected experiences at prices that hold their own." },
+      { "title": "Trust & transparency", "copy": "Clear communication, honest pricing and dependable service — the foundation of everything we do." }
+    ]
+  },
+  "perks": {
+    "tag": "Why choose us",
+    "headingHtml": "Why travellers pick<br />Flying Colours.",
+    "items": [
+      { "icon": "pin", "title": "Destination experts", "copy": "We specialise in carefully planned holidays to Vietnam, Bali, Thailand and Malaysia." },
+      { "icon": "star", "title": "Premium hotels", "copy": "Accommodation selected for quality, location and guest satisfaction on every itinerary." },
+      { "icon": "plane", "title": "Airport transfers", "copy": "Stress-free pick-up and drop-off included on most tour packages." },
+      { "icon": "check", "title": "Visa assistance", "copy": "Complete guidance through the visa documentation process, start to finish." },
+      { "icon": "mail", "title": "Personalised planning", "copy": "Every itinerary is built around your travel dates, budget and preferences." },
+      { "icon": "phone", "title": "Dedicated support", "copy": "Quick assistance before, during and after your holiday — one desk, one number." }
+    ]
+  },
+  "glimpses": {
+    "tag": "Real trips, real travellers",
+    "headingHtml": "Glimpses from<br />the road.",
+    "paragraph": "Straight from our travellers' own cameras — beaches, bridges, airport welcomes and everything between."
+  },
+  "team": {
+    "tag": "The desk",
+    "headingHtml": "Passionate travel<br />experts.",
+    "paragraph": "Every memorable holiday begins with proper planning. Our travel consultants work closely with every guest to build a trip that matches their interests, travel style and budget — from your first enquiry to the day you land back home."
+  },
+  "cta": {
+    "tag": "Come travel with us",
+    "headingHtml": "Your turn to fly<br />in full <em>colours</em>.",
+    "ctaLabel": "See where we fly",
+    "ctaHref": "/destinations"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "eyebrowTag": "Boarding pass to Southeast Asia",
+    "eyebrowSub": "EST. 2014 · NOIDA, INDIA",
+    "titleHtml": "Southeast<br />Asia in full<br /><em>colours</em>",
+    "blurb": "Vietnam, Bali, Thailand and Malaysia — planned end to end by people who have walked the itineraries themselves. One desk, one number, zero surprises.",
+    "primaryLabel": "Explore destinations",
+    "primaryHref": "/destinations",
+    "secondaryLabel": "Build my price",
+    "secondaryHref": "/services#configurator",
+    "tickerLabel": "NOW BOARDING",
+    "tickerItems": [
+      { "code": "SGN", "price": 42999 },
+      { "code": "DPS", "price": 48999 },
+      { "code": "BKK", "price": 34999 }
+    ],
+    "scrollCueLabel": "Scroll"
+  },
+  "marqueeItems": ["Vietnam", "*Bali", "Thailand", "*Malaysia", "Halong Bay", "*Nusa Penida", "Phi Phi", "*Langkawi"],
+  "horizontalDestinations": {
+    "tag": "The rail · 08 stops",
+    "heading": "Where we fly",
+    "linkLabel": "Full index",
+    "packagesFromLabel": "Packages from"
+  },
+  "whyUs": {
+    "tag": "Why Flying Colours",
+    "headingHtml": "We don't sell packages.<br />We plan journeys.",
+    "paragraphs": [
+      "Since 2014 we have run one thing extremely well: Southeast Asia. Vietnam, Bali, Thailand and Malaysia — the four countries our team has walked, eaten and argued about, itinerary by itinerary.",
+      "That focus is the whole product. We know which Halong cruise actually has hot water, which Ubud villa is worth the transfer, and which Krabi tour operator answers the phone in a storm. You get that judgement, not a call centre."
+    ],
+    "stats": [
+      { "to": 11, "suffix": "+", "labelHtml": "Years planning<br />Southeast Asia" },
+      { "to": 12400, "suffix": "+", "labelHtml": "Travellers<br />sent abroad" },
+      { "to": 4.8, "decimals": 1, "suffix": "", "labelHtml": "Average rating<br />1,564 reviews" }
+    ],
+    "ctaLabel": "Our story",
+    "ctaHref": "/about",
+    "badgeHtml": "Since<br />2014"
+  },
+  "pricingExplainer": {
+    "tag": "Transparent pricing",
+    "headingHtml": "Your whole trip,<br />printed on one pass.",
+    "paragraph": "Move a slider, change the number of nights, pick a stay standard — and watch the price update live on your own boarding pass. No enquiry form before you can see a number.",
+    "bullets": [
+      { "title": "Per-day pricing", "copy": "Land cost is calculated per person per day, so 6 nights is never priced like 8." },
+      { "title": "One straight number", "copy": "No hidden fees, no fine-print discount that only shows up at checkout." },
+      { "title": "Send it on WhatsApp", "copy": "Get your quote straight to a planner and keep talking from there." }
+    ],
+    "ctaLabel": "Open the price calculator",
+    "ctaHref": "/services#configurator",
+    "demoPass": {
+      "from": "DEL",
+      "to": "SGN",
+      "fromCity": "New Delhi",
+      "toCity": "Ho Chi Minh",
+      "stamp": "Fare locked · FCV",
+      "code": "FCV · 214 · 0725 · SGN · ECONOMY",
+      "passenger": "Your name here",
+      "duration": "06 Days / 05 Nights",
+      "total": "₹62,999",
+      "flight": "FCV 214",
+      "gate": "A12",
+      "seat": "14A"
+    }
+  },
+  "services": {
+    "tag": "What we handle",
+    "headingHtml": "Everything between<br />booking and boarding.",
+    "linkLabel": "All services & packages",
+    "items": [
+      { "num": "01", "title": "Personalised itineraries", "copy": "Nothing off a shelf. We build around your dates, your pace and the three things you actually care about seeing." },
+      { "num": "02", "title": "Expert local guides", "copy": "English-speaking guides we have travelled with ourselves, in every city on your route." },
+      { "num": "03", "title": "Visas, flights & insurance", "copy": "e-Visa filing, fare-class advice and cover that pays out. One invoice, no third parties." },
+      { "num": "04", "title": "Stress-free on-trip support", "copy": "A real person on WhatsApp for the whole trip — cancelled flights get solved before you finish reading the email." }
+    ]
+  },
+  "testimonials": {
+    "tag": "Seat 4.8 / 5 · 1,564 reviews",
+    "headingHtml": "Postcards from<br />the people we sent."
+  },
+  "glimpses": {
+    "tag": "Straight from their cameras",
+    "headingHtml": "Glimpses from<br />the road.",
+    "linkLabel": "See more glimpses",
+    "linkHref": "/about#glimpses"
+  },
+  "cta": {
+    "tag": "Final call",
+    "headingHtml": "Ready for take-off<br />in full <em>colours</em>?",
+    "paragraph": "Tell us your dates and rough budget. You will get a real itinerary and a real price from a planner — usually the same day.",
+    "primaryLabel": "Talk to a planner",
+    "primaryHref": "/contact",
+    "secondaryLabel": "Price it myself",
+    "secondaryHref": "/services#configurator"
+  }
+}

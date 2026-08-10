@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { SITE } from '@/lib/data';
 
 interface Props {
   /** [id, label] for each <h2> in the document, in order */
@@ -37,8 +38,8 @@ export default function LegalToc({ sections }: Props) {
   }, [sections]);
 
   return (
-    <nav className="legal-toc" aria-label="On this page">
-      <span className="legal-toc__title">On this page</span>
+    <nav className="legal-toc" aria-label={SITE.ui.legalToc.title}>
+      <span className="legal-toc__title">{SITE.ui.legalToc.title}</span>
       <ul>
         {sections.map(([id, label]) => (
           <li key={id}>

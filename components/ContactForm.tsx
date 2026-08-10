@@ -6,7 +6,9 @@
 
 import { useState } from 'react';
 import { Check, ArrowRight } from '@/components/icons';
-import { DESTINATION_LIST, CONTACT } from '@/lib/data';
+import { DESTINATION_LIST, CONTACT, FORMS } from '@/lib/data';
+
+const F = FORMS.contactForm;
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -41,63 +43,63 @@ export default function ContactForm() {
     <form className="form" onSubmit={onSubmit}>
       <div className="form__row">
         <div className="field">
-          <label htmlFor="name">Full name</label>
-          <input id="name" name="name" required placeholder="Ananya Sharma" autoComplete="name" />
+          <label htmlFor="name">{F.fields.name.label}</label>
+          <input id="name" name="name" required placeholder={F.fields.name.placeholder} autoComplete="name" />
         </div>
         <div className="field">
-          <label htmlFor="email">Email</label>
-          <input id="email" name="email" type="email" required placeholder="you@email.com" autoComplete="email" />
+          <label htmlFor="email">{F.fields.email.label}</label>
+          <input id="email" name="email" type="email" required placeholder={F.fields.email.placeholder} autoComplete="email" />
         </div>
       </div>
 
       <div className="form__row">
         <div className="field">
-          <label htmlFor="phone">Phone / WhatsApp</label>
-          <input id="phone" name="phone" type="tel" required placeholder="+91 98xxx xxxxx" autoComplete="tel" />
+          <label htmlFor="phone">{F.fields.phone.label}</label>
+          <input id="phone" name="phone" type="tel" required placeholder={F.fields.phone.placeholder} autoComplete="tel" />
         </div>
         <div className="field">
-          <label htmlFor="destination">Destination</label>
-          <select id="destination" name="destination" defaultValue="Not decided yet">
-            <option>Not decided yet</option>
+          <label htmlFor="destination">{F.fields.destination.label}</label>
+          <select id="destination" name="destination" defaultValue={F.fields.destination.defaultOption}>
+            <option>{F.fields.destination.defaultOption}</option>
             {DESTINATION_LIST.map((d) => <option key={d.slug}>{d.name}</option>)}
-            <option>Multi-country</option>
+            <option>{F.fields.destination.multiCountryOption}</option>
           </select>
         </div>
       </div>
 
       <div className="form__row">
         <div className="field">
-          <label htmlFor="pax">Travellers</label>
-          <input id="pax" name="pax" type="number" min={1} max={40} defaultValue={2} />
+          <label htmlFor="pax">{F.fields.pax.label}</label>
+          <input id="pax" name="pax" type="number" min={F.fields.pax.min} max={F.fields.pax.max} defaultValue={F.fields.pax.default} />
         </div>
         <div className="field">
-          <label htmlFor="dates">Approximate dates</label>
-          <input id="dates" name="dates" placeholder="Mid-October, 6 nights" />
+          <label htmlFor="dates">{F.fields.dates.label}</label>
+          <input id="dates" name="dates" placeholder={F.fields.dates.placeholder} />
         </div>
       </div>
 
       <div className="field">
-        <label htmlFor="budget">Budget per person (optional)</label>
-        <input id="budget" name="budget" placeholder="₹60,000 – ₹80,000" />
+        <label htmlFor="budget">{F.fields.budget.label}</label>
+        <input id="budget" name="budget" placeholder={F.fields.budget.placeholder} />
       </div>
 
       <div className="field">
-        <label htmlFor="message">What would make this trip worth it?</label>
+        <label htmlFor="message">{F.fields.message.label}</label>
         <textarea
           id="message"
           name="message"
           required
-          placeholder="Honeymoon, we want one night on a Halong Bay cruise and a quiet beach after…"
+          placeholder={F.fields.message.placeholder}
         />
       </div>
 
       <div className="hero__actions">
         <button type="submit" className="btn btn--gold" data-magnetic="0.28">
-          Send enquiry
+          {F.submitLabel}
           <ArrowRight className="btn__icon" />
         </button>
         <a href={CONTACT.phoneHref} className="btn btn--ghost" data-magnetic="0.28">
-          Or call {CONTACT.phone}
+          {F.callLabelPrefix} {CONTACT.phone}
         </a>
       </div>
 
@@ -105,26 +107,14 @@ export default function ContactForm() {
         <div className="form__ok" role="status">
           <Check style={{ width: 16, height: 16, flex: 'none' }} />
           <span>
-            Your enquiry is ready in your mail app — hit send and a planner will reply within
-            one working day. Prefer WhatsApp? Message us on {CONTACT.phone}.
+            {F.successMessage.replace('{phone}', CONTACT.phone)}
           </span>
         </div>
       )}
 
       <p className="form__note">
-        We reply to every enquiry personally — no automated drip sequence. Your details are
-        used only to plan your trip.
+        {F.disclaimerNote}
       </p>
     </form>
   );
 }
-
-// Refinement iteration 21 for code quality and clarity
-
-// Refinement iteration 43 for code quality and clarity
-
-// Refinement iteration 65 for code quality and clarity
-
-// Refinement iteration 16 for code quality and clarity
-
-// Refinement iteration 38 for code quality and clarity

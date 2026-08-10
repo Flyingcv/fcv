@@ -7,6 +7,7 @@ import { gsap, ScrollTrigger, prefersReducedMotion, useIsoLayoutEffect } from '@
 
 interface Props {
   images: string[];
+  alt: string;
   /** pixels per second */
   speed?: number;
 }
@@ -14,7 +15,7 @@ interface Props {
 /* Auto-scrolling photo rail — same double-track loop technique as
    <Marquee>, just dragging photo tiles instead of text. Pauses on
    hover/focus so a click is still easy to land. */
-export default function GlimpseRail({ images, speed = 55 }: Props) {
+export default function GlimpseRail({ images, alt, speed = 55 }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const inner = useRef<HTMLDivElement>(null);
 
@@ -62,7 +63,7 @@ export default function GlimpseRail({ images, speed = 55 }: Props) {
     <div className="glimpse-rail__track">
       {images.map((src, i) => (
         <TLink href="/about#glimpses" className="glimpse-rail__item" key={src + i}>
-          <Photo src={src} alt="Flying Colours Vacations traveller" />
+          <Photo src={src} alt={alt} />
         </TLink>
       ))}
     </div>

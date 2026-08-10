@@ -9,11 +9,16 @@ import BoardingPass from '@/components/BoardingPass';
 import PackageCard from '@/components/PackageCard';
 import { ArrowRight } from '@/components/icons';
 import {
-  DESTINATIONS, DESTINATION_LIST, PACKAGES, ORIGIN, inr,
+  DESTINATIONS, DESTINATION_LIST, PACKAGES, ORIGIN, DESTINATIONS_PAGE, inr,
   type DestinationSlug
 } from '@/lib/data';
+import { parseInlineHtml } from '@/lib/richtext';
 
 type Params = { params: Promise<{ slug: string }> };
+
+const T = DESTINATIONS_PAGE.slug;
+const fill = (template: string, values: Record<string, string>) =>
+  Object.entries(values).reduce((s, [k, v]) => s.replaceAll(`{${k}}`, v), template);
 
 export function generateStaticParams() {
   return DESTINATION_LIST.map((d) => ({ slug: d.slug }));
@@ -73,9 +78,9 @@ export default async function DestinationPage({ params }: Params) {
         <div className="wrap">
           <div className="dsplit dsplit--pass">
             <div>
-              <span className="tag rise">The short version</span>
+              <span className="tag rise">{T.overviewTag}</span>
               <SplitText as="h2" className="mt-1" style={{ fontSize: 'var(--t-2xl)' }}>
-                Why {d.name}<br />is worth the flight.
+                {parseInlineHtml(fill(T.overviewHeadingTemplate, { name: d.name }))}
               </SplitText>
               <p className="lede rise mt-2">{d.blurb}</p>
 
@@ -92,7 +97,7 @@ export default async function DestinationPage({ params }: Params) {
               </div>
 
               <TLink href="/services#configurator" className="btn btn--navy mt-3" data-magnetic="0.3">
-                Price a {d.name} trip
+                {fill(T.priceCtaTemplate, { name: d.name })}
                 <ArrowRight className="btn__icon" />
               </TLink>
             </div>
@@ -104,7 +109,7 @@ export default async function DestinationPage({ params }: Params) {
                 to={d.iata}
                 fromCity={ORIGIN.city}
                 toCity={d.name}
-                stamp={`${d.facts['Best season']} · peak`}
+                stamp={`${d.facts['Best season']} · ${T.stampSuffix}`}
                 code={`FCV · ${d.iata} · ${d.facts['Flight time'].replace(/\s/g, '')} · ECONOMY`}
                 fields={[
                   { label: 'Best season', value: d.facts['Best season'] },
@@ -131,9 +136,9 @@ export default async function DestinationPage({ params }: Params) {
             </div>
 
             <div>
-              <span className="tag rise">The non-negotiables</span>
+              <span className="tag rise">{T.highlightsTag}</span>
               <SplitText as="h2" className="mt-1" style={{ fontSize: 'var(--t-2xl)' }}>
-                Five things you<br />should not skip.
+                {parseInlineHtml(T.highlightsHeadingHtml)}
               </SplitText>
 
               <ul className="hilite-list">
@@ -157,12 +162,13 @@ export default async function DestinationPage({ params }: Params) {
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">Sample itinerary · {d.itinerary.length} days</span>
-              <SplitText as="h2">A {d.name} week,<br />hour by hour.</SplitText>
+              <span className="tag">{fill(T.itineraryTagTemplate, { count: String(d.itinerary.length) })}</span>
+              <SplitText as="h2">
+                {parseInlineHtml(fill(T.itineraryHeadingTemplate, { name: d.name }))}
+              </SplitText>
             </div>
             <p className="lede" style={{ maxWidth: '38ch' }}>
-              This is a starting point, not a fixed menu. Every day below can be
-              swapped, stretched or dropped entirely.
+              {T.itineraryParagraph}
             </p>
           </div>
 
@@ -192,11 +198,11 @@ export default async function DestinationPage({ params }: Params) {
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">{packages.length} ready-made routes</span>
-              <SplitText as="h2">{d.name} packages</SplitText>
+              <span className="tag">{fill(T.packagesTagTemplate, { count: String(packages.length) })}</span>
+              <SplitText as="h2">{fill(T.packagesHeadingTemplate, { name: d.name })}</SplitText>
             </div>
             <TLink href="/services" className="link-u" style={{ color: 'var(--navy-800)' }}>
-              Filter all packages <ArrowRight className="btn__icon" />
+              {T.packagesLinkLabel} <ArrowRight className="btn__icon" />
             </TLink>
           </div>
 
@@ -206,7 +212,7 @@ export default async function DestinationPage({ params }: Params) {
 
           {sample && (
             <p className="mono mt-3" style={{ color: 'var(--ink-faint)', fontSize: 'var(--t-xs)', letterSpacing: '.14em', textTransform: 'uppercase' }}>
-              Prices are per person on twin sharing · land package · flights optional
+              {T.pricingDisclaimer}
             </p>
           )}
         </div>
@@ -217,8 +223,8 @@ export default async function DestinationPage({ params }: Params) {
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">Connecting flights</span>
-              <SplitText as="h2">Pair it with</SplitText>
+              <span className="tag">{T.connectingTag}</span>
+              <SplitText as="h2">{T.connectingHeading}</SplitText>
             </div>
           </div>
 

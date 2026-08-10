@@ -135,6 +135,46 @@ dono mein automatically use hota hai, sirf ek jagah badalna padega.
 `phoneHref` ek special format mein hona chahiye: `"tel:+91XXXXXXXXXX"`
 (no spaces, `+` ke baad seedha number).
 
+### `site.json`
+Poori website mein jo bhi common/shared text hai — page ka `<title>`,
+Google search description, nav ke links, footer ka poora content, 404 page,
+har package ki "not included" list, add-on rates, aur chhote UI labels
+(jaise "Travellers", "Included:", price card ke messages) — sab yahan hai.
+
+### `home.json`, `about.json`, `services-page.json`, `destinations-page.json`, `contact-page.json`, `package-page.json`
+Har ek apne page ka poora content hai — hero heading/paragraph, stats,
+section headings, list items, CTA buttons, sab kuch. File ka naam jis page
+se match karta hai, wahi uska content hai (e.g. `about.json` = `/about` page).
+
+**`headingHtml` fields:** kuch headings mein `<br />` (line break) aur
+`<em>...</em>` (italic highlight) use hota hai — jaise
+`"Southeast<br />Asia in full<br /><em>colours</em>"`. Ye tags waise hi
+rehne do, bas unke beech ka text badlo.
+
+**`{placeholder}` fields:** kuch text mein `{name}`, `{count}` jaisi cheezein
+dikhengi (e.g. `"Filter {count} ready-made itineraries..."`) — yeh
+automatically real number/naam se replace ho jaati hain, inhe hataana mat.
+
+### `legal.json`
+Privacy Policy aur Cancellation & Refund Policy ka poora legal text.
+Har section `blocks` ki list hai — do types honte hain:
+- `{ "type": "p", "text": "..." }` — ek paragraph
+- `{ "type": "ul", "items": ["...", "..."] }` — bullet list
+
+Text ke andar `**bold text**` likhne se wo bold ban jaata hai, aur
+`{{email}}` / `{{phone}}` likhne se wahan `contact.json` ka real email/phone
+apne aap clickable link ban ke aa jaata hai — inhe directly type mat karo.
+
+### `pdf.json`
+Downloadable itinerary PDF ke saare labels aur headings — "Quick details",
+"What you pay", back-cover ka message, waghera. Package-specific data
+(prices, itinerary) `packages.json` se aata hai; ye file sirf PDF ke
+fixed/repeating text ke liye hai.
+
+### `forms.json`
+Contact form ke field labels/placeholders, price calculator ke slider
+limits aur labels, aur packages page ke filter chips/labels.
+
 ---
 
 ## Yeh kaam mat karna (developer ke liye chhod do)

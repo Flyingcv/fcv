@@ -1,0 +1,59 @@
+{
+  "contactForm": {
+    "fields": {
+      "name": { "label": "Full name", "placeholder": "Ananya Sharma" },
+      "email": { "label": "Email", "placeholder": "you@email.com" },
+      "phone": { "label": "Phone / WhatsApp", "placeholder": "+91 98xxx xxxxx" },
+      "destination": { "label": "Destination", "defaultOption": "Not decided yet", "multiCountryOption": "Multi-country" },
+      "pax": { "label": "Travellers", "min": 1, "max": 40, "default": 2 },
+      "dates": { "label": "Approximate dates", "placeholder": "Mid-October, 6 nights" },
+      "budget": { "label": "Budget per person (optional)", "placeholder": "₹60,000 – ₹80,000" },
+      "message": { "label": "What would make this trip worth it?", "placeholder": "Honeymoon, we want one night on a Halong Bay cruise and a quiet beach after…" }
+    },
+    "submitLabel": "Send enquiry",
+    "callLabelPrefix": "Or call",
+    "successMessage": "Your enquiry is ready in your mail app — hit send and a planner will reply within one working day. Prefer WhatsApp? Message us on {phone}.",
+    "disclaimerNote": "We reply to every enquiry personally — no automated drip sequence. Your details are used only to plan your trip."
+  },
+  "priceConfigurator": {
+    "minDays": 3,
+    "maxDays": 14,
+    "minPax": 2,
+    "maxPax": 12,
+    "defaultDays": 6,
+    "defaultPax": 2,
+    "labels": {
+      "destination": "Destination",
+      "tripLength": "Trip length",
+      "travellers": "Travellers",
+      "stayStandard": "Stay standard",
+      "nightsSuffix": "nights",
+      "travellingTogether": "travelling together",
+      "twinSharing": "twin sharing"
+    },
+    "passTitle": "Live quote · Boarding pass",
+    "sendQuoteLabel": "Send this quote on WhatsApp",
+    "disclaimerNote": "Indicative pricing for planning. Final quote depends on travel dates, hotel availability and live airfares — a planner confirms within 24 hours."
+  },
+  "packageFilter": {
+    "lengths": [
+      { "key": "any", "label": "Any", "minDays": null, "maxDays": null },
+      { "key": "short", "label": "4 days", "minDays": null, "maxDays": 4 },
+      { "key": "mid", "label": "5 – 6 days", "minDays": 5, "maxDays": 6 },
+      { "key": "long", "label": "7+ days", "minDays": 7, "maxDays": null }
+    ],
+    "minBudget": 25000,
+    "maxBudget": 125000,
+    "sortOptions": [
+      { "key": "popular", "label": "Popular" },
+      { "key": "price", "label": "Price" },
+      { "key": "days", "label": "Days" }
+    ],
+    "emptyState": {
+      "heading": "No route matches that yet.",
+      "paragraph": "Widen the budget or the trip length — or let a planner build something custom.",
+      "resetLabel": "Reset filters"
+    },
+    "resetLabel": "× Clear filters"
+  }
+}

@@ -6,31 +6,17 @@ import Photo from '@/components/Photo';
 import PackageFilter from '@/components/services/PackageFilter';
 import PriceConfigurator from '@/components/services/PriceConfigurator';
 import { ArrowRight, Plane } from '@/components/icons';
-import { img, PACKAGES } from '@/lib/data';
+import { img, PACKAGES, SERVICES_PAGE } from '@/lib/data';
+import { parseInlineHtml } from '@/lib/richtext';
 
 export const metadata: Metadata = {
-  title: 'Services & packages',
-  description:
-    'Filter every Southeast Asia package by days and budget, then build your own price with the interactive boarding-pass calculator.'
+  title: SERVICES_PAGE.meta.title,
+  description: SERVICES_PAGE.meta.description
 };
 
-const SERVICES = [
-  ['01', 'Personalised itineraries', 'Built around your dates, your pace and the three things you actually want to see. Nothing off a shelf.'],
-  ['02', 'Expert local guides', 'English-speaking guides in every city on your route — people we have travelled with ourselves.'],
-  ['03', 'Flights & fare advice', 'IATA-partnered ticketing, honest advice on fare classes, and re-issue support if plans move.'],
-  ['04', 'Visa & travel insurance', 'e-Visa filing for Vietnam, VOA guidance for Bali, and cover that actually pays out.'],
-  ['05', 'Hotels & private transfers', 'Rooms we have inspected, drivers we have used, and airport meet-and-greet on every arrival.'],
-  ['06', '24/7 on-trip support', 'One WhatsApp thread for the whole trip. Cancelled flights get solved before you finish the email.']
-];
-
-const STEPS = [
-  ['Tell us the shape', 'Dates, rough budget, who is travelling and what you would hate to miss. Five minutes on a call.'],
-  ['We draft the route', 'A day-by-day itinerary with real hotels and real prices — usually back with you the same day.'],
-  ['You redraw it', 'Swap a city, add two nights, drop the 5am trek. We rebuild until it reads like your holiday.'],
-  ['Fly, we stay on', 'Documents, transfers and a planner on WhatsApp for the entire trip. Then a postcard, hopefully.']
-];
-
 export default function ServicesPage() {
+  const { hero, services, pricing, steps, packages, cta } = SERVICES_PAGE;
+
   return (
     <>
       {/* --------------------------------------------------------- page hero */}
@@ -44,20 +30,19 @@ export default function ServicesPage() {
             <nav className="phero__crumbs" aria-label="Breadcrumb">
               <TLink href="/">Home</TLink> <span>/</span> <span>Services</span>
             </nav>
-            <span className="tag tag--light">Everything between booking and boarding</span>
-            <SplitText as="h1" className="mt-1">Services<br />&amp; packages</SplitText>
+            <span className="tag tag--light">{hero.tag}</span>
+            <SplitText as="h1" className="mt-1">{parseInlineHtml(hero.headingHtml)}</SplitText>
             <p className="lede mt-2" style={{ maxWidth: '52ch' }}>
-              Filter {PACKAGES.length} ready-made itineraries by length and budget — or move a
-              slider and build your own price from scratch.
+              {hero.paragraphTemplate.replace('{count}', String(PACKAGES.length))}
             </p>
 
             <div className="hero__actions mt-3">
-              <a href="#configurator" className="btn btn--gold" data-magnetic="0.3">
-                Open the price calculator
+              <a href={hero.primaryHref} className="btn btn--gold" data-magnetic="0.3">
+                {hero.primaryLabel}
                 <ArrowRight className="btn__icon" />
               </a>
-              <a href="#packages" className="btn btn--ghost" data-magnetic="0.3">
-                Browse packages
+              <a href={hero.secondaryHref} className="btn btn--ghost" data-magnetic="0.3">
+                {hero.secondaryLabel}
                 <ArrowRight className="btn__icon" />
               </a>
             </div>
@@ -70,22 +55,21 @@ export default function ServicesPage() {
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">What we handle</span>
-              <SplitText as="h2">Six jobs we take<br />off your desk.</SplitText>
+              <span className="tag">{services.tag}</span>
+              <SplitText as="h2">{parseInlineHtml(services.headingHtml)}</SplitText>
             </div>
             <p className="lede" style={{ maxWidth: '36ch' }}>
-              One planner owns your file end to end. You never get passed to a
-              different department halfway through.
+              {services.paragraph}
             </p>
           </div>
 
           <div className="grid grid-3" data-stagger="0.07">
-            {SERVICES.map(([num, title, copy]) => (
-              <article className="svc-card" key={num}>
-                <span className="svc-card__num">{num}</span>
+            {services.items.map((s) => (
+              <article className="svc-card" key={s.num}>
+                <span className="svc-card__num">{s.num}</span>
                 <Plane className="svc-card__ico" />
-                <h3>{title}</h3>
-                <p>{copy}</p>
+                <h3>{s.title}</h3>
+                <p>{s.copy}</p>
               </article>
             ))}
           </div>
@@ -97,12 +81,11 @@ export default function ServicesPage() {
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">Interactive · live pricing</span>
-              <SplitText as="h2">Build the price.<br />Watch the pass print.</SplitText>
+              <span className="tag">{pricing.tag}</span>
+              <SplitText as="h2">{parseInlineHtml(pricing.headingHtml)}</SplitText>
             </div>
             <p className="lede" style={{ maxWidth: '38ch' }}>
-              Land cost is calculated per person per day, so nothing is rounded up to a
-              package you did not ask for. Everything below updates instantly.
+              {pricing.paragraph}
             </p>
           </div>
 
@@ -115,13 +98,13 @@ export default function ServicesPage() {
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">How it works</span>
-              <SplitText as="h2">Four steps from<br />idea to boarding.</SplitText>
+              <span className="tag">{steps.tag}</span>
+              <SplitText as="h2">{parseInlineHtml(steps.headingHtml)}</SplitText>
             </div>
           </div>
 
           <div className="itin">
-            {STEPS.map(([title, copy], i) => (
+            {steps.items.map(({ title, copy }, i) => (
               <article className="itin__day rise" key={title}>
                 <span className="itin__num">Step {String(i + 1).padStart(2, '0')}</span>
                 <div>
@@ -139,12 +122,11 @@ export default function ServicesPage() {
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">{PACKAGES.length} itineraries · live filter</span>
-              <SplitText as="h2">Find your route.</SplitText>
+              <span className="tag">{packages.tagTemplate.replace('{count}', String(PACKAGES.length))}</span>
+              <SplitText as="h2">{packages.heading}</SplitText>
             </div>
             <p className="lede" style={{ maxWidth: '36ch' }}>
-              Filter by destination, number of days and budget per person. Results update
-              as you move — nothing to submit.
+              {packages.paragraph}
             </p>
           </div>
 
@@ -159,14 +141,13 @@ export default function ServicesPage() {
         </div>
         <div className="wrap">
           <div className="cta-band__inner">
-            <span className="tag tag--light tag--plain">Nothing quite right?</span>
-            <SplitText as="h2">Then we’ll build<br />it from <em>scratch</em>.</SplitText>
+            <span className="tag tag--light tag--plain">{cta.tag}</span>
+            <SplitText as="h2">{parseInlineHtml(cta.headingHtml)}</SplitText>
             <p className="lede rise" style={{ margin: '0 auto' }}>
-              Roughly 6 in 10 of our trips start as a custom brief rather than a listed
-              package. Send us the shape and we will draft the rest.
+              {cta.paragraph}
             </p>
-            <TLink href="/contact" className="btn btn--gold rise" data-magnetic="0.3">
-              Start a custom trip
+            <TLink href={cta.ctaHref} className="btn btn--gold rise" data-magnetic="0.3">
+              {cta.ctaLabel}
               <ArrowRight className="btn__icon" />
             </TLink>
           </div>
@@ -175,13 +156,3 @@ export default function ServicesPage() {
     </>
   );
 }
-
-// Refinement iteration 19 for code quality and clarity
-
-// Refinement iteration 41 for code quality and clarity
-
-// Refinement iteration 63 for code quality and clarity
-
-// Refinement iteration 14 for code quality and clarity
-
-// Refinement iteration 36 for code quality and clarity

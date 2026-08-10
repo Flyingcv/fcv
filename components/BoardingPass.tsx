@@ -1,4 +1,5 @@
 import { Plane } from '@/components/icons';
+import { SITE } from '@/lib/data';
 
 export interface PassField {
   label: string;
@@ -29,7 +30,7 @@ const value = (f: PassField) =>
 export default function BoardingPass({
   from, to, fromCity, toCity,
   fields = [], stubFields = [], code, stamp,
-  dark, className = '', notch, title = 'Boarding Pass'
+  dark, className = '', notch, title = SITE.boardingPassDefaultTitle
 }: Props) {
   return (
     <article
@@ -39,7 +40,7 @@ export default function BoardingPass({
       <div className="pass__main">
         <div className="pass__row" style={{ justifyContent: 'space-between', alignItems: 'baseline' }}>
           <span className="pass__label">{title}</span>
-          <span className="pass__label">Flying Colours Vacations</span>
+          <span className="pass__label">{SITE.brandName}</span>
         </div>
 
         <div className="pass__route">

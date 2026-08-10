@@ -2,7 +2,9 @@
 
 import { useState } from 'react';
 import { Caret } from '@/components/icons';
-import type { ItineraryDay } from '@/lib/data';
+import { SITE, type ItineraryDay } from '@/lib/data';
+
+const U = SITE.ui.itineraryAccordion;
 
 interface Props {
   days: ItineraryDay[];
@@ -32,7 +34,7 @@ export default function ItineraryAccordion({ days }: Props) {
               onClick={() => toggle(i)}
               aria-expanded={isOpen}
             >
-              <span className="accordion__day">Day {String(i + 1).padStart(2, '0')}</span>
+              <span className="accordion__day">{U.dayLabelPrefix} {String(i + 1).padStart(2, '0')}</span>
               <span className="accordion__title">{day.title}</span>
               <Caret className="accordion__caret" />
             </button>
@@ -42,7 +44,7 @@ export default function ItineraryAccordion({ days }: Props) {
                 <ul className="accordion__activities">
                   {day.activities.map((a) => <li key={a}>{a}</li>)}
                 </ul>
-                <p className="accordion__included"><span>Included:</span> {day.included}</p>
+                <p className="accordion__included"><span>{U.includedLabel}</span> {day.included}</p>
               </div>
             </div>
           </div>

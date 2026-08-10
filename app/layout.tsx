@@ -8,6 +8,7 @@ import MotionProvider from '@/components/motion/MotionProvider';
 import Reveals from '@/components/motion/Reveals';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import { SITE } from '@/lib/data';
 
 const display = Fraunces({
   subsets: ['latin'],
@@ -29,22 +30,18 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://flyingcoloursvacations.com'),
+  metadataBase: new URL(SITE.siteUrl),
   title: {
-    default: 'Flying Colours Vacations — Adding Colours to Every Journey',
-    template: '%s · Flying Colours Vacations'
+    default: SITE.meta.titleDefault,
+    template: SITE.meta.titleTemplate
   },
-  description:
-    'Southeast Asia holiday specialists. Handcrafted packages to Vietnam, Bali, Thailand and Malaysia with private guides, 24/7 on-trip support and transparent pricing.',
-  keywords: [
-    'Vietnam tour packages', 'Bali holiday packages', 'Thailand packages',
-    'Malaysia tour', 'Southeast Asia holidays', 'Flying Colours Vacations'
-  ],
+  description: SITE.meta.description,
+  keywords: SITE.meta.keywords,
   openGraph: {
     type: 'website',
-    siteName: 'Flying Colours Vacations',
-    title: 'Flying Colours Vacations — Adding Colours to Every Journey',
-    description: 'Handcrafted Southeast Asia holidays to Vietnam, Bali, Thailand and Malaysia.'
+    siteName: SITE.meta.ogSiteName,
+    title: SITE.meta.ogTitle,
+    description: SITE.meta.ogDescription
   },
   icons: {
     // Just the globe+plane mark, cropped from the full logo lockup — the

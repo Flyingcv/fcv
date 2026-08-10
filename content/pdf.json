@@ -1,0 +1,63 @@
+{
+  "brandName": "FLYING COLOURS VACATIONS",
+  "brandTagline": "ADDING COLOURS TO EVERY JOURNEY",
+  "cover": {
+    "tripRouteLabel": "Trip route",
+    "aboutLabel": "About this trip",
+    "goodToKnowLabel": "Good to know"
+  },
+  "quickDetails": {
+    "heading": "Quick details",
+    "sub": "Everything at a glance before you read the day-by-day plan."
+  },
+  "whereYouStay": {
+    "heading": "Where you stay",
+    "hotelNote": "Hotels are the properties we book most often on this route. If one is unavailable for your dates we substitute the same or a higher category and confirm it in writing."
+  },
+  "itineraryGlance": {
+    "heading": "Itinerary at a glance",
+    "sub": "The whole trip on one page — days, plan, where you sleep and which meals are covered.",
+    "columns": ["DAY", "ITINERARY", "STAY", "MEALS"]
+  },
+  "dayByDay": { "heading": "Day-by-day itinerary" },
+  "inclExcl": {
+    "heading": "Inclusions & exclusions",
+    "includedLabel": "Included",
+    "notIncludedLabel": "Not included"
+  },
+  "highlightsHeadingTemplate": "{name} highlights",
+  "pricing": {
+    "heading": "What you pay",
+    "sub": "Per person on twin-sharing basis, land package. Return flights price constantly — add one on request at the fare live on your travel date, or use the estimate in Optional add-ons below.",
+    "yourSelectionLabel": "Your selection",
+    "totalForGroupLabel": "TOTAL FOR GROUP",
+    "otherOptionsLabel": "Other package options",
+    "scaledNoteTemplate": "Scaled from the base {baseNights}N / {baseDays}D itinerary at {perNightRate} per person per night. The day-by-day plan below follows the original {baseNights}N / {baseDays}D route — a planner adjusts it for the extra nights before confirming."
+  },
+  "addons": {
+    "heading": "Optional add-ons",
+    "columns": ["SERVICE", "DESCRIPTION", "PRICE"]
+  },
+  "goodToKnow": { "heading": "Good to know" },
+  "payment": {
+    "heading": "Payment & booking",
+    "weAcceptLabel": "We accept"
+  },
+  "whyUs": { "heading": "Why travel with us" },
+  "backCover": {
+    "headingLine1": "Ready when",
+    "headingLine2": "you are.",
+    "paragraph": "Send us your dates and we will turn this into a confirmed, priced itinerary — usually the same day.",
+    "website": "flyingcoloursvacations.com",
+    "contactLabels": {
+      "phone": "Phone / WhatsApp",
+      "email": "Email",
+      "office": "Office",
+      "hours": "Desk hours"
+    }
+  },
+  "button": {
+    "idleLabel": "Download itinerary",
+    "busyLabel": "Preparing PDF…"
+  }
+}

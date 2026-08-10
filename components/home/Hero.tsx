@@ -6,7 +6,8 @@ import SplitText from '@/components/SplitText';
 import { Plane, ArrowRight } from '@/components/icons';
 import { useMotion } from '@/components/motion/MotionProvider';
 import { gsap, prefersReducedMotion, useIsoLayoutEffect } from '@/lib/gsap';
-import { img } from '@/lib/data';
+import { img, HOME, inr } from '@/lib/data';
+import { parseInlineHtml } from '@/lib/richtext';
 
 /* Self-hosted from /public — files there are served from the site root,
    so no /public prefix in the path. */
@@ -105,27 +106,26 @@ export default function Hero() {
 
       <div className="hero__inner" data-hero-inner>
         <div className="hero__eyebrow" data-hero-item>
-          <span className="tag tag--light">Boarding pass to Southeast Asia</span>
-          <span>EST. 2014 · NOIDA, INDIA</span>
+          <span className="tag tag--light">{HOME.hero.eyebrowTag}</span>
+          <span>{HOME.hero.eyebrowSub}</span>
         </div>
 
         <SplitText as="h1" className="hero__title" data-hero-title="">
-          Southeast<br />Asia in full<br /><em>colours</em>
+          {parseInlineHtml(HOME.hero.titleHtml)}
         </SplitText>
 
         <div className="hero__foot">
           <div data-hero-item>
             <p className="hero__blurb">
-              Vietnam, Bali, Thailand and Malaysia — planned end to end by people who
-              have walked the itineraries themselves. One desk, one number, zero surprises.
+              {HOME.hero.blurb}
             </p>
             <div className="hero__actions mt-2">
-              <TLink href="/destinations" className="btn btn--gold" data-magnetic="0.3">
-                Explore destinations
+              <TLink href={HOME.hero.primaryHref} className="btn btn--gold" data-magnetic="0.3">
+                {HOME.hero.primaryLabel}
                 <ArrowRight className="btn__icon" />
               </TLink>
-              <TLink href="/services#configurator" className="btn btn--ghost" data-magnetic="0.3">
-                Build my price
+              <TLink href={HOME.hero.secondaryHref} className="btn btn--ghost" data-magnetic="0.3">
+                {HOME.hero.secondaryLabel}
                 <ArrowRight className="btn__icon" />
               </TLink>
             </div>
@@ -133,12 +133,12 @@ export default function Hero() {
 
           <div data-hero-item style={{ display: 'grid', gap: '1.4rem', justifyItems: 'end' }}>
             <div className="hero__ticker">
-              <span><i className="dotlive" />NOW BOARDING</span>
-              <span>SGN <b>₹42,999</b></span>
-              <span>DPS <b>₹48,999</b></span>
-              <span>BKK <b>₹34,999</b></span>
+              <span><i className="dotlive" />{HOME.hero.tickerLabel}</span>
+              {HOME.hero.tickerItems.map((t) => (
+                <span key={t.code}>{t.code} <b>{inr(t.price)}</b></span>
+              ))}
             </div>
-            <span className="scroll-cue">Scroll <i /></span>
+            <span className="scroll-cue">{HOME.hero.scrollCueLabel} <i /></span>
           </div>
         </div>
       </div>

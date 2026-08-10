@@ -9,12 +9,13 @@ import BoardingPass from '@/components/BoardingPass';
 import { ArrowRight } from '@/components/icons';
 import { gsap, prefersReducedMotion } from '@/lib/gsap';
 import {
-  DESTINATION_LIST, DESTINATIONS, TIERS, ORIGIN,
+  DESTINATION_LIST, DESTINATIONS, TIERS, ORIGIN, FORMS,
   quote, inr, type DestinationSlug, type TierKey, type AddonKey
 } from '@/lib/data';
 
-const MIN_DAYS = 3;
-const MAX_DAYS = 14;
+const F = FORMS.priceConfigurator;
+const MIN_DAYS = F.minDays;
+const MAX_DAYS = F.maxDays;
 
 /** A number that counts to its new value instead of snapping.
  *  Driven by state so React keeps ownership of the text node. */
@@ -42,8 +43,8 @@ function Amount({ value, className }: { value: number; className?: string }) {
 
 export default function PriceConfigurator() {
   const [dest, setDest] = useState<DestinationSlug>('vietnam');
-  const [days, setDays] = useState(6);
-  const [pax, setPax] = useState(2);
+  const [days, setDays] = useState(F.defaultDays);
+  const [pax, setPax] = useState(F.defaultPax);
   const [tier, setTier] = useState<TierKey>('premium');
   // The "add to the package" picker is commented out below for now, so there
   // is nothing to toggle — quote() still accepts an addons list if it comes
@@ -85,7 +86,7 @@ export default function PriceConfigurator() {
         {/* destination */}
         <div className="config__block">
           <div className="config__head">
-            <label>Destination</label>
+            <label>{F.labels.destination}</label>
             <span className="config__val">{d.iata}<small>{d.name}</small></span>
           </div>
           <div className="chips">
@@ -105,9 +106,9 @@ export default function PriceConfigurator() {
         {/* days (slider still steps by whole days; display is nights-only) */}
         <div className="config__block">
           <div className="config__head">
-            <label htmlFor="days">Trip length</label>
+            <label htmlFor="days">{F.labels.tripLength}</label>
             <span className="config__val">
-              {String(days - 1).padStart(2, '0')}<small>nights</small>
+              {String(days - 1).padStart(2, '0')}<small>{F.labels.nightsSuffix}</small>
             </span>
           </div>
           <div className="slider-wrap">
@@ -128,8 +129,8 @@ export default function PriceConfigurator() {
               ))}
             </div>
             <div className="range-ends">
-              <span>{MIN_DAYS - 1} nights</span>
-              <span>{MAX_DAYS - 1} nights</span>
+              <span>{MIN_DAYS - 1} {F.labels.nightsSuffix}</span>
+              <span>{MAX_DAYS - 1} {F.labels.nightsSuffix}</span>
             </div>
           </div>
         </div>
@@ -137,22 +138,22 @@ export default function PriceConfigurator() {
         {/* travellers */}
         <div className="config__block">
           <div className="config__head">
-            <label>Travellers</label>
+            <label>{F.labels.travellers}</label>
             <span className="config__val">
               {String(pax).padStart(2, '0')}
-              <small>{pax >= 4 ? 'travelling together' : 'twin sharing'}</small>
+              <small>{pax >= 4 ? F.labels.travellingTogether : F.labels.twinSharing}</small>
             </span>
           </div>
           <div className="stepper">
-            <button onClick={() => setPax((p) => Math.max(2, p - 1))} disabled={pax <= 2} aria-label="One traveller fewer">−</button>
+            <button onClick={() => setPax((p) => Math.max(F.minPax, p - 1))} disabled={pax <= F.minPax} aria-label="One traveller fewer">−</button>
             <output>{pax}</output>
-            <button onClick={() => setPax((p) => Math.min(12, p + 1))} disabled={pax >= 12} aria-label="One traveller more">+</button>
+            <button onClick={() => setPax((p) => Math.min(F.maxPax, p + 1))} disabled={pax >= F.maxPax} aria-label="One traveller more">+</button>
           </div>
         </div>
 
         {/* tier */}
         <div className="config__block">
-          <div className="config__head"><label>Stay standard</label></div>
+          <div className="config__head"><label>{F.labels.stayStandard}</label></div>
           <div className="opts" role="radiogroup" aria-label="Stay standard">
             {(Object.keys(TIERS) as TierKey[]).map((k) => (
               <label className="opt" key={k}>
@@ -197,7 +198,7 @@ export default function PriceConfigurator() {
           to={d.iata}
           fromCity={ORIGIN.city}
           toCity={d.name}
-          title="Live quote · Boarding pass"
+          title={F.passTitle}
           stamp={`${TIERS[tier].label} · ${pax} PAX`}
           code={`FCV · ${d.iata} · ${String(days).padStart(2, '0')}D · ${TIERS[tier].label.toUpperCase()} · ${pax}PAX`}
           fields={[
@@ -232,14 +233,13 @@ export default function PriceConfigurator() {
 
         <div className="hero__actions mt-2">
           <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn btn--gold" data-magnetic="0.28">
-            Send this quote on WhatsApp
+            {F.sendQuoteLabel}
             <ArrowRight className="btn__icon" />
           </a>
         </div>
 
         <p className="form__note mt-2">
-          Indicative pricing for planning. Final quote depends on travel dates, hotel
-          availability and live airfares — a planner confirms within 24 hours.
+          {F.disclaimerNote}
         </p>
       </div>
     </div>

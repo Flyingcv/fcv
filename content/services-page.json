@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Services & packages",
+    "description": "Filter every Southeast Asia package by days and budget, then build your own price with the interactive boarding-pass calculator."
+  },
+  "hero": {
+    "tag": "Everything between booking and boarding",
+    "headingHtml": "Services<br />&amp; packages",
+    "paragraphTemplate": "Filter {count} ready-made itineraries by length and budget — or move a slider and build your own price from scratch.",
+    "primaryLabel": "Open the price calculator",
+    "primaryHref": "#configurator",
+    "secondaryLabel": "Browse packages",
+    "secondaryHref": "#packages"
+  },
+  "services": {
+    "tag": "What we handle",
+    "headingHtml": "Six jobs we take<br />off your desk.",
+    "paragraph": "One planner owns your file end to end. You never get passed to a different department halfway through.",
+    "items": [
+      { "num": "01", "title": "Personalised itineraries", "copy": "Built around your dates, your pace and the three things you actually want to see. Nothing off a shelf." },
+      { "num": "02", "title": "Expert local guides", "copy": "English-speaking guides in every city on your route — people we have travelled with ourselves." },
+      { "num": "03", "title": "Flights & fare advice", "copy": "IATA-partnered ticketing, honest advice on fare classes, and re-issue support if plans move." },
+      { "num": "04", "title": "Visa & travel insurance", "copy": "e-Visa filing for Vietnam, VOA guidance for Bali, and cover that actually pays out." },
+      { "num": "05", "title": "Hotels & private transfers", "copy": "Rooms we have inspected, drivers we have used, and airport meet-and-greet on every arrival." },
+      { "num": "06", "title": "24/7 on-trip support", "copy": "One WhatsApp thread for the whole trip. Cancelled flights get solved before you finish the email." }
+    ]
+  },
+  "pricing": {
+    "tag": "Interactive · live pricing",
+    "headingHtml": "Build the price.<br />Watch the pass print.",
+    "paragraph": "Land cost is calculated per person per day, so nothing is rounded up to a package you did not ask for. Everything below updates instantly."
+  },
+  "steps": {
+    "tag": "How it works",
+    "headingHtml": "Four steps from<br />idea to boarding.",
+    "items": [
+      { "title": "Tell us the shape", "copy": "Dates, rough budget, who is travelling and what you would hate to miss. Five minutes on a call." },
+      { "title": "We draft the route", "copy": "A day-by-day itinerary with real hotels and real prices — usually back with you the same day." },
+      { "title": "You redraw it", "copy": "Swap a city, add two nights, drop the 5am trek. We rebuild until it reads like your holiday." },
+      { "title": "Fly, we stay on", "copy": "Documents, transfers and a planner on WhatsApp for the entire trip. Then a postcard, hopefully." }
+    ]
+  },
+  "packages": {
+    "tagTemplate": "{count} itineraries · live filter",
+    "heading": "Find your route.",
+    "paragraph": "Filter by destination, number of days and budget per person. Results update as you move — nothing to submit."
+  },
+  "cta": {
+    "tag": "Nothing quite right?",
+    "headingHtml": "Then we'll build<br />it from <em>scratch</em>.",
+    "paragraph": "Roughly 6 in 10 of our trips start as a custom brief rather than a listed package. Send us the shape and we will draft the rest.",
+    "ctaLabel": "Start a custom trip",
+    "ctaHref": "/contact"
+  }
+}

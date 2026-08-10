@@ -1,0 +1,117 @@
+{
+  "brandName": "Flying Colours Vacations",
+  "boardingPassDefaultTitle": "Boarding Pass",
+  "glimpseAltText": "Flying Colours Vacations traveller",
+  "meta": {
+    "titleDefault": "Flying Colours Vacations — Adding Colours to Every Journey",
+    "titleTemplate": "%s · Flying Colours Vacations",
+    "description": "Southeast Asia holiday specialists. Handcrafted packages to Vietnam, Bali, Thailand and Malaysia with private guides, 24/7 on-trip support and transparent pricing.",
+    "keywords": [
+      "Vietnam tour packages",
+      "Bali holiday packages",
+      "Thailand packages",
+      "Malaysia tour",
+      "Southeast Asia holidays",
+      "Flying Colours Vacations"
+    ],
+    "ogSiteName": "Flying Colours Vacations",
+    "ogTitle": "Flying Colours Vacations — Adding Colours to Every Journey",
+    "ogDescription": "Handcrafted Southeast Asia holidays to Vietnam, Bali, Thailand and Malaysia."
+  },
+  "origin": { "code": "DEL", "city": "New Delhi" },
+  "nav": {
+    "links": [
+      { "href": "/", "label": "Home" },
+      { "href": "/about", "label": "About" },
+      { "href": "/destinations", "label": "Destinations", "menu": true },
+      { "href": "/services", "label": "Packages" },
+      { "href": "/contact", "label": "Contact" }
+    ],
+    "ctaLabel": "Plan my trip",
+    "dropdownFooterText": "04 destinations · 60+ itineraries",
+    "dropdownViewAllLabel": "View all",
+    "drawerFootLabel": "Talk to a planner"
+  },
+  "footer": {
+    "tagline": "Adding colours to every journey. Southeast Asia specialists since 2014 — planning, ticketing and 24/7 on-trip support from one desk in Noida.",
+    "socials": {
+      "instagram": "https://www.instagram.com/flyingcoloursvacations",
+      "facebook": "https://facebook.com/flyingcoloursvacations",
+      "whatsapp": "https://wa.me/917017440214"
+    },
+    "columns": {
+      "destinationsHeading": "Destinations",
+      "allDestinationsLabel": "All destinations",
+      "companyHeading": "Company",
+      "companyLinks": [
+        { "href": "/about", "label": "About us" },
+        { "href": "/services", "label": "Services & packages" },
+        { "href": "/services#configurator", "label": "Price calculator" },
+        { "href": "/contact", "label": "Contact" },
+        { "href": "/contact#faq", "label": "FAQs" }
+      ],
+      "deskHeading": "Departures desk",
+      "callbackLabel": "Request a callback"
+    },
+    "bottomLine1Template": "© {year} Flying Colours Vacations · All rights reserved",
+    "bottomLine2": "Noida · India — IATA-partnered ticketing",
+    "privacyLabel": "Privacy policy",
+    "cancellationLabel": "Cancellation & refund policy",
+    "creditText": "Made with 🔥 by",
+    "creditName": "The Angaar Labs",
+    "creditUrl": "https://labs.theangaarbatch.in/"
+  },
+  "notFound": {
+    "tag": "Error 404 · Gate closed",
+    "heading": "Off<br />route",
+    "paragraph": "This boarding pass is not in our system. The page may have moved, or the link was mistyped somewhere along the way.",
+    "primaryLabel": "Back to the terminal",
+    "secondaryLabel": "Browse packages"
+  },
+  "packageExcludes": [
+    "International / domestic airfare, unless specifically mentioned above",
+    "Visa fees and travel insurance",
+    "Personal expenses, tips and shopping",
+    "Meals not listed in the inclusions",
+    "Optional activities and entry tickets not listed above",
+    "Anything not specifically mentioned as included"
+  ],
+  "addons": {
+    "flights": { "label": "Return flights", "note": "Ex-Delhi, economy", "kind": "perPerson" },
+    "visa": { "label": "Visa & travel insurance", "note": "Filing + 100% claim support", "kind": "perPerson", "rate": 3500 },
+    "guide": { "label": "Private guide & car", "note": "English-speaking, full day", "kind": "perPersonPerDay", "rate": 900 },
+    "experiences": { "label": "Signature experiences pack", "note": "Cruise, show, sunrise trek", "kind": "perPerson", "rate": 6500 }
+  },
+  "siteUrl": "https://flyingcoloursvacations.com",
+  "ui": {
+    "priceCard": {
+      "perPersonTwinSharing": "per person · twin sharing",
+      "travellersLabel": "Travellers",
+      "totalForTemplate": "Total for {pax} {travellerWord}",
+      "travellerSingular": "traveller",
+      "travellerPlural": "travellers",
+      "durationLabel": "Duration",
+      "routeLabel": "Route",
+      "styleLabel": "Style",
+      "enquireLabel": "Enquire on WhatsApp",
+      "note": "This matches the itinerary shown below. Priced per person on twin sharing; a planner confirms the exact group quote.",
+      "waMessage": {
+        "intro": "Hi! I'd like to know more about this package:",
+        "travellersLine": "Travellers:",
+        "priceLineTemplate": "Estimated price: {total} per person ({groupTotal} total)",
+        "closing": "Please share availability and next steps."
+      }
+    },
+    "packageCard": {
+      "perPersonFromLabel": "Per person from",
+      "viewLabel": "View"
+    },
+    "itineraryAccordion": {
+      "dayLabelPrefix": "Day",
+      "includedLabel": "Included:"
+    },
+    "legalToc": {
+      "title": "On this page"
+    }
+  }
+}

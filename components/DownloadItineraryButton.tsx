@@ -3,9 +3,12 @@
 import { useState } from 'react';
 import { ArrowRight } from '@/components/icons';
 import {
-  BROCHURE, CONTACT, PACKAGE_EXCLUDES,
+  BROCHURE, CONTACT, PACKAGE_EXCLUDES, PDF_COPY,
   type Package, type Destination
 } from '@/lib/data';
+
+const fill = (template: string, values: Record<string, string>) =>
+  Object.entries(values).reduce((s, [k, v]) => s.replaceAll(`{${k}}`, v), template);
 
 interface Props {
   pkg: Package;
@@ -81,10 +84,12 @@ async function loadImageCover(src: string, targetW: number, targetH: number): Pr
   }
 }
 
-/** Loads a same-origin image (the logo) at its natural size, preserving
- *  transparency via PNG — unlike loadImageCover this doesn't crop or
- *  recompress to JPEG, since a logo needs a clean edge, not a photo fit. */
-async function loadImagePng(src: string): Promise<{ dataUrl: string; ratio: number } | null> {
+/** Loads the pre-cut transparent brand logo (see /public/logo-transparent.png
+ *  — the same JPEG lockup with its flat cream background keyed out) at its
+ *  natural size. Used for both the corner mark and the centre-page
+ *  watermark, so both stay clean on light and navy pages alike instead of
+ *  showing a pale rectangle around the artwork. */
+async function loadBrandLogoPng(src: string): Promise<{ dataUrl: string; ratio: number } | null> {
   try {
     const img = new Image();
     await new Promise<void>((resolve, reject) => {
@@ -99,50 +104,6 @@ async function loadImagePng(src: string): Promise<{ dataUrl: string; ratio: numb
     if (!ctx) return null;
     ctx.drawImage(img, 0, 0);
     return { dataUrl: canvas.toDataURL('image/png'), ratio: img.naturalWidth / img.naturalHeight };
-  } catch {
-    return null;
-  }
-}
-
-/** Loads the brand watermark JPEG and keys its flat cream background out to
- *  transparency, so tiling it across a page reads as a repeating logo mark
- *  rather than a grid of pale rectangles. Downscaled since it's drawn many
- *  times per page — full resolution would bloat the PDF for no visible gain
- *  at watermark size. A soft threshold band (not a hard cutoff) avoids a
- *  jagged edge from JPEG compression ringing around the artwork. */
-async function loadWatermarkPng(src: string): Promise<{ dataUrl: string; ratio: number } | null> {
-  try {
-    const img = new Image();
-    await new Promise<void>((resolve, reject) => {
-      img.onload = () => resolve();
-      img.onerror = () => reject(new Error('watermark load failed'));
-      img.src = src;
-    });
-
-    const targetW = 480;
-    const targetH = Math.round(targetW * (img.naturalHeight / img.naturalWidth));
-    const canvas = document.createElement('canvas');
-    canvas.width = targetW;
-    canvas.height = targetH;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return null;
-    ctx.drawImage(img, 0, 0, targetW, targetH);
-
-    const imageData = ctx.getImageData(0, 0, targetW, targetH);
-    const { data } = imageData;
-    const bgR = 249, bgG = 246, bgB = 241;
-    const cut = 26, feather = 20;
-    for (let i = 0; i < data.length; i += 4) {
-      const dr = data[i] - bgR;
-      const dg = data[i + 1] - bgG;
-      const db = data[i + 2] - bgB;
-      const dist = Math.sqrt(dr * dr + dg * dg + db * db);
-      if (dist < cut) data[i + 3] = 0;
-      else if (dist < cut + feather) data[i + 3] = Math.round(255 * ((dist - cut) / feather));
-    }
-    ctx.putImageData(imageData, 0, 0);
-
-    return { dataUrl: canvas.toDataURL('image/png'), ratio: targetW / targetH };
   } catch {
     return null;
   }
@@ -164,10 +125,9 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
 
       // Landscape banner (~2.35:1) rather than a full-bleed portrait cover —
       // it's a strip at the top of page 1, not the whole first page.
-      const [banner, logo, watermark] = await Promise.all([
+      const [banner, logo] = await Promise.all([
         loadImageCover(d.hero.replace(/w=\d+/, 'w=1600'), 1600, 680),
-        loadImagePng('/logo-flying-colours-vacations.webp'),
-        loadWatermarkPng('/PDF%20Watermark.jpeg')
+        loadBrandLogoPng('/logo-transparent.png')
       ]);
 
       // Mirrors the price card's own math exactly, so the PDF a visitor
@@ -282,35 +242,30 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
         gd.setGState(gd.GState({ opacity: 1 }));
       };
 
-      /** Faint tiled brand logo across the whole page, behind and over the
+      /** One large brand mark centred on the page, behind and over the
        *  content — makes a screenshot or photocopy traceable back to us
        *  without hurting legibility of the real text sitting on top. Falls
-       *  back silently (draws nothing) if the watermark asset failed to load. */
+       *  back silently (draws nothing) if the logo asset failed to load. */
       const drawWatermark = (onDark: boolean) => {
-        if (!watermark) return;
-        withOpacity(onDark ? 0.14 : 0.08, () => {
-          const wmW = 118;
-          const wmH = wmW / watermark.ratio;
-          const stepX = 205, stepY = 150;
-          let row = 0;
-          for (let ry = -40; ry < pageH + stepY; ry += stepY, row += 1) {
-            const offset = row % 2 ? stepX / 2 : 0;
-            for (let rx = -stepX + offset; rx < pageW + stepX; rx += stepX) {
-              doc.addImage(watermark.dataUrl, 'PNG', rx, ry, wmW, wmH);
-            }
-          }
+        if (!logo) return;
+        withOpacity(onDark ? 0.12 : 0.07, () => {
+          const wmW = pageW * 0.62;
+          const wmH = wmW / logo.ratio;
+          const x = (pageW - wmW) / 2;
+          const y = (pageH - wmH) / 2;
+          doc.addImage(logo.dataUrl, 'PNG', x, y, wmW, wmH);
         });
       };
 
-      /** Small logo mark, top-right, on every page. On the navy back cover
-       *  it sits on a white chip — the logo's wordmark is navy-on-transparent
+      /** Logo mark, top-right, on every page. On the navy back cover it
+       *  sits on a white chip — the logo's wordmark is navy-on-transparent
        *  and would vanish drawn directly onto navy. */
       const drawCornerLogo = (onDark: boolean) => {
         if (!logo) return;
-        const w = 68;
+        const w = 92;
         const h = w / logo.ratio;
         const x = pageW - M - w;
-        const yTop = 22;
+        const yTop = 20;
         if (onDark) {
           doc.setFillColor(255, 255, 255);
           doc.roundedRect(x - 8, yTop - 8, w + 16, h + 16, 4, 4, 'F');
@@ -323,11 +278,11 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       doc.setTextColor(...GOLD);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(9);
-      doc.text('FLYING COLOURS VACATIONS', M, y);
+      doc.text(PDF_COPY.brandName, M, y);
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(7.5);
       doc.setTextColor(...INK_FAINT);
-      doc.text('ADDING COLOURS TO EVERY JOURNEY', M, y + 12);
+      doc.text(PDF_COPY.brandTagline, M, y + 12);
       y += 34;
 
       const bannerH = CW * 0.42;
@@ -370,7 +325,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       doc.text(coverMeta, M, y);
       y += coverMeta.length * 14 + 12;
 
-      label('Trip route', M, y);
+      label(PDF_COPY.cover.tripRouteLabel, M, y);
       y += 15;
       doc.setTextColor(...INK);
       doc.setFont('helvetica', 'normal');
@@ -379,7 +334,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       doc.text(coverRoute, M, y);
       y += coverRoute.length * 14 + 22;
 
-      label('About this trip', M, y);
+      label(PDF_COPY.cover.aboutLabel, M, y);
       y += 15;
       doc.setTextColor(...INK_SOFT);
       doc.setFont('helvetica', 'normal');
@@ -388,7 +343,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       doc.text(blurbLines, M, y);
       y += blurbLines.length * 13.5 + 20;
 
-      label('Good to know', M, y);
+      label(PDF_COPY.cover.goodToKnowLabel, M, y);
       y += 16;
       const factEntries = Object.entries(d.facts);
       const factColW = CW / factEntries.length;
@@ -408,7 +363,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
 
       /* =================================================== QUICK DETAILS */
       section();
-      heading('Quick details', 'Everything at a glance before you read the day-by-day plan.');
+      heading(PDF_COPY.quickDetails.heading, PDF_COPY.quickDetails.sub);
 
       const qd = Object.entries(pkg.quickDetails);
       qd.forEach(([k, v], i) => {
@@ -433,7 +388,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       });
 
       section(24);
-      heading('Where you stay');
+      heading(PDF_COPY.whereYouStay.heading);
       pkg.hotels.forEach((h) => {
         const lines = wrap(h, CW - 16, 9.5);
         room(lines.length * 13 + 8);
@@ -448,28 +403,26 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       doc.setTextColor(...INK_FAINT);
       doc.setFont('helvetica', 'italic');
       doc.setFontSize(8.5);
-      const hotelNote = wrap(
-        'Hotels are the properties we book most often on this route. If one is unavailable for your dates we substitute the same or a higher category and confirm it in writing.',
-        CW, 8.5
-      );
+      const hotelNote = wrap(PDF_COPY.whereYouStay.hotelNote, CW, 8.5);
       room(hotelNote.length * 11);
       doc.text(hotelNote, M, y);
       y += hotelNote.length * 11;
 
       /* ================================================== SKETCH ITINERARY */
       section();
-      heading('Itinerary at a glance', 'The whole trip on one page — days, plan, where you sleep and which meals are covered.');
+      heading(PDF_COPY.itineraryGlance.heading, PDF_COPY.itineraryGlance.sub);
 
+      const [colDay, colItin, colStay, colMeals] = PDF_COPY.itineraryGlance.columns;
       const colX = [M + 8, M + 58, M + 300, M + 400];
       doc.setFillColor(...NAVY);
       doc.rect(M, y - 12, CW, 22, 'F');
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(7.5);
-      doc.text('DAY', colX[0], y);
-      doc.text('ITINERARY', colX[1], y);
-      doc.text('STAY', colX[2], y);
-      doc.text('MEALS', colX[3], y);
+      doc.text(colDay, colX[0], y);
+      doc.text(colItin, colX[1], y);
+      doc.text(colStay, colX[2], y);
+      doc.text(colMeals, colX[3], y);
       y += 20;
 
       pkg.itinerary.forEach((day, i) => {
@@ -484,10 +437,10 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
           doc.setTextColor(255, 255, 255);
           doc.setFont('helvetica', 'bold');
           doc.setFontSize(7.5);
-          doc.text('DAY', colX[0], y);
-          doc.text('ITINERARY', colX[1], y);
-          doc.text('STAY', colX[2], y);
-          doc.text('MEALS', colX[3], y);
+          doc.text(colDay, colX[0], y);
+          doc.text(colItin, colX[1], y);
+          doc.text(colStay, colX[2], y);
+          doc.text(colMeals, colX[3], y);
           y += 20;
         }
 
@@ -518,7 +471,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
 
       /* ================================================ DAYWISE ITINERARY */
       section();
-      heading('Day-by-day itinerary');
+      heading(PDF_COPY.dayByDay.heading);
 
       pkg.itinerary.forEach((day, i) => {
         const summaryLines = wrap(day.summary, CW - 84, 9.5);
@@ -576,7 +529,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
 
       /* =================================================== INCL / EXCL */
       section();
-      heading('Inclusions & exclusions');
+      heading(PDF_COPY.inclExcl.heading);
 
       const halfW = CW / 2 - 14;
       const topY = y;
@@ -584,7 +537,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       // Dynamic — sourced from pkg.includes plus every unique "Included: X"
       // line across the day-by-day plan, so editing content/packages.json
       // is the only thing that ever needs to change this list.
-      label('Included', M, y, GOLD);
+      label(PDF_COPY.inclExcl.includedLabel, M, y, GOLD);
       let incY = y + 20;
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(9.5);
@@ -606,7 +559,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       });
 
       const exX = M + halfW + 28;
-      label('Not included', exX, topY, INK_FAINT);
+      label(PDF_COPY.inclExcl.notIncludedLabel, exX, topY, INK_FAINT);
       let exY = topY + 20;
       PACKAGE_EXCLUDES.forEach((item) => {
         const lines = wrap(item, halfW - 18, 9.5);
@@ -620,7 +573,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
 
       /* ======================================================= HIGHLIGHTS */
       section(24);
-      heading(`${d.name} highlights`);
+      heading(fill(PDF_COPY.highlightsHeadingTemplate, { name: d.name }));
       d.highlights.forEach(([title, copy]) => {
         const lines = wrap(copy, CW - 16, 9.5);
         const h = 13 + lines.length * 12 + 11;
@@ -638,10 +591,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
 
       /* ========================================================== PRICING */
       section();
-      heading(
-        'What you pay',
-        'Per person on twin-sharing basis, land package. Return flights price constantly — add one on request at the fare live on your travel date, or use the estimate in Optional add-ons below.'
-      );
+      heading(PDF_COPY.pricing.heading, PDF_COPY.pricing.sub);
 
       // The visitor's live configuration from the price card — kept visually
       // distinct (navy, "Your selection") from the fixed catalog variants
@@ -654,7 +604,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
         doc.setFillColor(...NAVY);
         doc.roundedRect(M, y - 12, CW, rowH, 6, 6, 'F');
 
-        label('Your selection', M + 16, y + 2, GOLD_LIGHT, 8);
+        label(PDF_COPY.pricing.yourSelectionLabel, M + 16, y + 2, GOLD_LIGHT, 8);
         doc.setTextColor(255, 255, 255);
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(12);
@@ -674,7 +624,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
         doc.setFont('helvetica', 'normal');
         doc.setFontSize(7.5);
         doc.setTextColor(210, 216, 230);
-        doc.text('TOTAL FOR GROUP', pageW - M - 16, y + 27, { align: 'right' });
+        doc.text(PDF_COPY.pricing.totalForGroupLabel, pageW - M - 16, y + 27, { align: 'right' });
 
         y += rowH + 12;
 
@@ -683,7 +633,11 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
           doc.setFont('helvetica', 'italic');
           doc.setFontSize(8.5);
           const scaledNote = wrap(
-            `Scaled from the base ${pkg.nights}N / ${pkg.days}D itinerary at ${pdfMoney(perNightRate)} per person per night. The day-by-day plan below follows the original ${pkg.nights}N / ${pkg.days}D route — a planner adjusts it for the extra nights before confirming.`,
+            fill(PDF_COPY.pricing.scaledNoteTemplate, {
+              baseNights: String(pkg.nights),
+              baseDays: String(pkg.days),
+              perNightRate: pdfMoney(perNightRate)
+            }),
             CW, 8.5
           );
           room(scaledNote.length * 11);
@@ -694,7 +648,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
 
       if (pkg.priceVariants.length) {
         section(10);
-        label('Other package options', M, y);
+        label(PDF_COPY.pricing.otherOptionsLabel, M, y);
         y += 18;
 
         pkg.priceVariants.forEach((v) => {
@@ -725,16 +679,17 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       }
 
       section(24);
-      heading('Optional add-ons');
+      heading(PDF_COPY.addons.heading);
 
+      const [colService, colDescription, colPrice] = PDF_COPY.addons.columns;
       doc.setFillColor(...NAVY);
       doc.rect(M, y - 12, CW, 22, 'F');
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(7.5);
-      doc.text('SERVICE', M + 10, y);
-      doc.text('DESCRIPTION', M + 150, y);
-      doc.text('PRICE', pageW - M - 10, y, { align: 'right' });
+      doc.text(colService, M + 10, y);
+      doc.text(colDescription, M + 150, y);
+      doc.text(colPrice, pageW - M - 10, y, { align: 'right' });
       y += 20;
 
       BROCHURE.addons.forEach((a, i) => {
@@ -762,7 +717,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
 
       /* ============================================ NOTES + PAYMENT + WHY */
       section();
-      heading('Good to know');
+      heading(PDF_COPY.goodToKnow.heading);
       BROCHURE.notes.forEach((n) => {
         const lines = wrap(n, CW - 18, 9);
         room(lines.length * 12.5 + 9);
@@ -775,8 +730,8 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       });
 
       section(24);
-      heading('Payment & booking');
-      label('We accept', M, y);
+      heading(PDF_COPY.payment.heading);
+      label(PDF_COPY.payment.weAcceptLabel, M, y);
       y += 16;
       doc.setTextColor(...INK_SOFT);
       doc.setFont('helvetica', 'normal');
@@ -796,7 +751,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       });
 
       section(24);
-      heading('Why travel with us');
+      heading(PDF_COPY.whyUs.heading);
       // Two columns — these blurbs are short, and a single full-width column
       // ran the section long enough to widow its last items onto a page of
       // their own.
@@ -830,22 +785,22 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(10);
-      doc.text('FLYING COLOURS VACATIONS', M, 60);
+      doc.text(PDF_COPY.brandName, M, 60);
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(8.5);
       doc.setTextColor(...GOLD_LIGHT);
-      doc.text('ADDING COLOURS TO EVERY JOURNEY', M, 76);
+      doc.text(PDF_COPY.brandTagline, M, 76);
 
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(26);
-      doc.text('Ready when', M, pageH / 2 - 60);
-      doc.text('you are.', M, pageH / 2 - 28);
+      doc.text(PDF_COPY.backCover.headingLine1, M, pageH / 2 - 60);
+      doc.text(PDF_COPY.backCover.headingLine2, M, pageH / 2 - 28);
 
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(11);
       doc.setTextColor(220, 224, 235);
-      doc.text(wrap('Send us your dates and we will turn this into a confirmed, priced itinerary — usually the same day.', CW - 120, 11), M, pageH / 2 + 6);
+      doc.text(wrap(PDF_COPY.backCover.paragraph, CW - 120, 11), M, pageH / 2 + 6);
 
       let cy = pageH / 2 + 90;
       doc.setDrawColor(90, 100, 130);
@@ -853,10 +808,10 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       doc.line(M, cy - 26, pageW - M, cy - 26);
 
       const contactRows: [string, string][] = [
-        ['Phone / WhatsApp', CONTACT.phone],
-        ['Email', CONTACT.email],
-        ['Office', CONTACT.address],
-        ['Desk hours', CONTACT.hours]
+        [PDF_COPY.backCover.contactLabels.phone, CONTACT.phone],
+        [PDF_COPY.backCover.contactLabels.email, CONTACT.email],
+        [PDF_COPY.backCover.contactLabels.office, CONTACT.address],
+        [PDF_COPY.backCover.contactLabels.hours, CONTACT.hours]
       ];
       contactRows.forEach(([k, v]) => {
         const lines = wrap(v, CW - 150, 10);
@@ -874,7 +829,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       doc.setTextColor(...GOLD_LIGHT);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(9);
-      doc.text('flyingcoloursvacations.com', M, pageH - 56);
+      doc.text(PDF_COPY.backCover.website, M, pageH - 56);
 
       /* ------------------------------------------------------------- footer */
       const pageCount = doc.getNumberOfPages();
@@ -911,7 +866,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       disabled={busy}
       data-magnetic="0.25"
     >
-      {busy ? 'Preparing PDF…' : 'Download itinerary'}
+      {busy ? PDF_COPY.button.busyLabel : PDF_COPY.button.idleLabel}
       <ArrowRight className="btn__icon" />
     </button>
   );

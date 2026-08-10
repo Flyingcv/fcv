@@ -16,11 +16,37 @@ import tiersJson from '@/content/tiers.json';
 import reviewsJson from '@/content/reviews.json';
 import contactJson from '@/content/contact.json';
 import brochureJson from '@/content/brochure.json';
+import siteJson from '@/content/site.json';
+import homeJson from '@/content/home.json';
+import aboutJson from '@/content/about.json';
+import servicesPageJson from '@/content/services-page.json';
+import destinationsPageJson from '@/content/destinations-page.json';
+import contactPageJson from '@/content/contact-page.json';
+import packagePageJson from '@/content/package-page.json';
+import legalJson from '@/content/legal.json';
+import pdfJson from '@/content/pdf.json';
+import formsJson from '@/content/forms.json';
 
 /** Canonical production domain — matches metadataBase in app/layout.tsx.
  *  Used to build absolute links (e.g. inside WhatsApp enquiry messages)
  *  from server components, which have no window.location to fall back on. */
-export const SITE_URL = 'https://flyingcoloursvacations.com';
+export const SITE_URL = siteJson.siteUrl;
+
+/* --------------------------------------------------------------------------
+   SITE-WIDE CONTENT — metadata, nav, footer, 404, brand strings.
+   /content/site.json. Per-page copy lives in its own file (home.json,
+   about.json, ...) — see the imports above and /content/README.md.
+   -------------------------------------------------------------------------- */
+export const SITE = siteJson;
+export const HOME = homeJson;
+export const ABOUT = aboutJson;
+export const SERVICES_PAGE = servicesPageJson;
+export const DESTINATIONS_PAGE = destinationsPageJson;
+export const CONTACT_PAGE = contactPageJson;
+export const PACKAGE_PAGE = packagePageJson;
+export const LEGAL = legalJson;
+export const PDF_COPY = pdfJson;
+export const FORMS = formsJson;
 
 /** Unsplash helper — swap for your own photography/CDN later.
  *  If a URL fails, <Photo> degrades the frame to a branded gradient. */
@@ -113,15 +139,9 @@ export interface Package {
 export const PACKAGES = packagesJson as unknown as Package[];
 
 /** Shared across every package — shown on the package page and in the
- *  downloadable itinerary PDF. Kept in one place so the two can't drift. */
-export const PACKAGE_EXCLUDES = [
-  'International / domestic airfare, unless specifically mentioned above',
-  'Visa fees and travel insurance',
-  'Personal expenses, tips and shopping',
-  'Meals not listed in the inclusions',
-  'Optional activities and entry tickets not listed above',
-  'Anything not specifically mentioned as included'
-];
+ *  downloadable itinerary PDF. Kept in one place (/content/site.json) so
+ *  the two can't drift. */
+export const PACKAGE_EXCLUDES = siteJson.packageExcludes;
 
 /* --------------------------------------------------------------------------
    PRICING MODEL — drives the interactive configurator
@@ -141,14 +161,17 @@ interface Addon {
   rate: number | ((d: Destination) => number);
 }
 
+/** /content/site.json's `addons.flights` has no flat `rate` — it's priced
+ *  off each destination's own `flight` field, which JSON can't express as a
+ *  function, so that one case is wired up here. */
 export const ADDONS: Record<AddonKey, Addon> = {
-  flights: { label: 'Return flights', note: 'Ex-Delhi, economy', kind: 'perPerson', rate: (d) => d.flight },
-  visa: { label: 'Visa & travel insurance', note: 'Filing + 100% claim support', kind: 'perPerson', rate: 3500 },
-  guide: { label: 'Private guide & car', note: 'English-speaking, full day', kind: 'perPersonPerDay', rate: 900 },
-  experiences: { label: 'Signature experiences pack', note: 'Cruise, show, sunrise trek', kind: 'perPerson', rate: 6500 }
+  flights: { ...siteJson.addons.flights, rate: (d) => d.flight } as Addon,
+  visa: siteJson.addons.visa as Addon,
+  guide: siteJson.addons.guide as Addon,
+  experiences: siteJson.addons.experiences as Addon
 };
 
-export const ORIGIN = { code: 'DEL', city: 'New Delhi' };
+export const ORIGIN = siteJson.origin;
 
 export interface QuoteInput {
   dest: DestinationSlug;

@@ -9,63 +9,46 @@ import HorizontalDestinations from '@/components/home/HorizontalDestinations';
 import Testimonials from '@/components/home/Testimonials';
 import GlimpseRail from '@/components/home/GlimpseRail';
 import { ArrowRight, Star, Plane } from '@/components/icons';
-import { img } from '@/lib/data';
-
-const SERVICES = [
-  ['01', 'Personalised itineraries', 'Nothing off a shelf. We build around your dates, your pace and the three things you actually care about seeing.'],
-  ['02', 'Expert local guides', 'English-speaking guides we have travelled with ourselves, in every city on your route.'],
-  ['03', 'Visas, flights & insurance', 'e-Visa filing, fare-class advice and cover that pays out. One invoice, no third parties.'],
-  ['04', 'Stress-free on-trip support', 'A real person on WhatsApp for the whole trip — cancelled flights get solved before you finish reading the email.']
-];
+import { img, HOME, SITE } from '@/lib/data';
+import { parseInlineHtml } from '@/lib/richtext';
 
 export default function HomePage() {
+  const { whyUs, pricingExplainer, services, testimonials, glimpses, cta } = HOME;
+
   return (
     <>
       <Hero />
 
-      <Marquee
-        dir="right"
-        items={[
-          'Vietnam', '*Bali', 'Thailand', '*Malaysia',
-          'Halong Bay', '*Nusa Penida', 'Phi Phi', '*Langkawi'
-        ]}
-      />
+      <Marquee dir="right" items={HOME.marqueeItems} />
 
       {/* ------------------------------------------------------ who we are */}
       <section className="section">
         <div className="wrap">
           <div className="intro__layout">
             <div className="intro__copy">
-              <span className="tag rise">Why Flying Colours</span>
-              <SplitText as="h2">We don’t sell packages.<br />We plan journeys.</SplitText>
-              <p className="lede rise" style={{ ['--d' as string]: '.1s' } as React.CSSProperties}>
-                Since 2014 we have run one thing extremely well: Southeast Asia. Vietnam,
-                Bali, Thailand and Malaysia — the four countries our team has walked,
-                eaten and argued about, itinerary by itinerary.
-              </p>
-              <p className="rise mt-1" style={{ ['--d' as string]: '.18s' } as React.CSSProperties}>
-                That focus is the whole product. We know which Halong cruise actually has hot
-                water, which Ubud villa is worth the transfer, and which Krabi tour operator
-                answers the phone in a storm. You get that judgement, not a call centre.
-              </p>
+              <span className="tag rise">{whyUs.tag}</span>
+              <SplitText as="h2">{parseInlineHtml(whyUs.headingHtml)}</SplitText>
+              {whyUs.paragraphs.map((p, i) => (
+                <p
+                  key={p}
+                  className={i === 0 ? 'lede rise' : 'rise mt-1'}
+                  style={{ ['--d' as string]: `${0.1 + i * 0.08}s` } as React.CSSProperties}
+                >
+                  {p}
+                </p>
+              ))}
 
               <div className="intro__stats">
-                <div className="stat">
-                  <Counter to={11} suffix="+" />
-                  <span>Years planning<br />Southeast Asia</span>
-                </div>
-                <div className="stat">
-                  <Counter to={12400} suffix="+" />
-                  <span>Travellers<br />sent abroad</span>
-                </div>
-                <div className="stat">
-                  <Counter to={4.8} decimals={1} />
-                  <span>Average rating<br />1,564 reviews</span>
-                </div>
+                {whyUs.stats.map((s) => (
+                  <div className="stat" key={s.labelHtml}>
+                    <Counter to={s.to} suffix={s.suffix} decimals={s.decimals} />
+                    <span>{parseInlineHtml(s.labelHtml)}</span>
+                  </div>
+                ))}
               </div>
 
-              <TLink href="/about" className="btn btn--navy mt-3" data-magnetic="0.3">
-                Our story
+              <TLink href={whyUs.ctaHref} className="btn btn--navy mt-3" data-magnetic="0.3">
+                {whyUs.ctaLabel}
                 <ArrowRight className="btn__icon" />
               </TLink>
             </div>
@@ -78,7 +61,7 @@ export default function HomePage() {
                 <Photo src={img('1537996194471-e657df975ab4', 900)} alt="Rice terraces in Ubud, Bali" px={10} />
               </div>
               <div className="intro__badge" data-px-y="-40">
-                Since<br />2014
+                {parseInlineHtml(whyUs.badgeHtml)}
               </div>
             </div>
           </div>
@@ -92,34 +75,28 @@ export default function HomePage() {
         <div className="wrap">
           <div className="dsplit dsplit--pass" style={{ alignItems: 'center' }}>
             <div>
-              <span className="tag rise">Transparent pricing</span>
+              <span className="tag rise">{pricingExplainer.tag}</span>
               <SplitText as="h2" style={{ fontSize: 'var(--t-2xl)', marginBlock: '.8rem 1.4rem' }}>
-                Your whole trip,<br />printed on one pass.
+                {parseInlineHtml(pricingExplainer.headingHtml)}
               </SplitText>
               <p className="lede rise">
-                Move a slider, change the number of nights, pick a stay standard —
-                and watch the price update live on your own boarding pass. No enquiry form
-                before you can see a number.
+                {pricingExplainer.paragraph}
               </p>
 
               <ul className="hilite-list">
-                {[
-                  ['Per-day pricing', 'Land cost is calculated per person per day, so 6 nights is never priced like 8.'],
-                  ['One straight number', 'No hidden fees, no fine-print discount that only shows up at checkout.'],
-                  ['Send it on WhatsApp', 'Get your quote straight to a planner and keep talking from there.']
-                ].map(([t, d]) => (
-                  <li className="hilite rise" key={t}>
+                {pricingExplainer.bullets.map((b) => (
+                  <li className="hilite rise" key={b.title}>
                     <span>—</span>
                     <div>
-                      <b>{t}</b>
-                      <p>{d}</p>
+                      <b>{b.title}</b>
+                      <p>{b.copy}</p>
                     </div>
                   </li>
                 ))}
               </ul>
 
-              <TLink href="/services#configurator" className="btn btn--gold mt-3" data-magnetic="0.3">
-                Open the price calculator
+              <TLink href={pricingExplainer.ctaHref} className="btn btn--gold mt-3" data-magnetic="0.3">
+                {pricingExplainer.ctaLabel}
                 <ArrowRight className="btn__icon" />
               </TLink>
             </div>
@@ -127,21 +104,21 @@ export default function HomePage() {
             <div className="rise" data-px-y="-50">
               <BoardingPass
                 notch="var(--paper-200)"
-                from="DEL"
-                to="SGN"
-                fromCity="New Delhi"
-                toCity="Ho Chi Minh"
-                stamp="Fare locked · FCV"
-                code="FCV · 214 · 0725 · SGN · ECONOMY"
+                from={pricingExplainer.demoPass.from}
+                to={pricingExplainer.demoPass.to}
+                fromCity={pricingExplainer.demoPass.fromCity}
+                toCity={pricingExplainer.demoPass.toCity}
+                stamp={pricingExplainer.demoPass.stamp}
+                code={pricingExplainer.demoPass.code}
                 fields={[
-                  { label: 'Passenger', value: 'Your name here' },
-                  { label: 'Duration', value: '06 Days / 05 Nights', mono: true },
-                  { label: 'Total', value: '₹62,999', big: true }
+                  { label: 'Passenger', value: pricingExplainer.demoPass.passenger },
+                  { label: 'Duration', value: pricingExplainer.demoPass.duration, mono: true },
+                  { label: 'Total', value: pricingExplainer.demoPass.total, big: true }
                 ]}
                 stubFields={[
-                  { label: 'Flight', value: 'FCV 214', mono: true },
-                  { label: 'Gate', value: 'A12', mono: true },
-                  { label: 'Seat', value: '14A', mono: true }
+                  { label: 'Flight', value: pricingExplainer.demoPass.flight, mono: true },
+                  { label: 'Gate', value: pricingExplainer.demoPass.gate, mono: true },
+                  { label: 'Seat', value: pricingExplainer.demoPass.seat, mono: true }
                 ]}
               />
             </div>
@@ -154,21 +131,21 @@ export default function HomePage() {
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">What we handle</span>
-              <SplitText as="h2">Everything between<br />booking and boarding.</SplitText>
+              <span className="tag">{services.tag}</span>
+              <SplitText as="h2">{parseInlineHtml(services.headingHtml)}</SplitText>
             </div>
             <TLink href="/services" className="link-u" style={{ color: 'var(--navy-800)' }}>
-              All services & packages <ArrowRight className="btn__icon" />
+              {services.linkLabel} <ArrowRight className="btn__icon" />
             </TLink>
           </div>
 
           <div className="grid grid-4" data-stagger="0.08">
-            {SERVICES.map(([num, title, copy]) => (
-              <article className="svc-card" key={num}>
-                <span className="svc-card__num">{num}</span>
+            {services.items.map((s) => (
+              <article className="svc-card" key={s.num}>
+                <span className="svc-card__num">{s.num}</span>
                 <Plane className="svc-card__ico" />
-                <h3>{title}</h3>
-                <p>{copy}</p>
+                <h3>{s.title}</h3>
+                <p>{s.copy}</p>
               </article>
             ))}
           </div>
@@ -180,8 +157,8 @@ export default function HomePage() {
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">Seat 4.8 / 5 · 1,564 reviews</span>
-              <SplitText as="h2">Postcards from<br />the people we sent.</SplitText>
+              <span className="tag">{testimonials.tag}</span>
+              <SplitText as="h2">{parseInlineHtml(testimonials.headingHtml)}</SplitText>
             </div>
             <div className="stars" aria-label="4.8 out of 5">
               {Array.from({ length: 5 }).map((_, i) => <Star key={i} />)}
@@ -197,16 +174,16 @@ export default function HomePage() {
         <div className="wrap">
           <div className="section-head">
             <div className="section-head__text">
-              <span className="tag">Straight from their cameras</span>
-              <SplitText as="h2">Glimpses from<br />the road.</SplitText>
+              <span className="tag">{glimpses.tag}</span>
+              <SplitText as="h2">{parseInlineHtml(glimpses.headingHtml)}</SplitText>
             </div>
-            <TLink href="/about#glimpses" className="link-u" style={{ color: 'var(--gold-600)' }}>
-              See more glimpses <ArrowRight className="btn__icon" />
+            <TLink href={glimpses.linkHref} className="link-u" style={{ color: 'var(--gold-600)' }}>
+              {glimpses.linkLabel} <ArrowRight className="btn__icon" />
             </TLink>
           </div>
         </div>
 
-        <GlimpseRail images={Array.from({ length: 17 }, (_, i) => `/trip-glimpses/glimpse-${String(i + 1).padStart(2, '0')}.jpg`)} />
+        <GlimpseRail images={Array.from({ length: 17 }, (_, i) => `/trip-glimpses/glimpse-${String(i + 1).padStart(2, '0')}.jpg`)} alt={SITE.glimpseAltText} />
       </section>
 
       {/* --------------------------------------------------------- CTA band */}
@@ -216,19 +193,18 @@ export default function HomePage() {
         </div>
         <div className="wrap">
           <div className="cta-band__inner">
-            <span className="tag tag--light tag--plain">Final call</span>
-            <SplitText as="h2">Ready for take-off<br />in full <em>colours</em>?</SplitText>
+            <span className="tag tag--light tag--plain">{cta.tag}</span>
+            <SplitText as="h2">{parseInlineHtml(cta.headingHtml)}</SplitText>
             <p className="lede rise" style={{ margin: '0 auto' }}>
-              Tell us your dates and rough budget. You will get a real itinerary and a
-              real price from a planner — usually the same day.
+              {cta.paragraph}
             </p>
             <div className="hero__actions rise" style={{ justifyContent: 'center' }}>
-              <TLink href="/contact" className="btn btn--gold" data-magnetic="0.3">
-                Talk to a planner
+              <TLink href={cta.primaryHref} className="btn btn--gold" data-magnetic="0.3">
+                {cta.primaryLabel}
                 <ArrowRight className="btn__icon" />
               </TLink>
-              <TLink href="/services#configurator" className="btn btn--ghost" data-magnetic="0.3">
-                Price it myself
+              <TLink href={cta.secondaryHref} className="btn btn--ghost" data-magnetic="0.3">
+                {cta.secondaryLabel}
                 <ArrowRight className="btn__icon" />
               </TLink>
             </div>
@@ -238,17 +214,3 @@ export default function HomePage() {
     </>
   );
 }
-
-// Refinement iteration 17 for code quality and clarity
-
-// Refinement iteration 39 for code quality and clarity
-
-// Refinement iteration 61 for code quality and clarity
-
-// Refinement iteration 12 for code quality and clarity
-
-// Refinement iteration 34 for code quality and clarity
-
-// Refinement iteration 1 for code quality and clarity
-
-// Refinement iteration 3 for code quality and clarity

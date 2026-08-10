@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "Contact",
+    "descriptionTemplate": "Talk to a Southeast Asia planner at Flying Colours Vacations — Noida office, {phone}, {email}."
+  },
+  "hero": {
+    "tag": "Departures desk · open now",
+    "heading": "Let's plan it."
+  },
+  "cardsSection": {
+    "tag": "Reach us directly",
+    "headingHtml": "One desk.<br />One number.",
+    "callCard": { "label": "Call or WhatsApp" },
+    "emailCard": { "label": "Email", "note": "Replies from a planner, usually same day" },
+    "officeCard": { "label": "Office", "title": "Bhutani Alphathum, Noida" },
+    "hoursCard": { "label": "Desk hours", "note": "On-trip support runs around the clock" }
+  },
+  "formSection": {
+    "tag": "Trip enquiry",
+    "headingHtml": "Tell us the shape<br />of the trip."
+  },
+  "faqSection": {
+    "tag": "Before you ask",
+    "headingHtml": "The questions<br />we get most.",
+    "paragraph": "Still stuck? Call the desk — it is genuinely faster than typing it out.",
+    "primaryLabel": "Price a trip yourself",
+    "primaryHref": "/services#configurator",
+    "secondaryLabel": "Browse destinations",
+    "secondaryHref": "/destinations"
+  },
+  "faqs": [
+    ["How far in advance should I book?", "For peak season (October to March) we recommend 8–10 weeks, mainly for hotel availability rather than airfare. Bali in July–August and Vietnam over New Year fill earliest. Short breaks can be turned around in under two weeks if you are flexible on hotels."],
+    ["What does the price include?", "Every package price on this site is per person on twin sharing and covers the land package — hotels, listed tours, private transfers and daily breakfast. Flights, visas and insurance are optional add-ons you can toggle in the price calculator so you always see exactly what you are paying for."],
+    ["Do you handle visas?", "Yes. We file Vietnam e-Visas on your behalf, guide you through visa-on-arrival for Bali, and Thailand and Malaysia are visa-free for Indian passport holders on the durations we sell. Documents are checked before you fly, not at the airport."],
+    ["What happens if a flight is cancelled mid-trip?", "You message the same planner who built your itinerary. We rebook, inform the hotel, and reschedule any tours that are affected. That support runs 24/7 for the whole time you are travelling — it is not an outsourced call centre."],
+    ["Can you plan for large families or groups?", "Regularly. We plan around mixed-age pacing — no 5am treks for the grandparents while the kids are at a water park — and one planner stays on the file for the whole group."],
+    ["How do I pay?", "Bank transfer, UPI, credit or debit card, or a secure payment link. Typically a booking advance to hold hotels and the balance closer to departure. Card payments may carry a gateway charge, which we always show before you confirm."]
+  ]
+}

@@ -1,7 +1,9 @@
 import TLink from '@/components/TLink';
 import Photo from '@/components/Photo';
 import { ArrowRight } from '@/components/icons';
-import { inr, type Package } from '@/lib/data';
+import { inr, SITE, type Package } from '@/lib/data';
+
+const U = SITE.ui.packageCard;
 
 export default function PackageCard({ pkg }: { pkg: Package }) {
   return (
@@ -23,11 +25,11 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
 
         <div className="pkg__foot">
           <div className="pkg__price">
-            <small>Per person from</small>
+            <small>{U.perPersonFromLabel}</small>
             <b>{inr(pkg.price)}</b>
           </div>
           <TLink href={`/packages/${pkg.id}`} className="link-u" style={{ color: 'var(--gold-400)' }}>
-            View <ArrowRight className="btn__icon" />
+            {U.viewLabel} <ArrowRight className="btn__icon" />
           </TLink>
         </div>
       </div>

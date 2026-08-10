@@ -1,0 +1,184 @@
+{
+  "privacy": {
+    "meta": {
+      "title": "Privacy policy",
+      "description": "How Flying Colours Vacations collects, uses, discloses and protects your personal information."
+    },
+    "heroTag": "Legal",
+    "heroHeading": "Privacy policy.",
+    "lastUpdated": "Last updated · 2026",
+    "intro": [
+      { "type": "p", "text": "All defined terms used below shall have the meanings set forth in Our Terms and Conditions. At Flying Colours Vacations, we value and respect your privacy. This Privacy Policy explains how we collect, use, disclose and protect your personal information when you visit our website or use our services. By accessing or using our website, you consent to the terms outlined in this Privacy Policy." }
+    ],
+    "sections": [
+      {
+        "id": "collect",
+        "label": "1. Information we collect",
+        "heading": "1. Information we collect",
+        "blocks": [
+          { "type": "p", "text": "**Personal information.** We may collect personal information such as your name, email address, phone number and billing details when you make a reservation, register on our website, or contact us for inquiries." },
+          { "type": "p", "text": "**Non-personal information.** We also gather non-personal information like your IP address, browser type, operating system and website usage data through cookies and similar technologies. This data helps us enhance your browsing experience and improve our services." },
+          { "type": "p", "text": "**Information collected automatically.** When you access or use the site, we may also automatically collect:" },
+          { "type": "ul", "items": [
+            "**Transaction information** — product/package details, purchase price, and the date and location of a booking.",
+            "**Log information** — browser type, access times, pages viewed, your IP address and the page you visited before navigating to this site.",
+            "**Device information** — hardware model, operating system and version, and browsing behaviour.",
+            "**Location information** — approximate location each time you access this site, or precise location if you consent to it.",
+            "**Cookies and tracking technologies** — used to understand how you browse and interact with the site. Most browsers accept cookies by default; you can usually change your browser settings to remove or reject them."
+          ] },
+          { "type": "p", "text": "We may also receive information about you from other sources — for example demographic or change-of-address data from third-party sources, or information from third-party social media platforms if you log in using those credentials." }
+        ]
+      },
+      {
+        "id": "use",
+        "label": "2. How we use it",
+        "heading": "2. How we use your information",
+        "blocks": [
+          { "type": "p", "text": "We use your personal information to process reservations, respond to inquiries and provide customer support, including confirmation emails and service-related announcements (for example, if a booking needs to be rescheduled). We may also send you relevant updates, offers or newsletters if you have opted to receive them — you can unsubscribe at any time. Because we have to communicate with you about bookings you place, you cannot opt out of emails related to an active booking." },
+          { "type": "p", "text": "We analyse non-personal information to understand user behaviour, improve this site's content and layout, and inform our own marketing efforts." }
+        ]
+      },
+      {
+        "id": "sharing",
+        "label": "3. Sharing & disclosure",
+        "heading": "3. Information sharing & disclosure",
+        "blocks": [
+          { "type": "p", "text": "Except as set out below, we do not sell, rent, trade or license your personal or financial information to anyone." },
+          { "type": "ul", "items": [
+            "**Service providers.** We may share your information with trusted third parties who assist us in delivering our services, such as processing payments or managing customer support — only to the extent necessary for them to perform that service.",
+            "**Payment processing.** We must provide your card details to financial-services corporations such as payment processors and issuers as required to process your booking, using industry-standard security including data encryption.",
+            "**Legal compliance.** We may disclose information in response to law enforcement investigations, subpoenas, a court order, or where required by law — or where necessary to protect our legal rights, enforce our Terms and Conditions, or reduce the risk of fraud.",
+            "**Business transfers.** In the event of a merger, acquisition or sale of our business, your personal information may be transferred to the acquiring entity, subject to the same privacy obligations set out in this policy.",
+            "**Aggregated data.** We may share non-personal, aggregated information (such as the number of daily visitors to a page) with partners — this does not identify you personally."
+          ] }
+        ]
+      },
+      {
+        "id": "security",
+        "label": "4. Data security",
+        "heading": "4. Data security",
+        "blocks": [
+          { "type": "p", "text": "We take reasonable administrative, technical and physical measures to safeguard your personal information from unauthorised access, alteration, disclosure or destruction. No data transmission or storage method is entirely secure, and we cannot guarantee absolute security." }
+        ]
+      },
+      {
+        "id": "third-party",
+        "label": "5. Third-party links",
+        "heading": "5. Third-party links",
+        "blocks": [
+          { "type": "p", "text": "Our website may contain links to third-party websites or services. We are not responsible for the privacy practices or content of such websites, and we encourage you to review their privacy policies before providing any personal information." }
+        ]
+      },
+      {
+        "id": "children",
+        "label": "6. Children's privacy",
+        "heading": "6. Children's privacy",
+        "blocks": [
+          { "type": "p", "text": "Our services are not intended for individuals under the age of 18 and we do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a minor, please contact us and we will promptly delete it." }
+        ]
+      },
+      {
+        "id": "choices",
+        "label": "7. Your choices",
+        "heading": "7. Your choices — opt out & corrections",
+        "blocks": [
+          { "type": "p", "text": "On request, we will correct or update your personal information, stop sending marketing emails to your address, or disable your account to prevent future purchases through it. You can make these requests by emailing us at {{email}}. Please do not email your card number or other sensitive payment information to us directly." }
+        ]
+      },
+      {
+        "id": "offline",
+        "label": "8. Offline collection",
+        "heading": "8. Offline collection",
+        "blocks": [
+          { "type": "p", "text": "We may also collect information offline — for example, when you call us to place a booking or ask a question. We only ask for the information needed to help you, and any information collected offline is treated consistently with this policy." }
+        ]
+      },
+      {
+        "id": "updates",
+        "label": "9. Updates to this policy",
+        "heading": "9. Updates to this policy",
+        "blocks": [
+          { "type": "p", "text": "We may update this Privacy Policy from time to time. Material changes will be communicated through our website or other appropriate means. Continuing to use our services after such changes signifies your acceptance of the updated policy. We encourage you to review this page periodically." }
+        ]
+      },
+      {
+        "id": "contact",
+        "label": "10. Contact us",
+        "heading": "10. Contact us",
+        "blocks": [
+          { "type": "p", "text": "If you have any questions, concerns or requests regarding your privacy or this policy, write to us at {{email}} or call {{phone}}." }
+        ]
+      }
+    ]
+  },
+  "cancellation": {
+    "meta": {
+      "title": "Cancellation & refund policy",
+      "description": "Payment terms, cancellation and refund policy for bookings made with Flying Colours Vacations."
+    },
+    "heroTag": "Legal",
+    "heroHeadingHtml": "Cancellation<br />&amp; refund policy.",
+    "lastUpdated": "Last updated · 2026",
+    "intro": [],
+    "sections": [
+      {
+        "id": "delivery",
+        "label": "Delivery policy",
+        "heading": "Delivery policy",
+        "blocks": [
+          { "type": "p", "text": "A booking is confirmed as soon as payment is received and, in some cases, once we receive confirmation from the respective supplier for the booking made." }
+        ]
+      },
+      {
+        "id": "payment-terms",
+        "label": "Payment terms",
+        "heading": "Payment terms",
+        "blocks": [
+          { "type": "p", "text": "You will pay the price shown on your Booking Confirmation, which supersedes any rate shown elsewhere. Payment can be processed via online/internet banking, wire transfer to our bank account, or through an integrated payment gateway on our portal. If you use the payment gateway with a debit/credit card or net banking on someone else's behalf, you are doing so with that card or account holder's approval." },
+          { "type": "ul", "items": [
+            "If a transaction is flagged as suspicious by our risk-management checks, we may ask you to submit identification along with a front copy of the card used, to protect you from potential fraud. If the documents aren't provided in time, the reservation will be cancelled with immediate effect.",
+            "If a payment doesn't go through for any reason, please share the payment receipt or a screenshot with us — otherwise the booking will be cancelled, and any re-booking will be subject to availability.",
+            "Payment-gateway processing charges are borne by you. If a transaction is cancelled after being initiated, processing charges will still apply."
+          ] }
+        ]
+      },
+      {
+        "id": "amend-cancel",
+        "label": "Amending or cancelling",
+        "heading": "Amending or cancelling a booking",
+        "blocks": [
+          { "type": "p", "text": "Your ability to amend or cancel a tour booking is restricted by that booking's own terms and conditions, or by our third-party suppliers' cancellation policies. Depending on the booking type, there may be instances where an amendment or cancellation isn't possible, or where it comes with specific conditions." },
+          { "type": "p", "text": "To cancel a booking, please notify us in writing (email is fine) in addition to cancelling on our portal. Once we receive your cancellation request, we will acknowledge it by email and state any cancellation fee that applies. Each hotel/service provider has its own refund and cancellation policy, and we follow that policy accordingly." }
+        ]
+      },
+      {
+        "id": "refunds",
+        "label": "Refunds",
+        "heading": "Refunds",
+        "blocks": [
+          { "type": "ul", "items": [
+            "Refunds are made only through the original mode of payment.",
+            "Bookings eligible for a refund under the applicable cancellation policy will be refunded within **15 working days** of the cancellation request, after deducting any payment-gateway processing or wire-transfer charges.",
+            "If a paid service is not availed of, partly or fully, no refund will be made under any circumstances."
+          ] }
+        ]
+      },
+      {
+        "id": "changes",
+        "label": "Changes to this policy",
+        "heading": "Changes to this policy",
+        "blocks": [
+          { "type": "p", "text": "We may update this policy from time to time to reflect changes to our practices. If we make any material changes, we may notify you by email (sent to the address on your booking), by phone or message, or by a notice on our website. We encourage you to periodically review this page for the latest information." }
+        ]
+      },
+      {
+        "id": "questions",
+        "label": "Questions",
+        "heading": "Questions",
+        "blocks": [
+          { "type": "p", "text": "For anything related to a payment, cancellation or refund, write to us at {{email}} or call {{phone}}." }
+        ]
+      }
+    ]
+  }
+}

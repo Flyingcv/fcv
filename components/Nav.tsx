@@ -6,15 +6,9 @@ import TLink from '@/components/TLink';
 import Photo from '@/components/Photo';
 import { Caret, ArrowRight } from '@/components/icons';
 import { useMotion } from '@/components/motion/MotionProvider';
-import { DESTINATION_LIST, inr } from '@/lib/data';
+import { DESTINATION_LIST, SITE, CONTACT, inr } from '@/lib/data';
 
-const LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/destinations', label: 'Destinations', menu: true },
-  { href: '/services', label: 'Packages' },
-  { href: '/contact', label: 'Contact' }
-];
+const LINKS = SITE.nav.links;
 
 export default function Nav() {
   const pathname = usePathname();
@@ -76,9 +70,9 @@ export default function Nav() {
     <>
       <header className={`nav${solid ? ' is-solid' : ''}${hidden ? ' is-hidden' : ''}`}>
         <div className="nav__inner">
-          <TLink href="/" className="nav__logo" aria-label="Flying Colours Vacations — home">
+          <TLink href="/" className="nav__logo" aria-label={`${SITE.brandName} — home`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-flying-colours-vacations.webp" alt="Flying Colours Vacations" width={480} height={98} />
+            <img src="/logo-transparent.png" alt={SITE.brandName} width={1339} height={349} />
           </TLink>
 
           <nav className="nav__menu" aria-label="Primary">
@@ -120,8 +114,8 @@ export default function Nav() {
                       </TLink>
                     ))}
                     <div className="dropdown__footer">
-                      <span>04 destinations · 60+ itineraries</span>
-                      <TLink href="/destinations" onClick={closeMenu}>View all <ArrowRight className="btn__icon" style={{ display: 'inline', verticalAlign: '-2px' }} /></TLink>
+                      <span>{SITE.nav.dropdownFooterText}</span>
+                      <TLink href="/destinations" onClick={closeMenu}>{SITE.nav.dropdownViewAllLabel} <ArrowRight className="btn__icon" style={{ display: 'inline', verticalAlign: '-2px' }} /></TLink>
                     </div>
                   </div>
                 )}
@@ -129,7 +123,7 @@ export default function Nav() {
             ))}
 
             <TLink href="/services" className="btn btn--gold" data-magnetic="0.28" style={{ marginLeft: '.6rem' }}>
-              Plan my trip
+              {SITE.nav.ctaLabel}
               <ArrowRight className="btn__icon" />
             </TLink>
           </nav>
@@ -169,9 +163,9 @@ export default function Nav() {
         </div>
 
         <div className="drawer__foot">
-          <span>Talk to a planner</span>
-          <a href="tel:+917017440214">+91 70174 40214</a>
-          <a href="mailto:info@flyingcoloursvacations.com">info@flyingcoloursvacations.com</a>
+          <span>{SITE.nav.drawerFootLabel}</span>
+          <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
+          <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
         </div>
       </div>
     </>

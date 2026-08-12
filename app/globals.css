@@ -1220,3 +1220,5 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
   .rise, .ln > i { opacity: 1 !important; transform: none !important; }
   .reveal-clip { clip-path: none !important; }
 }
+
+/* --- */

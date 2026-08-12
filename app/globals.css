@@ -68,7 +68,7 @@
   --ease-out: cubic-bezier(.22, 1, .36, 1);
   --ease-io: cubic-bezier(.65, .05, .36, 1);
 
-  --nav-h: 66px;
+  --nav-h: 80px;
 }
 
 /* ---------- 2. RESET / BASE ---------- */

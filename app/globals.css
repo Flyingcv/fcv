@@ -1181,7 +1181,7 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
 }
 
 @media (max-width: 900px) {
-  :root { --nav-h: 60px; }
+  :root { --nav-h: 72px; }
   .grid-3 { grid-template-columns: 1fr; }
   .section-head { align-items: flex-start; }
 }

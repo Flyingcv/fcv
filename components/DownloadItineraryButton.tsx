@@ -157,8 +157,12 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
         doc.line(x1, yy, x2, yy);
       };
 
+      // Every page carries the corner logo (drawn later, on top, in the
+      // footer loop) — new pages reserve clearance under it so body content
+      // that starts right at the top of a page never renders underneath it.
+      const LOGO_CLEAR = 78;
       const room = (needed: number) => {
-        if (y + needed > BOTTOM) { doc.addPage(); y = M; return true; }
+        if (y + needed > BOTTOM) { doc.addPage(); y = LOGO_CLEAR; return true; }
         return false;
       };
 
@@ -262,7 +266,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
        *  and would vanish drawn directly onto navy. */
       const drawCornerLogo = (onDark: boolean) => {
         if (!logo) return;
-        const w = 132;
+        const w = 150;
         const h = w / logo.ratio;
         const x = pageW - M - w;
         const yTop = 20;
@@ -274,16 +278,10 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       };
 
       /* ============================================================ PAGE 1 */
-      y = M;
-      doc.setTextColor(...GOLD);
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(9);
-      doc.text(PDF_COPY.brandName, M, y);
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(7.5);
-      doc.setTextColor(...INK_FAINT);
-      doc.text(PDF_COPY.brandTagline, M, y + 12);
-      y += 34;
+      // No text brand lockup here — the corner logo (drawn on top, in the
+      // footer loop below) already carries the brand name on every page,
+      // including this one.
+      y = LOGO_CLEAR;
 
       const bannerH = CW * 0.42;
       if (banner) {
@@ -782,14 +780,8 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       doc.setFillColor(...NAVY);
       doc.rect(0, 0, pageW, pageH, 'F');
 
-      doc.setTextColor(255, 255, 255);
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(10);
-      doc.text(PDF_COPY.brandName, M, 60);
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(8.5);
-      doc.setTextColor(...GOLD_LIGHT);
-      doc.text(PDF_COPY.brandTagline, M, 76);
+      // No text brand lockup here either — the corner logo (white chip,
+      // drawn on top in the footer loop) already carries it.
 
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');

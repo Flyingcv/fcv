@@ -262,7 +262,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
        *  and would vanish drawn directly onto navy. */
       const drawCornerLogo = (onDark: boolean) => {
         if (!logo) return;
-        const w = 92;
+        const w = 132;
         const h = w / logo.ratio;
         const x = pageW - M - w;
         const yTop = 20;

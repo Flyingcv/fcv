@@ -8,12 +8,27 @@
     "headingHtml": "The whole<br />map, curated.",
     "paragraph": "We deliberately do not sell the world. These four countries are the ones our planners have walked end to end — which is why the itineraries actually work.",
     "stats": [
-      { "label": "Countries", "value": "04" },
-      { "label": "Cities", "value": "26" }
+      {
+        "label": "Countries",
+        "value": "04"
+      },
+      {
+        "label": "Cities",
+        "value": "26"
+      }
     ],
-    "fromPriceFallback": 28999
+    "fromPriceFallback": 28699
   },
-  "marqueeItems": ["Halong Bay", "*Ubud", "Krabi", "*Langkawi", "Hoi An", "*Nusa Penida", "Phuket", "*Genting"],
+  "marqueeItems": [
+    "Halong Bay",
+    "*Ubud",
+    "Krabi",
+    "*Langkawi",
+    "Hoi An",
+    "*Nusa Penida",
+    "Phuket",
+    "*Genting"
+  ],
   "cta": {
     "tag": "Not sure yet?",
     "headingHtml": "Tell us the vibe.<br />We'll pick the country.",

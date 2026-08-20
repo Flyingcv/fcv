@@ -555,141 +555,142 @@
   {
     "id": "vn-phu-quoc",
     "dest": "vietnam",
-    "title": "Phu Quoc Island & VinWonders",
+    "title": "Tropical Phu Quoc",
     "where": "Phu Quoc",
-    "days": 5,
-    "nights": 4,
-    "price": 56999,
-    "badge": "Family",
+    "days": 4,
+    "nights": 3,
+    "price": 28699,
+    "badge": "Value",
     "type": [
       "beach",
       "family"
     ],
-    "blurb": "The world’s longest sea cable car, a safari park, and sunsets from the quietest beaches in Vietnam.",
+    "blurb": "Snorkelling stops between four islands, the world's longest sea-crossing cable car to Hon Thom, and a full day at VinWonders and Grand World — Phu Quoc's beach-and-theme-park combination for families.",
     "includes": [
-      "Beach Resort",
-      "VinWonders Pass",
-      "Safari Entry",
-      "Half Board"
+      "4 Star Hotel",
+      "4-Island Tour",
+      "VinWonders & Grand World",
+      "Airport Transfers"
     ],
     "image": "https://images.unsplash.com/photo-1555921015-5532091f6026?auto=format&fit=crop&w=900&q=80",
     "route": [
-      "Phu Quoc Town",
-      "VinWonders",
-      "Sao Beach"
+      "Phu Quoc",
+      "4 Islands & Hon Thom Cable Car",
+      "VinWonders & Grand World"
     ],
     "itinerary": [
       {
-        "title": "Arrive Phu Quoc",
-        "summary": "Straight to the resort, then a first sunset on the sand.",
+        "title": "Phu Quoc arrival | Day at leisure",
+        "summary": "Meet our representative outside the arrival gate holding your Name Placard, transfer to your hotel, and enjoy the rest of the day at leisure.",
         "activities": [
-          "Airport pick-up and resort check-in",
-          "Sunset at a Sunset Sanato beach club"
+          "Meet our representative outside the arrival gate — holding your \"Name Placard\" — for a private transfer to your hotel",
+          "Rest of the day at leisure",
+          "Please note: hotel check-in time is 14:00 Hrs; early check-in is not guaranteed and is subject to the hotel’s terms and conditions"
         ],
-        "included": "Airport Transfer + Resort Check-in",
+        "included": "Airport Transfer + Hotel Check-in",
         "type": "Half day",
         "meals": "No meals",
         "stay": "Phu Quoc",
         "timings": [
           "12:00 PM - Airport pick-up at Phu Quoc (PQC)",
-          "02:00 PM - Beach resort check-in",
-          "05:30 PM - Sunset at Sunset Sanato beach club"
+          "02:00 PM - Hotel check-in",
+          "Evening - Free time at leisure"
         ]
       },
       {
-        "title": "Hon Thom cable car",
-        "summary": "The world's longest sea-crossing cable car, then a full theme-park afternoon.",
+        "title": "4-island tour with Hon Thom cable car, Aquatopia water park, lunch",
+        "summary": "A full day island-hopping by canoe for swimming and snorkelling, a buffet lunch and water park on Hon Thom, then the world’s longest overwater cable car back to the mainland.",
         "activities": [
-          "World's longest sea cable car to Hon Thom Island",
-          "Afternoon at VinWonders theme park"
+          "8:00 – 8:30: Our car and tour guide pick you up at your hotel lobby",
+          "8:30 – 9:00: The car moves to An Thoi Port",
+          "9:00 – 9:20: Canoe from the port to May Rut Trong Island — enjoy the beach, swimming and relaxing, with free photos and flycam videos",
+          "Canoe on to Hon Gam Ghi Island for snorkelling (snorkelling gear provided)",
+          "Canoe from Gam Ghi Island to May Rut Ngoai Island for swimming and relaxing, then on to Hon Thom Island",
+          "12:20 – 14:00: Buffet local lunch and relaxation on Hon Thom Island",
+          "14:00 – 16:30: Aquatopia Water Park",
+          "16:30 – 16:45: Transfer to the Hon Thom Cable Car station — your guide hands you your ticket and you wait for your turn",
+          "Hon Thom cable car back to the mainland — stretching over 8 kilometres, one of the longest overwater cable car rides in the world, with panoramic views of turquoise waters, islands and beaches",
+          "17:15: Arrive at An Thoi port — our car picks you up and drops you back at your hotel",
+          "What to bring: pants above the knee (you’ll be wading), a hat, sunscreen, towel and sunglasses, swimwear for May Rut Trong and snorkelling at Gam Ghi, and a spare set of dry clothes for the ride back",
+          "Note: the itinerary can change depending on weather conditions"
         ],
-        "included": "Cable Car + Theme Park Entry",
+        "included": "SIC AC Bus Transfer + Entrance Tickets + Local Lunch + Flycam Photos & Videos + English-Speaking Tour Guide",
         "type": "Full day",
         "meals": "Breakfast + Lunch",
         "stay": "Phu Quoc",
         "timings": [
-          "08:00 AM - Breakfast at the resort",
-          "09:30 AM - Hon Thom sea cable car",
-          "12:30 PM - Lunch",
-          "02:00 PM - VinWonders theme park",
-          "07:00 PM - Return to the resort"
+          "08:00 AM - Breakfast at the hotel",
+          "08:00 – 08:30 AM - Hotel pick-up",
+          "08:30 – 09:00 AM - Transfer to An Thoi Port",
+          "09:00 AM - Canoe to May Rut Trong, Hon Gam Ghi & May Rut Ngoai islands",
+          "12:20 – 14:00 - Buffet lunch on Hon Thom Island",
+          "14:00 – 16:30 - Aquatopia Water Park",
+          "16:30 – 16:45 - Transfer to the cable car station",
+          "17:15 - Arrive An Thoi port, return to hotel"
         ]
       },
       {
-        "title": "Safari & beach",
-        "summary": "Wildlife in the morning, white sand in the afternoon.",
+        "title": "VinWonders & Grand World (Private Transfer, No Guide)",
+        "summary": "A private transfer to VinWonders for the Hai Vuong aquarium mermaid show and unlimited games, then an evening at Grand World’s Venice-style Lake of Love.",
         "activities": [
-          "Morning at Vinpearl Safari Park",
-          "Afternoon on Sao Beach"
+          "09:30: Pick-up from your hotel and transfer to VinWonders Phu Quoc",
+          "Hai Vuong aquarium mermaid show — Vietnam’s largest and most modern aquarium, a colourful 15-minute show performed daily at 11:00 – 11:15 and 15:00 – 15:15",
+          "Games and rides across VinWonders, all included in your entry ticket",
+          "16:30: Leave VinWonders for Grand World Phu Quoc",
+          "Venice River (Lake of Love) — one of the best recreations of Venice’s original canals",
+          "18:30: Leave Grand World and return to your hotel",
+          "Note: this tour runs on private transfer only, with no tour guide — the Venice River boat ride is an optional paid extra, and Grand World itself has no entry ticket but its attractions are paid directly"
         ],
-        "included": "Safari Entry + Beach Transfer",
+        "included": "Private AC Vehicle Transfer + VinWonders Entrance Ticket + Water Bottle",
         "type": "Full day",
         "meals": "Breakfast",
         "stay": "Phu Quoc",
         "timings": [
-          "08:00 AM - Breakfast at the resort",
-          "09:00 AM - Vinpearl Safari Park",
-          "01:00 PM - Transfer to Sao Beach",
-          "05:00 PM - Return to the resort"
+          "08:00 AM - Breakfast at the hotel",
+          "09:30 AM - Transfer to VinWonders Phu Quoc",
+          "11:00 AM / 03:00 PM - Hai Vuong aquarium mermaid show",
+          "04:30 PM - Transfer to Grand World Phu Quoc",
+          "06:30 PM - Return to your hotel"
         ]
       },
       {
-        "title": "Island hopping",
-        "summary": "A boat day among the quieter southern islands.",
+        "title": "Phu Quoc Departure",
+        "summary": "Start your morning with a relaxed breakfast at the hotel before checking out, then transfer to the airport for your onward journey.",
         "activities": [
-          "Snorkelling trip to the southern islands",
-          "Fresh seafood lunch on the boat"
-        ],
-        "included": "Boat Trip + Snorkel Gear + Lunch",
-        "type": "Full day",
-        "meals": "Breakfast + Lunch",
-        "stay": "Phu Quoc",
-        "timings": [
-          "08:00 AM - Breakfast at the resort",
-          "09:30 AM - Speedboat to the southern islands",
-          "11:00 AM - Snorkelling stops",
-          "01:00 PM - Seafood lunch on board",
-          "04:30 PM - Return to the resort"
-        ]
-      },
-      {
-        "title": "Departure",
-        "summary": "A free morning before the transfer to the airport.",
-        "activities": [
-          "Free morning at the resort",
-          "Transfer to Phu Quoc Airport"
+          "Relaxed breakfast at the hotel before checking out",
+          "Private transfer to Phu Quoc Airport for your onward journey"
         ],
         "included": "Airport Transfer",
         "type": "Half day",
         "meals": "Breakfast",
         "stay": "-",
         "timings": [
-          "08:00 AM - Breakfast at the resort",
-          "11:00 AM - Checkout",
+          "08:00 AM - Breakfast at the hotel",
+          "11:00 AM - Check-out",
           "12:00 PM - Transfer to Phu Quoc Airport"
         ]
       }
     ],
     "quickDetails": {
       "Arrival / Departure": "Phu Quoc (PQC) / Phu Quoc (PQC)",
-      "Duration": "4N / 5D",
-      "Trip type": "Private departure - family friendly",
+      "Duration": "3N / 4D",
+      "Trip type": "Private departure",
       "International flights": "Not included (booking assistance available)",
-      "Domestic flights": "Not included",
-      "Internal transportation": "Private AC vehicle + island speedboat",
-      "Accommodation": "4 Star beach resort",
-      "Meals": "(4) Breakfast (2) Lunch",
-      "Places covered": "Phu Quoc Town - Hon Thom - VinWonders - Sao Beach",
-      "Visa": "e-Visa (Phu Quoc allows visa-free entry up to 30 days)"
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle",
+      "Accommodation": "4 Star hotels",
+      "Meals": "(3) Breakfast",
+      "Places covered": "Phu Quoc, Hon Thom Cable Car, Aquatopia Water Park, VinWonders, Grand World",
+      "Visa": "e-Visa (processing 3-5 working days)"
     },
     "hotels": [
-      "Phu Quoc - Sailing Club Signature Resort or similar (4 Star, beachfront)"
+      "Phu Quoc - AVS Hotel Phu Quoc or similar (4 Star)"
     ],
     "priceVariants": [
       {
-        "label": "4N / 5D",
+        "label": "3N / 4D",
         "note": "Land package only, twin sharing",
-        "price": 56999
+        "price": 28699
       }
     ]
   },

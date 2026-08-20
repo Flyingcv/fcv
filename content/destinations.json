@@ -7,7 +7,16 @@
     "blurb": "Emerald karsts rising out of Halong Bay, motorbike symphonies in Hanoi, and the tailor shops of Hoi An glowing under a thousand silk lanterns. Vietnam moves fast and rewards travellers who slow down.",
     "cover": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=80",
     "hero": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=2000&q=80",
-    "cities": ["Hanoi", "Ho Chi Minh", "Da Nang", "Hoi An", "Halong", "Sapa", "Phu Quoc", "Nha Trang"],
+    "cities": [
+      "Hanoi",
+      "Ho Chi Minh",
+      "Da Nang",
+      "Hoi An",
+      "Halong",
+      "Sapa",
+      "Phu Quoc",
+      "Nha Trang"
+    ],
     "facts": {
       "Flight time": "5h 20m direct",
       "Best season": "Oct — Apr",
@@ -16,21 +25,54 @@
     },
     "perDay": 5200,
     "flight": 24000,
-    "fromPrice": 42999,
+    "fromPrice": 28699,
     "highlights": [
-      ["Halong Bay overnight cruise", "Sleep on the water among 1,600 limestone islands, kayak into hidden lagoons at sunrise."],
-      ["Hoi An lantern old town", "A UNESCO trading port frozen in the 15th century — best walked after dark."],
-      ["Ba Na Hills & Golden Bridge", "Cable car above the clouds to the stone hands holding a walkway in the sky."],
-      ["Sapa rice terraces trek", "Homestay with Hmong families on staircase valleys carved over 300 years."],
-      ["Mekong Delta floating market", "Sampan through coconut canals to a market that opens at 5am on the water."]
+      [
+        "Halong Bay overnight cruise",
+        "Sleep on the water among 1,600 limestone islands, kayak into hidden lagoons at sunrise."
+      ],
+      [
+        "Hoi An lantern old town",
+        "A UNESCO trading port frozen in the 15th century — best walked after dark."
+      ],
+      [
+        "Ba Na Hills & Golden Bridge",
+        "Cable car above the clouds to the stone hands holding a walkway in the sky."
+      ],
+      [
+        "Sapa rice terraces trek",
+        "Homestay with Hmong families on staircase valleys carved over 300 years."
+      ],
+      [
+        "Mekong Delta floating market",
+        "Sampan through coconut canals to a market that opens at 5am on the water."
+      ]
     ],
     "itinerary": [
-      ["Arrive Hanoi", "Airport meet-and-greet, transfer to the Old Quarter. Evening egg-coffee walk and a water puppet show on Hoan Kiem lake."],
-      ["Ninh Binh day trip", "Rowboat through the Trang An caves, cycle to Hoa Lu, climb the 500 steps to Mua Cave for the valley panorama."],
-      ["Halong Bay cruise", "Board a deluxe junk, kayak Luon Cave, squid fishing after dinner, sunrise tai chi on the sundeck."],
-      ["Fly to Da Nang", "My Khe beach afternoon, then the Dragon Bridge fire show. Overnight in Da Nang."],
-      ["Hoi An & Ba Na Hills", "Golden Bridge in the morning, lantern-lit Ancient Town in the evening with a basket-boat ride."],
-      ["Departure", "Free morning for tailoring pick-up and cafés before the transfer to the airport."]
+      [
+        "Arrive Hanoi",
+        "Airport meet-and-greet, transfer to the Old Quarter. Evening egg-coffee walk and a water puppet show on Hoan Kiem lake."
+      ],
+      [
+        "Ninh Binh day trip",
+        "Rowboat through the Trang An caves, cycle to Hoa Lu, climb the 500 steps to Mua Cave for the valley panorama."
+      ],
+      [
+        "Halong Bay cruise",
+        "Board a deluxe junk, kayak Luon Cave, squid fishing after dinner, sunrise tai chi on the sundeck."
+      ],
+      [
+        "Fly to Da Nang",
+        "My Khe beach afternoon, then the Dragon Bridge fire show. Overnight in Da Nang."
+      ],
+      [
+        "Hoi An & Ba Na Hills",
+        "Golden Bridge in the morning, lantern-lit Ancient Town in the evening with a basket-boat ride."
+      ],
+      [
+        "Departure",
+        "Free morning for tailoring pick-up and cafés before the transfer to the airport."
+      ]
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1400&q=80",
@@ -39,7 +81,6 @@
       "https://images.unsplash.com/photo-1470004914212-05527e49370b?auto=format&fit=crop&w=1400&q=80"
     ]
   },
-
   "bali": {
     "slug": "bali",
     "name": "Bali",
@@ -48,7 +89,14 @@
     "blurb": "Volcanic ridgelines, cliff-edge temples over the Indian Ocean, and rice terraces that look engineered by water and patience. Bali does honeymoons, surf trips and slow family weeks equally well.",
     "cover": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1400&q=80",
     "hero": "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?auto=format&fit=crop&w=2000&q=80",
-    "cities": ["Seminyak", "Ubud", "Uluwatu", "Nusa Penida", "Canggu", "Kintamani"],
+    "cities": [
+      "Seminyak",
+      "Ubud",
+      "Uluwatu",
+      "Nusa Penida",
+      "Canggu",
+      "Kintamani"
+    ],
     "facts": {
       "Flight time": "7h 10m · 1 stop",
       "Best season": "Apr — Oct",
@@ -59,19 +107,52 @@
     "flight": 27500,
     "fromPrice": 48999,
     "highlights": [
-      ["Nusa Penida day cruise", "Kelingking cliff, Broken Beach and snorkelling with manta rays off Manta Point."],
-      ["Ubud rice terraces", "Tegallalang at first light, then a jungle swing over the Ayung river gorge."],
-      ["Uluwatu Kecak fire dance", "Sunset over a clifftop temple with 70 chanting performers and no instruments."],
-      ["Mount Batur sunrise trek", "A 2am start and a two-hour climb rewarded with breakfast steamed over a volcano vent."],
-      ["Private villa living", "Pool villas in Seminyak and Ubud with breakfast cooked in your own kitchen."]
+      [
+        "Nusa Penida day cruise",
+        "Kelingking cliff, Broken Beach and snorkelling with manta rays off Manta Point."
+      ],
+      [
+        "Ubud rice terraces",
+        "Tegallalang at first light, then a jungle swing over the Ayung river gorge."
+      ],
+      [
+        "Uluwatu Kecak fire dance",
+        "Sunset over a clifftop temple with 70 chanting performers and no instruments."
+      ],
+      [
+        "Mount Batur sunrise trek",
+        "A 2am start and a two-hour climb rewarded with breakfast steamed over a volcano vent."
+      ],
+      [
+        "Private villa living",
+        "Pool villas in Seminyak and Ubud with breakfast cooked in your own kitchen."
+      ]
     ],
     "itinerary": [
-      ["Arrive Denpasar", "Private transfer to your Seminyak villa. Sunset at Double Six beach and a seafood grill in Jimbaran."],
-      ["Uluwatu & the south", "Padang Padang beach, Uluwatu temple, and the Kecak fire dance as the sun drops."],
-      ["Nusa Penida", "Fast boat across the strait for Kelingking, Angel’s Billabong and Broken Beach."],
-      ["Move to Ubud", "Tegallalang terraces, Tirta Empul holy spring, and a Balinese cooking class with a local family."],
-      ["Mount Batur sunrise", "Guided summit trek, natural hot springs afterwards, free afternoon in the Ubud art market."],
-      ["Departure", "Spa morning at the villa, late checkout, transfer to DPS."]
+      [
+        "Arrive Denpasar",
+        "Private transfer to your Seminyak villa. Sunset at Double Six beach and a seafood grill in Jimbaran."
+      ],
+      [
+        "Uluwatu & the south",
+        "Padang Padang beach, Uluwatu temple, and the Kecak fire dance as the sun drops."
+      ],
+      [
+        "Nusa Penida",
+        "Fast boat across the strait for Kelingking, Angel’s Billabong and Broken Beach."
+      ],
+      [
+        "Move to Ubud",
+        "Tegallalang terraces, Tirta Empul holy spring, and a Balinese cooking class with a local family."
+      ],
+      [
+        "Mount Batur sunrise",
+        "Guided summit trek, natural hot springs afterwards, free afternoon in the Ubud art market."
+      ],
+      [
+        "Departure",
+        "Spa morning at the villa, late checkout, transfer to DPS."
+      ]
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1573790387438-4da905039392?auto=format&fit=crop&w=1400&q=80",
@@ -80,7 +161,6 @@
       "https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=1400&q=80"
     ]
   },
-
   "thailand": {
     "slug": "thailand",
     "name": "Thailand",
@@ -89,7 +169,14 @@
     "blurb": "Gold-tiled temples in Bangkok, longtail boats cutting between Krabi’s limestone stacks, and street food that has no business being that good for that little. The easiest first passport stamp in Asia.",
     "cover": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1400&q=80",
     "hero": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=2000&q=80",
-    "cities": ["Bangkok", "Phuket", "Krabi", "Pattaya", "Phi Phi", "Chiang Mai"],
+    "cities": [
+      "Bangkok",
+      "Phuket",
+      "Krabi",
+      "Pattaya",
+      "Phi Phi",
+      "Chiang Mai"
+    ],
     "facts": {
       "Flight time": "4h 15m direct",
       "Best season": "Nov — Mar",
@@ -100,19 +187,52 @@
     "flight": 19500,
     "fromPrice": 34999,
     "highlights": [
-      ["Phi Phi & Maya Bay", "Speedboat island hop with snorkelling stops at Bamboo Island and Pileh Lagoon."],
-      ["Grand Palace & Wat Arun", "Bangkok’s royal complex, then a Chao Phraya ferry to the Temple of Dawn."],
-      ["James Bond Island canoe", "Sea-canoe through Phang Nga’s hidden sea caves and mangrove hongs."],
-      ["Floating & night markets", "Damnoen Saduak by boat, then Asiatique or Chatuchak after sunset."],
-      ["Krabi four-island tour", "Railay, Chicken Island, Tup and Poda — the postcard version of Thailand."]
+      [
+        "Phi Phi & Maya Bay",
+        "Speedboat island hop with snorkelling stops at Bamboo Island and Pileh Lagoon."
+      ],
+      [
+        "Grand Palace & Wat Arun",
+        "Bangkok’s royal complex, then a Chao Phraya ferry to the Temple of Dawn."
+      ],
+      [
+        "James Bond Island canoe",
+        "Sea-canoe through Phang Nga’s hidden sea caves and mangrove hongs."
+      ],
+      [
+        "Floating & night markets",
+        "Damnoen Saduak by boat, then Asiatique or Chatuchak after sunset."
+      ],
+      [
+        "Krabi four-island tour",
+        "Railay, Chicken Island, Tup and Poda — the postcard version of Thailand."
+      ]
     ],
     "itinerary": [
-      ["Arrive Bangkok", "Transfer to Sukhumvit, evening Chao Phraya dinner cruise past the illuminated temples."],
-      ["Bangkok city", "Grand Palace, Wat Pho reclining Buddha and Wat Arun, then Chinatown street food by tuk-tuk."],
-      ["Fly to Krabi", "Ao Nang check-in, sunset at Railay West with a longtail transfer."],
-      ["Four-island tour", "Chicken Island sandbar, Tup Island walk-across, snorkelling at Poda."],
-      ["Phi Phi speedboat", "Maya Bay, Viking Cave, Monkey Beach and lunch on Phi Phi Don."],
-      ["Departure", "Free morning, transfer to Krabi airport for the flight home."]
+      [
+        "Arrive Bangkok",
+        "Transfer to Sukhumvit, evening Chao Phraya dinner cruise past the illuminated temples."
+      ],
+      [
+        "Bangkok city",
+        "Grand Palace, Wat Pho reclining Buddha and Wat Arun, then Chinatown street food by tuk-tuk."
+      ],
+      [
+        "Fly to Krabi",
+        "Ao Nang check-in, sunset at Railay West with a longtail transfer."
+      ],
+      [
+        "Four-island tour",
+        "Chicken Island sandbar, Tup Island walk-across, snorkelling at Poda."
+      ],
+      [
+        "Phi Phi speedboat",
+        "Maya Bay, Viking Cave, Monkey Beach and lunch on Phi Phi Don."
+      ],
+      [
+        "Departure",
+        "Free morning, transfer to Krabi airport for the flight home."
+      ]
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1400&q=80",
@@ -121,7 +241,6 @@
       "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=1400&q=80"
     ]
   },
-
   "malaysia": {
     "slug": "malaysia",
     "name": "Malaysia",
@@ -130,7 +249,13 @@
     "blurb": "Twin towers over a food capital, a casino city in the clouds an hour away, and Langkawi’s duty-free beaches. Malaysia packs three completely different holidays into one short-haul flight.",
     "cover": "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1400&q=80",
     "hero": "https://images.unsplash.com/photo-1508062878650-88b52897f298?auto=format&fit=crop&w=2000&q=80",
-    "cities": ["Kuala Lumpur", "Genting Highlands", "Langkawi", "Penang", "Malacca"],
+    "cities": [
+      "Kuala Lumpur",
+      "Genting Highlands",
+      "Langkawi",
+      "Penang",
+      "Malacca"
+    ],
     "facts": {
       "Flight time": "4h 45m direct",
       "Best season": "Dec — Apr",
@@ -141,19 +266,52 @@
     "flight": 21000,
     "fromPrice": 37999,
     "highlights": [
-      ["Petronas Towers skybridge", "Level 86 observation deck plus the KLCC fountain show after dark."],
-      ["Genting Highlands", "Awana SkyWay cable car into the cloud forest, Skytropolis indoor theme park."],
-      ["Batu Caves", "272 rainbow steps up to a limestone cathedral guarded by a 42m gold statue."],
-      ["Langkawi Sky Bridge", "Cable car to Gunung Mat Cincang and a curved bridge suspended over the rainforest."],
-      ["Island hopping & eagle feeding", "Dayang Bunting lake, Beras Basah beach and the Kilim geoforest mangroves."]
+      [
+        "Petronas Towers skybridge",
+        "Level 86 observation deck plus the KLCC fountain show after dark."
+      ],
+      [
+        "Genting Highlands",
+        "Awana SkyWay cable car into the cloud forest, Skytropolis indoor theme park."
+      ],
+      [
+        "Batu Caves",
+        "272 rainbow steps up to a limestone cathedral guarded by a 42m gold statue."
+      ],
+      [
+        "Langkawi Sky Bridge",
+        "Cable car to Gunung Mat Cincang and a curved bridge suspended over the rainforest."
+      ],
+      [
+        "Island hopping & eagle feeding",
+        "Dayang Bunting lake, Beras Basah beach and the Kilim geoforest mangroves."
+      ]
     ],
     "itinerary": [
-      ["Arrive Kuala Lumpur", "Transfer to Bukit Bintang. Evening at the KLCC park fountain show and Jalan Alor food street."],
-      ["KL city tour", "Batu Caves, King’s Palace, Merdeka Square and the Petronas Towers skybridge."],
-      ["Genting Highlands", "Awana SkyWay, Chin Swee temple, and an afternoon at Skytropolis before returning to KL."],
-      ["Fly to Langkawi", "Beach afternoon at Pantai Cenang, sunset dinner on the sand."],
-      ["Island hopping & SkyCab", "Morning island hop, afternoon Sky Bridge and the Panorama cable car."],
-      ["Departure", "Duty-free shopping in Kuah town before the transfer to LGK."]
+      [
+        "Arrive Kuala Lumpur",
+        "Transfer to Bukit Bintang. Evening at the KLCC park fountain show and Jalan Alor food street."
+      ],
+      [
+        "KL city tour",
+        "Batu Caves, King’s Palace, Merdeka Square and the Petronas Towers skybridge."
+      ],
+      [
+        "Genting Highlands",
+        "Awana SkyWay, Chin Swee temple, and an afternoon at Skytropolis before returning to KL."
+      ],
+      [
+        "Fly to Langkawi",
+        "Beach afternoon at Pantai Cenang, sunset dinner on the sand."
+      ],
+      [
+        "Island hopping & SkyCab",
+        "Morning island hop, afternoon Sky Bridge and the Panorama cable car."
+      ],
+      [
+        "Departure",
+        "Duty-free shopping in Kuah town before the transfer to LGK."
+      ]
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1400&q=80",

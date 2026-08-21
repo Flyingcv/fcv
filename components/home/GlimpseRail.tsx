@@ -79,3 +79,5 @@ export default function GlimpseRail({ images, alt, speed = 55 }: Props) {
     </div>
   );
 }
+
+

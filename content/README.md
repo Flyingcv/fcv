@@ -220,10 +220,17 @@ Home page (`/`) ka poora content, section-wise:
 | `glimpses` | "Glimpses from the road" photo section ka heading |
 | `cta` | Sabse neeche ka final call-to-action |
 
-### `about.json`, `services-page.json`, `destinations-page.json`, `contact-page.json`, `package-page.json`
+### `about.json`
+About page (`/about`) ka poora content — `hero` (stats ke saath), `story`
+(company history paragraphs), `marqueeItems`, `missionVision`, `values`
+(4 value cards), `perks` (6 "why choose us" cards), `glimpses`, `team`,
+`cta`. Har section ka pattern upar "Common patterns" mein explain kiya
+gaya hai.
+
+### `services-page.json`, `destinations-page.json`, `contact-page.json`, `package-page.json`
 Har ek apne page ka poora content hai — hero heading/paragraph, stats,
 section headings, list items, CTA buttons, sab kuch. File ka naam jis page
-se match karta hai, wahi uska content hai (e.g. `about.json` = `/about` page).
+se match karta hai, wahi uska content hai (e.g. `services-page.json` = `/services` page).
 
 ### `legal.json`
 Privacy Policy aur Cancellation & Refund Policy ka poora legal text.

@@ -261,6 +261,20 @@ Package-specific data (price, itinerary, hotels) yaha nahi — wo
 `packages.json` se aata hai; yeh file sirf **fixed section labels** ke
 liye hai jo har package page pe repeat hote hain.
 
+### `pdf.json`
+Downloadable itinerary PDF ke saare labels aur headings — cover page,
+"Quick details", "Where you stay", "Day-by-day itinerary", "Inclusions
+& exclusions", "What you pay", "Optional add-ons", "Good to know",
+"Payment & booking", "Why travel with us", back-cover ka message, aur
+download button ke label. Package-specific data (prices, itinerary)
+`packages.json` se aata hai, aur common add-ons/notes/payment-terms
+`brochure.json` se; ye file sirf PDF ke **fixed/repeating text** ke
+liye hai.
+
+### `forms.json`
+Contact form ke field labels/placeholders, price calculator ke slider
+limits aur labels, aur packages page ke filter chips/labels.
+
 ### `legal.json`
 Privacy Policy aur Cancellation & Refund Policy ka poora legal text.
 Har section `blocks` ki list hai — do types honte hain:
@@ -270,16 +284,6 @@ Har section `blocks` ki list hai — do types honte hain:
 Text ke andar `**bold text**` likhne se wo bold ban jaata hai, aur
 `{{email}}` / `{{phone}}` likhne se wahan `contact.json` ka real email/phone
 apne aap clickable link ban ke aa jaata hai — inhe directly type mat karo.
-
-### `pdf.json`
-Downloadable itinerary PDF ke saare labels aur headings — "Quick details",
-"What you pay", back-cover ka message, waghera. Package-specific data
-(prices, itinerary) `packages.json` se aata hai; ye file sirf PDF ke
-fixed/repeating text ke liye hai.
-
-### `forms.json`
-Contact form ke field labels/placeholders, price calculator ke slider
-limits aur labels, aur packages page ke filter chips/labels.
 
 ---
 

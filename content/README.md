@@ -64,6 +64,27 @@ kar sakta hai.
 
 ---
 
+## Common patterns — inko samajh lo to har file aasan lagegi
+
+Zyadatar page-content files (`home.json`, `about.json`, `services-page.json`,
+`destinations-page.json`, `contact-page.json`, `package-page.json`) ek jaisi
+building blocks se bani hain, bar-bar:
+
+| Field naam | Kya hai |
+|---|---|
+| `tag` / `eyebrowTag` | Section ke upar chhota label (e.g. "Our story") |
+| `heading`, `headingHtml`, `titleHtml` | Main heading. `Html` wale mein `<br />` (line break) aur `<em>...</em>` (italic highlight) use ho sakta hai — tags waise hi rehne do, bas beech ka text badlo |
+| `paragraph`, `paragraphs`, `blurb`, `copy` | Body text |
+| `ctaLabel` / `ctaHref`, `primaryLabel` / `primaryHref`, `secondaryLabel` / `secondaryHref` | Button ka text aur wo kaha jaata hai (URL). Href mat badalna jab tak pata na ho wo page exist karta hai |
+| `items`, `stats`, `bullets` | Chhote cards/points ki list — har ek me aam taur pe `title`/`label` + `copy`/`value` |
+| `...Template` (jaise `overviewHeadingTemplate`) | Inke andar `{name}`, `{count}` jaisi cheezein hongi — yeh automatically real value se replace ho jaati hain, curly-brace wale word ko hataana mat, bas aas-paas ka text badal sakte ho |
+
+Yeh pattern samajhne ke baad neeche diye gaye per-file section-lists sirf
+"kaunsa top-level key kis section ko control karta hai" bata rahe hain — andar
+ki fields upar wale pattern se hi samajh aa jayengi.
+
+---
+
 ## Files — kya kahan hai
 
 ### `destinations.json`

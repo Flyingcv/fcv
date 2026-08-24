@@ -252,7 +252,14 @@ Contact page (`/contact`) ka content:
 | `faqs` | FAQ list — har entry `["Question", "Answer"]` pair hai. Naya FAQ add karna ho to same format mein ek naya pair jodo |
 
 ### `package-page.json`
-Har package detail page (`/services/[package]`) ke section headings.
+Har package detail page (`/services/[package]`) ke section headings —
+`tripRouteTag`, `quickDetails`, `itinerary`, `hotels`, `breakdown`
+(Included/Not included labels), `costing`, `about`, `highlights`,
+`gallery`, `morePackages`, `cta`, aur `waMessage` (jab user "Enquire on
+WhatsApp" dabata hai to jo message pre-filled hota hai uska text).
+Package-specific data (price, itinerary, hotels) yaha nahi — wo
+`packages.json` se aata hai; yeh file sirf **fixed section labels** ke
+liye hai jo har package page pe repeat hote hain.
 
 ### `legal.json`
 Privacy Policy aur Cancellation & Refund Policy ka poora legal text.

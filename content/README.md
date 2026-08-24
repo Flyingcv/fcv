@@ -272,8 +272,11 @@ download button ke label. Package-specific data (prices, itinerary)
 liye hai.
 
 ### `forms.json`
-Contact form ke field labels/placeholders, price calculator ke slider
-limits aur labels, aur packages page ke filter chips/labels.
+| Section | Kya hai |
+|---|---|
+| `contactForm` | Contact page ke form fields — har field ka `label` + `placeholder`, submit button text, success/disclaimer messages |
+| `priceConfigurator` | Price calculator (boarding-pass) ke slider limits (`minDays`/`maxDays`/`minPax`/`maxPax`), default values, aur uske labels — **yaha bhi ek `"travellers": "Travellers"` label hai** |
+| `packageFilter` | Services page ke filter chips — trip-length options, budget range (`minBudget`/`maxBudget`), sort options, "no results" empty-state text |
 
 ### `legal.json`
 Privacy Policy aur Cancellation & Refund Policy ka poora legal text.

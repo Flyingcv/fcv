@@ -187,10 +187,23 @@ dono mein automatically use hota hai, sirf ek jagah badalna padega.
 (no spaces, `+` ke baad seedha number).
 
 ### `site.json`
-Poori website mein jo bhi common/shared text hai — page ka `<title>`,
-Google search description, nav ke links, footer ka poora content, 404 page,
-har package ki "not included" list, add-on rates, aur chhote UI labels
-(jaise "Travellers", "Included:", price card ke messages) — sab yahan hai.
+Poori website mein jo bhi common/shared text hai:
+
+| Section | Kya hai |
+|---|---|
+| `brandName`, `boardingPassDefaultTitle`, `glimpseAltText` | Chhote brand-level text snippets |
+| `meta` | Google search title/description, keywords, social-share (OG) text |
+| `origin` | Boarding-pass UI mein "from" city/airport code (default: Delhi) |
+| `nav` | Top navbar ke links, "Plan my trip" CTA, dropdown text |
+| `footer` | Footer ka poora content — tagline, social links, company/destination columns, copyright line, credit line |
+| `notFound` | 404 ("page not found") page ka text |
+| `packageExcludes` | Har package ki default "Not included" list (jab tak package apna khud ka na de) |
+| `addons` | Price calculator ke add-on rates — flights, visa (`rate`), private guide (`rate`), experiences pack (`rate`). `rate` badalne se price calculator ka number turant badal jayega |
+| `siteUrl` | Website ka full URL (SEO ke liye) |
+| `ui.priceCard` | Price-calculator wale "boarding pass" card ke sab labels — **yehi wo jagah hai jaha `"Travellers"` wala label hai (`travellersLabel`, `travellerSingular`, `travellerPlural`, WhatsApp message ka `travellersLine`)** |
+| `ui.packageCard` | Package listing card ke chhote labels ("Per person from", "View") |
+| `ui.itineraryAccordion` | Itinerary ke "Day" prefix aur "Included:" label |
+| `ui.legalToc` | Privacy/Cancellation page ke sidebar ka "On this page" title |
 
 ### `home.json`, `about.json`, `services-page.json`, `destinations-page.json`, `contact-page.json`, `package-page.json`
 Har ek apne page ka poora content hai — hero heading/paragraph, stats,

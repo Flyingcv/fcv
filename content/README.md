@@ -233,7 +233,13 @@ hum handle karte hain), `pricing` (calculator section ka intro),
 `steps` (4-step "how it works"), `packages` (package-listing section ka
 heading), `cta` (custom-trip CTA).
 
-### `destinations-page.json`, `contact-page.json`, `package-page.json`
+### `destinations-page.json`
+Destinations listing page (`/destinations`) ka content — `hero` (stats
+ke saath), `marqueeItems`, `cta`, aur `slug` (yeh har individual
+destination page — jaise `/destinations/vietnam` — ke reusable headings/
+templates hain, jinme `{name}` aur `{count}` placeholders hote hain).
+
+### `contact-page.json`, `package-page.json`
 Har ek apne page ka poora content hai — hero heading/paragraph, stats,
 section headings, list items, CTA buttons, sab kuch.
 

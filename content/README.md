@@ -126,11 +126,11 @@ Yeh `/services` page ke saare ready-made package cards hain (Vietnam ke
 | `badge` | Card ke upar chhota label — "Bestseller", "Value", "Family" waghera, kuch bhi text daal sakte ho |
 | `type` | Filter categories — services page ke filter buttons se match karta hai: `culture`, `beach`, `nature`, `adventure`, `family`, `honeymoon`, `luxury` |
 | `blurb` | Card ka description |
-| `includes` | Chhoti list jo card ke andar dikhti hai (e.g. "4★ Hotels") |
+| `includes` | Chhoti list jo card ke andar dikhti hai (e.g. "4 Star Hotel") |
 | `image` | Card photo ka URL |
 | `route` | Trip ke stops ki list, order mein — package page pe route strip banta hai |
-| `quickDetails` | "Quick details" table — arrival/departure, duration, flights, meals, visa waghera. Left side label, right side value. Jitne chaho utne rows add/remove kar sakte ho |
-| `hotels` | Jin hotels mein stay hota hai unki list |
+| `quickDetails` | "Quick details" table — arrival/departure, duration, flights, meals, visa waghera. Left side label, right side value. Jitne chaho utne rows add/remove kar sakte ho. **Yehi wo jagah hai jaha `"Accommodation"` row hoti hai — hotel ka star rating (e.g. `"4 Star hotels"`) yahan se badalta hai** |
+| `hotels` | Jin hotels mein stay hota hai unki list — har entry mein bhi star rating likhi hoti hai, jaise `"...or similar (4 Star)"` — **star rating badalte waqt `quickDetails.Accommodation` aur is list, dono jagah badalna** |
 | `priceVariants` | Alag-alag duration/flight options ke prices. Har ek `{ label, note, price }` — pehla wala highlight hota hai |
 | `itinerary` | Din-ba-din plan (neeche detail mein) |
 

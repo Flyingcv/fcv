@@ -239,9 +239,20 @@ ke saath), `marqueeItems`, `cta`, aur `slug` (yeh har individual
 destination page — jaise `/destinations/vietnam` — ke reusable headings/
 templates hain, jinme `{name}` aur `{count}` placeholders hote hain).
 
-### `contact-page.json`, `package-page.json`
-Har ek apne page ka poora content hai — hero heading/paragraph, stats,
-section headings, list items, CTA buttons, sab kuch.
+### `contact-page.json`
+Contact page (`/contact`) ka content:
+
+| Section | Kya hai |
+|---|---|
+| `meta` | Page title/description |
+| `hero` | Top heading |
+| `cardsSection` | 4 chhote cards — Call, Email, Office, Desk hours |
+| `formSection` | Enquiry form ke upar ka heading |
+| `faqSection` | FAQ section ka heading + 2 buttons |
+| `faqs` | FAQ list — har entry `["Question", "Answer"]` pair hai. Naya FAQ add karna ho to same format mein ek naya pair jodo |
+
+### `package-page.json`
+Har package detail page (`/services/[package]`) ke section headings.
 
 ### `legal.json`
 Privacy Policy aur Cancellation & Refund Policy ka poora legal text.

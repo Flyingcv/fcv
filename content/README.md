@@ -205,19 +205,25 @@ Poori website mein jo bhi common/shared text hai:
 | `ui.itineraryAccordion` | Itinerary ke "Day" prefix aur "Included:" label |
 | `ui.legalToc` | Privacy/Cancellation page ke sidebar ka "On this page" title |
 
-### `home.json`, `about.json`, `services-page.json`, `destinations-page.json`, `contact-page.json`, `package-page.json`
+### `home.json`
+Home page (`/`) ka poora content, section-wise:
+
+| Section | Kya hai |
+|---|---|
+| `hero` | Sabse upar wala heading, blurb, dono buttons, "NOW BOARDING" ticker (destination codes + starting price) |
+| `marqueeItems` | Scrolling marquee ke words (jinke aage `*` hai wo alag style mein dikhte hain) |
+| `horizontalDestinations` | "Where we fly" wali horizontal-scroll section ka tag/heading |
+| `whyUs` | "We don't sell packages, we plan journeys" section — paragraphs + stats (years/travellers/rating) |
+| `pricingExplainer` | Price calculator ka preview section — bullets + ek sample "demo" boarding pass ke fields |
+| `services` | "What we handle" 4 items (icons wale) |
+| `testimonials` | Reviews section ka heading (actual reviews `reviews.json` se aate hain) |
+| `glimpses` | "Glimpses from the road" photo section ka heading |
+| `cta` | Sabse neeche ka final call-to-action |
+
+### `about.json`, `services-page.json`, `destinations-page.json`, `contact-page.json`, `package-page.json`
 Har ek apne page ka poora content hai — hero heading/paragraph, stats,
 section headings, list items, CTA buttons, sab kuch. File ka naam jis page
 se match karta hai, wahi uska content hai (e.g. `about.json` = `/about` page).
-
-**`headingHtml` fields:** kuch headings mein `<br />` (line break) aur
-`<em>...</em>` (italic highlight) use hota hai — jaise
-`"Southeast<br />Asia in full<br /><em>colours</em>"`. Ye tags waise hi
-rehne do, bas unke beech ka text badlo.
-
-**`{placeholder}` fields:** kuch text mein `{name}`, `{count}` jaisi cheezein
-dikhengi (e.g. `"Filter {count} ready-made itineraries..."`) — yeh
-automatically real number/naam se replace ho jaati hain, inhe hataana mat.
 
 ### `legal.json`
 Privacy Policy aur Cancellation & Refund Policy ka poora legal text.

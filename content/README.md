@@ -227,10 +227,15 @@ About page (`/about`) ka poora content — `hero` (stats ke saath), `story`
 `cta`. Har section ka pattern upar "Common patterns" mein explain kiya
 gaya hai.
 
-### `services-page.json`, `destinations-page.json`, `contact-page.json`, `package-page.json`
+### `services-page.json`
+Services page (`/services`) ka content — `hero`, `services` (6 cards jo
+hum handle karte hain), `pricing` (calculator section ka intro),
+`steps` (4-step "how it works"), `packages` (package-listing section ka
+heading), `cta` (custom-trip CTA).
+
+### `destinations-page.json`, `contact-page.json`, `package-page.json`
 Har ek apne page ka poora content hai — hero heading/paragraph, stats,
-section headings, list items, CTA buttons, sab kuch. File ka naam jis page
-se match karta hai, wahi uska content hai (e.g. `services-page.json` = `/services` page).
+section headings, list items, CTA buttons, sab kuch.
 
 ### `legal.json`
 Privacy Policy aur Cancellation & Refund Policy ka poora legal text.

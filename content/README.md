@@ -154,6 +154,10 @@ number hona chahiye. 6 din ka trip = `"days": 6` aur `itinerary` mein 6 blocks.
 karke uske fields badal do, aur uske pehle wale block ke end mein comma
 lagana mat bhoolna (kyunki ab wo last nahi raha).
 
+**Kisi ek package ko dhundna ho to:** editor mein Ctrl+F/Cmd+F se uska `id`
+(jaise `"vn-phu-quoc"`) ya `title` search karo — file bahut badi hai, sab
+packages ek hi list mein hain.
+
 ### `brochure.json`
 Yeh downloadable PDF ka wo content hai jo **sabhi packages mein same** rehta
 hai — isliye ek hi jagah rakha hai:
@@ -170,8 +174,16 @@ Inme se kuch bhi badloge to **har package ka PDF** update ho jayega.
 
 ### `tiers.json`
 Price calculator ki 3 stay-tiers (Budget / Premium / Luxury) ka label,
-chhota note, aur price multiplier. `mult: 1.45` ka matlab hai iss tier ka
-price base rate se 1.45x hai. In teeno keys (`comfort`, `premium`, `luxury`)
+chhota note, aur price multiplier:
+
+```json
+"comfort": { "label": "Budget", "note": "3★", "mult": 1.0 },
+"premium": { "label": "Premium", "note": "4★", "mult": 1.45 },
+"luxury":  { "label": "Luxury",  "note": "5★", "mult": 2.1 }
+```
+
+`mult: 1.45` ka matlab hai iss tier ka price base rate (`destinations.json`
+ke `perDay`) se 1.45x hai. In teeno keys (`comfort`, `premium`, `luxury`)
 ke naam mat badalna — bas andar wali `label`/`note`/`mult` values badal
 sakte ho.
 
@@ -183,8 +195,15 @@ kar do.
 ### `contact.json`
 Phone, email, office address, desk hours — yeh Contact page aur Footer
 dono mein automatically use hota hai, sirf ek jagah badalna padega.
-`phoneHref` ek special format mein hona chahiye: `"tel:+91XXXXXXXXXX"`
-(no spaces, `+` ke baad seedha number).
+
+| Field | Kya hai |
+|---|---|
+| `phone` | Display hone wala number |
+| `phoneHref` | Click-to-call link — special format: `"tel:+91XXXXXXXXXX"` (no spaces, `+` ke baad seedha number) |
+| `email` | Contact email |
+| `address` | Office address |
+| `hours` | Desk hours (jaise "Mon – Sat · 10:00 – 19:00 IST") |
+| `emergency` | 24/7 on-trip support wali line |
 
 ### `site.json`
 Poori website mein jo bhi common/shared text hai:
@@ -280,13 +299,20 @@ liye hai.
 
 ### `legal.json`
 Privacy Policy aur Cancellation & Refund Policy ka poora legal text.
-Har section `blocks` ki list hai — do types honte hain:
+Dono (`privacy` aur `cancellation`) ka structure same hai — `meta`,
+`heroTag`/`heroHeading`, `lastUpdated`, `intro`, aur `sections` (list of
+`{ id, label, heading, blocks }`). Har section ke `blocks` ki list do
+types ki ho sakti hai:
 - `{ "type": "p", "text": "..." }` — ek paragraph
 - `{ "type": "ul", "items": ["...", "..."] }` — bullet list
 
 Text ke andar `**bold text**` likhne se wo bold ban jaata hai, aur
 `{{email}}` / `{{phone}}` likhne se wahan `contact.json` ka real email/phone
 apne aap clickable link ban ke aa jaata hai — inhe directly type mat karo.
+
+Naya legal section add karna ho to `sections` list mein ek naya block
+copy-paste karo — `id` unique rakhna (wo sidebar navigation ke liye use
+hota hai).
 
 ---
 
@@ -295,6 +321,8 @@ apne aap clickable link ban ke aa jaata hai — inhe directly type mat karo.
 - `lib/data.ts`, koi bhi `.tsx` file, ya `app`/`components` folder ke
   andar kuch bhi — yeh sab website ka actual code hai, content nahi.
 - `content/` folder ke andar file ka **naam** ya `.json` extension badalna.
+- Kisi field ka **naam** (colon `:` ke bayi taraf wala word) badalna —
+  sirf uski **value** (colon ke dayi taraf, quotes ke andar) badalo.
 
 ---
 

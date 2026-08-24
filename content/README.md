@@ -1,14 +1,19 @@
 # Website content — edit guide (no coding needed)
 
 Sabhi jagah dikhne wala content — destinations, packages, prices, reviews,
-office/contact details — ab is `content/` folder ki JSON files mein hai.
-Website ka code (`lib/`, `components/`, `app/`) alag hai aur usse chhedne
-ki zaroorat nahi. Bas neeche di gayi files edit karo, save karo, aur site
-apne aap update ho jayegi (agla deploy hone par).
+office/contact details, har page ka text — ab is `content/` folder ki JSON
+files mein hai. Website ka code (`lib/`, `components/`, `app/`) alag hai aur
+usse chhedne ki zaroorat nahi. Bas neeche di gayi files edit karo, save
+karo, aur site apne aap update ho jayegi (agla deploy hone par).
 
 **In short:** yeh saari files "fill in the blanks" jaisi hain. Sirf `"quotes"`
 ke andar wali cheez badlo — structure (colons `:`, commas `,`, curly/square
 brackets `{ } [ ]`) waisa hi rehne do.
+
+**Is file ko kaise use karo:** neeche pehle "kya kahan hai" ka ek quick
+lookup table hai — jo cheez badalni hai wo dhundo aur seedha uss file/section
+pe jao. Uske baad har file ka poora field-by-field breakdown hai, agar
+detail chahiye ho.
 
 ---
 
@@ -31,6 +36,31 @@ brackets `{ } [ ]`) waisa hi rehne do.
 
 Agar in teeno ka khayal rakha, to koi bhi non-technical person safely edit
 kar sakta hai.
+
+---
+
+## Quick lookup — "mujhe yeh change karna hai, kaha jau?"
+
+| Kya change karna hai | File | Kaha |
+|---|---|---|
+| Kisi ek specific package ka price, title, itinerary, hotel, includes | `packages.json` | wo package apne `id` se dhundo (Ctrl+F) |
+| Sab packages mein ek saath koi wording (jaise "Travellers" → "Persons") | `site.json` (`ui.priceCard`), `forms.json` | neeche in dono files ke section dekho |
+| Hotel ka star rating (3★ → 4★ waghera) ek specific package ke liye | `packages.json` | usi package ke andar `quickDetails.Accommodation` aur `hotels` list |
+| Price calculator ke Budget/Premium/Luxury tier ka naam ya multiplier | `tiers.json` | poori file chhoti si hai |
+| Phone number, email, office address, desk hours | `contact.json` | poori file |
+| Company ka naam, logo text, meta title/description (Google search), nav links, footer, "not included" list, add-on rates (guide/visa/flight rate) | `site.json` | neeche section dekho |
+| Home page ka hero text, stats, "why us", testimonials heading | `home.json` | neeche section dekho |
+| About page ka story, mission/vision, team, values | `about.json` | neeche section dekho |
+| Customer reviews/testimonials (home page pe) | `reviews.json` | naya block copy-paste karo |
+| Contact page ke FAQs, form headings | `contact-page.json` | neeche section dekho |
+| Destinations listing page (`/destinations`) ka hero/CTA text | `destinations-page.json` | neeche section dekho |
+| Ek destination (Vietnam/Bali/Thailand/Malaysia) ka apna data — tagline, itinerary, gallery, price | `destinations.json` | uss destination ka block dhundo |
+| Services page (`/services`) ka hero, "how it works" steps | `services-page.json` | neeche section dekho |
+| Package detail page (`/services/[package]`) ke section headings jaise "Quick details", "Hotels on this route" | `package-page.json` | neeche section dekho |
+| Downloadable PDF ke labels/headings ("Quick details", "What you pay" waghera) | `pdf.json` | neeche section dekho |
+| PDF mein sab packages ke liye common content — addons table, notes, payment info, "why us" | `brochure.json` | poori file |
+| Contact form ke field labels, price calculator slider limits, filter chips | `forms.json` | neeche section dekho |
+| Privacy Policy / Cancellation & Refund Policy ka text | `legal.json` | neeche section dekho |
 
 ---
 

@@ -9,7 +9,7 @@ import PackageCard from '@/components/PackageCard';
 import ItineraryAccordion from '@/components/ItineraryAccordion';
 import PriceCard from '@/components/PriceCard';
 import { ArrowRight, Check, Close } from '@/components/icons';
-import { PACKAGES, DESTINATIONS, ORIGIN, PACKAGE_EXCLUDES, PACKAGE_PAGE, SITE, SITE_URL, inr } from '@/lib/data';
+import { PACKAGES, DESTINATIONS, ORIGIN, PACKAGE_EXCLUDES, PACKAGE_PAGE, BROCHURE, SITE, SITE_URL, inr } from '@/lib/data';
 import { parseInlineHtml } from '@/lib/richtext';
 
 type Params = { params: Promise<{ id: string }> };
@@ -74,7 +74,7 @@ export default async function PackagePage({ params }: Params) {
               <div><span>Duration</span><b>{pkg.nights}N / {pkg.days}D</b></div>
               <div><span>Route</span><b>{ORIGIN.code} → {d.iata}</b></div>
               <div><span>Price</span><b>{inr(pkg.price)} / person</b></div>
-              <div><span>Style</span><b>{d.tagline}</b></div>
+              <div><span>Style</span><b>{pkg.style ?? d.tagline}</b></div>
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@ export default async function PackagePage({ params }: Params) {
                   <div>
                     <h3><Check style={{ width: 16, height: 16, color: 'var(--gold-600)' }} /> {P.breakdown.includedLabel}</h3>
                     <ul className="inex-list inex-list--yes">
-                      {pkg.includes.map((inc) => (
+                      {(pkg.inclusions ?? pkg.includes).map((inc) => (
                         <li key={inc}><Check /> {inc}</li>
                       ))}
                     </ul>
@@ -169,7 +169,7 @@ export default async function PackagePage({ params }: Params) {
                   <div>
                     <h3><Close style={{ width: 16, height: 16, color: 'var(--ink-faint)' }} /> {P.breakdown.notIncludedLabel}</h3>
                     <ul className="inex-list inex-list--no">
-                      {PACKAGE_EXCLUDES.map((ex) => (
+                      {(pkg.exclusions ?? PACKAGE_EXCLUDES).map((ex) => (
                         <li key={ex}><Close /> {ex}</li>
                       ))}
                     </ul>
@@ -201,6 +201,29 @@ export default async function PackagePage({ params }: Params) {
                   <TLink href={P.costing.disclaimerLinkHref}>{P.costing.disclaimerLinkLabel}</TLink>.
                 </p>
               </div>
+
+              {/* -------------------------------------------------- optional add-ons */}
+              {(pkg.addons ?? BROCHURE.addons).length > 0 && (
+                <div>
+                  <div className="section-head">
+                    <div className="section-head__text">
+                      <span className="tag">{P.addons.tag}</span>
+                      <SplitText as="h2">{parseInlineHtml(P.addons.headingHtml)}</SplitText>
+                    </div>
+                  </div>
+                  <div className="variant-list">
+                    {(pkg.addons ?? BROCHURE.addons).map((a) => (
+                      <div className="variant" key={a.service}>
+                        <div>
+                          <b>{a.service}</b>
+                          <span>{a.description}</span>
+                        </div>
+                        <em>{a.price}</em>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* ------------------------------------------------ about the trip */}
               <div>

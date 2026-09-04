@@ -75,7 +75,7 @@ export default function PriceCard({ pkg, destination: d }: Props) {
       <div className="price-card__facts">
         <div><span>{U.durationLabel}</span><b>{nights}N / {days}D</b></div>
         <div><span>{U.routeLabel}</span><b>{ORIGIN.code} → {d.iata}</b></div>
-        <div><span>{U.styleLabel}</span><b>{d.tagline}</b></div>
+        <div><span>{U.styleLabel}</span><b>{pkg.style ?? d.tagline}</b></div>
       </div>
 
       <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn btn--gold" data-magnetic="0.28">

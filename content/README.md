@@ -45,7 +45,10 @@ kar sakta hai.
 |---|---|---|
 | Kisi ek specific package ka price, title, itinerary, hotel, includes | `packages.json` | wo package apne `id` se dhundo (Ctrl+F) |
 | Sab packages mein ek saath koi wording (jaise "Travellers" → "Persons") | `site.json` (`ui.priceCard`), `forms.json` | neeche in dono files ke section dekho |
-| Hotel ka star rating (3★ → 4★ waghera) ek specific package ke liye | `packages.json` | usi package ke andar `quickDetails.Accommodation` aur `hotels` list |
+| Hotel ka star rating (3★ → 4★ waghera) ek specific package ke liye | `packages.json` | usi package ke andar `quickDetails.Accommodation` aur `hotels` list (chip ke andar `includes` mein bhi agar likha ho) |
+| Kisi ek package ka "Style" (jaise "Beach, Cable car, Safari") baaki packages se alag rakhna ho | `packages.json` | usi package ka `style` field — na ho to poore destination ka common tagline dikhta hai |
+| Kisi ek package ka "Not included" list baaki se alag rakhna ho | `packages.json` | usi package ka `exclusions` field — na ho to `site.json` ka common `packageExcludes` dikhta hai |
+| Kisi ek package ka "Optional add-ons" (Visa/SIM/Hotel upgrade waghera) baaki se alag rakhna ho, ya section hi hide karna ho | `packages.json` | usi package ka `addons` field (`"addons": []` de to section webpage aur PDF dono se hide ho jaata hai) — na ho to `brochure.json` ka common list dikhta hai |
 | Price calculator ke Budget/Premium/Luxury tier ka naam ya multiplier | `tiers.json` | poori file chhoti si hai |
 | Phone number, email, office address, desk hours | `contact.json` | poori file |
 | Company ka naam, logo text, meta title/description (Google search), nav links, footer, "not included" list, add-on rates (guide/visa/flight rate) | `site.json` | neeche section dekho |
@@ -121,6 +124,7 @@ Yeh `/services` page ke saare ready-made package cards hain (Vietnam ke
 | `dest` | Kaunse destination ka hai — sirf `"vietnam"`, `"bali"`, `"thailand"` ya `"malaysia"` in charo mein se ek |
 | `title` | Card ka heading |
 | `where` | Card ke title ke upar chhota sa region/route text |
+| `style` *(optional)* | Package page aur price-card pe "Style" row (jaise "Beach, Cable car, Safari"). Na do to us destination ka common `tagline` (`destinations.json` se) dikhta hai |
 | `days`, `nights` | Trip ki duration |
 | `price` | Per person price in ₹ |
 | `badge` | Card ke upar chhota label — "Bestseller", "Value", "Family" waghera, kuch bhi text daal sakte ho |
@@ -131,6 +135,9 @@ Yeh `/services` page ke saare ready-made package cards hain (Vietnam ke
 | `route` | Trip ke stops ki list, order mein — package page pe route strip banta hai |
 | `quickDetails` | "Quick details" table — arrival/departure, duration, flights, meals, visa waghera. Left side label, right side value. Jitne chaho utne rows add/remove kar sakte ho. **Yehi wo jagah hai jaha `"Accommodation"` row hoti hai — hotel ka star rating (e.g. `"4 Star hotels"`) yahan se badalta hai** |
 | `hotels` | Jin hotels mein stay hota hai unki list — har entry mein bhi star rating likhi hoti hai, jaise `"...or similar (4 Star)"` — **star rating badalte waqt `quickDetails.Accommodation` aur is list, dono jagah badalna** |
+| `inclusions` *(optional)* | Package page ke "Included" list aur PDF ke liye detailed, poori sentence wali list (e.g. `"4 Nights stay with breakfast in 3 star hotel"`). Na do to `includes` (chhoti chips) hi is jagah bhi dikh jaati hain |
+| `exclusions` *(optional)* | Isi package ka apna "Not included" list. Na do to `site.json` ka common `packageExcludes` fallback ki tarah dikhta hai |
+| `addons` *(optional)* | Isi package ke "Optional add-ons" (webpage aur PDF dono mein) — list of `{ service, description, price }`. Na do to `brochure.json` ka common `addons` list dikhta hai; `"addons": []` (khaali list) do to section hi hide ho jaata hai |
 | `priceVariants` | Alag-alag duration/flight options ke prices. Har ek `{ label, note, price }` — pehla wala highlight hota hai |
 | `itinerary` | Din-ba-din plan (neeche detail mein) |
 
@@ -159,18 +166,21 @@ lagana mat bhoolna (kyunki ab wo last nahi raha).
 packages ek hi list mein hain.
 
 ### `brochure.json`
-Yeh downloadable PDF ka wo content hai jo **sabhi packages mein same** rehta
-hai — isliye ek hi jagah rakha hai:
+Yeh downloadable PDF (aur package page ke "Optional add-ons" section) ka wo
+content hai jo **default/common** rehta hai — jab tak koi package apna khud
+ka `addons` na de (dekho `packages.json` ke `addons` field ki row upar):
 
 | Field | Kya hai |
 |---|---|
-| `addons` | Optional add-ons ki table (Visa, insurance, SIM, flights waghera). Har ek `{ service, description, price }` |
-| `notes` | "Good to know" section — check-in timing, meals, hotel substitution waghera |
-| `paymentMethods` | Kaunse payment modes accept karte ho |
-| `paymentTerms` | Payment/booking ki terms |
-| `whyUs` | "Why travel with us" section — har ek `{ title, copy }` |
+| `addons` | Default optional add-ons ki table (Visa, insurance, SIM, flights waghera) — webpage ke package page pe aur PDF mein, un packages ke liye jinka apna `addons` field nahi hai. Har ek `{ service, description, price }` |
+| `notes` | "Good to know" section — check-in timing, meals, hotel substitution waghera (PDF-only) |
+| `paymentMethods` | Kaunse payment modes accept karte ho (PDF-only) |
+| `paymentTerms` | Payment/booking ki terms (PDF-only) |
+| `whyUs` | "Why travel with us" section — har ek `{ title, copy }` (PDF-only) |
 
-Inme se kuch bhi badloge to **har package ka PDF** update ho jayega.
+`addons` badloge to **har package** (jiska apna `addons` na ho) ka PDF +
+webpage dono update ho jayenge. Baaki 4 fields (`notes`/`paymentMethods`/
+`paymentTerms`/`whyUs`) sirf PDF mein hain, in per-package override nahi.
 
 ### `tiers.json`
 Price calculator ki 3 stay-tiers (Budget / Premium / Luxury) ka label,

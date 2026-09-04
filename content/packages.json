@@ -4,6 +4,7 @@
     "dest": "vietnam",
     "title": "Hanoi · Ninh Binh · Halong Bay",
     "where": "North Vietnam",
+    "style": "Limestone bays, train street, boating, kayaking",
     "days": 6,
     "nights": 5,
     "price": 62999,
@@ -153,14 +154,43 @@
       "International flights": "Not included (booking assistance available)",
       "Domestic flights": "Not applicable",
       "Internal transportation": "Private AC vehicle + overnight junk cruise",
-      "Accommodation": "4 Star hotels + 1N deluxe cruise cabin",
+      "Accommodation": "3 Star hotels + 1N 4 Star cruise cabin",
       "Meals": "(5) Breakfast (2) Lunch (1) Dinner",
       "Places covered": "Hanoi - Ninh Binh - Halong Bay",
       "Visa": "e-Visa (processing 3-5 working days)"
     },
     "hotels": [
-      "Hanoi - La Siesta Premium Hang Be or similar (4 Star)",
-      "Halong Bay - Deluxe overnight junk cruise, sea-view cabin"
+      "Hanoi - La Siesta Premium Hang Be or similar (3 Star)",
+      "Halong Bay - Deluxe overnight junk cruise, sea-view cabin (4 Star)"
+    ],
+    "inclusions": [
+      "4 Nights stay with breakfast in 3 star hotel",
+      "1 Night stay with all meals in a 4 star Overnight cruise",
+      "HD City tour",
+      "Ninh Binh tour with lunch",
+      "Cruise transfer on Sharing basis",
+      "All tours on Sharing basis",
+      "All airport transfers on pvt basis"
+    ],
+    "exclusions": [
+      "Flights",
+      "Early check-in / late check-out",
+      "Personal expenses",
+      "E-visa",
+      "Tips",
+      "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
+      "Meals not listed in inclusions",
+      "Add-on services",
+      "GST",
+      "TCS",
+      "Any surcharge during festivals / black out dates etc"
+    ],
+    "addons": [
+      { "service": "Visa assistance", "description": "End-to-end e-Visa filing and document check", "price": "From ₹3,500 per person" },
+      { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
+      { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
+      { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" },
+      { "service": "Hotel upgrade", "description": "Move up a star category and upgrade to 4 star hotels", "price": "₹7,000 per person extra" }
     ],
     "priceVariants": [
       {
@@ -180,6 +210,7 @@
     "dest": "vietnam",
     "title": "Da Nang & Hoi An Heritage",
     "where": "Central Vietnam",
+    "style": "Lantern Streets, Lantern boat, Theme park, Cable car",
     "days": 4,
     "nights": 3,
     "price": 42999,
@@ -286,14 +317,41 @@
       "International flights": "Not included (booking assistance available)",
       "Domestic flights": "Not applicable",
       "Internal transportation": "Private AC vehicle",
-      "Accommodation": "4 Star hotels",
+      "Accommodation": "3 Star hotels",
       "Meals": "(3) Breakfast",
       "Places covered": "Da Nang - Ba Na Hills - Hoi An",
       "Visa": "e-Visa (processing 3-5 working days)"
     },
     "hotels": [
-      "Da Nang - Sala Danang Beach Hotel or similar (4 Star)",
-      "Hoi An - Little Riverside or similar (4 Star), subject to availability"
+      "Da Nang - Sala Danang Beach Hotel or similar (3 Star)",
+      "Hoi An - Little Riverside or similar (3 Star), subject to availability"
+    ],
+    "inclusions": [
+      "3 nights stay with breakfast in 3 star hotel",
+      "Coconut forest and Hoi An tour",
+      "Bana Hill tour with cable car and buffet Indian lunch",
+      "All tours on Sharing basis",
+      "All airport transfers on pvt basis",
+      "English speaking guide",
+      "E-Visa"
+    ],
+    "exclusions": [
+      "Flights",
+      "Early check-in / late check-out",
+      "Personal expenses",
+      "Tips",
+      "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
+      "Meals that are not listed in inclusions",
+      "Add-on services",
+      "GST",
+      "TCS",
+      "Any surcharge during festivals / black out dates etc"
+    ],
+    "addons": [
+      { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
+      { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
+      { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" },
+      { "service": "Hotel upgrade", "description": "Move up a star category and upgrade to 4 star hotels", "price": "₹8,000 per person extra" }
     ],
     "priceVariants": [
       {
@@ -557,6 +615,7 @@
     "dest": "vietnam",
     "title": "Tropical Phu Quoc",
     "where": "Phu Quoc",
+    "style": "Island tour, Beach, Cable car, Safari, Grand World",
     "days": 4,
     "nights": 3,
     "price": 28699,

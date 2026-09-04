@@ -591,17 +591,46 @@
       "International flights": "Not included (booking assistance available)",
       "Domestic flights": "Included - 2 sectors",
       "Internal transportation": "Private AC vehicle + overnight train + junk cruise",
-      "Accommodation": "4 Star & 5 Star mix + 1N homestay + 1N cruise",
+      "Accommodation": "3 Star hotels + 1N homestay + 1N cruise",
       "Meals": "(9) Breakfast (4) Lunch (2) Dinner",
       "Places covered": "Hanoi - Sapa - Halong Bay - Da Nang - Hoi An - Ho Chi Minh City - Mekong Delta",
       "Visa": "e-Visa (processing 3-5 working days)"
     },
     "hotels": [
-      "Hanoi - La Siesta Premium Hang Be or similar (4 Star)",
+      "Hanoi - La Siesta Premium Hang Be or similar (3 Star)",
       "Sapa - Hmong family homestay, Lao Chai valley",
       "Halong Bay - Deluxe overnight junk cruise, sea-view cabin",
-      "Da Nang / Hoi An - Sala Danang Beach Hotel or similar (4 Star)",
-      "Ho Chi Minh City - Silverland Yen or similar (4 Star)"
+      "Da Nang / Hoi An - Sala Danang Beach Hotel or similar (3 Star)",
+      "Ho Chi Minh City - Silverland Yen or similar (3 Star)"
+    ],
+    "inclusions": [
+      "9 Nights stay with breakfast in 3 star hotel",
+      "Ninh Binh tour with lunch",
+      "Halong Bay day cruise with Indian lunch and kayaking",
+      "Coconut forest and Hoi An tour with lantern boat ride",
+      "Bana Hill tour with cable car and entry",
+      "Mekong Delta tour with lunch",
+      "All tours on Sharing basis",
+      "All airport transfers on pvt basis",
+      "All Tips",
+      "All applicable International and Domestic Flights (up to ₹48,000)"
+    ],
+    "exclusions": [
+      "Early check-in / late check-out",
+      "Personal expenses",
+      "E-visa",
+      "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
+      "Meals that are not listed in inclusions",
+      "Add-on services",
+      "GST",
+      "TCS",
+      "Any surcharge during festivals / black out dates etc"
+    ],
+    "addons": [
+      { "service": "Visa assistance", "description": "End-to-end e-Visa filing and document check", "price": "From ₹3,500 per person" },
+      { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
+      { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
+      { "service": "Hotel upgrade", "description": "Move up a star category and upgrade to 4 star hotels", "price": "₹15,000 per person extra" }
     ],
     "priceVariants": [
       {
@@ -738,13 +767,44 @@
       "International flights": "Not included (booking assistance available)",
       "Domestic flights": "Not applicable",
       "Internal transportation": "Private AC vehicle",
-      "Accommodation": "4 Star hotels",
+      "Accommodation": "3 Star hotels",
       "Meals": "(3) Breakfast",
       "Places covered": "Phu Quoc, Hon Thom Cable Car, Aquatopia Water Park, VinWonders, Grand World",
       "Visa": "e-Visa (processing 3-5 working days)"
     },
     "hotels": [
-      "Phu Quoc - AVS Hotel Phu Quoc or similar (4 Star)"
+      "Phu Quoc - AVS Hotel Phu Quoc or similar (3 Star)"
+    ],
+    "inclusions": [
+      "4 Nights stay with breakfast in 3 star hotel",
+      "4 island tour on sharing basis, with water park, cable car and lunch",
+      "VinWonders theme park",
+      "Grand World",
+      "Sunset Town with Kiss Bridge ticket",
+      "All tours on pvt basis",
+      "Tips",
+      "All airport transfers on pvt basis"
+    ],
+    "exclusions": [
+      "Flights",
+      "Early check-in / late check-out",
+      "Personal expenses",
+      "E-visa",
+      "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
+      "Meals not listed in inclusions",
+      "Add-on services",
+      "GST",
+      "TCS",
+      "Any surcharge during festivals / black out dates etc"
+    ],
+    "addons": [
+      { "service": "Visa assistance", "description": "End-to-end e-Visa filing and document check", "price": "Not required on a direct flight that doesn't enter mainland Vietnam; otherwise e-Visa required, from ₹3,500 per person" },
+      { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
+      { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
+      { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" },
+      { "service": "Hotel upgrade", "description": "Move up a star category and upgrade to 4 star hotels", "price": "₹5,000 per person extra" },
+      { "service": "Vinpearl Safari", "description": "Add Vinpearl Safari tour with private transfer, no guide", "price": "₹4,500 per person extra" },
+      { "service": "Kiss of the Sea show", "description": "Add KOTS tickets during the Sunset Town visit", "price": "₹2,300 per person extra" }
     ],
     "priceVariants": [
       {

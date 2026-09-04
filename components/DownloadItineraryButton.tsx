@@ -303,7 +303,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(11);
       doc.setTextColor(...GOLD);
-      doc.text(pdfText(d.tagline), M, y);
+      doc.text(pdfText(pkg.style ?? d.tagline), M, y);
       y += 28;
 
       doc.setTextColor(...NAVY);
@@ -532,34 +532,39 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
       const halfW = CW / 2 - 14;
       const topY = y;
 
-      // Dynamic — sourced from pkg.includes plus every unique "Included: X"
-      // line across the day-by-day plan, so editing content/packages.json
-      // is the only thing that ever needs to change this list.
+      // Dynamic — sourced from pkg.inclusions when the package defines its
+      // own detailed list, otherwise from pkg.includes plus every unique
+      // "Included: X" line across the day-by-day plan. Editing
+      // content/packages.json is the only thing that ever needs to change
+      // this list.
       label(PDF_COPY.inclExcl.includedLabel, M, y, GOLD);
       let incY = y + 20;
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(9.5);
-      pkg.includes.forEach((item) => {
+      const inclusionsList = pkg.inclusions ?? pkg.includes;
+      inclusionsList.forEach((item) => {
         const lines = wrap(item, halfW - 18, 9.5);
         drawCheck(M, incY);
         doc.setTextColor(...INK_SOFT);
         doc.text(lines, M + 15, incY);
         incY += lines.length * 12.5 + 7;
       });
-      const dayIncl = Array.from(new Set(pkg.itinerary.flatMap((dd) => dd.included.split(' + ').map((s) => s.trim()))));
-      dayIncl.forEach((item) => {
-        if (pkg.includes.some((i2) => i2.toLowerCase() === item.toLowerCase())) return;
-        const lines = wrap(item, halfW - 18, 9.5);
-        drawCheck(M, incY);
-        doc.setTextColor(...INK_SOFT);
-        doc.text(lines, M + 15, incY);
-        incY += lines.length * 12.5 + 7;
-      });
+      if (!pkg.inclusions) {
+        const dayIncl = Array.from(new Set(pkg.itinerary.flatMap((dd) => dd.included.split(' + ').map((s) => s.trim()))));
+        dayIncl.forEach((item) => {
+          if (inclusionsList.some((i2) => i2.toLowerCase() === item.toLowerCase())) return;
+          const lines = wrap(item, halfW - 18, 9.5);
+          drawCheck(M, incY);
+          doc.setTextColor(...INK_SOFT);
+          doc.text(lines, M + 15, incY);
+          incY += lines.length * 12.5 + 7;
+        });
+      }
 
       const exX = M + halfW + 28;
       label(PDF_COPY.inclExcl.notIncludedLabel, exX, topY, INK_FAINT);
       let exY = topY + 20;
-      PACKAGE_EXCLUDES.forEach((item) => {
+      (pkg.exclusions ?? PACKAGE_EXCLUDES).forEach((item) => {
         const lines = wrap(item, halfW - 18, 9.5);
         drawCross(exX, exY);
         doc.setTextColor(...INK_FAINT);

@@ -24,6 +24,7 @@
     "disclaimerLinkLabel": "price calculator",
     "disclaimerLinkHref": "/services#configurator"
   },
+  "addons": { "tag": "Make it yours", "headingHtml": "Optional<br />add-ons." },
   "about": { "tag": "About this trip", "headingHtml": "The short<br />version." },
   "highlights": { "tag": "Trip highlights", "headingHtml": "Don't miss<br />these." },
   "gallery": { "tag": "Gallery by travellers", "headingHtml": "Real trips,<br />real photos." },

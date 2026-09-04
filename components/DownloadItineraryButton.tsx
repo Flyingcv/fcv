@@ -681,42 +681,45 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
         });
       }
 
-      section(24);
-      heading(PDF_COPY.addons.heading);
+      const addons = pkg.addons ?? BROCHURE.addons;
+      if (addons.length > 0) {
+        section(24);
+        heading(PDF_COPY.addons.heading);
 
-      const [colService, colDescription, colPrice] = PDF_COPY.addons.columns;
-      doc.setFillColor(...NAVY);
-      doc.rect(M, y - 12, CW, 22, 'F');
-      doc.setTextColor(255, 255, 255);
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(7.5);
-      doc.text(colService, M + 10, y);
-      doc.text(colDescription, M + 150, y);
-      doc.text(colPrice, pageW - M - 10, y, { align: 'right' });
-      y += 20;
+        const [colService, colDescription, colPrice] = PDF_COPY.addons.columns;
+        doc.setFillColor(...NAVY);
+        doc.rect(M, y - 12, CW, 22, 'F');
+        doc.setTextColor(255, 255, 255);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7.5);
+        doc.text(colService, M + 10, y);
+        doc.text(colDescription, M + 150, y);
+        doc.text(colPrice, pageW - M - 10, y, { align: 'right' });
+        y += 20;
 
-      BROCHURE.addons.forEach((a, i) => {
-        const descLines = wrap(a.description, 220, 8.5);
-        const rowH = Math.max(22, descLines.length * 12 + 12);
-        room(rowH);
-        if (i % 2 === 0) {
-          doc.setFillColor(...BAND);
-          doc.rect(M, y - 11, CW, rowH, 'F');
-        }
-        doc.setTextColor(...INK);
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(9);
-        doc.text(pdfText(a.service), M + 10, y);
-        doc.setTextColor(...INK_SOFT);
-        doc.setFont('helvetica', 'normal');
-        doc.setFontSize(8.5);
-        doc.text(descLines, M + 150, y);
-        doc.setTextColor(...GOLD);
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(8.5);
-        doc.text(pdfText(a.price), pageW - M - 10, y, { align: 'right' });
-        y += rowH;
-      });
+        addons.forEach((a, i) => {
+          const descLines = wrap(a.description, 220, 8.5);
+          const rowH = Math.max(22, descLines.length * 12 + 12);
+          room(rowH);
+          if (i % 2 === 0) {
+            doc.setFillColor(...BAND);
+            doc.rect(M, y - 11, CW, rowH, 'F');
+          }
+          doc.setTextColor(...INK);
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(9);
+          doc.text(pdfText(a.service), M + 10, y);
+          doc.setTextColor(...INK_SOFT);
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(8.5);
+          doc.text(descLines, M + 150, y);
+          doc.setTextColor(...GOLD);
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(8.5);
+          doc.text(pdfText(a.price), pageW - M - 10, y, { align: 'right' });
+          y += rowH;
+        });
+      }
 
       /* ============================================ NOTES + PAYMENT + WHY */
       section();

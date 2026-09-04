@@ -117,6 +117,8 @@ export interface Package {
   dest: DestinationSlug;
   title: string;
   where: string;
+  /** Short "Style" descriptor (e.g. "Beach, Cable car, Safari") — falls back to the destination's tagline when absent */
+  style?: string;
   days: number;
   nights: number;
   price: number;
@@ -132,6 +134,12 @@ export interface Package {
   quickDetails: Record<string, string>;
   /** Properties we book most often on this route */
   hotels: string[];
+  /** Detailed line-by-line inclusions for the Included list / PDF — falls back to `includes` when absent */
+  inclusions?: string[];
+  /** Per-package "Not included" list — falls back to the site-wide PACKAGE_EXCLUDES when absent */
+  exclusions?: string[];
+  /** Per-package optional add-ons — falls back to the shared BROCHURE.addons; an empty array hides the section */
+  addons?: { service: string; description: string; price: string }[];
   /** Same trip at different lengths / with flights included */
   priceVariants: PriceVariant[];
 }

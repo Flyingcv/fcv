@@ -1,8 +1,8 @@
 'use client';
 
-/* No backend yet — the form composes a complete enquiry and hands it to the
-   visitor's mail client, so it genuinely works today. Wire it to an API route
-   (or Formspree/Resend) when you are ready; see README.md. */
+/* No backend yet — the form composes a complete enquiry and opens it as a
+   WhatsApp message to the desk number, so it genuinely works today. Wire it
+   to an API route (or Formspree/Resend) when you are ready; see README.md. */
 
 import { useState } from 'react';
 import { Check, ArrowRight } from '@/components/icons';
@@ -31,10 +31,12 @@ export default function ContactForm() {
       get('message')
     ].join('\n');
 
-    window.location.href =
-      `mailto:${CONTACT.email}` +
-      `?subject=${encodeURIComponent(`Trip enquiry — ${get('destination')} — ${get('name')}`)}` +
-      `&body=${encodeURIComponent(body)}`;
+    const waNumber = CONTACT.phone.replace(/\D/g, '');
+    window.open(
+      `https://wa.me/${waNumber}?text=${encodeURIComponent(`Trip enquiry — ${get('destination')} — ${get('name')}\n\n${body}`)}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
 
     setSent(true);
   };

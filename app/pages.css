@@ -857,6 +857,23 @@
   color: var(--navy-900);
 }
 
+/* Add-on rows reuse .variant, but their price can be a full sentence
+   ("Not required on a direct flight…") rather than a short number — so
+   unlike a price-variant amount, it needs to wrap and shrink instead of
+   holding its intrinsic width, or it overlaps the text beside it. */
+.variant--addon { align-items: flex-start; flex-wrap: wrap; }
+.variant--addon > div:first-child { flex: 1 1 260px; min-width: 0; }
+.variant--addon em {
+  flex: 1 1 180px;
+  min-width: 0;
+  font-family: var(--f-body);
+  font-style: normal;
+  font-size: var(--t-sm);
+  font-weight: 700;
+  color: var(--gold-600);
+  text-align: right;
+}
+
 /* Package-detail two-column layout: scrolling content + a sticky price card */
 .pkg-detail {
   display: grid;

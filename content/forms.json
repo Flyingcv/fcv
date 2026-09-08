@@ -12,7 +12,7 @@
     },
     "submitLabel": "Send enquiry",
     "callLabelPrefix": "Or call",
-    "successMessage": "Your enquiry is ready in your mail app — hit send and a planner will reply within one working day. Prefer WhatsApp? Message us on {phone}.",
+    "successMessage": "Your enquiry has opened on WhatsApp — hit send and a planner will reply within one working day. Prefer a call? Ring us on {phone}.",
     "disclaimerNote": "We reply to every enquiry personally — no automated drip sequence. Your details are used only to plan your trip."
   },
   "priceConfigurator": {

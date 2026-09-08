@@ -697,9 +697,11 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
         doc.text(colPrice, pageW - M - 10, y, { align: 'right' });
         y += 20;
 
+        const priceColW = pageW - M - 10 - (M + 385);
         addons.forEach((a, i) => {
           const descLines = wrap(a.description, 220, 8.5);
-          const rowH = Math.max(22, descLines.length * 12 + 12);
+          const priceLines = wrap(a.price, priceColW, 8.5);
+          const rowH = Math.max(22, descLines.length * 12 + 12, priceLines.length * 12 + 12);
           room(rowH);
           if (i % 2 === 0) {
             doc.setFillColor(...BAND);
@@ -716,7 +718,7 @@ export default function DownloadItineraryButton({ pkg, destination: d, nights, p
           doc.setTextColor(...GOLD);
           doc.setFont('helvetica', 'bold');
           doc.setFontSize(8.5);
-          doc.text(pdfText(a.price), pageW - M - 10, y, { align: 'right' });
+          doc.text(priceLines, pageW - M - 10, y, { align: 'right' });
           y += rowH;
         });
       }

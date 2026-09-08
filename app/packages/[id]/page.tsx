@@ -213,7 +213,7 @@ export default async function PackagePage({ params }: Params) {
                   </div>
                   <div className="variant-list">
                     {(pkg.addons ?? BROCHURE.addons).map((a) => (
-                      <div className="variant" key={a.service}>
+                      <div className="variant variant--addon" key={a.service}>
                         <div>
                           <b>{a.service}</b>
                           <span>{a.description}</span>

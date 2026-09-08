@@ -798,7 +798,7 @@
       "Any surcharge during festivals / black out dates etc"
     ],
     "addons": [
-      { "service": "Visa assistance", "description": "End-to-end e-Visa filing and document check", "price": "Not required on a direct flight that doesn't enter mainland Vietnam; otherwise e-Visa required, from ₹3,500 per person" },
+      { "service": "Visa assistance", "description": "End-to-end e-Visa filing and document check — not required on a direct flight that doesn't enter mainland Vietnam", "price": "From ₹3,500 per person" },
       { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
       { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
       { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" },

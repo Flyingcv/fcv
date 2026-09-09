@@ -5,7 +5,7 @@
     "iata": "SGN",
     "tagline": "Limestone bays, lantern-lit lanes",
     "blurb": "Emerald karsts rising out of Halong Bay, motorbike symphonies in Hanoi, and the tailor shops of Hoi An glowing under a thousand silk lanterns. Vietnam moves fast and rewards travellers who slow down.",
-    "cover": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=80",
+    "cover": "/destination-banners/vietnam.webp",
     "hero": "/destination-banners/vietnam.webp",
     "cities": [
       "Hanoi",
@@ -32,6 +32,10 @@
         "Sleep on the water among 1,600 limestone islands, kayak into hidden lagoons at sunrise."
       ],
       [
+        "Train Street experience",
+        "Watch the train pass just inches away as you sip coffee along Hanoi’s iconic railway tracks."
+      ],
+      [
         "Hoi An lantern old town",
         "A UNESCO trading port frozen in the 15th century — best walked after dark."
       ],
@@ -40,34 +44,30 @@
         "Cable car above the clouds to the stone hands holding a walkway in the sky."
       ],
       [
-        "Sapa rice terraces trek",
-        "Homestay with Hmong families on staircase valleys carved over 300 years."
-      ],
-      [
-        "Mekong Delta floating market",
-        "Sampan through coconut canals to a market that opens at 5am on the water."
+        "Kiss of the Sea Show",
+        "Watch fire, water, light, and music collide in a spectacular sunset show overlooking the sea in Phu Quoc."
       ]
     ],
     "itinerary": [
       [
         "Arrive Hanoi",
-        "Airport meet-and-greet, transfer to the Old Quarter. Evening egg-coffee walk and a water puppet show on Hoan Kiem lake."
+        "Airport meet-and-greet, transfer to hotel. Explore the Old Quarter walk in the evening, train street having egg-coffee."
       ],
       [
         "Ninh Binh day trip",
-        "Rowboat through the Trang An caves, cycle to Hoa Lu, climb the 500 steps to Mua Cave for the valley panorama."
+        "Rowboat through the Tam Coc caves, cycle to Hoa Lu, climb the 500 steps to Mua Cave for the valley panorama."
       ],
       [
         "Halong Bay cruise",
-        "Board a deluxe junk, kayak Luon Cave, squid fishing after dinner, sunrise tai chi on the sundeck."
+        "A fullday trip to Halong bay. Kayak Luon Cave, swim at Titop beach, and have lunch on a traditional junk boat. Sunset party with tea, wine and fruites."
       ],
       [
-        "Fly to Da Nang",
-        "My Khe beach afternoon, then the Dragon Bridge fire show. Overnight in Da Nang."
+        "Fly to Da Nang, Hoi An ancient Town",
+        "Coconut Forest and Basket Boat ride; lantern-lit Ancient Town in the evening. Overnight in Da Nang."
       ],
       [
-        "Hoi An & Ba Na Hills",
-        "Golden Bridge in the morning, lantern-lit Ancient Town in the evening with a basket-boat ride."
+        "Ba Na Hills",
+        "Golden Bridge in the morning, French village and cable car back to Da Nang. Overnight in Da Nang."
       ],
       [
         "Departure",
@@ -76,7 +76,7 @@
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?auto=format&fit=crop&w=1400&q=80",
+      "/destination-banners/vietnam.webp",
       "https://images.unsplash.com/photo-1555921015-5532091f6026?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1470004914212-05527e49370b?auto=format&fit=crop&w=1400&q=80"
     ]
@@ -87,7 +87,7 @@
     "iata": "DPS",
     "tagline": "Island of a thousand temples",
     "blurb": "Volcanic ridgelines, cliff-edge temples over the Indian Ocean, and rice terraces that look engineered by water and patience. Bali does honeymoons, surf trips and slow family weeks equally well.",
-    "cover": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1400&q=80",
+    "cover": "/destination-banners/bali.webp",
     "hero": "/destination-banners/bali.webp",
     "cities": [
       "Seminyak",
@@ -167,7 +167,7 @@
     "iata": "BKK",
     "tagline": "Temples, islands and night markets",
     "blurb": "Gold-tiled temples in Bangkok, longtail boats cutting between Krabi’s limestone stacks, and street food that has no business being that good for that little. The easiest first passport stamp in Asia.",
-    "cover": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1400&q=80",
+    "cover": "/destination-banners/thailand.webp",
     "hero": "/destination-banners/thailand.webp",
     "cities": [
       "Bangkok",
@@ -247,7 +247,7 @@
     "iata": "KUL",
     "tagline": "Skylines, highlands, rainforest",
     "blurb": "Twin towers over a food capital, a casino city in the clouds an hour away, and Langkawi’s duty-free beaches. Malaysia packs three completely different holidays into one short-haul flight.",
-    "cover": "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1400&q=80",
+    "cover": "/destination-banners/malaysia.webp",
     "hero": "/destination-banners/malaysia.webp",
     "cities": [
       "Kuala Lumpur",

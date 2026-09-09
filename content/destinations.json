@@ -155,10 +155,10 @@
       ]
     ],
     "gallery": [
-      "https://images.unsplash.com/photo-1573790387438-4da905039392?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=1400&q=80"
+      "/img/nusa-penida.webp",
+      "/img/tanah-lot.webp",
+      "/img/ubud.webp",
+      "/img/ulun-danu.webp"
     ]
   },
   "thailand": {
@@ -235,10 +235,10 @@
       ]
     ],
     "gallery": [
-      "https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=1400&q=80"
+      "/img/chiang-mai.webp",
+      "/img/phi-phi.webp",
+      "/img/Wat-Ratchanatdaram.webp",
+      "/img/krabi.webp"
     ]
   },
   "malaysia": {
@@ -314,10 +314,10 @@
       ]
     ],
     "gallery": [
-      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1508062878650-88b52897f298?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=80"
+      "/img/genting-cable.jpeg",
+      "/img/genting-skytropolis.jpeg",
+      "/img/eagle-square.jpg",
+      "/img/batu.jpeg"
     ]
   }
 }

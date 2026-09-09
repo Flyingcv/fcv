@@ -10,9 +10,9 @@
     "secondaryHref": "/services#configurator",
     "tickerLabel": "NOW BOARDING",
     "tickerItems": [
-      { "code": "SGN", "price": 42999 },
-      { "code": "DPS", "price": 48999 },
-      { "code": "BKK", "price": 34999 }
+      { "code": "SGN", "price": 18999 },
+      { "code": "DPS", "price": 38999 },
+      { "code": "BKK", "price": 24999 }
     ],
     "scrollCueLabel": "Scroll"
   },

@@ -206,6 +206,171 @@
     ]
   },
   {
+    "id": "vn-hcmc-history",
+    "dest": "vietnam",
+    "title": "Super Saigon",
+    "where": "South Vietnam",
+    "style": "History, Rural & cultural immersion",
+    "days": 4,
+    "nights": 3,
+    "price": 17999,
+    "badge": "Value",
+    "type": [
+      "culture",
+      "nature"
+    ],
+    "blurb": "Best of Southern Vietnam—from the energy of Ho Chi Minh City to the historic Cu Chi Tunnels and the tranquil waterways of the Mekong Delta.",
+    "includes": [
+      "3★ Hotels",
+      "Ho Chi Minh City Tour",
+      "Cu Chi Tunnel Tour",
+      "Mekong Delta Tour",
+      "Airport Transfers",
+      "Daily Breakfast"
+    ],
+    "image": "/img/mekong.jpeg",
+    "route": [
+      "Ho Chi Minh City",
+      "Cu Chi Tunnel",
+      "Mekong Delta"
+    ],
+    "itinerary": [
+      {
+        "title": "Arrive Ho Chi Minh City | Afternoon City Tour",
+        "summary": "Airport meet-and-greet and a transfer to the Dist-1 hotel. Star your afternoon city tour of Ho Chi Minh City.",
+        "activities": [
+          "Airport pick-up and private transfer to your hotel",
+          "City Tour",
+          "12:30 – 13:00 (the time of pick up depends on guest’s hotel/ accommodation’s exact position).",
+          "13:00 PM: visit to Cho Lon (Big Market) and Thien Hau Pagoda which is located in China Town. Continue to Bach Dang harbor. After checking in the waterbus tickets, and stabilizing your seat, the boat will start to depart. During the trip, you will have a unique view of the most typical commercial buildings of the city including the Vinhomes Central Park urban area, the magnificent Landmark 81 tower, the Bitexco Financial Tower, the green peaceful District 2. A lot of stunning moments are waiting for you. Try to discover the soul of this land - Saigon River by water bus, maybe you will realize many miracles, a more accurate view of the land once called Paris of Indochina or the Pearl of the Far East.",
+          "18:00 PM: Transfer back your hotel or meeting point. Finish the trip."
+        ],
+        "included": "Airport Transfer + Hotel Check-in + City Tour",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Ho Chi Minh City",
+        "timings": [
+          "09:00 AM - Airport pick-up at Noi Bai (HAN)",
+          "02:00 PM - Old Quarter hotel check-in",
+          "05:00 PM - Egg-coffee walk with your guide",
+          "08:00 PM - Water puppet show at Hoan Kiem Lake"
+        ]
+      },
+      {
+        "title": "Cu Chi Tunnel tour",
+        "summary": "Explore the historic Cu Chi Tunnels, an intricate underground network that offers a fascinating glimpse into Vietnam’s wartime history, resilience, and ingenuity.",
+        "activities": [
+        "Pickup : 07:30 – 08:00 : Arrive Cu Chi Tunnels, View short video film and presentation about Cu Chi tunnels, before try a real experience with the world well known tunnels of Vietnam war era. Travelers can try delicious manioc which is the main food in Cu Chi during the war. After that visit the immense network of connecting underground tunnels and the click photos with war era artilleries , guns and tanks.",
+                   "For those who are interested in shooting guns, there is an opportunity to fire off an AK47 or MK16 at the nearby rifle range (cost not included 'Approx 25$ for 10 Bullets' On direct payment)",
+                   "Leave Cu Chi tunnels and arrive Ho Chi Minh City (By Road - Approx 1.5 Hrs)"
+        ],
+        "included": "AC Transport+English Speaking Tour guide+Tips+Entrance fee of Cu Chi Tunnel+Water Bottle on bus",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "Ho Chi Minh City",
+        "timings": [
+          "08:00 AM - Breakfast at hotel",
+          "09:00 AM - Ho Chi Minh Mausoleum complex",
+          "11:30 AM - Temple of Literature",
+          "03:00 PM - Old Quarter walking tour",
+          "07:00 PM - Street-food dinner with a local guide"
+        ]
+      },
+      {
+        "title": "Mekong Delta Tour with lunch",
+        "summary": "Discover the tranquil beauty of the Mekong Delta, cruising along scenic waterways while experiencing local villages, lush landscapes, and authentic Vietnamese culture.",
+        "activities": 
+        [
+        "7:30 - 8:00 AM Pick you up at our office at  or at your hotel in District 1 before heading to My Tho city.",
+        "Unforgettable way of seeing the Mekong Delta to drive along the provincial roads down on the Southern region of Vietnam through paddy rice field, pine-apple plantation, orchard and small hamlets (2 hours drive).",
+        "Following your arrival in My Tho, you will have a local motor excursion to Dragon Island, Unicorn Island, Turtle Island, Phoenix Island. We will stop at the famous Unicorn Island, you will visit nature pure honey at a bee keeping farm, taste some honey wine, rice wine, and banana wine.",
+        "Continue the motor boat excursion to Ben Tre province, where you will see a coconut candy workshop. From there, transfer to a small motor boat and travel along the lush, green canals and stop at the local restaurant for Vietnamese lunch.",
+        "Moving on to another area on the Unicorn Island to enjoy sampling various tropical fruits at the orchard garden while listening to the Southern traditional music.",
+        "You will be taken back to My Tho by local boat. Take bus to  Vinh Trang pagoda for guests visit then back to Ho Chi Minh City, arrive around 5.30 pm"
+        ],
+        "included": " Air-con Bus/Van+Entrance Fees+1 Vietnamese Set Lunch+ Boat Trip+ fruits+Honey tea &Candy+ English Speaking Tour guide+Mineral water on bus.",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Ho Chi Minh City",
+        "timings": [
+          "07:30 AM - Depart Hanoi for Ninh Binh",
+          "10:00 AM - Trang An rowboat through the caves",
+          "01:00 PM - Local lunch",
+          "02:30 PM - Cycle to Hoa Lu ancient capital",
+          "04:00 PM - Mua Cave climb for the valley panorama",
+          "07:30 PM - Return to Hanoi"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the flight home.",
+        "activities": [
+          "Free morning for souvenir shopping and cafés",
+          "Private transfer to Ho Chi Minh City International Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at hotel",
+          "10:00 AM - Free morning for souvenir shopping",
+          "12:00 PM - Checkout and transfer to Noi Bai Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Ho Chi Minh City (SGN) / Ho Chi Minh City (SGN)",
+      "Duration": "3N / 4D",
+      "Trip type": "Private departure",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle",
+      "Accommodation": "3 Star hotels",
+      "Meals": "(3) Breakfast (1) Lunch",
+      "Places covered": "Ho Chi Minh City – Cu Chi Tunnel – Mekong Delta",
+      "Visa": "e-Visa (processing 3-5 working days)"
+    },
+    "hotels": [
+      "Prague Hotel or similar (3 Star)"
+    ],
+    "inclusions": [
+      "3 Nights stay with breakfast in 3 star hotel",
+      "HD City tour",
+      "Cu Chi Tunnel Tour",
+      "Mekong Delta Tour with lunch",
+      "All compulsory Tips",
+      "All tours on Sharing basis",
+      "All airport transfers on pvt basis"
+    ],
+    "exclusions": [
+      "Flights",
+      "Early check-in / late check-out",
+      "Personal expenses",
+      "E-visa",
+      "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
+      "Meals not listed in inclusions",
+      "Add-on services",
+      "GST",
+      "TCS",
+      "Any surcharge during festivals / black-out dates etc"
+    ],
+    "addons": [
+      { "service": "Visa assistance", "description": "End-to-end e-Visa filing and document check", "price": "From ₹3,500 per person" },
+      { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
+      { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
+      { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" },
+      { "service": "Hotel upgrade", "description": "Move up a star category and upgrade to 4 star hotels", "price": "₹7,000 per person extra" }
+    ],
+    "priceVariants": [
+      {
+        "label": "3N / 4D",
+        "note": "Land package only, twin sharing",
+        "price": 17999
+      }
+    ]
+  },
+  {
     "id": "vn-central-express",
     "dest": "vietnam",
     "title": "Da Nang & Hoi An Heritage",
@@ -224,6 +389,7 @@
       "3★ Hotels",
       "Ba Na Hills",
       "Basket Boat",
+      "Coconut Forest",
       "Airport Pickup"
     ],
     "image": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=900&q=80",
@@ -649,14 +815,14 @@
     "days": 4,
     "nights": 3,
     "price": 28699,
-    "badge": "Value",
+    "badge": "Popular",
     "type": [
       "beach",
       "family"
     ],
     "blurb": "Snorkelling stops between four islands, the world's longest sea-crossing cable car to Hon Thom, and a full day at VinWonders and Grand World — Phu Quoc's beach-and-theme-park combination for families.",
     "includes": [
-      "3 Star Hotel",
+      "3★ Star Hotel",
       "4-Island Tour",
       "VinWonders & Grand World",
       "Airport Transfers"
@@ -690,8 +856,7 @@
         "title": "4-island tour with Hon Thom cable car, Aquatopia water park, lunch",
         "summary": "A full day island-hopping by canoe for swimming and snorkelling, a buffet lunch and water park on Hon Thom, then the world’s longest overwater cable car back to the mainland.",
         "activities": [
-          "8:00 – 8:30: Our car and tour guide pick you up at your hotel lobby",
-          "8:30 – 9:00: The car moves to An Thoi Port",
+          "8:00 – 8:30: Our car and tour guide pick you up at your hotel lobby and moves to An Thoi Port",
           "9:00 – 9:20: Canoe from the port to May Rut Trong Island — enjoy the beach, swimming and relaxing, with free photos and flycam videos",
           "Canoe on to Hon Gam Ghi Island for snorkelling (snorkelling gear provided)",
           "Canoe from Gam Ghi Island to May Rut Ngoai Island for swimming and relaxing, then on to Hon Thom Island",

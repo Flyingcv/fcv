@@ -42,7 +42,7 @@
       { "key": "mid", "label": "5 – 6 days", "minDays": 5, "maxDays": 6 },
       { "key": "long", "label": "7+ days", "minDays": 7, "maxDays": null }
     ],
-    "minBudget": 25000,
+    "minBudget": 10000,
     "maxBudget": 125000,
     "sortOptions": [
       { "key": "popular", "label": "Popular" },

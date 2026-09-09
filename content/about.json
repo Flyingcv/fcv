@@ -4,15 +4,16 @@
     "description": "Flying Colours Vacations plans international holidays from Noida — transparent pricing, dependable service and 24/7 on-trip support."
   },
   "hero": {
-    "tag": "Est. 2014 · Noida, India",
+    "tag": "Est. 2016 · Noida, India",
     "headingHtml": "Adding colours<br />to every journey.",
     "stats": [
-      { "label": "Founded", "value": "2014" },
+      { "label": "Founded", "value": "2016" },
       { "label": "Destinations", "value": "04" },
-      { "label": "Happy travellers", "value": "500+" },
+      { "label": "Happy travellers", "value": "12,400+" },
       { "label": "Support", "value": "24×7" }
     ]
   },
+
   "story": {
     "tag": "Our story",
     "headingHtml": "Creating memorable<br />holidays, since day one.",
@@ -44,7 +45,7 @@
     "items": [
       { "title": "Customer first", "copy": "Every recommendation we make is based on what's best for you — never what's easiest to sell." },
       { "title": "Professional service", "copy": "From your first enquiry to your return journey, our team stays committed to seamless support." },
-      { "title": "Best value", "copy": "Premium hotels, exciting sightseeing and carefully selected experiences at prices that hold their own." },
+      { "title": "Best value", "copy": "Premium hotels, exciting sightseeing and carefully selected experiences at prices that deliver exceptional value." },
       { "title": "Trust & transparency", "copy": "Clear communication, honest pricing and dependable service — the foundation of everything we do." }
     ]
   },
@@ -54,7 +55,7 @@
     "items": [
       { "icon": "pin", "title": "Destination experts", "copy": "We specialise in carefully planned holidays to Vietnam, Bali, Thailand and Malaysia." },
       { "icon": "star", "title": "Premium hotels", "copy": "Accommodation selected for quality, location and guest satisfaction on every itinerary." },
-      { "icon": "plane", "title": "Airport transfers", "copy": "Stress-free pick-up and drop-off included on most tour packages." },
+      { "icon": "plane", "title": "Airport transfers", "copy": "Stress-free pick-up and drop-off included in all tour packages." },
       { "icon": "check", "title": "Visa assistance", "copy": "Complete guidance through the visa documentation process, start to finish." },
       { "icon": "mail", "title": "Personalised planning", "copy": "Every itinerary is built around your travel dates, budget and preferences." },
       { "icon": "phone", "title": "Dedicated support", "copy": "Quick assistance before, during and after your holiday — one desk, one number." }

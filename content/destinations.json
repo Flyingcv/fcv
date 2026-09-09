@@ -19,13 +19,13 @@
     ],
     "facts": {
       "Flight time": "5h 20m direct",
-      "Best season": "Oct — Apr",
+      "Best season": "All time",
       "Currency": "VND (₫)",
-      "Visa": "e-Visa · 3 days"
+      "Visa": "e-Visa · 5 days · Pre-Arrival Information (PAI) required"
     },
-    "perDay": 5200,
+    "perDay": 5500,
     "flight": 24000,
-    "fromPrice": 28699,
+    "fromPrice": 18999,
     "highlights": [
       [
         "Halong Bay overnight cruise",
@@ -181,7 +181,7 @@
       "Flight time": "4h 15m direct",
       "Best season": "Nov — Mar",
       "Currency": "THB (฿)",
-      "Visa": "Visa-free · 60 days"
+      "Visa": "Visa-free · 30 days · TDAC is mandatory"
     },
     "perDay": 4800,
     "flight": 19500,
@@ -260,7 +260,7 @@
       "Flight time": "4h 45m direct",
       "Best season": "Dec — Apr",
       "Currency": "MYR (RM)",
-      "Visa": "Visa-free entry"
+      "Visa": "Visa-free · 30 days · MDAC is mandatory"
     },
     "perDay": 5000,
     "flight": 21000,

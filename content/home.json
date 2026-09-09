@@ -1,7 +1,7 @@
 {
   "hero": {
     "eyebrowTag": "Boarding pass to Southeast Asia",
-    "eyebrowSub": "EST. 2014 · NOIDA, -INDIA",
+    "eyebrowSub": "EST. 2016 · NOIDA, INDIA",
     "titleHtml": "Southeast<br />Asia in full<br /><em>colours</em>",
     "blurb": "Vietnam, Bali, Thailand and Malaysia — planned end to end by people who have walked the itineraries themselves. One desk, one number, zero surprises.",
     "primaryLabel": "Explore destinations",
@@ -27,24 +27,24 @@
     "tag": "Why Flying Colours",
     "headingHtml": "We don't sell packages.<br />We plan journeys.",
     "paragraphs": [
-      "Since 2014 we have run one thing extremely well: Southeast Asia. Vietnam, Bali, Thailand and Malaysia — the four countries our team has walked, eaten and argued about, itinerary by itinerary.",
+      "Since 2016 we have run one thing extremely well: Southeast Asia. Vietnam, Bali, Thailand and Malaysia — the four countries our team has walked, eaten and argued about, itinerary by itinerary.",
       "That focus is the whole product. We know which Halong cruise actually has hot water, which Ubud villa is worth the transfer, and which Krabi tour operator answers the phone in a storm. You get that judgement, not a call centre."
     ],
     "stats": [
-      { "to": 11, "suffix": "+", "labelHtml": "Years planning<br />Southeast Asia" },
+      { "to": 10, "suffix": "+", "labelHtml": "Years planning<br />Southeast Asia" },
       { "to": 12400, "suffix": "+", "labelHtml": "Travellers<br />sent abroad" },
-      { "to": 4.8, "decimals": 1, "suffix": "", "labelHtml": "Average rating<br />1,564 reviews" }
+      { "to": 4.8, "decimals": 1, "suffix": "", "labelHtml": "Average rating<br />564 reviews" }
     ],
     "ctaLabel": "Our story",
     "ctaHref": "/about",
-    "badgeHtml": "Since<br />2014"
+    "badgeHtml": "Since<br />2016"
   },
   "pricingExplainer": {
     "tag": "Transparent pricing",
     "headingHtml": "Your whole trip,<br />printed on one pass.",
     "paragraph": "Move a slider, change the number of nights, pick a stay standard — and watch the price update live on your own boarding pass. No enquiry form before you can see a number.",
     "bullets": [
-      { "title": "Per-day pricing", "copy": "Land cost is calculated per person per day, so 6 nights is never priced like 8." },
+      { "title": "Per-person pricing", "copy": "Land cost is calculated per person, so 6 people is never priced like 8." },
       { "title": "One straight number", "copy": "No hidden fees, no fine-print discount that only shows up at checkout." },
       { "title": "Send it on WhatsApp", "copy": "Get your quote straight to a planner and keep talking from there." }
     ],
@@ -58,8 +58,8 @@
       "stamp": "Fare locked · FCV",
       "code": "FCV · 214 · 0725 · SGN · ECONOMY",
       "passenger": "Your name here",
-      "duration": "06 Days / 05 Nights",
-      "total": "₹62,999",
+      "duration": "05 Days / 04 Nights",
+      "total": "₹18,999",
       "flight": "FCV 214",
       "gate": "A12",
       "seat": "14A"
@@ -77,7 +77,7 @@
     ]
   },
   "testimonials": {
-    "tag": "Seat 4.8 / 5 · 1,564 reviews",
+    "tag": "Seat 4.8 / 5 · 564 reviews",
     "headingHtml": "Postcards from<br />the people we sent."
   },
   "glimpses": {
@@ -96,3 +96,5 @@
     "secondaryHref": "/services#configurator"
   }
 }
+
+

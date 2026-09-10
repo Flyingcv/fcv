@@ -1141,7 +1141,7 @@
     "priceVariants": [
       {
         "label": "5N / 6D",
-        "note": "Land package only, couple",
+        "note": "Land package only, double sharing",
         "price": 74999
       }
     ]
@@ -2443,38 +2443,40 @@
     "where": "Langkawi",
     "days": 4,
     "nights": 3,
-    "price": 33999,
-    "badge": "Short break",
+    "price": 17999,
+    "badge": "Popular",
     "type": [
       "beach",
       "honeymoon"
     ],
     "blurb": "Sky Bridge above the rainforest canopy, island hopping by speedboat and duty-free sunsets at Cenang.",
     "includes": [
-      "Beach Resort",
+      "4★ Beach Resort",
       "SkyCab Tickets",
       "Island Hopping",
       "Breakfast"
     ],
     "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80",
     "route": [
+      "Langkawi",
       "Pantai Cenang",
-      "Langkawi Sky Bridge"
+      "Langkawi Sky Bridge",
+      "hopping island"
     ],
     "itinerary": [
       {
         "title": "Arrive Langkawi",
-        "summary": "Straight to the beach at Pantai Cenang.",
+        "summary": "Straight to the beach resort at Pantai Cenang.",
         "activities": [
           "Pantai Cenang beach check-in"
         ],
-        "included": "Airport Transfer + Hotel Check-in",
+        "included": "Airport Transfer + Beach Resort Check-in",
         "type": "Half day",
         "meals": "No meals",
         "stay": "Pantai Cenang",
         "timings": [
           "01:00 PM - Airport pick-up at Langkawi (LGK)",
-          "02:00 PM - Beach resort check-in",
+          "02:00 PM - Beach Resort check-in",
           "05:30 PM - Sunset at Pantai Cenang"
         ]
       },
@@ -2482,10 +2484,13 @@
         "title": "Sky Bridge & SkyCab",
         "summary": "A cable car into the rainforest canopy, then the curved bridge itself.",
         "activities": [
+          "PVT transfers",
           "Cable car to Gunung Mat Cincang",
+          "Sky Rex",
+          "Sky Dome",
           "Curved Sky Bridge walk"
         ],
-        "included": "SkyCab Tickets",
+        "included": "SkyCab + Sky Bridge + SkyDome + 3D art musuem Tickets",
         "type": "Full day",
         "meals": "Breakfast",
         "stay": "Pantai Cenang",
@@ -2502,8 +2507,7 @@
         "summary": "A boat day between a freshwater lake and a mangrove forest.",
         "activities": [
           "Dayang Bunting Lake",
-          "Eagle feeding show",
-          "Mangrove tour"
+          "Eagle feeding show"
         ],
         "included": "Boat Tour + Guide",
         "type": "Full day",
@@ -2546,16 +2550,16 @@
       "Accommodation": "4 Star beach resort",
       "Meals": "(3) Breakfast",
       "Places covered": "Pantai Cenang - Langkawi Sky Bridge - Southern islands",
-      "Visa": "Visa-free entry for Indian passport holders (up to 30 days)"
+      "Visa": "Visa-free entry for Indian passport holders (up to 30 days); MDAC required"
     },
     "hotels": [
-      "Pantai Cenang, Langkawi - Meritus Pelangi Beach Resort or similar (4 Star)"
+      "Pantai Cenang, Langkawi - Bella Vista Waterfront Resort (4 Star)"
     ],
     "priceVariants": [
       {
         "label": "3N / 4D",
         "note": "Land package only, twin sharing",
-        "price": 33999
+        "price": 17999
       }
     ]
   },
@@ -2733,201 +2737,6 @@
         "label": "6N / 7D",
         "note": "Land package + 1 domestic flight",
         "price": 64999
-      }
-    ]
-  },
-  {
-    "id": "my-luxe",
-    "dest": "malaysia",
-    "title": "Borneo & Langkawi Luxury",
-    "where": "Kota Kinabalu · Langkawi",
-    "days": 8,
-    "nights": 7,
-    "price": 104999,
-    "badge": "Luxury",
-    "type": [
-      "luxury",
-      "nature"
-    ],
-    "blurb": "Orangutan sanctuary mornings, private-island resorts and a sunset cruise on the South China Sea.",
-    "includes": [
-      "5★ Resorts",
-      "Domestic Flights",
-      "Private Guide",
-      "Half Board"
-    ],
-    "image": "https://images.unsplash.com/photo-1508062878650-88b52897f298?auto=format&fit=crop&w=900&q=80",
-    "route": [
-      "Kota Kinabalu",
-      "Sepilok",
-      "Langkawi"
-    ],
-    "itinerary": [
-      {
-        "title": "Arrive Kota Kinabalu",
-        "summary": "A first evening on Borneo's waterfront.",
-        "activities": [
-          "City check-in",
-          "Waterfront sunset"
-        ],
-        "included": "Airport Transfer + Hotel Check-in",
-        "type": "Half day",
-        "meals": "Dinner",
-        "stay": "Kota Kinabalu",
-        "timings": [
-          "01:00 PM - Airport pick-up at Kota Kinabalu (BKI)",
-          "02:30 PM - Resort check-in",
-          "05:30 PM - Waterfront sunset",
-          "07:30 PM - Dinner at the resort"
-        ]
-      },
-      {
-        "title": "Sepilok Orangutan Sanctuary",
-        "summary": "A morning face-to-face with Borneo's most famous residents.",
-        "activities": [
-          "Morning feeding session",
-          "Rainforest boardwalk"
-        ],
-        "included": "Sanctuary Entry + Guide",
-        "type": "Full day",
-        "meals": "Breakfast + Dinner",
-        "stay": "Kota Kinabalu",
-        "timings": [
-          "06:30 AM - Early breakfast and transfer",
-          "09:00 AM - Sepilok Orangutan Sanctuary feeding",
-          "11:30 AM - Rainforest boardwalk",
-          "05:00 PM - Return to the resort",
-          "07:30 PM - Dinner at the resort"
-        ]
-      },
-      {
-        "title": "Island resort transfer",
-        "summary": "From the mainland to a private-island stay.",
-        "activities": [
-          "Transfer to a private-island resort"
-        ],
-        "included": "Boat Transfer + Resort Check-in",
-        "type": "Half day",
-        "meals": "Breakfast + Dinner",
-        "stay": "Private island",
-        "timings": [
-          "09:00 AM - Breakfast and checkout",
-          "11:00 AM - Boat transfer to the private island",
-          "01:00 PM - Island resort check-in",
-          "07:30 PM - Dinner at the resort"
-        ]
-      },
-      {
-        "title": "Marine park day",
-        "summary": "A slow day in and around the water.",
-        "activities": [
-          "Snorkelling at the marine park",
-          "Beach time"
-        ],
-        "included": "Snorkel Gear + Park Entry",
-        "type": "Full day",
-        "meals": "Breakfast + Dinner",
-        "stay": "Private island",
-        "timings": [
-          "08:30 AM - Breakfast at the resort",
-          "10:00 AM - Marine park snorkelling",
-          "02:00 PM - Beach time",
-          "07:30 PM - Dinner at the resort"
-        ]
-      },
-      {
-        "title": "Fly to Langkawi",
-        "summary": "From Borneo's coast to Langkawi's beaches.",
-        "activities": [
-          "Domestic flight to Langkawi",
-          "Beachfront resort check-in"
-        ],
-        "included": "Domestic Flight",
-        "type": "Full day",
-        "meals": "Breakfast + Dinner",
-        "stay": "Langkawi",
-        "timings": [
-          "08:00 AM - Breakfast and boat transfer",
-          "11:30 AM - Flight to Langkawi",
-          "03:00 PM - Beachfront resort check-in",
-          "07:30 PM - Dinner at the resort"
-        ]
-      },
-      {
-        "title": "Sky Bridge & SkyCab",
-        "summary": "The rainforest canopy cable car and Sky Bridge walk.",
-        "activities": [
-          "Rainforest canopy cable car",
-          "Sky Bridge walk"
-        ],
-        "included": "SkyCab Tickets",
-        "type": "Full day",
-        "meals": "Breakfast",
-        "stay": "Langkawi",
-        "timings": [
-          "08:30 AM - Breakfast at the resort",
-          "10:00 AM - SkyCab to Gunung Mat Cincang",
-          "11:30 AM - Sky Bridge walk",
-          "03:00 PM - Return to the resort"
-        ]
-      },
-      {
-        "title": "Sunset cruise",
-        "summary": "A private sail to close out the trip.",
-        "activities": [
-          "Sunset sail on the South China Sea"
-        ],
-        "included": "Private Cruise",
-        "type": "Full day",
-        "meals": "Breakfast + Dinner",
-        "stay": "Langkawi",
-        "timings": [
-          "09:00 AM - Breakfast at the resort",
-          "11:00 AM - Free morning",
-          "05:00 PM - Private sunset sail on the South China Sea",
-          "08:00 PM - Dinner at the resort"
-        ]
-      },
-      {
-        "title": "Departure",
-        "summary": "A free morning before the transfer to the airport.",
-        "activities": [
-          "Free morning at leisure",
-          "Transfer to Langkawi Airport"
-        ],
-        "included": "Airport Transfer",
-        "type": "Half day",
-        "meals": "Breakfast",
-        "stay": "-",
-        "timings": [
-          "08:00 AM - Breakfast at the resort",
-          "11:00 AM - Checkout",
-          "12:00 PM - Transfer to Langkawi Airport"
-        ]
-      }
-    ],
-    "quickDetails": {
-      "Arrival / Departure": "Kota Kinabalu (BKI) / Langkawi (LGK)",
-      "Duration": "7N / 8D",
-      "Trip type": "Private departure - luxury",
-      "International flights": "Not included (booking assistance available)",
-      "Domestic flights": "Included - 1 sector (BKI to LGK)",
-      "Internal transportation": "Private AC vehicle + island boat transfers",
-      "Accommodation": "5 Star resorts including a private-island stay",
-      "Meals": "(7) Breakfast (5) Dinner - half board",
-      "Places covered": "Kota Kinabalu - Sepilok - Private island - Langkawi",
-      "Visa": "Visa-free entry for Indian passport holders (up to 30 days)"
-    },
-    "hotels": [
-      "Kota Kinabalu - Shangri-La Tanjung Aru or similar (5 Star)",
-      "Private island - Gaya Island Resort or similar (5 Star)",
-      "Langkawi - The Danna Langkawi or similar (5 Star)"
-    ],
-    "priceVariants": [
-      {
-        "label": "7N / 8D",
-        "note": "Land package + 1 domestic flight, half board",
-        "price": 104999
       }
     ]
   }

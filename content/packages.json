@@ -7,16 +7,16 @@
     "style": "Limestone bays, train street, boating, kayaking",
     "days": 5,
     "nights": 4,
-    "price": 34999,
-    "badge": "Bestseller",
+    "price": 39999,
+    "badge": "Premium",
     "type": [
       "culture",
       "nature"
     ],
-    "blurb": "Old Quarter mornings, a Trang An rowboat afternoon and a night anchored among the karsts of Halong Bay.",
+    "blurb": "Old Quarter mornings, a Tam Coc rowboat afternoon and a night anchored among the karsts of Halong Bay.",
     "includes": [
-      "3★ Hotels",
-      "4★ Overnight Cruise",
+      "4★ Hotel",
+      "4★ Overnight Premium Cruise",
       "Daily Breakfast",
       "Kayaking",
       "Ninh Binh Tour",
@@ -51,7 +51,7 @@
         ]
       },
       {
-        "title": "Ninh Binh day trip",
+        "title": "Ninh Binh day trip (Tam Coc + Hoa Lu + Boat Ride + Lunch)",
         "summary": "A day among Ninh Binh's limestone valleys — often called \"Halong Bay on land\".",
         "activities": [
           "07:00-07:30: Our tour guide and driver pick you up at your hotel in the Old Quarter. If your hotel is outside the Old Quarter area, the meet-up point will be at the Hanoi Opera House. From there, we will travel by air-conditioned bus to Ninh Binh, where we will spend the day exploring the highlights of the region.",
@@ -75,14 +75,14 @@
         ]
       },
       {
-        "title": "Halong Bay cruise",
+        "title": "Transfer to Halong Bay Cruise | Enjoy your Stay & Activities on cruise",
         "summary": "Board a deluxe overnight junk and sail out among 1,600 limestone islands.",
         "activities": [
           "Board the deluxe junk and cruise into Halong Bay",
           "Kayak into Luon Cave's hidden lagoon",
           "Squid fishing off the deck after dinner"
         ],
-        "included": "Overnight Cruise + All Meals + Kayaking",
+        "included": "AC Luxury Limousine sharing transfer + Overnight Cruise + All Meals + Kayaking",
         "type": "Full day",
         "meals": "Breakfast + Lunch + Dinner",
         "stay": "Halong Bay cruise",
@@ -96,16 +96,22 @@
         ]
       },
       {
-        "title": "Halong Bay sunrise",
+        "title": "Return to Hanoi Hotel from Cruise | Evening Free at Leisure",
         "summary": "A slow morning on the water before the cruise heads back to Hanoi.",
         "activities": [
-          "Sunrise tai chi session on the sundeck",
-          "Cruise back to the Halong Bay harbour",
-          "Free evening back in the Hanoi Old Quarter"
+          "06:30: Sunrise & tai chi session on the sundeck",
+          "07:00: Light Breakfast is served in restaurant",
+          "08:00-09:00: Explore the Sung Sot Cave",
+          "09:30: Return to boat and checkout; Have have brunch in restaurant while the boat sails back to pier. Settle the bill at the end of trip for drinks and direct orders.",
+          "11:30: Cruise back to the Halong Bay harbour",
+          "Take the Luxury Limousine Van to return to Hanoi",
+          "3:30-4:00: Drop at hotel",
+          "Free evening back in the Hanoi Old Quarter; Take the evening free at leisure, enjoy shopping in old quarter market , go for water puppet show or just take a walking tour around Hoan Kiem lake if you are staying nearby old quarters.",
+          "Note: This is the standard itinerary for overnight cruises. Itinerary might have slight change depending upon cruise to cruise."
         ],
-        "included": "Cruise Breakfast + Return Transfer",
+        "included": "Cruise Breakfast/Brunch + Return Transfer",
         "type": "Half day",
-        "meals": "Breakfast",
+        "meals": "Breakfast + Brunch",
         "stay": "Hanoi",
         "timings": [
           "06:30 AM - Sunrise tai chi on the sundeck",
@@ -135,28 +141,28 @@
     ],
     "quickDetails": {
       "Arrival / Departure": "Hanoi (HAN) / Hanoi (HAN)",
-      "Duration": "5N / 6D",
+      "Duration": "4N / 5D",
       "Trip type": "Private departure",
       "International flights": "Not included (booking assistance available)",
       "Domestic flights": "Not applicable",
       "Internal transportation": "Private AC vehicle + overnight junk cruise",
-      "Accommodation": "3 Star hotels + 1N 4 Star cruise cabin",
-      "Meals": "(5) Breakfast (2) Lunch (1) Dinner",
+      "Accommodation": "4 Star hotel + 1N 4 Star cruise cabin",
+      "Meals": "(5) Breakfast (1) Brunch (2) Lunch (1) Dinner",
       "Places covered": "Hanoi - Ninh Binh - Halong Bay",
       "Visa": "e-Visa (processing 3-5 working days)"
     },
     "hotels": [
-      "Hanoi - Little Diamond Hotel (sup room) or similar (3 Star)",
-      "Halong Bay - La Regina Classic cruise, DLX ocean-view cabin (4 Star)"
+      "Hanoi - Army Hotel (sup room) or similar (4 Star)",
+      "Halong Bay - Le Journey Premium cruise, DLX cabin (4 Star)"
     ],
     "inclusions": [
-      "3 Nights stay with breakfast in 3 star hotel in Hanoi",
+      "3 Nights stay with breakfast in 4 star hotel in Hanoi",
       "1 Night stay with all meals in a 4 star Overnight cruise",
       "HalfDay City tour",
       "Ninh Binh tour with lunch",
-      "Halong Bay Cruise transfer on Sharing basis",
+      "Halong Bay Cruise transfer in Luxury Limousine van on Sharing basis",
       "Single Entry E-Visa (5-7 working days)",
-      "English speaking guide",
+      "English speaking guide during",
       "All Tips",
       "All tours on Sharing basis",
       "All airport transfers on pvt basis"
@@ -175,14 +181,179 @@
       { "service": "Sapa Addon", "description": "Add SAPA in this itinerary", "price": "quoted on request" },
       { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
       { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
-      { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" },
-      { "service": "Hotel upgrade", "description": "Move up a star category and upgrade to 4 star hotels", "price": "₹5,000 per person extra" }
+      { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" }
     ],
     "priceVariants": [
       {
         "label": "4N / 5D",
         "note": "Land package only, twin sharing",
-        "price": 34999
+        "price": 39999
+      }
+    ]
+  },
+  {
+    "id": "vn-hanoi-heritage",
+    "dest": "vietnam",
+    "title": "Hanoi · Ninh Binh · Halong Bay",
+    "where": "North Vietnam",
+    "style": "Limestone bays, train street, boating, kayaking",
+    "days": 4,
+    "nights": 3,
+    "price": 29499,
+    "badge": "Premium",
+    "type": [
+      "culture",
+      "nature"
+    ],
+    "blurb": "Old Quarter mornings, a Tam Coc rowboat afternoon and a day drip anchored among the limestone of Halong Bay.",
+    "includes": [
+      "5★ Premium Day Cruise with Indian Lunch",
+      "4★ Hotel",
+      "Daily Breakfast",
+      "Kayaking",
+      "Ninh Binh Tour",
+      "Boat ride",
+      "Airport Transfers"
+    ],
+    "image": "/img/train.webp",
+    "route": [
+      "Hanoi",
+      "Ninh Binh",
+      "Halong Bay"
+    ],
+    "itinerary": [
+      {
+        "title": "Arrive Hanoi | Hanoi City tour",
+        "summary": "Airport meet-and-greet and a transfer to hotel. Day inside Vietnam's capital — from Ho Chi Minh's resting place to its oldest university.",
+        "activities": [
+          "Airport pick-up and private transfer to your hotel (checkin time is 2:00 PM)",
+          "Ho Chi Minh Mausoleum complex and the One Pillar Pagoda",
+          "Temple of Literature, Vietnam's first national university",
+          "Guided Old Quarter walking tour"
+        ],
+        "included": "Airport Transfer + Hotel Check-in + Half Day Hanoi City Tour (option to choose Morning tour or afternoon tour)",
+        "type": "Half day",
+        "meals": "No meals",
+        "stay": "Hanoi",
+        "timings": [
+          "09:00 AM - Airport pick-up at Noi Bai (HAN)",
+          "02:00 PM - Old Quarter hotel check-in",
+          "05:00 PM - Egg-coffee walk with your guide",
+          "08:00 PM - Water puppet show at Hoan Kiem Lake"
+        ]
+      },
+      {
+        "title": "Ninh Binh day trip (Tam Coc + Hoa Lu + Boat Ride + Lunch)",
+        "summary": "A day among Ninh Binh's limestone valleys — often called \"Halong Bay on land\".",
+        "activities": [
+          "07:00-07:30: Our tour guide and driver pick you up at your hotel in the Old Quarter. If your hotel is outside the Old Quarter area, the meet-up point will be at the Hanoi Opera House. From there, we will travel by air-conditioned bus to Ninh Binh, where we will spend the day exploring the highlights of the region.",
+          "09:40: Having a short break for 20 minutes.",
+          "10:30: After arriving in Ninh Binh province, the guide takes you to visit Hoa Lu – the Ancient Royal capital of VietNam. We will visit Dinh king temple and Le king temple, in the 10th century, finding out the heroic histories of these two Kings in Chinese Wars. After that, we went to Tam Coc (10 km far from Hoa Lu).",
+          "12:00: Enjoying lunch at local restaurant with great local cuisine. After lunch you will get on bamboo boat – rowed by the local people – in Hoang Long River to visit Tam Coc (three caves) on the way. You pass through three enormous caves that provide a brief respite from the intense summer sun. It takes approximately two hours to go up and down the river and along the way, you witness local fisherfolk, village life along the river and, of course, the striking limestone karst formations that Tam Coc is famous for.",
+          "16:30: Getting on the bus and going back to Ha Noi.",
+          "19:00: Arriving Hanoi, drop off at hotel located in Old Quarter or Opera House. "
+        ],
+        "included": "Ac Bus transfer from Hanoi + Rowboat Ride + Hoa Lu + Bicycle + sightseeing entrance tickets",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Hanoi",
+        "timings": [
+          "07:30 AM - Depart Hanoi for Ninh Binh",
+          "10:00 AM - Tam Coc rowboat through the caves",
+          "01:00 PM - Local lunch",
+          "02:30 PM - Cycle to Hoa Lu ancient capital",
+          "04:00 PM - Mua Cave climb for the valley panorama",
+          "07:30 PM - Return to Hanoi"
+        ]
+      },
+      {
+        "title": "Day Trip to Halong Bay with Indian Lunch",
+        "summary": "Board a premium day cruise and sail out among 1,600 limestone islands.",
+        "activities": [
+          "07:30-08:00: Picking up from hotel (in Hanoi Old Quater area) and departing for Bãi Cháy Island (Halong), stopping over for a rest on the way. 11h30-12h00: Arrive at Halong Harbor, welcome aboard, and safety briefing. The cruise will take you on a 5-hour journey via 2 day-sleeper boat cruise route which is renowned for its striking, passages uninhabited islets and outcrops have been given imaginative names by the locals, due to their perceived shapes, including Cock Fighting and Thumb, while enjoying Vietnamese mouth-watering lunch on boat.",
+          "13h45-14h00: Arrive at Bo Hon archipelago, you will visit Surprising Cave to see a lot of stalagmites and stalactites with different shapes of sea lives, then go kayaking or bamboo boat in Luon Cave to discover the beautiful lagoon. Visit Titov Island with a sandy beach adjacent to the towering limestone mountain with an excellent backdrop of the Bay and climb up Titov Peak for a panoramic view of the bay-like paradise.",
+          "16h30:. There is a lot of time for enjoying a sunset party with tea, wine, fruits, and cakes, sunbathing on the upper deck with music, and enjoying the great fun of group touring fellows among the world's iconic natural scenery.",
+          "18h00- 18h30: Disembark for a bus ride back to Hanoi, short break on the way.",
+          "21h00 – 21h30: Drop off at your hotel/stay, trip ends."
+        ],
+        "included": "AC Shuttle bus sharing transfer + Premium 5star day Cruise + indian lunch + Kayaking",
+        "type": "Full day",
+        "meals": "Breakfast + Lunch",
+        "stay": "Hanoi",
+        "timings": [
+          "07:30 AM - Checkout and transfer to Halong Bay",
+          "11:30 AM - Board the deluxe junk, welcome drink",
+          "01:00 PM - Lunch on board",
+          "03:00 PM - Kayak into Luon Cave lagoon",
+          "07:00 PM - Dinner on board",
+          "09:00 PM - Squid fishing off the deck"
+        ]
+      },
+      {
+        "title": "Departure",
+        "summary": "A free morning before the flight home.",
+        "activities": [
+          "Free morning for souvenir shopping and cafés",
+          "Private transfer to Noi Bai International Airport"
+        ],
+        "included": "Airport Transfer",
+        "type": "Half day",
+        "meals": "Breakfast",
+        "stay": "-",
+        "timings": [
+          "08:00 AM - Breakfast at hotel",
+          "10:00 AM - Free morning for souvenir shopping",
+          "12:00 PM - Checkout and transfer to Noi Bai Airport"
+        ]
+      }
+    ],
+    "quickDetails": {
+      "Arrival / Departure": "Hanoi (HAN) / Hanoi (HAN)",
+      "Duration": "4N / 5D",
+      "Trip type": "Private departure",
+      "International flights": "Not included (booking assistance available)",
+      "Domestic flights": "Not applicable",
+      "Internal transportation": "Private AC vehicle + overnight junk cruise",
+      "Accommodation": "4 Star hotel + 1N 4 Star cruise cabin",
+      "Meals": "(5) Breakfast (1) Brunch (2) Lunch (1) Dinner",
+      "Places covered": "Hanoi - Ninh Binh - Halong Bay",
+      "Visa": "e-Visa (processing 3-5 working days)"
+    },
+    "hotels": [
+      "Hanoi - Army Hotel (sup room) or similar (4 Star)"
+    ],
+    "inclusions": [
+      "3 Nights stay with breakfast in 4 star hotel in Hanoi",
+      "HalfDay City tour",
+      "Ninh Binh tour with lunch",
+      "5 Star Halong Bay Day Cruise with indian lunch",
+      "Single Entry E-Visa (5-7 working days)",
+      "English speaking guide during",
+      "All Tips",
+      "All tours on Sharing basis",
+      "All airport transfers on pvt basis"
+    ],
+    "exclusions": [
+      "Flights",
+      "Early check-in / late check-out",
+      "Personal expenses",
+      "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
+      "Meals not listed in inclusions",
+      "Any Add-on services listed below",
+      "GST & TCS",
+      "Any surcharge during festivals / black out dates etc"
+    ],
+    "addons": [
+      { "service": "Sapa Addon", "description": "Add SAPA in this itinerary", "price": "quoted on request" },
+      { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
+      { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
+      { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" }
+    ],
+    "priceVariants": [
+      {
+        "label": "3N / 54",
+        "note": "Land package only, twin sharing",
+        "price": 29499
       }
     ]
   },

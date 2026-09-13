@@ -5,9 +5,9 @@
     "title": "Hanoi · Ninh Binh · Halong Bay",
     "where": "North Vietnam",
     "style": "Limestone bays, train street, boating, kayaking",
-    "days": 6,
-    "nights": 5,
-    "price": 62999,
+    "days": 5,
+    "nights": 4,
+    "price": 34999,
     "badge": "Bestseller",
     "type": [
       "culture",
@@ -16,11 +16,14 @@
     "blurb": "Old Quarter mornings, a Trang An rowboat afternoon and a night anchored among the karsts of Halong Bay.",
     "includes": [
       "3★ Hotels",
-      "Overnight Cruise",
-      "All Transfers",
-      "Daily Breakfast"
+      "4★ Overnight Cruise",
+      "Daily Breakfast",
+      "Kayaking",
+      "Ninh Binh Tour",
+      "Boat ride",
+      "Airport Transfers"
     ],
-    "image": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=80",
+    "image": "/img/halong.webp",
     "route": [
       "Hanoi",
       "Ninh Binh",
@@ -28,14 +31,15 @@
     ],
     "itinerary": [
       {
-        "title": "Arrive Hanoi",
-        "summary": "Airport meet-and-greet and a transfer to the Old Quarter — the first evening is for settling in before the trip properly begins.",
+        "title": "Arrive Hanoi | Hanoi City tour",
+        "summary": "Airport meet-and-greet and a transfer to hotel. Day inside Vietnam's capital — from Ho Chi Minh's resting place to its oldest university.",
         "activities": [
-          "Airport pick-up and private transfer to your Old Quarter hotel",
-          "Evening egg-coffee walk through the Old Quarter's 36 streets",
-          "Water puppet show on Hoan Kiem Lake"
+          "Airport pick-up and private transfer to your hotel (checkin time is 2:00 PM)",
+          "Ho Chi Minh Mausoleum complex and the One Pillar Pagoda",
+          "Temple of Literature, Vietnam's first national university",
+          "Guided Old Quarter walking tour"
         ],
-        "included": "Airport Transfer + Hotel Check-in + Water Puppet Show",
+        "included": "Airport Transfer + Hotel Check-in + Half Day Hanoi City Tour (option to choose Morning tour or afternoon tour)",
         "type": "Half day",
         "meals": "No meals",
         "stay": "Hanoi",
@@ -47,41 +51,23 @@
         ]
       },
       {
-        "title": "Hanoi city tour",
-        "summary": "A full day inside Vietnam's capital — from Ho Chi Minh's resting place to its oldest university.",
-        "activities": [
-          "Ho Chi Minh Mausoleum complex and the One Pillar Pagoda",
-          "Temple of Literature, Vietnam's first national university",
-          "Guided Old Quarter walking tour",
-          "Street-food dinner with a local guide"
-        ],
-        "included": "City Guide + Entry Tickets + Street-Food Dinner",
-        "type": "Full day",
-        "meals": "Breakfast",
-        "stay": "Hanoi",
-        "timings": [
-          "08:00 AM - Breakfast at hotel",
-          "09:00 AM - Ho Chi Minh Mausoleum complex",
-          "11:30 AM - Temple of Literature",
-          "03:00 PM - Old Quarter walking tour",
-          "07:00 PM - Street-food dinner with a local guide"
-        ]
-      },
-      {
         "title": "Ninh Binh day trip",
         "summary": "A day among Ninh Binh's limestone valleys — often called \"Halong Bay on land\".",
         "activities": [
-          "Rowboat through the Trang An caves and grottoes",
-          "Cycle through rice paddies to Hoa Lu, Vietnam's ancient capital",
-          "Climb the 500 steps to Mua Cave for the valley panorama"
+          "07:00-07:30: Our tour guide and driver pick you up at your hotel in the Old Quarter. If your hotel is outside the Old Quarter area, the meet-up point will be at the Hanoi Opera House. From there, we will travel by air-conditioned bus to Ninh Binh, where we will spend the day exploring the highlights of the region.",
+          "09:40: Having a short break for 20 minutes.",
+          "10:30: After arriving in Ninh Binh province, the guide takes you to visit Hoa Lu – the Ancient Royal capital of VietNam. We will visit Dinh king temple and Le king temple, in the 10th century, finding out the heroic histories of these two Kings in Chinese Wars. After that, we went to Tam Coc (10 km far from Hoa Lu).",
+          "12:00: Enjoying lunch at local restaurant with great local cuisine. After lunch you will get on bamboo boat – rowed by the local people – in Hoang Long River to visit Tam Coc (three caves) on the way. You pass through three enormous caves that provide a brief respite from the intense summer sun. It takes approximately two hours to go up and down the river and along the way, you witness local fisherfolk, village life along the river and, of course, the striking limestone karst formations that Tam Coc is famous for.",
+          "16:30: Getting on the bus and going back to Ha Noi.",
+          "19:00: Arriving Hanoi, drop off at hotel located in Old Quarter or Opera House. "
         ],
-        "included": "Rowboat Ride + Bicycle + Mua Cave Entry",
+        "included": "Ac Bus transfer from Hanoi + Rowboat Ride + Hoa Lu + Bicycle + sightseeing entrance tickets",
         "type": "Full day",
         "meals": "Breakfast + Lunch",
         "stay": "Hanoi",
         "timings": [
           "07:30 AM - Depart Hanoi for Ninh Binh",
-          "10:00 AM - Trang An rowboat through the caves",
+          "10:00 AM - Tam Coc rowboat through the caves",
           "01:00 PM - Local lunch",
           "02:30 PM - Cycle to Hoa Lu ancient capital",
           "04:00 PM - Mua Cave climb for the valley panorama",
@@ -160,15 +146,18 @@
       "Visa": "e-Visa (processing 3-5 working days)"
     },
     "hotels": [
-      "Hanoi - La Siesta Premium Hang Be or similar (3 Star)",
-      "Halong Bay - Deluxe overnight junk cruise, sea-view cabin (4 Star)"
+      "Hanoi - Little Diamond Hotel (sup room) or similar (3 Star)",
+      "Halong Bay - La Regina Classic cruise, DLX ocean-view cabin (4 Star)"
     ],
     "inclusions": [
-      "4 Nights stay with breakfast in 3 star hotel",
+      "3 Nights stay with breakfast in 3 star hotel in Hanoi",
       "1 Night stay with all meals in a 4 star Overnight cruise",
-      "HD City tour",
+      "HalfDay City tour",
       "Ninh Binh tour with lunch",
-      "Cruise transfer on Sharing basis",
+      "Halong Bay Cruise transfer on Sharing basis",
+      "Single Entry E-Visa (5-7 working days)",
+      "English speaking guide",
+      "All Tips",
       "All tours on Sharing basis",
       "All airport transfers on pvt basis"
     ],
@@ -176,32 +165,24 @@
       "Flights",
       "Early check-in / late check-out",
       "Personal expenses",
-      "E-visa",
-      "Tips",
       "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
       "Meals not listed in inclusions",
-      "Add-on services",
-      "GST",
-      "TCS",
+      "Any Add-on services listed below",
+      "GST & TCS",
       "Any surcharge during festivals / black out dates etc"
     ],
     "addons": [
-      { "service": "Visa assistance", "description": "End-to-end e-Visa filing and document check", "price": "From ₹3,500 per person" },
+      { "service": "Sapa Addon", "description": "Add SAPA in this itinerary", "price": "quoted on request" },
       { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
       { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
       { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" },
-      { "service": "Hotel upgrade", "description": "Move up a star category and upgrade to 4 star hotels", "price": "₹7,000 per person extra" }
+      { "service": "Hotel upgrade", "description": "Move up a star category and upgrade to 4 star hotels", "price": "₹5,000 per person extra" }
     ],
     "priceVariants": [
       {
-        "label": "5N / 6D",
+        "label": "4N / 5D",
         "note": "Land package only, twin sharing",
-        "price": 62999
-      },
-      {
-        "label": "7N / 8D",
-        "note": "With Sapa add-on, land package",
-        "price": 78999
+        "price": 34999
       }
     ]
   },
@@ -2456,7 +2437,7 @@
       "Island Hopping",
       "Breakfast"
     ],
-    "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80",
+    "image": "/img/eagle-square.jpg",
     "route": [
       "Langkawi",
       "Pantai Cenang",
@@ -2568,6 +2549,7 @@
     "dest": "malaysia",
     "title": "Malaysia Twin City — KL & Langkawi",
     "where": "KL → Langkawi",
+    "style": "Skylines, highlands, rainforest, Cable Car",
     "days": 7,
     "nights": 6,
     "price": 64999,
@@ -2584,7 +2566,7 @@
       "2 Tours",
       "All Transfers"
     ],
-    "image": "https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=900&q=80",
+    "image": "/img/genting-skytropolis.jpeg",
     "route": [
       "Kuala Lumpur",
       "Genting Highlands",
@@ -2720,8 +2702,7 @@
       "Arrival / Departure": "Kuala Lumpur (KUL) / Langkawi (LGK)",
       "Duration": "6N / 7D",
       "Trip type": "Private departure",
-      "International flights": "Not included (booking assistance available)",
-      "Domestic flights": "Included - 1 sector (KUL to LGK)",
+      "Flights": "Not included (booking assistance available)",
       "Internal transportation": "Private AC vehicle + cable car + island speedboat",
       "Accommodation": "4 Star hotels and beach resort",
       "Meals": "(6) Breakfast",
@@ -2730,8 +2711,51 @@
     },
     "hotels": [
       "Kuala Lumpur - Furama Bukit Bintang or similar (4 Star)",
-      "Pantai Cenang, Langkawi - Meritus Pelangi Beach Resort or similar (4 Star)"
+      "Pantai Cenang, Langkawi - BellaVista Waterfront Resort or similar (4 Star)"
     ],
+    "inclusions": [
+    "3 Nights stay with breakfast in 4 star hotel in Kuala Lumpur",
+    "3 Nights stay with breakfast in 4 star resort in Langkawi",
+    "HD Kuala Lumpur city tour",
+    "Genting Highlands tour with cable car and Batu Cave visit",
+    "Sky Bridge & SkyCab tour",
+    "Langkawi island-hopping tour",
+    "All tours on sharing basis",
+    "All airport and intercity transfers"
+  ],
+  "exclusions": [
+    "International or Domestic flights",
+    "Early check-in / late check-out",
+    "Porterage, room service bills, laundry charges, telephone calls and other expenditure of a personal nature",
+    "Meals not listed in inclusions",
+    "Add-on services",
+    "GST",
+    "TCS",
+    "Any surcharge during festivals / blackout dates etc.",
+    "Tourism Tax (approximately MYR 10 per room per night) to be paid directly at the hotel"
+  ],
+  "addons": [
+    {
+      "service": "Travel insurance",
+      "description": "Medical, baggage and trip-cancellation cover",
+      "price": "From ₹1,400 per person"
+    },
+    {
+      "service": "International SIM / eSIM",
+      "description": "Data pack active from landing, multiple variants",
+      "price": "From ₹1,500 per SIM"
+    },
+    {
+      "service": "Flights",
+      "description": "International flights from Delhi, Mumbai, Bengaluru or your home city",
+      "price": "At actuals, quoted on request"
+    },
+    {
+      "service": "Hotel upgrade",
+      "description": "Upgrade to a higher star category or premium beach resort",
+      "price": "On request"
+    }
+  ],
     "priceVariants": [
       {
         "label": "6N / 7D",

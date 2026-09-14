@@ -270,13 +270,13 @@
         "title": "Day Trip to Halong Bay with Indian Lunch",
         "summary": "Board a premium day cruise and sail out among 1,600 limestone islands.",
         "activities": [
-          "07:30-08:00: Picking up from hotel (in Hanoi Old Quater area) and departing for Bãi Cháy Island (Halong), stopping over for a rest on the way. 11h30-12h00: Arrive at Halong Harbor, welcome aboard, and safety briefing. The cruise will take you on a 5-hour journey via 2 day-sleeper boat cruise route which is renowned for its striking, passages uninhabited islets and outcrops have been given imaginative names by the locals, due to their perceived shapes, including Cock Fighting and Thumb, while enjoying Vietnamese mouth-watering lunch on boat.",
+          "07:30-08:00: Picking up from hotel (in Hanoi Old Quater area) and departing for Bãi Cháy Island (Halong), stopping over for a rest on the way. 11h30-12h00: Arrive at Halong Harbor, welcome aboard, and safety briefing. The cruise will take you on a 5-hour journey via 2 day-sleeper boat cruise route which is renowned for its striking, passages uninhabited islets and outcrops have been given imaginative names by the locals, due to their perceived shapes, including Cock Fighting and Thumb, while enjoying Indian mouth-watering lunch on boat.(water bottle and beverage drinks self paid)",
           "13h45-14h00: Arrive at Bo Hon archipelago, you will visit Surprising Cave to see a lot of stalagmites and stalactites with different shapes of sea lives, then go kayaking or bamboo boat in Luon Cave to discover the beautiful lagoon. Visit Titov Island with a sandy beach adjacent to the towering limestone mountain with an excellent backdrop of the Bay and climb up Titov Peak for a panoramic view of the bay-like paradise.",
           "16h30:. There is a lot of time for enjoying a sunset party with tea, wine, fruits, and cakes, sunbathing on the upper deck with music, and enjoying the great fun of group touring fellows among the world's iconic natural scenery.",
           "18h00- 18h30: Disembark for a bus ride back to Hanoi, short break on the way.",
           "21h00 – 21h30: Drop off at your hotel/stay, trip ends."
         ],
-        "included": "AC Shuttle bus sharing transfer + Premium 5star day Cruise + indian lunch + Kayaking",
+        "included": "AC Shuttle bus sharing transfer + Premium 5★ day Cruise + indian lunch + Kayaking",
         "type": "Full day",
         "meals": "Breakfast + Lunch",
         "stay": "Hanoi",
@@ -309,28 +309,29 @@
     ],
     "quickDetails": {
       "Arrival / Departure": "Hanoi (HAN) / Hanoi (HAN)",
-      "Duration": "4N / 5D",
+      "Duration": "3N / 4D",
       "Trip type": "Private departure",
       "International flights": "Not included (booking assistance available)",
       "Domestic flights": "Not applicable",
-      "Internal transportation": "Private AC vehicle + overnight junk cruise",
-      "Accommodation": "4 Star hotel + 1N 4 Star cruise cabin",
-      "Meals": "(5) Breakfast (1) Brunch (2) Lunch (1) Dinner",
+      "Internal transportation": "Private AC vehicle",
+      "Accommodation": "4 Star premium hotel",
+      "Meals": "(3) Breakfast (2) Lunch",
       "Places covered": "Hanoi - Ninh Binh - Halong Bay",
       "Visa": "e-Visa (processing 3-5 working days)"
     },
     "hotels": [
-      "Hanoi - Army Hotel (sup room) or similar (4 Star)"
+      "Hanoi - Army Hotel (sup room) or similar (4 Star)",
+      "Halong Bay - Deluxe 4 star overnight cruise (Le Journey Premium or Syrena-DLX cabin) (if choosing overnight cruise add-on)"
     ],
     "inclusions": [
-      "3 Nights stay with breakfast in 4 star hotel in Hanoi",
+      "3 Nights stay with breakfast in Premium 4 star hotel in Hanoi",
       "HalfDay City tour",
       "Ninh Binh tour with lunch",
-      "5 Star Halong Bay Day Cruise with indian lunch",
+      "5 Star Premium Halong Bay Day Cruise with indian lunch",
       "Single Entry E-Visa (5-7 working days)",
       "English speaking guide during",
       "All Tips",
-      "All tours on Sharing basis",
+      "All tours on Sharing AC shuttle basis",
       "All airport transfers on pvt basis"
     ],
     "exclusions": [
@@ -344,16 +345,28 @@
       "Any surcharge during festivals / black out dates etc"
     ],
     "addons": [
+      { "service": "Luxury Limousine", "description": "Upgrade all sightseeing in Limousine minivan on sharing basis", "price": "₹1,500 per person" },
+      { "service": "Overnight Cruise", "description": "Upgrade the Day tour of Halong Bay to 4 star Overnight Cruise with all meals and activities with 2 way Limousine minivan transfer.", "price": "₹7,500 per person on twin sharing" },
       { "service": "Sapa Addon", "description": "Add SAPA in this itinerary", "price": "quoted on request" },
-      { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
-      { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
+      { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,200 per person" },
+      { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,100 per SIM" },
       { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" }
     ],
     "priceVariants": [
       {
-        "label": "3N / 54",
+        "label": "3N / 4D",
         "note": "Land package only, twin sharing",
         "price": 29499
+      },
+      {
+        "label": "3N / 4D",
+        "note": "All sightseeing in Luxury Limousine Minivan on sharing basis",
+        "price": 30999
+      },
+      {
+        "label": "3N / 4D",
+        "note": "Upgrade the Day tour of Halong Bay to 4 star Overnight Cruise with all local meals and activities and 2 way Limousine minivan transfer.",
+        "price": 36999
       }
     ]
   },

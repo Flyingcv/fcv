@@ -149,7 +149,7 @@
       "Accommodation": "4 Star hotel + 1N 4 Star cruise cabin",
       "Meals": "(5) Breakfast (1) Brunch (2) Lunch (1) Dinner",
       "Places covered": "Hanoi - Ninh Binh - Halong Bay",
-      "Visa": "e-Visa (processing 3-5 working days)"
+      "Visa": "e-Visa (processing 3-5 working days) + Pre-Arrival Information (PAI) required."
     },
     "hotels": [
       "Hanoi - Army Hotel (sup room) or similar (4 Star)",
@@ -317,11 +317,11 @@
       "Accommodation": "4 Star premium hotel",
       "Meals": "(3) Breakfast (2) Lunch",
       "Places covered": "Hanoi - Ninh Binh - Halong Bay",
-      "Visa": "e-Visa (processing 3-5 working days)"
+      "Visa": "e-Visa (processing 3-5 working days) + Pre-Arrival Information (PAI) required."
     },
     "hotels": [
       "Hanoi - Army Hotel (sup room) or similar (4 Star)",
-      "Halong Bay - Deluxe 4 star overnight cruise (Le Journey Premium or Syrena-DLX cabin) (if choosing overnight cruise add-on)"
+      "Halong Bay - Deluxe 4 star overnight cruise (Le Journey Premium or Syrena -DLX cabin) (if choosing overnight cruise add-on)"
     ],
     "inclusions": [
       "3 Nights stay with breakfast in Premium 4 star hotel in Hanoi",
@@ -348,8 +348,6 @@
       { "service": "Luxury Limousine", "description": "Upgrade all sightseeing in Limousine minivan on sharing basis", "price": "₹1,500 per person" },
       { "service": "Overnight Cruise", "description": "Upgrade the Day tour of Halong Bay to 4 star Overnight Cruise with all meals and activities with 2 way Limousine minivan transfer.", "price": "₹7,500 per person on twin sharing" },
       { "service": "Sapa Addon", "description": "Add SAPA in this itinerary", "price": "quoted on request" },
-      { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,200 per person" },
-      { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,100 per SIM" },
       { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" }
     ],
     "priceVariants": [
@@ -494,7 +492,7 @@
       "Accommodation": "3 Star hotels",
       "Meals": "(3) Breakfast (1) Lunch",
       "Places covered": "Ho Chi Minh City – Cu Chi Tunnel – Mekong Delta",
-      "Visa": "e-Visa (processing 3-5 working days)"
+      "Visa": "e-Visa (processing 3-5 working days) + Pre-Arrival Information (PAI) required."
     },
     "hotels": [
       "Prague Hotel or similar (3 Star)"
@@ -505,6 +503,7 @@
       "Cu Chi Tunnel Tour",
       "Mekong Delta Tour with lunch",
       "All compulsory Tips",
+      "Single Entry E-Visa (5-7 working days)",
       "All tours on Sharing basis",
       "All airport transfers on pvt basis"
     ],
@@ -512,16 +511,13 @@
       "Flights",
       "Early check-in / late check-out",
       "Personal expenses",
-      "E-visa",
       "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
       "Meals not listed in inclusions",
       "Add-on services",
-      "GST",
-      "TCS",
+      "GST & TCS",
       "Any surcharge during festivals / black-out dates etc"
     ],
     "addons": [
-      { "service": "Visa assistance", "description": "End-to-end e-Visa filing and document check", "price": "From ₹3,500 per person" },
       { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
       { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
       { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" },
@@ -651,11 +647,10 @@
       "Accommodation": "3 Star hotels",
       "Meals": "(3) Breakfast",
       "Places covered": "Da Nang - Ba Na Hills - Hoi An",
-      "Visa": "e-Visa (processing 3-5 working days)"
+      "Visa": "e-Visa (processing 3-5 working days) + Pre-Arrival Information (PAI) required."
     },
     "hotels": [
-      "Da Nang - Sala Danang Beach Hotel or similar (3 Star)",
-      "Hoi An - Little Riverside or similar (3 Star), subject to availability"
+      "Da Nang - Cosmos Hotel or similar (3 Star)"
     ],
     "inclusions": [
       "3 nights stay with breakfast in 3 star hotel",
@@ -663,19 +658,18 @@
       "Bana Hill tour with cable car and buffet Indian lunch",
       "All tours on Sharing basis",
       "All airport transfers on pvt basis",
+      "All Tips",
       "English speaking guide",
-      "E-Visa"
+      "Single Entry E-Visa (5-7 working days)"
     ],
     "exclusions": [
       "Flights",
       "Early check-in / late check-out",
       "Personal expenses",
-      "Tips",
       "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
       "Meals that are not listed in inclusions",
       "Add-on services",
-      "GST",
-      "TCS",
+      "GST & TCS",
       "Any surcharge during festivals / black out dates etc"
     ],
     "addons": [
@@ -925,13 +919,13 @@
       "Accommodation": "3 Star hotels + 1N homestay + 1N cruise",
       "Meals": "(9) Breakfast (4) Lunch (2) Dinner",
       "Places covered": "Hanoi - Sapa - Halong Bay - Da Nang - Hoi An - Ho Chi Minh City - Mekong Delta",
-      "Visa": "e-Visa (processing 3-5 working days)"
+      "Visa": "e-Visa (processing 3-5 working days) +Pre-Arrival Information (PAI) required."
     },
     "hotels": [
       "Hanoi - La Siesta Premium Hang Be or similar (3 Star)",
       "Sapa - Hmong family homestay, Lao Chai valley",
       "Halong Bay - Deluxe overnight junk cruise, sea-view cabin",
-      "Da Nang / Hoi An - Sala Danang Beach Hotel or similar (3 Star)",
+      "Da Nang - Sala Danang Beach Hotel or similar (3 Star)",
       "Ho Chi Minh City - Silverland Yen or similar (3 Star)"
     ],
     "inclusions": [
@@ -944,12 +938,12 @@
       "All tours on Sharing basis",
       "All airport transfers on pvt basis",
       "All Tips",
+      "Single Entry E-Visa (5-7 working days)",
       "All applicable International and Domestic Flights (up to ₹48,000)"
     ],
     "exclusions": [
       "Early check-in / late check-out",
       "Personal expenses",
-      "E-visa",
       "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
       "Meals that are not listed in inclusions",
       "Add-on services",
@@ -958,7 +952,6 @@
       "Any surcharge during festivals / black out dates etc"
     ],
     "addons": [
-      { "service": "Visa assistance", "description": "End-to-end e-Visa filing and document check", "price": "From ₹3,500 per person" },
       { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
       { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
       { "service": "Hotel upgrade", "description": "Move up a star category and upgrade to 4 star hotels", "price": "₹15,000 per person extra" }
@@ -1033,7 +1026,7 @@
           "What to bring: pants above the knee (you’ll be wading), a hat, sunscreen, towel and sunglasses, swimwear for May Rut Trong and snorkelling at Gam Ghi, and a spare set of dry clothes for the ride back",
           "Note: the itinerary can change depending on weather conditions"
         ],
-        "included": "SIC AC Bus Transfer + Entrance Tickets + Local Lunch + Flycam Photos & Videos + English-Speaking Tour Guide",
+        "included": "SIC AC Bus Transfer + Hon Thom Cable car + Entrance Tickets + Local Lunch + Flycam Photos & Videos + English-Speaking Tour Guide",
         "type": "Full day",
         "meals": "Breakfast + Lunch",
         "stay": "Phu Quoc",
@@ -1100,18 +1093,18 @@
       "Accommodation": "3 Star hotels",
       "Meals": "(3) Breakfast",
       "Places covered": "Phu Quoc, Hon Thom Cable Car, Aquatopia Water Park, VinWonders, Grand World",
-      "Visa": "e-Visa (processing 3-5 working days)"
+      "Visa": "e-Visa (3-5 working days); Not required on a direct flight that doesn't enter mainland Vietnam; Pre-Arrival Information (PAI) required."
     },
     "hotels": [
       "Phu Quoc - AVS Hotel Phu Quoc or similar (3 Star)"
     ],
     "inclusions": [
       "4 Nights stay with breakfast in 3 star hotel",
-      "4 island tour on sharing basis, with water park, cable car and lunch",
+      "4 island tour on sharing basis (Aquatopia Water Park, Hon Thom Cable Car and lunch)",
       "VinWonders theme park",
       "Grand World",
       "Sunset Town with Kiss Bridge ticket",
-      "All tours on pvt basis",
+      "All tours on pvt basis except 4-island tour which is on sharing basis",
       "Tips",
       "All airport transfers on pvt basis"
     ],
@@ -1123,8 +1116,7 @@
       "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
       "Meals not listed in inclusions",
       "Add-on services",
-      "GST",
-      "TCS",
+      "GST & TCS",
       "Any surcharge during festivals / black out dates etc"
     ],
     "addons": [

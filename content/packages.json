@@ -2448,7 +2448,7 @@
     "priceVariants": [
       {
         "label": "8N / 9D",
-        "note": "Land package + 2 domestic flights",
+        "note": "Land package only, twin sharing",
         "price": 89999
       }
     ]
@@ -2458,20 +2458,21 @@
     "dest": "malaysia",
     "title": "Kuala Lumpur & Genting Highlands",
     "where": "KL · Genting",
-    "days": 5,
-    "nights": 4,
-    "price": 37999,
+    "days": 4,
+    "nights": 3,
+    "price": 17499,
     "badge": "Bestseller",
     "type": [
       "culture",
       "family"
     ],
-    "blurb": "Petronas skybridge, Batu Caves and a cable car ride into the cloud forest above Kuala Lumpur.",
+    "blurb": "Batu Caves and a cable car ride into the cloud forest above Kuala Lumpur.",
     "includes": [
-      "4★ Hotels",
-      "SkyWay Cable Car",
-      "City Tour",
-      "Breakfast"
+      "3★ Hotels",
+      "Daily Breakfast",
+      "Genting Cable Car",
+      "Batu Caves",
+      "City Tour"
     ],
     "image": "/img/genting-skytropolis.jpeg",
     "route": [
@@ -2481,10 +2482,10 @@
     "itinerary": [
       {
         "title": "Arrive Kuala Lumpur",
-        "summary": "Straight to Bukit Bintang, with the KLCC fountain show after dark.",
+        "summary": "Drop at Hotel | hotel checkin 2PM",
         "activities": [
-          "Bukit Bintang check-in",
-          "KLCC park fountain show"
+          "Hotel check-in",
+          "Explore the nearby areas, get to know the city and its culture."
         ],
         "included": "Airport Transfer + Hotel Check-in",
         "type": "Half day",
@@ -2498,13 +2499,12 @@
       },
       {
         "title": "KL city tour",
-        "summary": "Caves, palaces and the city's tallest skybridge in one day.",
+        "summary": "City tour KL Half day.",
         "activities": [
-          "Batu Caves",
-          "King's Palace and Merdeka Square",
-          "Petronas Towers skybridge"
+          "KLCC park and Petronas Twin Tower photo stop",
+          "King's Palace and Merdeka Square"
         ],
-        "included": "City Guide + Skybridge Tickets",
+        "included": "City driver cum Guide + car",
         "type": "Full day",
         "meals": "Breakfast",
         "stay": "Kuala Lumpur",
@@ -2520,36 +2520,19 @@
         "title": "Genting Highlands",
         "summary": "A cable car into the cloud forest above the city.",
         "activities": [
-          "Awana SkyWay cable car",
-          "Afternoon at Skytropolis indoor park"
+          "Genting Cable Car",
+          "30 minutes Batu Caves Temple enroute"
         ],
-        "included": "Cable Car + Theme Park Entry",
+        "included": "Cable Car Tickets + Transfers",
         "type": "Full day",
         "meals": "Breakfast",
         "stay": "Kuala Lumpur",
         "timings": [
           "08:00 AM - Breakfast and depart for Genting",
-          "10:00 AM - Awana SkyWay cable car",
+          "10:00 AM - Genting Cable Car",
           "11:30 AM - Chin Swee Caves Temple",
           "01:30 PM - Skytropolis indoor theme park",
           "06:00 PM - Return to Kuala Lumpur"
-        ]
-      },
-      {
-        "title": "Free day in KL",
-        "summary": "A day for the food street and the malls.",
-        "activities": [
-          "Jalan Alor food street",
-          "Shopping at leisure"
-        ],
-        "included": "Free Day",
-        "type": "Full day",
-        "meals": "Breakfast",
-        "stay": "Kuala Lumpur",
-        "timings": [
-          "09:00 AM - Breakfast at the hotel",
-          "11:00 AM - Free day for shopping",
-          "07:00 PM - Jalan Alor food street"
         ]
       },
       {
@@ -2572,26 +2555,51 @@
     ],
     "quickDetails": {
       "Arrival / Departure": "Kuala Lumpur (KUL) / Kuala Lumpur (KUL)",
-      "Duration": "4N / 5D",
+      "Duration": "3N / 4D",
       "Trip type": "Private departure - family friendly",
       "International flights": "Not included (booking assistance available)",
       "Domestic flights": "Not applicable",
-      "Internal transportation": "Private AC vehicle + Awana SkyWay cable car",
-      "Accommodation": "4 Star hotels",
+      "Internal transportation": "Private AC vehicle + Genting cable car",
+      "Accommodation": "3 Star hotels",
       "Meals": "(4) Breakfast",
       "Places covered": "Kuala Lumpur - Batu Caves - Genting Highlands",
-      "Visa": "Visa-free entry for Indian passport holders (up to 30 days)"
+      "Visa": "Visa-free entry for Indian passport holders (up to 30 days); MDAC required"
     },
     "hotels": [
-      "Kuala Lumpur - Furama Bukit Bintang or similar (4 Star)"
+      "Kuala Lumpur - Star Points Hotel (3 Star)"
     ],
     "priceVariants": [
       {
-        "label": "4N / 5D",
+        "label": "3N / 4D",
         "note": "Land package only, twin sharing",
-        "price": 37999
+        "price": 17499
       }
-    ]
+    ],
+    "inclusions": [
+    "3 Nights stay with breakfast in 3 star hotel in Kuala Lumpur",
+    "HD Kuala Lumpur city tour",
+    "Genting Highlands tour with cable car and Batu Cave visit",
+    "All tours on PVT basis",
+    "English speaking driver cum guide",
+    "All airport and intercity transfers"
+  ],
+  "exclusions": [
+    "Tourism Tax (approximately MYR 10 per room per night) to be paid directly at the hotel",
+    "International or Domestic flights",
+    "Early check-in / late check-out",
+    "Porterage, room service bills, laundry charges, telephone calls and other expenditure of a personal nature",
+    "Meals not listed in inclusions",
+    "Add-on services",
+    "GST",
+    "TCS",
+    "Any surcharge during festivals / blackout dates etc."
+  ],
+  "addons": [
+    {"service": "Flights", "description": "International flights from Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request"},
+    {"service": "KL tower observation deck", "description": "Add KL tower observation deck ticket", "price": "From ₹1750 per person"},
+    {"service": "Lunch at Genting", "description": "Enjoy a delicious lunch at the Spice Garden Genting Highland restaurant", "price": "From ₹1300 per person"},
+    {"service": "Petronas Twin Towers", "description": "Visit the iconic Petronas Twin Towers with PVT transfer", "price": "From ₹4900 per person"}
+  ]
   },
   {
     "id": "my-langkawi",
@@ -2608,33 +2616,32 @@
     ],
     "blurb": "Sky Bridge above the rainforest canopy, island hopping by speedboat and duty-free sunsets at Cenang.",
     "includes": [
-      "4★ Beach Resort",
+      "3★ Resort",
+      "Daily Breakfast",
       "SkyCab Tickets",
-      "Island Hopping",
-      "Breakfast"
+      "Sky bridge",
+      "Island Hopping"
     ],
     "image": "/img/eagle-square.jpg",
     "route": [
       "Langkawi",
-      "Pantai Cenang",
       "Langkawi Sky Bridge",
       "hopping island"
     ],
     "itinerary": [
       {
         "title": "Arrive Langkawi",
-        "summary": "Straight to the beach resort at Pantai Cenang.",
+        "summary": "Arrival at Airport | Transfer to Hotel.",
         "activities": [
-          "Pantai Cenang beach check-in"
+          "Hotel check-in"
         ],
         "included": "Airport Transfer + Beach Resort Check-in",
         "type": "Half day",
         "meals": "No meals",
-        "stay": "Pantai Cenang",
+        "stay": "Langkawi",
         "timings": [
           "01:00 PM - Airport pick-up at Langkawi (LGK)",
-          "02:00 PM - Beach Resort check-in",
-          "05:30 PM - Sunset at Pantai Cenang"
+          "02:00 PM - Beach Resort check-in"
         ]
       },
       {
@@ -2647,10 +2654,10 @@
           "Sky Dome",
           "Curved Sky Bridge walk"
         ],
-        "included": "SkyCab + Sky Bridge + SkyDome + 3D art musuem Tickets",
+        "included": "SkyCab + Sky Bridge + SkyDome + 3D Art Musuem Tickets",
         "type": "Full day",
         "meals": "Breakfast",
-        "stay": "Pantai Cenang",
+        "stay": "Langkawi",
         "timings": [
           "08:30 AM - Breakfast at the resort",
           "10:00 AM - SkyCab to Gunung Mat Cincang",
@@ -2664,12 +2671,12 @@
         "summary": "A boat day between a freshwater lake and a mangrove forest.",
         "activities": [
           "Dayang Bunting Lake",
-          "Eagle feeding show"
+          "island hopping"
         ],
-        "included": "Boat Tour + Guide",
+        "included": "Boat Tour + Driver Cum Guide",
         "type": "Full day",
         "meals": "Breakfast",
-        "stay": "Pantai Cenang",
+        "stay": "Langkawi",
         "timings": [
           "08:00 AM - Breakfast at the resort",
           "09:30 AM - Island-hopping speedboat departs",
@@ -2704,13 +2711,13 @@
       "International flights": "Not included (booking assistance available)",
       "Domestic flights": "Not applicable",
       "Internal transportation": "Private AC vehicle + island speedboat",
-      "Accommodation": "4 Star beach resort",
+      "Accommodation": "3 Star beach resort",
       "Meals": "(3) Breakfast",
-      "Places covered": "Pantai Cenang - Langkawi Sky Bridge - Southern islands",
+      "Places covered": "Langkawi Island - Langkawi Sky Bridge - Southern islands",
       "Visa": "Visa-free entry for Indian passport holders (up to 30 days); MDAC required"
     },
     "hotels": [
-      "Pantai Cenang, Langkawi - Bella Vista Waterfront Resort (4 Star)"
+      "Langkawi - Bella Vista Waterfront Resort (3 Star)"
     ],
     "priceVariants": [
       {
@@ -2718,6 +2725,30 @@
         "note": "Land package only, twin sharing",
         "price": 17999
       }
+    ],
+    "inclusions": [
+      "3 nights stay with breakfast in 3 star resort",
+      "Half day island hopping tour[SIC]",
+      "Fullday PVT tour Langkawi oriental village + CABLE CAR COMBO (SKYCAB, SKYDOME, SKYREX & 3D ART MUSEUM) + SKY BRIDGE",
+      "All tours on Sharing basis",
+      "All airport transfers on pvt basis",
+      "English speaking driver cum guide"
+    ],
+    "exclusions": [
+      "Tourism Tax (approximately MYR 10 per room per night) to be paid directly at the hotel",
+      "Flights",
+      "Early check-in / late check-out",
+      "Personal expenses",
+      "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
+      "Meals that are not listed in inclusions",
+      "Add-on services",
+      "GST & TCS",
+      "Any surcharge during festivals / black out dates etc"
+    ],
+    "addons": [
+      { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹700 per person" },
+      { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" },
+      { "service": "Hotel upgrade", "description": "Move up a star category and upgrade to 4 star hotels", "price": "At actuals, quoted on request" }
     ]
   },
   {
@@ -2728,21 +2759,25 @@
     "style": "Skylines, highlands, rainforest, Cable Car",
     "days": 7,
     "nights": 6,
-    "price": 64999,
+    "price": 34999,
     "badge": "Popular",
     "type": [
       "family",
       "beach",
-      "culture"
+      "culture",
+      "city life",
+      "cable car"
     ],
     "blurb": "City energy first, island time second — connected by a 55-minute domestic hop.",
     "includes": [
-      "4★ Hotels",
-      "Domestic Flight",
-      "2 Tours",
-      "All Transfers"
+      "3★ Hotels",
+      "KL and Genting tour",
+      "Genting cable car",
+      "Langkwai SkyCab & Sky Bridge",
+      "hopping island tour",
+      "All airport Transfers"
     ],
-    "image": "/img/genting-skytropolis.jpeg",
+    "image": "/img/genting-cable.jpeg",
     "route": [
       "Kuala Lumpur",
       "Genting Highlands",
@@ -2751,11 +2786,12 @@
     "itinerary": [
       {
         "title": "Arrive Kuala Lumpur",
-        "summary": "Straight to Bukit Bintang to settle in.",
+        "summary": "Drop at Hotel   |   hotel checkin 2PM.",
         "activities": [
-          "Bukit Bintang check-in"
+          "KL hotel check-in",
+          "Explore the nearby areas, get to know the city and its culture."
         ],
-        "included": "Airport Transfer + Hotel Check-in",
+        "included": "Airport Transfer + Hotel Check-in + Day free at leisure",
         "type": "Half day",
         "meals": "No meals",
         "stay": "Kuala Lumpur",
@@ -2767,21 +2803,17 @@
       },
       {
         "title": "KL city tour",
-        "summary": "Caves and skybridges in one full city day.",
+        "summary": "City tour KL Half day.",
         "activities": [
-          "Batu Caves",
-          "Petronas Towers skybridge"
+          "KLCC park and Petronas Twin Tower photo stop",
+          "King's Palace and Merdeka Square photo stop"
         ],
-        "included": "City Guide + Skybridge Tickets",
-        "type": "Full day",
+        "included": "City driver cum Guide + car",
+        "type": "Half day",
         "meals": "Breakfast",
         "stay": "Kuala Lumpur",
         "timings": [
-          "08:00 AM - Breakfast at the hotel",
-          "09:30 AM - Batu Caves",
-          "01:00 PM - Merdeka Square",
-          "03:30 PM - Petronas Towers skybridge",
-          "07:30 PM - KLCC fountain show"
+          "08:00 AM - Breakfast at the hotel"
         ]
       },
       {
@@ -2789,7 +2821,7 @@
         "summary": "A cable car ride and a cliffside temple in the cloud forest.",
         "activities": [
           "Cable car ride",
-          "Chin Swee Caves Temple"
+          "30 minutes Batu Caves Temple enroute"
         ],
         "included": "Cable Car Tickets",
         "type": "Full day",
@@ -2804,21 +2836,21 @@
         ]
       },
       {
-        "title": "Fly to Langkawi",
+        "title": "Arrival in Langkawi",
         "summary": "A short domestic hop trades the city for the coast.",
         "activities": [
           "Domestic flight to Langkawi",
-          "Evening at Pantai Cenang"
+          "Evening at Hotel, explore near by areas/beach"
         ],
-        "included": "Domestic Flight",
+        "included": "2 Airport transfers",
         "type": "Full day",
         "meals": "Breakfast",
-        "stay": "Pantai Cenang",
+        "stay": "Langkawi",
         "timings": [
           "09:00 AM - Checkout and airport transfer",
-          "12:00 PM - Flight to Langkawi",
-          "02:00 PM - Beach resort check-in",
-          "05:30 PM - Sunset at Pantai Cenang"
+          "01:10 PM - Drop at Langkawi hotel",
+          "02:00 PM - Resort check-in",
+          "05:30 PM - Sunset at LAngkawi"
         ]
       },
       {
@@ -2828,10 +2860,10 @@
           "Rainforest canopy cable car",
           "Sky Bridge walk"
         ],
-        "included": "SkyCab Tickets",
+        "included": "SkyCab Tickets +sky bridge + PVt car",
         "type": "Full day",
         "meals": "Breakfast",
-        "stay": "Pantai Cenang",
+        "stay": "Langkawi",
         "timings": [
           "08:30 AM - Breakfast at the resort",
           "10:00 AM - SkyCab to Gunung Mat Cincang",
@@ -2845,10 +2877,10 @@
         "activities": [
           "Speedboat tour of the southern islands"
         ],
-        "included": "Boat Tour + Guide",
+        "included": "Boat Tour + Driver cum Guide",
         "type": "Full day",
         "meals": "Breakfast",
-        "stay": "Pantai Cenang",
+        "stay": "Langkawi",
         "timings": [
           "08:00 AM - Breakfast at the resort",
           "09:30 AM - Island-hopping speedboat",
@@ -2880,26 +2912,27 @@
       "Trip type": "Private departure",
       "Flights": "Not included (booking assistance available)",
       "Internal transportation": "Private AC vehicle + cable car + island speedboat",
-      "Accommodation": "4 Star hotels and beach resort",
+      "Accommodation": "3 Star hotels and beach resort",
       "Meals": "(6) Breakfast",
       "Places covered": "Kuala Lumpur - Genting Highlands - Langkawi",
       "Visa": "Visa-free entry for Indian passport holders (up to 30 days)"
     },
     "hotels": [
-      "Kuala Lumpur - Furama Bukit Bintang or similar (4 Star)",
-      "Pantai Cenang, Langkawi - BellaVista Waterfront Resort or similar (4 Star)"
+      "Kuala Lumpur - Star Points Hotel",
+      "Langkawi - BellaVista Waterfront Resort"
     ],
-    "inclusions": [
-    "3 Nights stay with breakfast in 4 star hotel in Kuala Lumpur",
-    "3 Nights stay with breakfast in 4 star resort in Langkawi",
+  "inclusions": [
+    "3 Nights stay with breakfast in 3 star hotel in Kuala Lumpur",
+    "3 Nights stay with breakfast in 3 star resort in Langkawi",
     "HD Kuala Lumpur city tour",
     "Genting Highlands tour with cable car and Batu Cave visit",
     "Sky Bridge & SkyCab tour",
-    "Langkawi island-hopping tour",
-    "All tours on sharing basis",
+    "Langkawi island-hopping tour (sharing)",
+    "All tours on PVT basis or as mentioned in the itinerary",
     "All airport and intercity transfers"
   ],
   "exclusions": [
+    "Tourism Tax (approximately MYR 10 per room per night) to be paid directly at the hotel",
     "International or Domestic flights",
     "Early check-in / late check-out",
     "Porterage, room service bills, laundry charges, telephone calls and other expenditure of a personal nature",
@@ -2907,36 +2940,20 @@
     "Add-on services",
     "GST",
     "TCS",
-    "Any surcharge during festivals / blackout dates etc.",
-    "Tourism Tax (approximately MYR 10 per room per night) to be paid directly at the hotel"
+    "Any surcharge during festivals / blackout dates etc."
   ],
   "addons": [
-    {
-      "service": "Travel insurance",
-      "description": "Medical, baggage and trip-cancellation cover",
-      "price": "From ₹1,400 per person"
-    },
-    {
-      "service": "International SIM / eSIM",
-      "description": "Data pack active from landing, multiple variants",
-      "price": "From ₹1,500 per SIM"
-    },
-    {
-      "service": "Flights",
-      "description": "International flights from Delhi, Mumbai, Bengaluru or your home city",
-      "price": "At actuals, quoted on request"
-    },
-    {
-      "service": "Hotel upgrade",
-      "description": "Upgrade to a higher star category or premium beach resort",
-      "price": "On request"
-    }
+    {"service": "KL tower observation deck", "description": "Add KL tower observation deck ticket", "price": "From ₹1750 per person"},
+    {"service": "Lunch at Genting", "description": "Enjoy a delicious lunch at the Spice Garden Genting Highland restaurant", "price": "From ₹1300 per person"},
+    {"service": "Petronas Twin Towers", "description": "Visit the iconic Petronas Twin Towers with PVT transfer", "price": "From ₹4900 per person"},
+    {"service": "Flights", "description": "International flights from Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request"},
+    {"service": "Hotel upgrade", "description": "Upgrade to a higher star category or premium beach resort", "price": "On request"}
   ],
     "priceVariants": [
       {
         "label": "6N / 7D",
-        "note": "Land package + 1 domestic flight",
-        "price": 64999
+        "note": "Land package only, twin sharing",
+        "price": 34999
       }
     ]
   }

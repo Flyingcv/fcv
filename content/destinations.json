@@ -161,6 +161,85 @@
       "/img/Ulun-Danu.webp"
     ]
   },
+  "malaysia": {
+    "slug": "malaysia",
+    "name": "Malaysia",
+    "iata": "KUL",
+    "tagline": "Skylines, highlands, rainforest",
+    "blurb": "Twin towers over a food capital, a casino city in the clouds an hour away, and Langkawi’s duty-free beaches. Malaysia packs three completely different holidays into one short-haul flight.",
+    "cover": "/destination-banners/malaysia.webp",
+    "hero": "/destination-banners/malaysia.webp",
+    "cities": [
+      "Kuala Lumpur",
+      "Genting Highlands",
+      "Langkawi",
+      "Penang",
+      "Malacca"
+    ],
+    "facts": {
+      "Flight time": "4h 45m direct",
+      "Best season": "Dec — Apr",
+      "Currency": "MYR (RM)",
+      "Visa": "Visa-free · 30 days · MDAC is mandatory"
+    },
+    "perDay": 5000,
+    "flight": 21000,
+    "fromPrice": 17999,
+    "highlights": [
+      [
+        "Petronas Towers skybridge",
+        "Level 86 observation deck plus the KLCC fountain show after dark."
+      ],
+      [
+        "Genting Highlands",
+        "Awana SkyWay cable car into the cloud forest, Skytropolis indoor theme park."
+      ],
+      [
+        "Batu Caves",
+        "272 rainbow steps up to a limestone cathedral guarded by a 42m gold statue."
+      ],
+      [
+        "Langkawi Sky Bridge",
+        "Cable car to Gunung Mat Cincang and a curved bridge suspended over the rainforest."
+      ],
+      [
+        "Island hopping & eagle feeding",
+        "Dayang Bunting lake, Beras Basah beach and the Kilim geoforest mangroves."
+      ]
+    ],
+    "itinerary": [
+      [
+        "Arrive Kuala Lumpur",
+        "Transfer to Bukit Bintang. Evening at the KLCC park fountain show and Jalan Alor food street."
+      ],
+      [
+        "KL city tour",
+        "Batu Caves, King’s Palace, Merdeka Square and the Petronas Towers skybridge."
+      ],
+      [
+        "Genting Highlands",
+        "Awana SkyWay, Chin Swee temple, and an afternoon at Skytropolis before returning to KL."
+      ],
+      [
+        "Fly to Langkawi",
+        "Beach afternoon at Pantai Cenang, sunset dinner on the sand."
+      ],
+      [
+        "Island hopping & SkyCab",
+        "Morning island hop, afternoon Sky Bridge and the Panorama cable car."
+      ],
+      [
+        "Departure",
+        "Duty-free shopping in Kuah town before the transfer to LGK."
+      ]
+    ],
+    "gallery": [
+      "/img/genting-skytropolis.jpeg",
+      "/img/genting-cable.jpeg",
+      "/img/eagle-square.jpg",
+      "/img/batu.jpeg"
+    ]
+  },
   "thailand": {
     "slug": "thailand",
     "name": "Thailand",
@@ -239,85 +318,6 @@
       "/img/Phi-Phi.webp",
       "/img/Wat-Ratchanatdaram.webp",
       "/img/krabi.webp"
-    ]
-  },
-  "malaysia": {
-    "slug": "malaysia",
-    "name": "Malaysia",
-    "iata": "KUL",
-    "tagline": "Skylines, highlands, rainforest",
-    "blurb": "Twin towers over a food capital, a casino city in the clouds an hour away, and Langkawi’s duty-free beaches. Malaysia packs three completely different holidays into one short-haul flight.",
-    "cover": "/destination-banners/malaysia.webp",
-    "hero": "/destination-banners/malaysia.webp",
-    "cities": [
-      "Kuala Lumpur",
-      "Genting Highlands",
-      "Langkawi",
-      "Penang",
-      "Malacca"
-    ],
-    "facts": {
-      "Flight time": "4h 45m direct",
-      "Best season": "Dec — Apr",
-      "Currency": "MYR (RM)",
-      "Visa": "Visa-free · 30 days · MDAC is mandatory"
-    },
-    "perDay": 5000,
-    "flight": 21000,
-    "fromPrice": 17999,
-    "highlights": [
-      [
-        "Petronas Towers skybridge",
-        "Level 86 observation deck plus the KLCC fountain show after dark."
-      ],
-      [
-        "Genting Highlands",
-        "Awana SkyWay cable car into the cloud forest, Skytropolis indoor theme park."
-      ],
-      [
-        "Batu Caves",
-        "272 rainbow steps up to a limestone cathedral guarded by a 42m gold statue."
-      ],
-      [
-        "Langkawi Sky Bridge",
-        "Cable car to Gunung Mat Cincang and a curved bridge suspended over the rainforest."
-      ],
-      [
-        "Island hopping & eagle feeding",
-        "Dayang Bunting lake, Beras Basah beach and the Kilim geoforest mangroves."
-      ]
-    ],
-    "itinerary": [
-      [
-        "Arrive Kuala Lumpur",
-        "Transfer to Bukit Bintang. Evening at the KLCC park fountain show and Jalan Alor food street."
-      ],
-      [
-        "KL city tour",
-        "Batu Caves, King’s Palace, Merdeka Square and the Petronas Towers skybridge."
-      ],
-      [
-        "Genting Highlands",
-        "Awana SkyWay, Chin Swee temple, and an afternoon at Skytropolis before returning to KL."
-      ],
-      [
-        "Fly to Langkawi",
-        "Beach afternoon at Pantai Cenang, sunset dinner on the sand."
-      ],
-      [
-        "Island hopping & SkyCab",
-        "Morning island hop, afternoon Sky Bridge and the Panorama cable car."
-      ],
-      [
-        "Departure",
-        "Duty-free shopping in Kuah town before the transfer to LGK."
-      ]
-    ],
-    "gallery": [
-      "/img/genting-skytropolis.jpeg",
-      "/img/genting-cable.jpeg",
-      "/img/eagle-square.jpg",
-      "/img/batu.jpeg"
     ]
   }
 }

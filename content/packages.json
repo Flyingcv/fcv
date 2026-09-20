@@ -2461,7 +2461,7 @@
     "days": 4,
     "nights": 3,
     "price": 17499,
-    "badge": "Bestseller",
+    "badge": "Value",
     "type": [
       "culture",
       "family"
@@ -2609,7 +2609,7 @@
     "days": 4,
     "nights": 3,
     "price": 17999,
-    "badge": "Popular",
+    "badge": "Bestseller",
     "type": [
       "beach",
       "honeymoon"
@@ -2754,7 +2754,7 @@
   {
     "id": "my-twin-city",
     "dest": "malaysia",
-    "title": "Malaysia Twin City — KL & Langkawi",
+    "title": "Malaysia Twin City — Langkawi & KL with Genting",
     "where": "KL → Langkawi",
     "style": "Skylines, highlands, rainforest, Cable Car",
     "days": 7,

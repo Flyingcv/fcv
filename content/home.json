@@ -11,8 +11,8 @@
     "tickerLabel": "NOW BOARDING",
     "tickerItems": [
       { "code": "SGN", "price": 18999 },
-      { "code": "DPS", "price": 38999 },
-      { "code": "BKK", "price": 24999 }
+      { "code": "KUL", "price": 17499 },
+      { "code": "BKK", "price": 19499 }
     ],
     "scrollCueLabel": "Scroll"
   },

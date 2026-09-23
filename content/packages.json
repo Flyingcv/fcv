@@ -1,197 +1,5 @@
 [
   {
-    "id": "vn-halong-heritage",
-    "dest": "vietnam",
-    "title": "Hanoi · Ninh Binh · Halong Bay",
-    "where": "North Vietnam",
-    "style": "Limestone bays, train street, boating, kayaking",
-    "days": 5,
-    "nights": 4,
-    "price": 39999,
-    "badge": "Premium",
-    "type": [
-      "culture",
-      "nature"
-    ],
-    "blurb": "Old Quarter mornings, a Tam Coc rowboat afternoon and a night anchored among the karsts of Halong Bay.",
-    "includes": [
-      "4★ Hotel",
-      "4★ Overnight Premium Cruise",
-      "Daily Breakfast",
-      "Kayaking",
-      "Ninh Binh Tour",
-      "Boat ride",
-      "Airport Transfers"
-    ],
-    "image": "/img/halong.webp",
-    "route": [
-      "Hanoi",
-      "Ninh Binh",
-      "Halong Bay"
-    ],
-    "itinerary": [
-      {
-        "title": "Arrive Hanoi | Hanoi City tour",
-        "summary": "Airport meet-and-greet and a transfer to hotel. Day inside Vietnam's capital — from Ho Chi Minh's resting place to its oldest university.",
-        "activities": [
-          "Airport pick-up and private transfer to your hotel (checkin time is 2:00 PM)",
-          "Ho Chi Minh Mausoleum complex and the One Pillar Pagoda",
-          "Temple of Literature, Vietnam's first national university",
-          "Guided Old Quarter walking tour"
-        ],
-        "included": "Airport Transfer + Hotel Check-in + Half Day Hanoi City Tour (option to choose Morning tour or afternoon tour)",
-        "type": "Half day",
-        "meals": "No meals",
-        "stay": "Hanoi",
-        "timings": [
-          "09:00 AM - Airport pick-up at Noi Bai (HAN)",
-          "02:00 PM - Old Quarter hotel check-in",
-          "05:00 PM - Egg-coffee walk with your guide",
-          "08:00 PM - Water puppet show at Hoan Kiem Lake"
-        ]
-      },
-      {
-        "title": "Ninh Binh day trip (Tam Coc + Hoa Lu + Boat Ride + Lunch)",
-        "summary": "A day among Ninh Binh's limestone valleys — often called \"Halong Bay on land\".",
-        "activities": [
-          "07:00-07:30: Our tour guide and driver pick you up at your hotel in the Old Quarter. If your hotel is outside the Old Quarter area, the meet-up point will be at the Hanoi Opera House. From there, we will travel by air-conditioned bus to Ninh Binh, where we will spend the day exploring the highlights of the region.",
-          "09:40: Having a short break for 20 minutes.",
-          "10:30: After arriving in Ninh Binh province, the guide takes you to visit Hoa Lu – the Ancient Royal capital of VietNam. We will visit Dinh king temple and Le king temple, in the 10th century, finding out the heroic histories of these two Kings in Chinese Wars. After that, we went to Tam Coc (10 km far from Hoa Lu).",
-          "12:00: Enjoying lunch at local restaurant with great local cuisine. After lunch you will get on bamboo boat – rowed by the local people – in Hoang Long River to visit Tam Coc (three caves) on the way. You pass through three enormous caves that provide a brief respite from the intense summer sun. It takes approximately two hours to go up and down the river and along the way, you witness local fisherfolk, village life along the river and, of course, the striking limestone karst formations that Tam Coc is famous for.",
-          "16:30: Getting on the bus and going back to Ha Noi.",
-          "19:00: Arriving Hanoi, drop off at hotel located in Old Quarter or Opera House. "
-        ],
-        "included": "Ac Bus transfer from Hanoi + Rowboat Ride + Hoa Lu + Bicycle + sightseeing entrance tickets",
-        "type": "Full day",
-        "meals": "Breakfast + Lunch",
-        "stay": "Hanoi",
-        "timings": [
-          "07:30 AM - Depart Hanoi for Ninh Binh",
-          "10:00 AM - Tam Coc rowboat through the caves",
-          "01:00 PM - Local lunch",
-          "02:30 PM - Cycle to Hoa Lu ancient capital",
-          "04:00 PM - Mua Cave climb for the valley panorama",
-          "07:30 PM - Return to Hanoi"
-        ]
-      },
-      {
-        "title": "Transfer to Halong Bay Cruise | Enjoy your Stay & Activities on cruise",
-        "summary": "Board a deluxe overnight junk and sail out among 1,600 limestone islands.",
-        "activities": [
-          "Board the deluxe junk and cruise into Halong Bay",
-          "Kayak into Luon Cave's hidden lagoon",
-          "Squid fishing off the deck after dinner"
-        ],
-        "included": "AC Luxury Limousine sharing transfer + Overnight Cruise + All Meals + Kayaking",
-        "type": "Full day",
-        "meals": "Breakfast + Lunch + Dinner",
-        "stay": "Halong Bay cruise",
-        "timings": [
-          "07:30 AM - Checkout and transfer to Halong Bay",
-          "11:30 AM - Board the deluxe junk, welcome drink",
-          "01:00 PM - Lunch on board",
-          "03:00 PM - Kayak into Luon Cave lagoon",
-          "07:00 PM - Dinner on board",
-          "09:00 PM - Squid fishing off the deck"
-        ]
-      },
-      {
-        "title": "Return to Hanoi Hotel from Cruise | Evening Free at Leisure",
-        "summary": "A slow morning on the water before the cruise heads back to Hanoi.",
-        "activities": [
-          "06:30: Sunrise & tai chi session on the sundeck",
-          "07:00: Light Breakfast is served in restaurant",
-          "08:00-09:00: Explore the Sung Sot Cave",
-          "09:30: Return to boat and checkout; Have have brunch in restaurant while the boat sails back to pier. Settle the bill at the end of trip for drinks and direct orders.",
-          "11:30: Cruise back to the Halong Bay harbour",
-          "Take the Luxury Limousine Van to return to Hanoi",
-          "3:30-4:00: Drop at hotel",
-          "Free evening back in the Hanoi Old Quarter; Take the evening free at leisure, enjoy shopping in old quarter market , go for water puppet show or just take a walking tour around Hoan Kiem lake if you are staying nearby old quarters.",
-          "Note: This is the standard itinerary for overnight cruises. Itinerary might have slight change depending upon cruise to cruise."
-        ],
-        "included": "Cruise Breakfast/Brunch + Return Transfer",
-        "type": "Half day",
-        "meals": "Breakfast + Brunch",
-        "stay": "Hanoi",
-        "timings": [
-          "06:30 AM - Sunrise tai chi on the sundeck",
-          "08:00 AM - Breakfast on board",
-          "11:00 AM - Disembark at Halong harbour",
-          "03:00 PM - Arrive Hanoi, hotel check-in",
-          "07:00 PM - Free evening in the Old Quarter"
-        ]
-      },
-      {
-        "title": "Departure",
-        "summary": "A free morning before the flight home.",
-        "activities": [
-          "Free morning for souvenir shopping and cafés",
-          "Private transfer to Noi Bai International Airport"
-        ],
-        "included": "Airport Transfer",
-        "type": "Half day",
-        "meals": "Breakfast",
-        "stay": "-",
-        "timings": [
-          "08:00 AM - Breakfast at hotel",
-          "10:00 AM - Free morning for souvenir shopping",
-          "12:00 PM - Checkout and transfer to Noi Bai Airport"
-        ]
-      }
-    ],
-    "quickDetails": {
-      "Arrival / Departure": "Hanoi (HAN) / Hanoi (HAN)",
-      "Duration": "4N / 5D",
-      "Trip type": "Private departure",
-      "International flights": "Not included (booking assistance available)",
-      "Domestic flights": "Not applicable",
-      "Internal transportation": "Private AC vehicle + overnight junk cruise",
-      "Accommodation": "4 Star hotel + 1N 4 Star cruise cabin",
-      "Meals": "(5) Breakfast (1) Brunch (2) Lunch (1) Dinner",
-      "Places covered": "Hanoi - Ninh Binh - Halong Bay",
-      "Visa": "e-Visa (processing 3-5 working days) + Pre-Arrival Information (PAI) required."
-    },
-    "hotels": [
-      "Hanoi - Army Hotel (sup room) or similar (4 Star)",
-      "Halong Bay - Le Journey Premium cruise, DLX cabin (4 Star)"
-    ],
-    "inclusions": [
-      "3 Nights stay with breakfast in 4 star hotel in Hanoi",
-      "1 Night stay with all meals in a 4 star Overnight cruise",
-      "HalfDay City tour",
-      "Ninh Binh tour with lunch",
-      "Halong Bay Cruise transfer in Luxury Limousine van on Sharing basis",
-      "Single Entry E-Visa (5-7 working days)",
-      "English speaking guide during",
-      "All Tips",
-      "All tours on Sharing basis",
-      "All airport transfers on pvt basis"
-    ],
-    "exclusions": [
-      "Flights",
-      "Early check-in / late check-out",
-      "Personal expenses",
-      "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
-      "Meals not listed in inclusions",
-      "Any Add-on services listed below",
-      "GST & TCS",
-      "Any surcharge during festivals / black out dates etc"
-    ],
-    "addons": [
-      { "service": "Sapa Addon", "description": "Add SAPA in this itinerary", "price": "quoted on request" },
-      { "service": "Travel insurance", "description": "Medical, baggage and trip-cancellation cover", "price": "From ₹1,400 per person" },
-      { "service": "International SIM / eSIM", "description": "Data pack active from landing, multiple variants", "price": "From ₹1,500 per SIM" },
-      { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" }
-    ],
-    "priceVariants": [
-      {
-        "label": "4N / 5D",
-        "note": "Land package only, twin sharing",
-        "price": 39999
-      }
-    ]
-  },
-  {
     "id": "vn-hanoi-heritage",
     "dest": "vietnam",
     "title": "Hanoi · Ninh Binh · Halong Bay",
@@ -199,7 +7,7 @@
     "style": "Limestone bays, train street, boating, kayaking",
     "days": 4,
     "nights": 3,
-    "price": 29499,
+    "price": 30999,
     "badge": "Premium",
     "type": [
       "culture",
@@ -276,7 +84,7 @@
           "18h00- 18h30: Disembark for a bus ride back to Hanoi, short break on the way.",
           "21h00 – 21h30: Drop off at your hotel/stay, trip ends."
         ],
-        "included": "AC Shuttle bus sharing transfer + Premium 5★ day Cruise + indian lunch + Kayaking",
+        "included": "AC Shuttle bus sharing transfer + Premium 5★ day Cruise + Indian Lunch + Kayaking",
         "type": "Full day",
         "meals": "Breakfast + Lunch",
         "stay": "Hanoi",
@@ -314,7 +122,7 @@
       "International flights": "Not included (booking assistance available)",
       "Domestic flights": "Not applicable",
       "Internal transportation": "Private AC vehicle",
-      "Accommodation": "4 Star premium hotel",
+      "Accommodation": "4★ Premium hotel",
       "Meals": "(3) Breakfast (2) Lunch",
       "Places covered": "Hanoi - Ninh Binh - Halong Bay",
       "Visa": "e-Visa (processing 3-5 working days) + Pre-Arrival Information (PAI) required."
@@ -324,15 +132,15 @@
       "Halong Bay - Deluxe 4 star overnight cruise (Le Journey Premium or Syrena -DLX cabin) (if choosing overnight cruise add-on)"
     ],
     "inclusions": [
-      "3 Nights stay with breakfast in Premium 4 star hotel in Hanoi",
+      "3 Nights stay with breakfast in Premium 4★ hotel in Hanoi",
       "HalfDay City tour",
-      "Ninh Binh tour with lunch",
+      "Ninh Binh tour with lunch (Tam Coc, Hoa Lu, Boat Ride)",
       "5 Star Premium Halong Bay Day Cruise with indian lunch",
       "Single Entry E-Visa (5-7 working days)",
       "English speaking guide during",
       "All Tips",
       "All tours on Sharing AC shuttle basis",
-      "All airport transfers on pvt basis"
+      "All airport transfers on PVT basis"
     ],
     "exclusions": [
       "Flights",
@@ -345,8 +153,6 @@
       "Any surcharge during festivals / black out dates etc"
     ],
     "addons": [
-      { "service": "Luxury Limousine", "description": "Upgrade all sightseeing in Limousine minivan on sharing basis", "price": "₹1,500 per person" },
-      { "service": "Overnight Cruise", "description": "Upgrade the Day tour of Halong Bay to 4 star Overnight Cruise with all meals and activities with 2 way Limousine minivan transfer.", "price": "₹7,500 per person on twin sharing" },
       { "service": "Sapa Addon", "description": "Add SAPA in this itinerary", "price": "quoted on request" },
       { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or your home city", "price": "At actuals, quoted on request" }
     ],
@@ -354,17 +160,17 @@
       {
         "label": "3N / 4D",
         "note": "Land package only, twin sharing",
-        "price": 29499
-      },
-      {
-        "label": "3N / 4D",
-        "note": "All sightseeing in Luxury Limousine Minivan on sharing basis",
         "price": 30999
       },
       {
         "label": "3N / 4D",
-        "note": "Upgrade the Day tour of Halong Bay to 4 star Overnight Cruise with all local meals and activities and 2 way Limousine minivan transfer.",
-        "price": 36999
+        "note": "All sightseeing in Luxury Limousine Minivan on sharing basis",
+        "price": 32999
+      },
+      {
+        "label": "3N / 4D",
+        "note": "Upgrade the Day tour of Halong Bay to 4 star Overnight Cruise with all local meals and activities and 2 way Limousine minivan transfer + All tours with Limousine minivan.",
+        "price": 38999
       }
     ]
   },
@@ -539,15 +345,16 @@
     "style": "Lantern Streets, Lantern boat, Theme park, Cable car",
     "days": 4,
     "nights": 3,
-    "price": 42999,
+    "price": 24499,
     "badge": "Short break",
     "type": [
       "culture",
-      "beach"
+      "beach",
+      "theme park"
     ],
     "blurb": "Golden Bridge above the clouds, My Khe beach afternoons and lantern-lit evenings in the Ancient Town.",
     "includes": [
-      "3★ Hotels",
+      "4★ Hotels",
       "Ba Na Hills",
       "Basket Boat",
       "Coconut Forest",
@@ -565,8 +372,8 @@
         "summary": "Straight to the coast — check in, then watch Da Nang's bridges light up after dark.",
         "activities": [
           "Airport pick-up and transfer to your Da Nang hotel",
-          "Sunset at My Khe Beach",
-          "Dragon Bridge fire-breathing show (weekend evenings)"
+          "Explore Sunset at My Khe Beach",
+          "Explore Dragon Bridge fire-breathing show (weekend evenings)"
         ],
         "included": "Airport Transfer + Hotel Check-in",
         "type": "Half day",
@@ -587,9 +394,9 @@
           "Golden Bridge, held up by giant stone hands",
           "French Village and Fantasy Park theme park"
         ],
-        "included": "Cable Car + Ba Na Hills Entry",
+        "included": "Cable Car + Ba Na Hills Entry + Sharing Transfer + Buffet Indian Lunch",
         "type": "Full day",
-        "meals": "Breakfast",
+        "meals": "Breakfast + Buffet Lunch",
         "stay": "Da Nang",
         "timings": [
           "07:30 AM - Breakfast and depart for Ba Na Hills",
@@ -607,10 +414,10 @@
           "Basket-boat ride through the coconut forest on the Thu Bon river",
           "Evening lantern walk through the Ancient Town"
         ],
-        "included": "Basket Boat Ride + Walking Tour",
+        "included": "Sharing Transfer + Coconut Forest + Basket Boat Ride + Walking Tour + Lantern Boat Ride",
         "type": "Full day",
-        "meals": "Breakfast",
-        "stay": "Hoi An / Da Nang",
+        "meals": "Breakfast + Dinner",
+        "stay": "Da Nang",
         "timings": [
           "09:00 AM - Transfer to Hoi An",
           "10:30 AM - Tailor-shop visit for made-to-measure orders",
@@ -650,11 +457,13 @@
       "Visa": "e-Visa (processing 3-5 working days) + Pre-Arrival Information (PAI) required."
     },
     "hotels": [
-      "Da Nang - Cosmos Hotel or similar (3 Star)"
+      "Da Nang - Yarra Ocean Suite Hotel/ Santa Luxury Hotel/ The Code Hotel and Spa or similar (4 Star)",
+      "Da Nang - Minh Toan Safi Ocean Hotel/ Stella Maris Hotel or similar (4 Star Premium Hotel)(if choosing 4★ upgrade add-on)"
     ],
     "inclusions": [
-      "3 nights stay with breakfast in 3 star hotel",
-      "Coconut forest and Hoi An tour",
+      "3 nights stay with breakfast in 4★ hotel",
+      "Coconut forest and Hoi An tour with basket boat ride",
+      "Lantern Boat ride",
       "Bana Hill tour with cable car and buffet Indian lunch",
       "All tours on Sharing basis",
       "All airport transfers on pvt basis",
@@ -681,8 +490,13 @@
     "priceVariants": [
       {
         "label": "3N / 4D",
-        "note": "Land package only, twin sharing",
-        "price": 42999
+        "note": "Land package only with 4 star hotel, twin sharing",
+        "price": 24499
+      },
+      {
+        "label": "3N / 4D",
+        "note": "With Upgraded Premium 4★ hotel, twin sharing",
+        "price": 26999
       }
     ]
   },
@@ -1096,7 +910,7 @@
       "Visa": "e-Visa (3-5 working days); Not required on a direct flight that doesn't enter mainland Vietnam; Pre-Arrival Information (PAI) required."
     },
     "hotels": [
-      "Phu Quoc - AVS Hotel Phu Quoc or similar (3 Star)"
+      "Phu Quoc - AVS Hotel Phu Quoc or similar (4 Star)"
     ],
     "inclusions": [
       "4 Nights stay with breakfast in 3 star hotel",
@@ -1139,43 +953,44 @@
   {
     "id": "bali-honeymoon",
     "dest": "bali",
-    "title": "Bali Honeymoon — Villas & Volcanoes",
-    "where": "Seminyak → Ubud",
-    "days": 6,
-    "nights": 5,
-    "price": 74999,
+    "title": "Bali Honeymoon — Temples & Volcanoes",
+    "where": "Kuta → Ubud",
+    "days": 5,
+    "nights": 4,
+    "price": 12499,
     "badge": "Honeymoon",
     "type": [
       "honeymoon",
       "luxury"
     ],
-    "blurb": "Private pool villas, a floating breakfast, Kecak fire dance at Uluwatu and a candlelit dinner on the sand.",
+    "blurb": "Kintamani tour, Ubud palace, Kintamani volcano, Tanah Lot Temple, Uluwatu Temple tour",
     "includes": [
-      "Pool Villas",
-      "Floating Breakfast",
-      "Couple Spa",
-      "Romantic Dinner"
+      "Kintamani Tour",
+      "Daily Breakfast",
+      "Ubud Market",
+      "Tanah Lot Temple",
+      "Uluwatu Temple Tour"
+
     ],
     "image": "/img/Ubud.webp",
     "route": [
-      "Seminyak",
-      "Uluwatu",
+      "Bali Denpasar",
+      "Kuta",
       "Ubud",
-      "Kintamani"
+      "Uluwatu"
     ],
     "itinerary": [
       {
         "title": "Arrive Denpasar",
-        "summary": "Straight to a private pool villa, then a first sunset together.",
+        "summary": "Straight to Kuta, then a first sunset together.",
         "activities": [
-          "Private transfer to your Seminyak pool villa",
-          "Sunset at Double Six Beach",
-          "Seafood grill dinner in Jimbaran"
+          "Private transfer to your hotel",
+          "Flower Garlands Welcome"
         ],
-        "included": "Private Transfer + Villa Check-in",
+        "included": "Private Transfer + Hotel Check-in",
         "type": "Half day",
         "meals": "No meals",
-        "stay": "Seminyak",
+        "stay": "Kuta",
         "timings": [
           "01:00 PM - Airport pick-up at Denpasar (DPS)",
           "03:00 PM - Pool villa check-in",
@@ -1184,17 +999,17 @@
         ]
       },
       {
-        "title": "Uluwatu & the south",
-        "summary": "Clifftop beaches by day, fire dance by dusk.",
+        "title": "Kintamani Tour",
+        "summary": "Kintamani tour visit celuk & mas village, ubud palace, ubud market, kintamani volcano, agro tourism coffee plantation + Rice Terrace",
         "activities": [
-          "Padang Padang Beach",
-          "Uluwatu clifftop temple",
-          "Kecak fire dance at sunset"
+          "Kintamani tour",
+          "Kintamani Volcano",
+          "Rice Terrace"
         ],
-        "included": "Temple Entry + Kecak Show Tickets",
+        "included": "Kintamani + Ubud market + Rice Terrace",
         "type": "Full day",
         "meals": "Breakfast",
-        "stay": "Seminyak",
+        "stay": "Kuta",
         "timings": [
           "08:30 AM - Breakfast at the villa",
           "10:00 AM - Padang Padang Beach",
@@ -1204,16 +1019,16 @@
         ]
       },
       {
-        "title": "Move to Ubud",
-        "summary": "From the coast to the rice terraces and holy springs of the interior.",
+        "title": "Tanah Lot Temple",
+        "summary": "Tanah Lot and Uluwatu Temple tour.",
         "activities": [
-          "Tegallalang rice terraces",
-          "Tirta Empul holy spring purification ritual"
+          "Tanah Lot Temple",
+          "Uluwatu Temple Tour"
         ],
-        "included": "Private Car + Entry Tickets",
-        "type": "Full day",
+        "included": "Private Car + Entry",
+        "type": "Half day",
         "meals": "Breakfast",
-        "stay": "Ubud",
+        "stay": "Kuta",
         "timings": [
           "09:00 AM - Checkout and transfer to Ubud",
           "11:00 AM - Tegallalang rice terraces",
@@ -1222,50 +1037,10 @@
         ]
       },
       {
-        "title": "Mount Batur sunrise",
-        "summary": "A 2am start rewarded with breakfast above the clouds.",
-        "activities": [
-          "Guided summit trek starting at 2am",
-          "Breakfast steamed over the volcano vent",
-          "Natural hot springs afterwards"
-        ],
-        "included": "Trekking Guide + Breakfast + Hot Springs",
-        "type": "Full day",
-        "meals": "Breakfast",
-        "stay": "Ubud",
-        "timings": [
-          "02:00 AM - Depart for Mount Batur",
-          "04:00 AM - Guided summit trek begins",
-          "06:00 AM - Sunrise from the crater rim",
-          "07:00 AM - Breakfast steamed over the vent",
-          "11:00 AM - Natural hot springs",
-          "02:00 PM - Return to the villa"
-        ]
-      },
-      {
-        "title": "Romance day",
-        "summary": "A day built entirely around the two of you.",
-        "activities": [
-          "Floating breakfast on the villa pool",
-          "Couple's spa treatment",
-          "Candlelit dinner on the sand"
-        ],
-        "included": "Floating Breakfast + Couple Spa + Romantic Dinner",
-        "type": "Full day",
-        "meals": "Breakfast + Dinner",
-        "stay": "Ubud",
-        "timings": [
-          "09:00 AM - Floating breakfast on the villa pool",
-          "01:00 PM - Couple spa treatment",
-          "05:00 PM - Free time",
-          "07:30 PM - Candlelit dinner on the sand"
-        ]
-      },
-      {
         "title": "Departure",
-        "summary": "A late checkout before the transfer to the airport.",
+        "summary": "Checkout before the transfer to the airport.",
         "activities": [
-          "Late checkout and free morning",
+          "Checkout and free morning",
           "Transfer to Denpasar Airport"
         ],
         "included": "Airport Transfer",
@@ -1273,33 +1048,57 @@
         "meals": "Breakfast",
         "stay": "-",
         "timings": [
-          "09:00 AM - Breakfast at the villa",
-          "12:00 PM - Late checkout",
+          "09:00 AM - Breakfast at the hotel",
+          "12:00 PM - checkout",
           "01:00 PM - Transfer to Denpasar Airport"
         ]
       }
     ],
     "quickDetails": {
       "Arrival / Departure": "Denpasar (DPS) / Denpasar (DPS)",
-      "Duration": "5N / 6D",
+      "Duration": "4N / 5D",
       "Trip type": "Private departure - honeymoon",
       "International flights": "Not included (booking assistance available)",
       "Domestic flights": "Not applicable",
-      "Internal transportation": "Private AC vehicle with English-speaking driver",
-      "Accommodation": "Private pool villas (5 Star)",
-      "Meals": "(5) Breakfast (1) Dinner",
-      "Places covered": "Seminyak - Uluwatu - Ubud - Kintamani",
+      "Internal transportation": "Private AC vehicle with English-speaking driver-cum-Guide",
+      "Accommodation": "Rhadana Hotel (4 Star)",
+      "Meals": "(4) Breakfast",
+      "Places covered": "Kintamani - Ubud - Uluwatu",
       "Visa": "Visa on arrival (approx. IDR 500,000)"
     },
     "hotels": [
-      "Seminyak - The Layar Designer Villas or similar (private pool villa)",
-      "Ubud - Kajane Mua or similar (private pool villa)"
+      "Kuta – Rhadana Kuta Bali hotel"
+    ],
+    "inclusions": [
+      "4 Nights stay with breakfast in 4 star hotel",
+      "Flower Garland Welcome",
+      "Kintamani tour with Celuk and Mas village",
+      "Ubud Palace and Ubud Market",
+      "Kintamni volcano and Rice Terrace",
+      "Tanah Lot Temple",
+      "Uluwatu Temple Tour",
+      "All tours on pvt basis with English speaking driver-cum-guide",
+      "All airport transfers on pvt basis"
+    ],
+    "exclusions": [
+      "Flights",
+      "Early check-in / late check-out",
+      "Personal expenses",
+      "Porterage, Room Service Bills, Laundry Charges, telephone calls and other expenditure of a personal nature etc",
+      "Meals not listed in inclusions",
+      "Add-on services",
+      "GST & TCS",
+      "Any surcharge during festivals / black out dates etc"
+    ],
+    "addons": [
+      { "service": "Flights", "description": "Ex-Delhi, Mumbai, Bengaluru or other city", "price": "At actuals, quoted on request" },
+      { "service": "Hotel upgrade", "description": "Move up a star category or upgrade to PVT Villa", "price": "At actuals, quoted on request " }
     ],
     "priceVariants": [
       {
-        "label": "5N / 6D",
+        "label": "4N / 5D",
         "note": "Land package only, double sharing",
-        "price": 74999
+        "price": 12499
       }
     ]
   },

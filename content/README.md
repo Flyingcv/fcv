@@ -64,6 +64,7 @@ kar sakta hai.
 | PDF mein sab packages ke liye common content — addons table, notes, payment info, "why us" | `brochure.json` | poori file |
 | Contact form ke field labels, price calculator slider limits, filter chips | `forms.json` | neeche section dekho |
 | Privacy Policy / Cancellation & Refund Policy ka text | `legal.json` | neeche section dekho |
+| Travel Guides listing, hero image, article titles, URLs (slugs), dates, SEO meta descriptions, photos aur story text | `blogs.json` | listing hero `hero.image` mein; har story ka `image` uske article hero mein aur SEO description `metaDescription` mein; `slug` root URL (`/{slug}`) banata hai |
 
 ---
 
@@ -233,6 +234,16 @@ Poori website mein jo bhi common/shared text hai:
 | `ui.packageCard` | Package listing card ke chhote labels ("Per person from", "View") |
 | `ui.itineraryAccordion` | Itinerary ke "Day" prefix aur "Included:" label |
 | `ui.legalToc` | Privacy/Cancellation page ke sidebar ka "On this page" title |
+
+### `blogs.json`
+Travel Guides listing (`/travel-guides`) aur individual stories (`/{slug}`) ka content. Har
+story object mein `slug`, `title`, `category`, `publishedAt` (`YYYY-MM-DD`),
+`readTime`, `excerpt`, optional `metaDescription`, `image`, `imageAlt` aur `body`
+fields hain. `metaDescription` har guide ke HTML SEO description aur Open Graph
+description ko control karta hai; agar khaali/absent ho, `excerpt` fallback hota
+hai. The `slug` is the article URL, so changing it also changes the link. `body` is an ordered
+list of blocks: use `paragraph` and `heading` blocks with `text`, `list`
+blocks with an `items` array, or `link` blocks with `label` and `href`.
 
 ### `home.json`
 Home page (`/`) ka poora content, section-wise:

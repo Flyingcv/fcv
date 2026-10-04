@@ -6,12 +6,15 @@ import TLink from '@/components/TLink';
 import Photo from '@/components/Photo';
 import { Caret, ArrowRight } from '@/components/icons';
 import { useMotion } from '@/components/motion/MotionProvider';
-import { DESTINATION_LIST, SITE, CONTACT, inr } from '@/lib/data';
+import { BLOG_POSTS, DESTINATION_LIST, SITE, CONTACT, inr } from '@/lib/data';
 
 const LINKS = SITE.nav.links;
 
 export default function Nav() {
   const pathname = usePathname();
+  const lightNavPage = pathname === '/travel-guides' || pathname.startsWith('/travel-guides/') ||
+    pathname === '/blogs' || pathname.startsWith('/blogs/') ||
+    BLOG_POSTS.some((post) => pathname === `/${post.slug}`);
   const { revealed } = useMotion();
   const [solid, setSolid] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -68,7 +71,7 @@ export default function Nav() {
 
   return (
     <>
-      <header className={`nav${solid ? ' is-solid' : ''}${hidden ? ' is-hidden' : ''}`}>
+      <header className={`nav${solid || lightNavPage ? ' is-solid' : ''}${hidden ? ' is-hidden' : ''}`}>
         <div className="nav__inner">
           <TLink href="/" className="nav__logo" aria-label={`${SITE.brandName} — home`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}

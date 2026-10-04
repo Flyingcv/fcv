@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "title": "Travel stories & guides",
+    "description": "Thoughtful travel tips, destination guides and inspiration for your next Southeast Asia holiday."
+  },
+  "hero": {
+    "tag": "The travel journal",
+    "heading": "Notes from the <em>road.</em>",
+    "paragraph": "Destination inspiration, practical planning notes and little details that make a journey feel like yours.",
+    "image": "/img/VinWonders-phu-quoc-3.jpg",
+    "imageAlt": "Mountain scenery and a cable car in Sapa, Vietnam"
+  },
+  "posts": [
+    {
+      "slug": "international-tour-packages-from-delhi-ncr",
+      "title": "Vietnam, Bali & Malaysia Tour Packages from Delhi NCR",
+      "category": "Destination guide",
+      "publishedAt": "2026-09-18",
+      "readTime": "6 min read",
+      "excerpt": "Explore Vietnam, Bali, Phu Quoc & Malaysia tour packages from Delhi NCR. Plan customised international holidays and honeymoon packages with Flying Colours Vacations.",
+      "metaDescription": "Explore Vietnam, Bali, Phu Quoc & Malaysia tour packages from Delhi NCR. Plan customised international holidays and honeymoon packages with Flying Colours Vacations.",
+      "image": "/img/sapa.jpg",
+      "imageAlt": "Mountain scenery and a cable car in Sapa, Vietnam",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Vietnam rewards a little breathing room. Distances can look short on a map, but the best memories often come from giving each place enough time to reveal its rhythm. For a first visit, connect the north, central coast and south with a mix of flights and comfortable road transfers."
+        },
+        {
+          "type": "heading",
+          "text": "A balanced first-timer's route"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Begin in Hanoi for two nights: wander the Old Quarter, sample local dishes and leave room for a relaxed city tour.",
+            "Add an overnight cruise in Ha Long Bay or Lan Ha Bay, choosing a sailing that matches your preferred pace.",
+            "Fly to Da Nang and stay near Hoi An for three nights, with time for the old town, a beach morning and a countryside experience.",
+            "Finish in Ho Chi Minh City, then choose a day in the Mekong Delta or extra time to explore the city."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A week can cover the highlights, while ten to twelve days makes the journey feel much less hurried. If your dates are fixed, prioritise fewer stops rather than trying to fit every region into a short trip."
+        },
+        {
+          "type": "heading",
+          "text": "Small planning choices that help"
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep your first day light after an international flight, check current entry requirements before departure, and carry a little flexibility for weather or traffic. Comfortable shoes and a locally connected guide can make busy city days easier, especially when travelling with family."
+        },
+        {
+          "type": "link",
+          "label": "Explore our Vietnam holiday options",
+          "href": "/destinations/vietnam"
+        }
+      ]
+    }
+,
+    {
+      "slug": "bali-beyond-the-beach",
+      "title": "Bali beyond the beach: finding your own island rhythm",
+      "category": "Travel inspiration",
+      "publishedAt": "2026-08-29",
+      "readTime": "5 min read",
+      "excerpt": "Pair the coast with temple visits, green inland landscapes and unhurried mornings to discover a more rounded Bali escape.",
+      "metaDescription": "Discover Bali beyond the beach with practical ideas for combining Ubud, temple visits, green landscapes and a relaxed coastal stay.",
+      "image": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1400&q=80",
+      "imageAlt": "Bali temple surrounded by lush tropical greenery",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Bali can be a beach break, a slow countryside stay or a little of both. Rather than changing hotels every night, choose two areas that suit the way you like to travel and let day trips fill in the rest."
+        },
+        {
+          "type": "heading",
+          "text": "Two bases, two different moods"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Stay around Ubud for rice terraces, craft markets, temple visits and a greener, more inland feel.",
+            "Choose a coastal base such as Sanur, Seminyak or Nusa Dua depending on whether you prefer calm swimming, dining or resort time.",
+            "Plan one or two guided outings, then keep an open day for a spa, a café you discover or simply doing nothing."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Travel times vary with traffic, so group nearby sights together and avoid packing too many cross-island transfers into one day. A local driver can make a flexible sightseeing day much more comfortable."
+        },
+        {
+          "type": "heading",
+          "text": "Make the trip feel like yours"
+        },
+        {
+          "type": "paragraph",
+          "text": "For a first visit, balance a couple of iconic sights with everyday moments: an early walk, a long lunch or a sunset close to your hotel. Check seasonal conditions when choosing beach activities, and leave a little space in the itinerary for plans to change."
+        },
+        {
+          "type": "link",
+          "label": "See Bali destination ideas",
+          "href": "/destinations/bali"
+        }
+      ]
+    }
+  ]
+}

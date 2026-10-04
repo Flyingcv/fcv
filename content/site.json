@@ -25,6 +25,7 @@
       { "href": "/about", "label": "About" },
       { "href": "/destinations", "label": "Destinations", "menu": true },
       { "href": "/services", "label": "Packages" },
+      { "href": "/travel-guides", "label": "Travel Guides" },
       { "href": "/contact", "label": "Contact" }
     ],
     "ctaLabel": "Plan my trip",
@@ -46,6 +47,7 @@
       "companyLinks": [
         { "href": "/about", "label": "About us" },
         { "href": "/services", "label": "Services & packages" },
+        { "href": "/travel-guides", "label": "Travel Guides" },
         { "href": "/services#configurator", "label": "Price calculator" },
         { "href": "/contact", "label": "Contact" },
         { "href": "/contact#faq", "label": "FAQs" }

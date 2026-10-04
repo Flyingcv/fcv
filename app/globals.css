@@ -1086,6 +1086,15 @@ body.menu-open .drawer__link { opacity: 1; transform: none; transition: opacity 
   inset: 0;
   background: linear-gradient(180deg, rgba(3,10,24,.86) 0%, rgba(3,10,24,.35) 40%, rgba(3,10,24,.94) 100%);
 }
+.phero--blogs .phero__bg img {
+  opacity: .92;
+  object-position: center 45%;
+}
+.phero--blogs .phero__bg::after {
+  background:
+    linear-gradient(90deg, rgba(3,10,24,.8) 0%, rgba(3,10,24,.55) 42%, rgba(3,10,24,.12) 100%),
+    linear-gradient(0deg, rgba(3,10,24,.72) 0%, rgba(3,10,24,.04) 68%);
+}
 .phero__inner { position: relative; z-index: 2; width: 100%; }
 .phero h1 { font-size: var(--t-3xl); text-transform: uppercase; font-weight: 700; letter-spacing: -.035em; }
 .phero__crumbs {

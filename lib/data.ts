@@ -26,6 +26,7 @@ import packagePageJson from '@/content/package-page.json';
 import legalJson from '@/content/legal.json';
 import pdfJson from '@/content/pdf.json';
 import formsJson from '@/content/forms.json';
+import blogsJson from '@/content/blogs.json';
 
 /** Canonical production domain — matches metadataBase in app/layout.tsx.
  *  Used to build absolute links (e.g. inside WhatsApp enquiry messages)
@@ -47,6 +48,30 @@ export const PACKAGE_PAGE = packagePageJson;
 export const LEGAL = legalJson;
 export const PDF_COPY = pdfJson;
 export const FORMS = formsJson;
+export const BLOG_PAGE = blogsJson;
+
+export interface BlogBlock {
+  type: 'paragraph' | 'heading' | 'list' | 'link';
+  text?: string;
+  items?: string[];
+  label?: string;
+  href?: string;
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  category: string;
+  publishedAt: string;
+  readTime: string;
+  excerpt: string;
+  metaDescription?: string;
+  image: string;
+  imageAlt: string;
+  body: BlogBlock[];
+}
+
+export const BLOG_POSTS = blogsJson.posts as BlogPost[];
 
 /** Unsplash helper — swap for your own photography/CDN later.
  *  If a URL fails, <Photo> degrades the frame to a branded gradient. */

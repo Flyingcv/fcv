@@ -26,7 +26,7 @@ import packagePageJson from '@/content/package-page.json';
 import legalJson from '@/content/legal.json';
 import pdfJson from '@/content/pdf.json';
 import formsJson from '@/content/forms.json';
-import blogsJson from '@/content/blogs.json';
+import blogsJson from '@/content/travel-guides.json';
 
 /** Canonical production domain — matches metadataBase in app/layout.tsx.
  *  Used to build absolute links (e.g. inside WhatsApp enquiry messages)

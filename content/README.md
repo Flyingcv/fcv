@@ -64,7 +64,7 @@ kar sakta hai.
 | PDF mein sab packages ke liye common content — addons table, notes, payment info, "why us" | `brochure.json` | poori file |
 | Contact form ke field labels, price calculator slider limits, filter chips | `forms.json` | neeche section dekho |
 | Privacy Policy / Cancellation & Refund Policy ka text | `legal.json` | neeche section dekho |
-| Travel Guides listing, hero image, article titles, URLs (slugs), dates, SEO meta descriptions, photos aur story text | `blogs.json` | listing hero `hero.image` mein; har story ka `image` uske article hero mein aur SEO description `metaDescription` mein; `slug` root URL (`/{slug}`) banata hai |
+| Travel Guides listing, hero image, article titles, URLs (slugs), dates, SEO meta descriptions, photos aur story text | `travel-guides.json` | listing hero `hero.image` mein; har story ka `image` uske article hero mein aur SEO description `metaDescription` mein; `slug` root URL (`/{slug}`) banata hai |
 
 ---
 
@@ -235,7 +235,7 @@ Poori website mein jo bhi common/shared text hai:
 | `ui.itineraryAccordion` | Itinerary ke "Day" prefix aur "Included:" label |
 | `ui.legalToc` | Privacy/Cancellation page ke sidebar ka "On this page" title |
 
-### `blogs.json`
+### `travel-guides.json`
 Travel Guides listing (`/travel-guides`) aur individual stories (`/{slug}`) ka content. Har
 story object mein `slug`, `title`, `category`, `publishedAt` (`YYYY-MM-DD`),
 `readTime`, `excerpt`, optional `metaDescription`, `image`, `imageAlt` aur `body`
@@ -354,3 +354,7 @@ chahiye hota hai tabhi changes live dikhenge (kaise hosted hai uske hisaab
 se — Vercel/Netlify jaisi services par yeh git push karte hi apne aap ho
 jata hai). Agar pata nahi kaise deploy hota hai, developer se ek baar
 poochh lena.
+## Changes final krne k liye?
+git add .
+git commit -m "done some changes"
+git push origin main

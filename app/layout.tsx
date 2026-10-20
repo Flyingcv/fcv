@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   description: SITE.meta.description,
   keywords: SITE.meta.keywords,
   verification: {
-  google: '1jBA1QMpO6JxxF0eEP1ES8BhVuUDwNjSFXye3ZEm51Q'
+  google: 'e4EpBWSLB0qcSIJ_tcNo8N7oZq8Q8RSEVe2QutF9fY8'
   },
   openGraph: {
     type: 'website',

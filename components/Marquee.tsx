@@ -22,7 +22,7 @@ export default function Marquee({ items, speed = 90, dir = 'left' }: Props) {
       const width = el.scrollWidth / 2;
       const duration = Math.max(width / speed, 8);
 
-      const tween = dir === 'left'
+      const tween = dir === 'right'
         ? gsap.fromTo(el, { xPercent: 0 }, { xPercent: -50, duration, ease: 'none', repeat: -1 })
         : gsap.fromTo(el, { xPercent: -50 }, { xPercent: 0, duration, ease: 'none', repeat: -1 });
 

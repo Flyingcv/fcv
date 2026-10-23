@@ -66,6 +66,11 @@ export interface BlogPost {
   readTime: string;
   excerpt: string;
   metaDescription?: string;
+  seo?: {
+    focusKeyword?: string;
+    title?: string;
+    description?: string;
+  };
   image: string;
   imageAlt: string;
   body: BlogBlock[];

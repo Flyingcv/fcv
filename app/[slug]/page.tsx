@@ -14,12 +14,15 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const post = BLOG_POSTS.find((article) => article.slug === slug);
   if (!post) return { title: 'Story not found' };
 
+  const seoTitle = post.seo?.title || post.title;
+  const seoDescription = post.seo?.description || post.metaDescription || post.excerpt;
+
   return {
-    title: post.title,
-    description: post.metaDescription || post.excerpt,
+    title: seoTitle,
+    description: seoDescription,
     openGraph: {
-      title: post.title,
-      description: post.metaDescription || post.excerpt,
+      title: seoTitle,
+      description: seoDescription,
       images: [{ url: post.image, alt: post.imageAlt }]
     }
   };

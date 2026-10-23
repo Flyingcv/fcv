@@ -238,10 +238,13 @@ Poori website mein jo bhi common/shared text hai:
 ### `travel-guides.json`
 Travel Guides listing (`/travel-guides`) aur individual stories (`/{slug}`) ka content. Har
 story object mein `slug`, `title`, `category`, `publishedAt` (`YYYY-MM-DD`),
-`readTime`, `excerpt`, optional `metaDescription`, `image`, `imageAlt` aur `body`
-fields hain. `metaDescription` har guide ke HTML SEO description aur Open Graph
-description ko control karta hai; agar khaali/absent ho, `excerpt` fallback hota
-hai. The `slug` is the article URL, so changing it also changes the link. `body` is an ordered
+`readTime`, `excerpt`, optional `seo` object, optional legacy `metaDescription`,
+`image`, `imageAlt` aur `body` fields hain. `seo.focusKeyword` editorial SEO
+guidance ke liye hai; `seo.title` HTML page/Open Graph title ko aur
+`seo.description` HTML/Open Graph description ko control karta hai. Missing SEO
+title ke liye `title`, aur missing description ke liye `metaDescription` then
+`excerpt` fallback hota hai. `slug` article URL hai, so changing it also changes
+the link. `body` is an ordered
 list of blocks: use `paragraph` and `heading` blocks with `text`, `list`
 blocks with an `items` array, or `link` blocks with `label` and `href`.
 

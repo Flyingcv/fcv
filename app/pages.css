@@ -2923,7 +2923,8 @@ input[type="range"]::-moz-range-thumb {
   line-height: 1.15;
 }
 
-.blog-article__content ul {
+.blog-article__content ul,
+.blog-article__content ol {
   display: grid;
   gap: .65rem;
   margin: 1rem 0 1.5rem;

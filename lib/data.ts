@@ -51,7 +51,7 @@ export const FORMS = formsJson;
 export const BLOG_PAGE = blogsJson;
 
 export interface BlogBlock {
-  type: 'paragraph' | 'heading' | 'list' | 'link';
+  type: 'paragraph' | 'heading' | 'list' | 'ordered-list' | 'link';
   text?: string;
   items?: string[];
   label?: string;

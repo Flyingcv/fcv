@@ -2,18 +2,26 @@ import TLink from '@/components/TLink';
 import Photo from '@/components/Photo';
 import { ArrowRight } from '@/components/icons';
 import type { BlogBlock, BlogPost } from '@/lib/data';
+import { parseInlineHtml } from '@/lib/richtext';
 
 const formatDate = (date: string) =>
   new Intl.DateTimeFormat('en', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
     .format(new Date(`${date}T00:00:00Z`));
 
 function ArticleBlock({ block }: { block: BlogBlock }) {
-  if (block.type === 'heading') return <h2>{block.text}</h2>;
+  if (block.type === 'heading') return <h2>{parseInlineHtml(block.text ?? '')}</h2>;
   if (block.type === 'list') {
     return (
       <ul>
-        {(block.items ?? []).map((item) => <li key={item}>{item}</li>)}
+        {(block.items ?? []).map((item) => <li key={item}>{parseInlineHtml(item)}</li>)}
       </ul>
+    );
+  }
+  if (block.type === 'ordered-list') {
+    return (
+      <ol>
+        {(block.items ?? []).map((item) => <li key={item}>{parseInlineHtml(item)}</li>)}
+      </ol>
     );
   }
   if (block.type === 'link' && block.href && block.label) {
@@ -27,7 +35,7 @@ function ArticleBlock({ block }: { block: BlogBlock }) {
       </p>
     );
   }
-  return <p>{block.text}</p>;
+  return <p>{parseInlineHtml(block.text ?? '')}</p>;
 }
 
 export default function BlogArticle({ post }: { post: BlogPost }) {
